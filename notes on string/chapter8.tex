@@ -1,0 +1,1287 @@
+% \setcounter{section}{0}%更改chapter的计数器值
+% %\numberwithin{equation}{chapter}%公式计数器从属于节计数器
+% \numberwithin{equation}{section}%公式计数器从属于节计数器
+% \numberwithin{figure}{section}%图计数器从属于节计数器
+% \setcounter{chapter}{7}
+
+%\chapter{\texorpdfstring{环面和T对偶}{8 Toroidal compactification and T -duality}}
+\chapter{环面和T对偶} \label{cha:8}
+弦理论的真实紧致化将是卷II最后几章的主题. 但先来考察一下弦论最简单的紧致化，一个或多个维度周期等价. 我们先来考察场论中的相同紧致化，它们会在规范作用与引力的Kaluza-Klein统一中遇到. 然后我们将其拓展至弦论，这时产生了几个新的且内禀的弦现象：缠绕态，加强的规范对称性，T对偶以及D膜. 我们还会沿此考察稍微复杂的紧致化，轨形与定向形.
+
+%\section{\texorpdfstring{场论中的环面紧致化}{8.1 Toroidal compactification in field theory}}
+\section{场论中的环面紧致化}
+在广义相对论中，时空的几何是动力学的. 我们看到的三个空间维是伸展的，但曾经高度蜷曲. 逻辑上又这样的可能性：依旧还有保持很小的额外维. 事实上，这在1914年就已经提出，并将其作为把电磁场与引力场统一为单个高维场的分量. 考察5维情况，其中$x^{4}$ 周期等价
+\begin{equation}
+	x^{4} \cong x^{4}+2 \pi R
+\end{equation}
+其他 $x^{\mu}$ 是不紧致的. 这是环向紧致化，5维度规分成 $G_{\mu v}, G_{\mu 4}$, and $G_{44} $. 从4维观点看，它们是度规，矢量以及标量.\\
+我们来细致地考察. 取更普遍的情况$D=d+1$个时空维，其中 $x^{d}$ 是周期的. 将度规参数化为
+\begin{equation}
+	d s^{2}=G_{M N}^{D} d x^{M} d x^{N}=G_{\mu v} d x^{\mu} d x^{v}+G_{d d}\left(d x^{d}+A_{\mu} d x^{\mu}\right)^{2}
+\end{equation}
+
+记整个$D$ 维时空的度规为$G_{M N}^{D} $，注意 $G_{\mu v} \neq G_{\mu v}^{D} $，我们在 $d$ 维作用量中用$G_{\mu \nu} $升降指标. 现今，仅允许$G_{\mu v}, G_{d d}$及$A_{\mu}$ 依赖于$x^{\mu}$.  $(8.1 .2)$ 是在$x^{d}$的平移下不变的最一般形式的度规. 这一形式依旧允许$d$维再参量化 $x^{\prime \mu}\left(x^{v}\right)$ 以及
+\begin{equation}
+	x^{\prime d}=x^{d}+\lambda\left(x^{\mu}\right)
+\end{equation}
+在这个再参量化下
+\begin{equation}
+	A_{\mu}^{\prime}=A_{\mu}-\partial_{\mu} \lambda
+\end{equation}
+所以规范变换作为高维坐标群的一部分产生，这就是Kaluza-Klein机制.\\
+为了看到$x^{d}$相关性的效应，考察$D$维中的无质量标量 $\phi$. 简单起见，紧致维度中的度规取成 $G_{d d}=1$. 周期维度上的动量是量子化的, $p_{d}=n / R$. 将 $\phi$ 的 $x^{d}$相关性展成完备基
+\begin{equation}
+	\phi\left(x^{M}\right)=\sum_{n=-\infty}^{\infty} \phi_{n}\left(x^{\mu}\right) \exp \left(i n x^{d} / R\right)
+\end{equation}
+ $D$维波方程 $\partial_{M} \partial^{M} \phi=0$ 变成
+\begin{equation}
+	\partial_{\mu} \partial^{\mu} \phi_{n}\left(x^{\mu}\right)=\frac{n^{2}}{R^{2}} \phi_{n}\left(x^{\mu}\right)
+\end{equation}
+$D$维场的模 $\phi_{n}$ 因此变成 $d$维场的无限塔. $d$维质量平方
+\begin{equation}
+	-p^{\mu} p_{\mu}=\frac{n^{2}}{R^{2}}
+\end{equation}
+对于$p_{d} $不为零的场，质量平方非零. 当能量远小于 $R^{-1}$, 只有 $x^{d}$ 依赖依旧存在，而物理是$d$ 维的.当能量超过 $R^{-1}$, 我们就看到Kaluza-Klein态塔.\\
+与Kaluza-Klein规范不变性 (8.1.3)相对应的荷是 $p_{d}$ 动量. 在这个简单例子中，所有携带Kaluza-Klein荷的场都是有质量的. 更一般地，若还有高自旋场以及弯曲背景，无质量的带荷场能够存在.\\
+无质量场的有效作用量总是一个重要课题. 定义 $G_{d d}=e^{2 \sigma} $， 度规(8.1 .2)的Ricci标量是
+\begin{equation}
+	\boldsymbol{R}=\boldsymbol{R}_{d}-2 e^{-\sigma} \nabla^{2} e^{\sigma}-\frac{1}{4} e^{2 \sigma} F_{\mu \nu} F^{\mu v}
+\end{equation}
+其中 $\boldsymbol{R}$ 是 $G_{M N}^{D}$ 构建的， $\boldsymbol{R}_{d}$是$G_{\mu \nu} $构建的. 引力子-伸缩子作用量 (3.7.20) 变成
+\begin{equation}
+	\begin{aligned}
+		\boldsymbol{S}_{1}=& \frac{1}{2 \kappa_{0}^{2}} \int d^{D} x\left(-G_{D}\right)^{1 / 2} e^{-2 \Phi}\left(\boldsymbol{R}+4 \nabla_{\mu} \Phi \nabla^{\mu} \Phi\right) \\
+		=& \frac{\pi R}{\kappa_{0}^{2}} \int d^{d} x\left(-G_{d}\right)^{1 / 2} e^{-2 \Phi+\sigma} \\
+		& \times\left(\boldsymbol{R}_{d}-4 \partial_{\mu} \Phi \partial^{\mu} \sigma+4 \partial_{\mu} \Phi \partial^{\mu} \Phi-\frac{1}{4} e^{2 \sigma} F_{\mu \nu} F^{\mu v}\right) \\
+		=& \frac{\pi R}{\kappa_{0}^{2}} \int  d^{d} x\left(-G_{d}\right)^{1 / 2} e^{-2 \Phi_{d}} \\
+		& \times\left(\boldsymbol{R}_{d}-\partial_{\mu} \sigma \partial^{\mu} \sigma+4 \partial_{\mu} \Phi_{d} \partial^{\mu} \Phi_{d}-\frac{1}{4} e^{2 \sigma} F_{\mu v} F^{\mu v}\right)
+	\end{aligned}
+\end{equation}
+这给出了所有无质量场的动能项. 这里 $G_{d}$是 $G_{\mu v}$的行列式，  $\Phi_{d}=\Phi-\sigma / 2$是有效$d$维伸缩子. 伸缩子动能项的符号错误是虚假的，因为引力子与度规迹的混合也必须考虑在内. 实现它的最简单方法是(3.7.25)中的Weyl变换.\\
+场方程并不决定紧致维数的半径：
+\footnote{Of course, only the invariant radius
+	$$\rho=R e^{\sigma}$$
+distinguishes physically inequivalent solutions. We could set $R$ to some convenient value, say $\alpha^{1 / 2}$, or to unity if we use dimensionless variables, but it is convenient to leave it general; often it will be more convenient to set $G_{d d}$ to unity instead. Similarly we could set $\kappa_{0}^{2}$ to be the appropriate power of $\alpha^{\prime}$ by an additive shift of $\Phi$, but again it does not hurt to leave it general and we will see in chapter 13 that it is natural to fix the additive normalization of $\Phi$ in a different way.}
+对于$\Phi$ and $\sigma $ 的任意值，平坦度规以及常伸缩子是解. 换句话说，没有$\Phi$荷$\sigma$的势能，因而这些场必须是无质量的，很像Goldstone bosons. $\Phi$荷 $\sigma$ 的不同值标记简并构型(或量子理论的态), 并且若态中的场缓慢变化，那么它的能量只来自于梯度，它与Goldstone现象不同之处在于简并态并没有通过任何对称性彼此相关. 在这个玻色理论中，简并是偶然的，并且上一节讨论的一圈能量破坏了这个简并. 在超对称理论中，存在物理上不等价但简并的真空. 这是相当常见的，并且在理解动力学时有很大作用. 用来标记不等价真空的场被称为模. 在自然中，超对称破缺几乎必然地赋予了所有模质量，否则它们将传递引力量级的无限长程力.\\
+定义$A_{\mu}=R \tilde{A}_{\mu}$, 协变导数为
+\begin{equation}
+	\partial_{\mu}+i p_{d} A_{\mu}=\partial_{\mu}+i n \tilde{A}_{\mu}
+\end{equation}
+这使得电荷是整数.  $d$ 维规范耦合与引力耦合的定义如下. Lagrangian密度中 $\tilde{F}_{\mu \nu} \tilde{F}^{\mu v}$的系数定义成 $-1 / 4 g_{d}^{2}$,  $\boldsymbol{R}_{d}$的导数定义成 $1 / 2 \kappa_{d}^{2}$. 以引力耦合的形式，规范耦合写成
+\begin{equation}
+	g_{d}^{2}=\frac{\kappa_{0}^{2} e^{2 \Phi_{d}}}{\pi R^{3} e^{2 \sigma}}=\frac{2 \kappa_{d}^{2}}{\rho^{2}}
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+		$$1 / g_{\alpha}^{2}=R^{2} e^{2 \sigma} \cdot \frac{\pi R}{k_{0}^{2}} e^{-2 {\Phi}_{d}},\quad 1 / 2 k_{d}^{2}=\frac{\pi R e^{-2 \Phi_d}}{k_{0}^{2}},\quad \rho=R e^\sigma$$}}\\
+
+$d$ 维与 $D$ 维引力耦合关系是
+\begin{equation}
+	\frac{1}{\kappa_{d}^{2}}=\frac{2 \pi \rho}{\kappa^{2}}
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+		$$\frac{1}{2 k^{2}}=\frac{e^{-2 \Phi}}{2 k_{0}^{2}}=\frac{e^{-2 \Phi}}{2} \frac{1}{2 k_{d}^{2} \pi R e^{-2{\Phi} _d}}=\frac{e^{-\sigma}}{4 k_{d}^{2} \pi R}=\frac{1}{2 k_{d}^{2} 2 \pi \rho}$$}}\\
+
+$2 \pi \rho$ 是紧致维数的体积.\\
+通过推广Kaluza-Klein机制，反对称张量也可以给出规范对称性. 将 $B_{M N}$ 分成 $B_{\mu v}$和$A_{\mu}^{\prime}=B_{d \mu}$,  (3.7.7) 中的规范参量 $\zeta_{M}$ 分成 $d$维反对称张量变换 $\zeta_{\mu}$和普通的规范不变量 $\zeta_{d}$.规范场是 $B_{d \mu}$ ，场强是 $H_{d \mu v}$. 反对称张量作用量变成
+\begin{equation}
+	\begin{aligned}
+		\boldsymbol{S}_{2} &=-\frac{1}{24 \kappa_{0}^{2}} \int d^{D} x\left(-G_{D}\right)^{1 / 2} e^{-2 \Phi} H_{M N L} H^{M N L} \\
+		&=-\frac{\pi R}{12 \kappa_{0}^{2}} \int d^{d} x\left(-G_{d}\right)^{1 / 2} e^{-2 \Phi_{d}}\left(\tilde{H}_{\mu \nu \lambda} \tilde{H}^{\mu v \lambda}+3 e^{-2 \sigma} H_{d \mu v} H_{d}^{\mu v}\right)
+	\end{aligned}
+\end{equation}
+我们定义了
+\begin{equation}
+	\tilde{H}_{\mu v \lambda}=\left(\partial_{\mu} B_{v \lambda}-A_{\mu} H_{d v \lambda}\right)+\text { cyclic permutations }
+\end{equation}
+正比于矢势的项来源于逆度规 $G^{M N} $，它被称为Chern-Simons项，这代表一个规范势与任意多个场强相耦合. 在超对称理论中经常会出现这样的项，并与有趣的物理现象相联系. 注意 $\tilde{H}_{\mu v \lambda}$ 是规范不变的，因为$A_{\mu}$的变分 (8.1.4)被如下变分抵消：
+\begin{equation}
+	B_{v \lambda}^{\prime}=B_{v \lambda}-\lambda H_{d v \lambda}
+\end{equation}
+不存在 $B_{M N}$与其他场的最小耦合，所以不像Kaluza-Klein情况. 在反对称张量规范对称性下没有场带荷；在弦论中这是不同的.\\
+\begin{remark}
+$${\color{blue}
+g^{M N}=\left[\begin{array}{ll}
+g^{\mu \nu} & -A^{\mu} \\
+-A_{\nu} & g_{\mu v} A^{\mu} A^{\nu}+e^{-2 \sigma}
+\end{array}\right]}
+$$
+$$\color{blue}
+	\begin{aligned}
+	G^{M W} G^{L K} G^{S R} H_{M L S} H_{N K R}&=3 G^{d d} H_{d \mu \nu} H_{d} \mu \nu \\
+	&=3 e^{-2 \sigma} H_{d \mu \nu} H_{d}^{\mu \nu}+3 g_{\mu \nu} A_{\mu } H_{d\mu \nu}+A_{\nu} H_{d}^{\mu \nu}
+	\end{aligned}
+	$$
+\end{remark}
+
+\section{共形场论中的环面紧致化}%{8.2 Toroidal compactification in CFT}
+现在我们来考察单个周期标量场的共形场论
+\begin{equation}
+	X \cong X+2 \pi R
+\end{equation}
+为了保持方程的整洁，我们扔掉$X^{d}$的上标，并令 $G_{d d}=1$. 世界面作用量与非紧致理论相同，均为 $\int d^{2} z \partial X \bar{\partial} X / 2 \pi \alpha^{\prime}$, 所以运动方程，算符乘积以及能动张量均保持不变. 周期性有两个效应. \\
+其一，弦态在等价关系 (8.2 .1) 下必须是单值的. 即，平移弦的算符绕紧致维数一圈必须使该态不变，所以质心动量量子化
+\begin{equation}
+	k=\frac{n}{R}, \quad n \in \mathbf{Z}
+\end{equation}
+这与场论相同.\\
+其二为弦论特有. 闭弦现在必须缠绕紧致维
+\begin{equation}
+	X(\sigma+2 \pi)=X(\sigma)+2 \pi R w, \quad w \in \mathbf{Z}
+\end{equation}
+整数 $w$ 时缠绕数，缠绕数为 $+1, 0 ,-1$的态如图\ref{Fig8.1}(a)所示.\\ 
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 1052 545
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=789,natheight=408.75]{Fig8.1.jpg}\\
+		\caption{Fig. 8.1. (a) Closed oriented strings of winding number $w=+1,0,-1$. For illustration, one compact dimension $X$ and one noncompact dimension $Y$ are shown. (b) Transition of a $w=0$ string into $w=+1$ and $w=-1$ strings.}\label{Fig8.1}
+	\end{center}
+\end{figure}
+
+从世界面场论的观点来看，缠绕数非零的弦是拓扑孤子，即场构型拓扑非平庸的态. 相容的弦理论必须纳入缠绕数态：通过分裂-合并过程， $w=0$ 的弦可以变成 $w=+1$, $w=-1$ 的弦，如图\ref{Fig8.1}(b)所示. 很容易看到这个例子中缠绕数总是守恒的. \\
+为了确定闭弦CFT的态，考察Laurent展开
+\begin{equation}
+	\partial X(z)=-i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty}^{\infty} \frac{\alpha_{m}}{z^{m+1}}, \quad \bar{\partial} X(\bar{z})=-i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty}^{\infty} \frac{\tilde{\alpha}_{m}}{\bar{z}^{m+1}}
+\end{equation}
+缠绕一周后，$X$的改变为
+\begin{equation}
+	2 \pi R w=\oint(d z \partial X+d \bar{z} \bar{\partial} X)=2 \pi\left(\alpha^{\prime} / 2\right)^{1 / 2}\left(\alpha_{0}-\tilde{\alpha}_{0}\right)
+\end{equation}
+总的 Noether 动量是
+\begin{equation}
+	p=\frac{1}{2 \pi \alpha^{\prime}} \oint(d z \partial X-d \bar{z} \bar{\partial} X)=\left(2 \alpha^{\prime}\right)^{-1 / 2}\left(\alpha_{0}+\tilde{\alpha}_{0}\right)
+\end{equation}
+对于非紧致维度，这像往常一样给出 $\alpha_{0}=\tilde{\alpha}_{0}=$ $p\left(\alpha^{\prime} / 2\right)^{1 / 2}$, 但对于周期维度则有
+\begin{subequations}
+\begin{equation}
+p_{L} \equiv\left(2 / \alpha^{\prime}\right)^{1 / 2} \alpha_{0}=\frac{n}{R}+\frac{w R}{\alpha^{\prime}} 
+\end{equation}	
+\begin{equation}
+p_{R} \equiv\left(2 / \alpha^{\prime}\right)^{1 / 2} \tilde{\alpha}_{0}=\frac{n}{R}-\frac{w R}{\alpha^{\prime}}
+\end{equation}		
+\end{subequations}
+Virasoro生成元是
+\begin{subequations}
+\begin{equation}
+L_{0}=\frac{\alpha^{\prime} p_{L}^{2}}{4}+\sum_{n=1}^{\infty} \alpha_{-n} \alpha_{n}
+\end{equation}
+\begin{equation}
+\tilde{L}_{0}=\frac{\alpha^{\prime} p_{R}^{2}}{4}+\sum_{n=1}^{\infty} \tilde{\alpha}_{-n} \tilde{\alpha}_{n}
+\end{equation}		 				
+\end{subequations}
+
+
+\subsection*{\centerline{The partition function(配分函数)}}
+ $X$ 的配分函数
+\begin{equation}
+	\begin{aligned}
+		&(q \bar{q})^{-1 / 24} \operatorname{Tr}\left(q^{L_{0}} \bar{q}^{\tilde{L}_{0}}\right) \\
+		=&|\eta(\tau)|^{-2} \sum_{n, w=-\infty}^{\infty} q^{\alpha^{\prime} p_{L}^{2} / 4} \bar{q}^{\alpha^{\prime} p_{R}^{2} / 4} \\
+		=&|\eta(\tau)|^{-2} \sum_{n, w=-\infty}^{\infty} \exp \left[-\pi \tau_{2}\left(\frac{\alpha^{\prime} n^{2}}{R^{2}}+\frac{w^{2} R^{2}}{\alpha^{\prime}}\right)+2 \pi i \tau_{1} n w\right]
+	\end{aligned}
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+		$$
+		P_{L}^{2}-P_{R}^{2}=\left(P_{L}-P_{R}\right)\left(P_{L}+P_{R}\right)=2\frac{wR}{\alpha^\prime}2\frac{n}{R}=4\frac{wn}{\alpha^\prime}
+		$$
+	$$
+	P_L^{2}+P_{R}^{2}=\frac{n^{2}}{R^{2}}+\frac{w^{2} R^{2}}{\left(\alpha^{\prime}\right)^{2}}
+	$$}}\\
+
+振子与非紧致情况相同. 而动量积分被换成了对$n$ 荷 $w$的求和. 模不变性不显然，但利用Poisson重求和公式,
+\begin{equation}
+	\sum_{n=-\infty}^{\infty} \exp \left(-\pi a n^{2}+2 \pi i b n\right)=a^{-1 / 2} \sum_{m=-\infty}^{\infty} \exp \left[-\frac{\pi(m-b)^{2}}{a}\right]
+\end{equation}
+配分函数变成
+\begin{equation}
+	2 \pi R Z_{X}(\tau) \sum_{m, w=-\infty}^{\infty} \exp \left(-\frac{\pi R^{2}|m-w \tau|^{2}}{\alpha^{\prime} \tau_{2}}\right)
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+$$
+\begin{aligned}
+&\sum_{n=-\infty}^{+\infty} \exp \left[-\pi \tau_{2} \frac{\alpha^{\prime} n^{2}}{R^{2}}+2 \pi i \tau_{1} n w-\pi \tau_{2}  \frac{w^{2} R^{2}}{\alpha^{\prime}}\right] \\
+&=\frac{R}{\left(\alpha^{\prime} \tau_{2}\right)^{1 / 2}} \sum_{m=-\infty}^{+\infty} \exp \left[-\frac{\pi R^{2}}{\alpha^{\prime} \tau_{2}}\left(\left(m-w \tau_{1}\right)^{2}+w^{2} \tau_{2}^{2}\right)\right]
+\end{aligned}
+$$
+$$
+Z_{x}(\tau)=\frac{|\eta(\tau)|^{-2}}{\left(4 \pi^{2} \alpha^{\prime} \tau_{2}\right)^{1 / 2}}
+$$}}\\
+
+$Z_{X}(\tau)$是非紧致理论中的模不变表达式 (7.2.9) ，这个和在 $\tau \rightarrow \tau+1$下显然是不变的. 而当$\tau \rightarrow-1 / \tau$ 时，\\
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+		$$
+		\frac{|m-w \tau|^{2}}{\tau_{2}} \rightarrow \frac{\mid m+w / \tau|^{2}}{\tau_{2} /|\tau|^{2}}=\frac{|m \tau+w|^{2}}{\tau_{2}}
+		$$}}\\
+
+(8.2.11) 有一个简单的路径积分解释. 在周期时空中对所有亏格为1的世界面求和，世界面上每个不平庸的闭曲线会缠绕紧致方向
+\begin{subequations}
+\begin{equation}
+X\left(\sigma^{1}+2 \pi, \sigma^{2}\right) =X\left(\sigma^{1}, \sigma^{2}\right)+2 \pi w R
+\end{equation}
+\begin{equation}
+X\left(\sigma^{1}+2 \pi \tau_{1}, \sigma^{2}+2 \pi \tau_{2}\right) =X\left(\sigma^{1}, \sigma^{2}\right)+2 \pi m R
+\end{equation}
+\end{subequations}
+即，路径积分分裂成由$w$ 和 $m $标记的拓扑不等价截面. 通过将$X$写成满足周期性的经典解                                                                                                              
+\begin{equation}
+	X_{\mathrm{cl}}=\sigma^{1} w R+\sigma^{2}\left(m-w \tau_{1}\right) R / \tau_{2}
+\end{equation}
+加上满足周期性边界条件的量子部分. 这个Gauss型路径积分可以被做掉. 对量子部分的路径积分与非紧致情况相同；而经典部分，作为(8.2.11)中的指数出现. 模变换在周期上的效应就简化为交换求和变量 $m$ 和 $w$.\\
+
+\subsection*{\centerline{Vertex operators(顶点算符)}}
+为了构建 $\alpha_{0} \neq \tilde{\alpha}_{0}$的缠绕态，我们需要独立的变量 $x_{L}$和 $x_{R}$，满足
+\begin{equation}
+	\left[x_{L}, p_{L}\right]=\left[x_{R}, p_{R}\right]=i
+\end{equation}
+场 $X$ 分裂成称全纯部分和反全纯部分
+\begin{equation}
+	X(z, \bar{z})=X_{L}(z)+X_{R}(\bar{z})
+\end{equation}
+其中
+\begin{subequations}
+\begin{equation}
+X_{L}(z)=x_{L}-i \frac{\alpha^{\prime}}{2} p_{L} \ln z+i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty \atop m \neq 0}^{\infty} \frac{\alpha_{m}}{m z^{m}}
+\end{equation}
+\begin{equation}
+X_{R}(\bar{z})=x_{R}-i \frac{\alpha^{\prime}}{2} p_{R} \ln \bar{z}+i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty \atop m \neq 0}^{\infty} \frac{\tilde{\alpha}_{m}}{m \bar{z}^{m}}
+\end{equation}
+\end{subequations}
+如果我们限制在 $k_{L}=k_{R}$的态上以及仅用 $X_{L}(z)+X_{R}(\bar{z})$构建的算符，这就退化至非紧致维度的CFT.\\
+我们现在讨论OPE与顶角算符. 很容易猜出顶角算符的形式. 既然通常的XX算符乘积 $-\left(\alpha^{\prime} / 2\right) \ln \left(z_{12} \bar{z}_{12}\right)$可以拆成全纯函数加上反全纯函数，因此
+\begin{subequations}
+\begin{equation}
+X_{L}\left(z_{1}\right) X_{L}\left(z_{2}\right) \sim-\frac{\alpha^{\prime}}{2} \ln z_{12}, \quad X_{R}\left(\bar{z}_{1}\right) X_{R}\left(\bar{z}_{2}\right) \sim-\frac{\alpha^{\prime}}{2} \ln \bar{z}_{12} 
+\end{equation}
+\begin{equation}
+X_{L}\left(z_{1}\right) X_{R}\left(\bar{z}_{2}\right) \sim 0
+\end{equation}		
+\end{subequations}
+对应于态 $\left|0 ; k_{L}, k_{R}\right\rangle$的算符是
+\begin{equation}
+	\mathscr{V}_{k_{L} k_{R}}(z, \bar{z})=: e^{i k_{L} X_{L}(z)+i k_{R} X_{R}(\bar{z})}
+\end{equation}
+OPE为
+\begin{equation}
+	\mathscr{V}_{k_{L} k_{R}}\left(z_{1}, \bar{z}_{1}\right) \mathscr{V}_{k_{L}^{\prime} k_{R}^{\prime}}\left(z_{2}, \bar{z}_{2}\right) \sim z_{12}^{\alpha^{\prime} k_{L} k_{L}^{\prime} / 2} \bar{z}_{12}^{\alpha^{\prime} k_{R} k_{R}^{\prime} / 2} \mathscr{V}_{\left(k+k^{\prime}\right)_{L}\left(k+k^{\prime}\right)_{R}}\left(z_{2}, \bar{z}_{2}\right)
+\end{equation}
+我们会在各种表达式中遇到支点、割线. 这不奇怪，因为场$X$不再是单值的. 然而重要的是，整个顶点算符的OPE必须是单值的：当 $z_{1}$ 环绕 $z_{2}$一周，净相位为1.
+\begin{equation}
+	\exp \left[\pi i \alpha^{\prime}\left(k_{L} k_{L}^{\prime}-k_{R} k_{R}^{\prime}\right)\right]=\exp \left[2 \pi i\left(n w^{\prime}+w n^{\prime}\right)\right]=1
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+		$$
+		k_{L} \cdot k_{L}^{\prime}=\left(\frac{n}{R}+\frac{w R}{\alpha^{\prime}}\right)\left(\frac{n^{\prime}}{R}+\frac{w^{\prime} R}{\alpha^{\prime}}\right)=\frac{n n^{\prime}}{R^{2}}+\frac{w^{\prime} n}{\alpha^{\prime}}+\frac{n w^{\prime} }{\alpha^{\prime}}+\frac{w w^{\prime} R^2}{(\alpha^\prime)^2}
+		$$
+	$$
+	k_{R} \cdot k_{R}^{\prime}=\left(\frac{n}{R}-\frac{w R}{\alpha^{\prime}}\right)\left(\frac{n^{\prime}}{R}-\frac{w^{\prime} R}{\alpha^{\prime}}\right)=\frac{n n^{\prime}}{R^{2}}-\frac{w^{\prime} n}{\alpha^{\prime}}-\frac{n w^{\prime} }{\alpha^{\prime}}+\frac{w w^{\prime} R^2}{(\alpha^\prime)^2}
+	$$
+$$
+\alpha^{\prime}\left(k_{L} \cdot k_{L}^{\prime}-k_{R} k_{R}^{\prime}\right)=2 w^{\prime} n+2 n w^{\prime}
+$$}}\\
+
+为了使弦振幅合理定义，这正是所必须的.\\
+
+\subsection*{\centerline{A technicality(一个技巧)}}
+之上的讨论显然是正确的，但我们对于对数中支点、割线位置的处理太过随便. 如果我们交换$z_{1}$ 和 $z_{2}$，以及动量 $k$ 和 $k^{\prime} $ ，OPE(8.2.19)就会出现问题. 左边是对称的，但右边会差 $\exp \left[\pi i\left(n w^{\prime}+w n^{\prime}\right)\right]$ . 因此，如果 $n w^{\prime}+w n^{\prime}$为奇，会差一个负号. 我们也可以以如下方式看到这个问题. 从模展开可导出等时对易子 $\left(\left|z_{1}\right|=\left|z_{2}\right|\right)$ 
+\begin{equation}
+	\left[X_{L}\left(z_{1}\right), X_{L}\left(z_{2}\right)\right]=\frac{\pi i \alpha^{\prime}}{2} \operatorname{sign}\left(\sigma_{1}^{1}-\sigma_{2}^{1}\right)
+\end{equation}
+那么CBH公式告诉我们，如果我们通过产生-湮灭次序定义算符，那么$n w^{\prime}+w n^{\prime}$ 为奇时，算符 $\mathscr{V}_{k_{L} k_{R}}$ 与 $\mathscr{V}_{k_{k}^{\prime} k_{R}^{\prime}}$反对易；不可见的支点、割线(8.2 .20)会变成两个可视的，顶点算符正确的振子表达式是 (相位中有任意性) 
+\begin{equation}
+	\mathscr{V}_{k_{L} k_{R}}(z, \bar{z})=\exp \left[\pi i\left(k_{L}-k_{R}\right)\left(p_{L}+p_{R}\right) \alpha^{\prime} / 4\right] \circ e^{i k_{L} X_{L}(z)+i k_{R} X_{R}(\bar{z})_{\circ}}
+\end{equation}
+其中像往常一样， $p_L,\quad p_R$ 是算符, $k$ 是数 (给定顶点算符携带的动量). 其中 $\mathscr{V}_{k_{L} k_{R}}$和 $\mathscr{V}_{k_{L}^{\prime} k_{R}^{\prime}}$彼此对易，额外的因子称为闭上链(cocycles). 这给出额外相位
+\begin{equation}
+	\begin{gathered}
+		\exp \left\{\pi i\left[\left(k_{L}-k_{R}\right)\left(k_{L}^{\prime}+k_{R}^{\prime}\right)-\left(k_{L}^{\prime}-k_{R}^{\prime}\right)\left(k_{L}+k_{R}\right)\right] \alpha^{\prime} / 4\right\} \\
+		=\exp \left[\pi i\left(n w^{\prime}-w n^{\prime}\right)\right]
+	\end{gathered}
+\end{equation}
+这移除了支点、割线. 对于大多数情况，可以忽视这一复杂性，并用上一段那个更简单的表达式进行处理；闭上链只影响特定振幅的相对符号.\\
+一般的 $X^{\mu}$ 路径积分 (6.2.18) 以一种显然的方式因式分解成全纯和反全纯，这使得我们可以做替换
+\begin{equation}
+	\prod_{i, j=1 \atop i<j}^{n}\left|z_{i j}\right|^{\alpha^{\prime} k_{i} k_{j}} \rightarrow \prod_{i, j=1 \atop i<j}^{n} z_{i j}^{\alpha^{\prime} k_{L i k_{L j} / 2}} \bar{z}_{i j}^{\alpha^{\prime} k_{R i} k_{R j} / 2}
+\end{equation}
+也可将对 $x_{0}$的非紧致积分 $2 \pi \delta\left(\sum k\right)$ 替换成
+\begin{equation}
+	2 \pi R \delta_{\Sigma_{i} n_{i}, 0} \delta_{\Sigma_{i} w_{i}, 0}
+\end{equation}
+精确表达式 (8.2.22) 会给出一些额外的符号.
+
+\subsection*{\centerline{D D F operators(DDF算符)}}
+我们已经看到指数算符可以分成全纯和反全纯部分，这有很多应用，我们现在用它来讨论第4章末尾的DDF算符.\\
+我们将用光锥坐标 $X^{\pm}=2^{-1 / 2}\left(X^{0} \pm X^{1}\right)$处理，它的全纯部分有OPE(扔掉下标 $L$ )
+\begin{equation}
+	X^{+}(z) X^{-}(0) \sim \frac{\alpha^{\prime}}{2} \ln z, \quad X^{+}(z) X^{+}(0) \sim X^{-}(z) X^{-}(0) \sim 0
+\end{equation}
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{Note:
+$$
+\begin{aligned}
+X^{+}(z) X^{-}(0) &=2^{-1}\left(X^{0}(z)+X^{\prime}(z)\right)\left(X^{0}(0)-X^{\prime}(0)\right) \\
+&=2^{-1}\left(\frac{\alpha^{\prime}}{2} \ln z_{12}+\frac{\alpha^{\prime}}{2}\ln z_{12}\right)=\frac{\alpha^{\prime}}{2} \ln z_{12}
+\end{aligned}
+$$}}\\
+
+由此得出算符
+\begin{equation}
+	V^{i}\left(n k_{0}, z\right)=\partial X^{i}(z) e^{i n k_{0} X^{+}(z)}\left(2 / \alpha^{\prime}\right)^{1 / 2}
+\end{equation}
+是$(1,0)$本原场，其中i是横向指标. OPE为
+\begin{equation}
+	\begin{array}{r}
+		V^{i}\left(n k_{0}, z\right) V^{j}\left(m k_{0}, 0\right) \sim-\frac{\delta^{i j}}{z^{2}} e^{i(n+m) k_{0} X^{+}(0)} \\
+		-\frac{i n k_{0} \delta^{i j}}{z} \partial X^{+}(0) e^{i(n+m) k_{0} X^{+}(0)}
+	\end{array}
+\end{equation}
+定义DDF算符为
+\begin{equation}
+	A_{n}^{i}=\oint \frac{d z}{2 \pi} V^{i}\left(n k_{0}, z\right)
+\end{equation}
+除非$n+m=0$，否则OPE(8.2 .28)中的 $z^{-1}$ 项就是全导数. 因而DDF算符满足振子代数
+\begin{equation}
+	\left[A_{m}^{i}, A_{n}^{j}\right]=m \delta^{i j} \delta_{m,-n} \frac{\alpha^{\prime} k_{0} p^{+}}{2}
+\end{equation}
+考察这个算符在动量给定为 $q$的态上的作用.  $V^{i}\left(n k_{0}, z\right)$ 与这个态的顶点算符将会包含 $z^{-\alpha^{\prime} n k_{0} q^{-} / 2}$. 因而如果我们固定$k_{0}=2 / \alpha^{\prime} q^{-}$，它将是单值的. 那么围道积分 $(8.2 .29)$ 就在这个截面上定义了合理的算符. DDF算符是 $(1,0)$张量的积分，因而与Virasoro生成元对易，它将物理态变到物理态. 由此，我们可以通过在振子基态上作用DDF算符建立物理态. 以这种方法得到的态与光锥态一一对应. DDF算符不包含$X^{-}$ ，因而这些态没有 $\alpha_{-m}^{-}$激发. 因此，与更加一般但不太显然的构造 (4.4.19)相比，它们实际上给出相同的态.
+
+
+\section{闭弦和T对偶}%{8.3 Closed strings and T -duality}
+既然我们在研究弦理论，我们取 $D=26$, 并且只取 $X^{25}$ 是周期的. 质壳 $\left(L_{0}\right.$与$\left.\tilde{L}_{0}\right)$ 是
+\begin{equation}
+	\begin{aligned}
+		m^{2}=-k^{\mu} k_{\mu} &=\left(k_{L}^{25}\right)^{2}+\frac{4}{\alpha^{\prime}}(N-1) \\
+		&=\left(k_{R}^{25}\right)^{2}+\frac{4}{\alpha^{\prime}}(\tilde{N}-1)
+	\end{aligned}
+\end{equation}
+或
+\begin{subequations}
+\begin{equation}
+m^{2} =\frac{n^{2}}{R^{2}}+\frac{w^{2} R^{2}}{\alpha^{\prime 2}}+\frac{2}{\alpha^{\prime}}(N+\tilde{N}-2) 
+\end{equation}
+\begin{equation}
+0 =n w+N-\tilde{N}
+\end{equation}
+\end{subequations}
+对质量平方有四个贡献：紧致动量，缠绕弦的势能，振子以及零点能. 第4章对物理频谱的讨论适用于任何紧致化，所以我们仅通过考察横向振子 $M=2, \ldots, 25$，就得到了态的正确计数.\\
+首先，我们复现出无质量频谱的场论结果. 在R的一般值处，仅当$n=w=0$ ， $N=\tilde{N}=1$时，态才可能是无质量的. 这里有 $24^{2}$个相同的态，但是根据振子是处在时空方向 $\mu$还是内部方向25，对其分类将是有用的.
+\begin{equation}
+	\begin{aligned}
+		&\alpha_{-1}^{\mu} \tilde{\alpha}_{-1}^{v}|0 ; k\rangle, \quad\left(\alpha_{-1}^{\mu} \tilde{\alpha}_{-1}^{25}+\alpha_{-1}^{25} \tilde{\alpha}_{-1}^{\mu}\right)|0 ; k\rangle \\
+		&\left(\alpha_{-1}^{\mu} \tilde{\alpha}_{-1}^{25}-\alpha_{-1}^{25} \tilde{\alpha}_{-1}^{\mu}\right)|0 ; k\rangle, \quad \alpha_{-1}^{25} \tilde{\alpha}_{-1}^{25}|0 ; k\rangle
+	\end{aligned}
+\end{equation}
+其中第一个进一步分裂成25维引力子加伸缩子加反对称张量；第二个，时空维度与内部指标上的引力子，它是Kaluza-Klein矢量；第三个是来自反对称张量的矢量；最后一个态是标量，它是紧致方向上半径的模，它的顶点算符 $: \partial X^{25} \bar{\partial} X^{25} e^{i k \cdot X}:$是度规 $G_{25,25}$的微扰. 这与考察低能场论时发现的频谱是相同的.\\
+考察有质量的态在 $U(1) \times U(1)$ 对称性下的变换是十分有益的. 再一次，Kaluza-Klein规范对称性来自 $X^{25}$ 方向上的平移，所以相应的荷是紧致动量 $p_{25} $ . 对于反对称张量规范对称性，考察零动量顶点算符，它测出了任何与其耦合的态的变换. 它正比于
+\begin{equation}
+	\partial X^{\mu} \bar{\partial} X^{25}-\partial X^{25} \bar{\partial} X^{\mu}=\bar{\partial}\left(X^{25} \partial X^{\mu}\right)-\partial\left(X^{25} \bar{\partial} X^{\mu}\right)
+\end{equation}
+这是全导数，但是在缠绕态上，由于$X^{25}$不是单值的，所以它的积分不为零. 所以 $B_{\mu, 25}$荷是缠绕数. 这是这一紧致化中我们首个遇到的“弦”物理：在场论中没有携带这一荷的态.\\
+我们从弦三点耦合来验证规范耦合. 规范玻色子顶点算符是
+\begin{equation}
+	\frac{2^{1 / 2} g_{\mathrm{c}, 25}}{\alpha^{\prime}}:\left(\partial X^{\mu} \bar{\partial} X^{25} \pm \partial X^{25} \bar{\partial} X^{\mu}\right) e^{i k \cdot X}:
+\end{equation}
+我们将25维弦耦合 $g_{\mathrm{c}, 25}=g_{\mathrm{c}}(2 \pi R)^{-1 / 2}$ . 因子 $(2 \pi R)^{-1 / 2}$ 来自于零模波函数的归一化，对于一般的紧致动量和缠绕数，快子的顶点算符是
+\begin{equation}
+	g_{\mathrm{c}, 25}: e^{i k_{L} \cdot X_{L}(z)+i k_{R} \cdot X_{R}(\bar{z})}:
+\end{equation}
+一个规范玻色子与两个快子的三点振幅，若快子的紧致动量以及缠绕数不为零，那么类似于(6.6.14),
+\begin{equation}
+	\begin{aligned}
+		&-2^{-1 / 2} \pi i g_{\mathrm{c}, 25}(2 \pi)^{25} \delta^{25}\left(\sum_{i} k_{i}\right) k_{23}^{\mu}\left(k_{L 23}^{25} \pm k_{R 23}^{25}\right) \\
+		\rightarrow &-2^{3 / 2} \pi i g_{\mathrm{c}, 25}(2 \pi)^{25} \delta^{25}\left(\sum_{i} k_{i}\right) k_{2}^{\mu}\left(k_{L 2}^{25} \pm k_{R 2}^{25}\right)
+	\end{aligned}
+\end{equation}
+在第二行，我们取规范玻色子动量 $k_{1} \rightarrow 0$,这定义了规范耦合. 两个规范玻色子分别与 $k_{L 2}^{25} \pm k_{R 2}^{25}$耦合，即紧致动量与缠绕数. 这正是我们期待的. 将规范玻色子换成引力子，继续考察这个振幅，我们将复现出各个耦合间的关系(8.1.11), (8.1.12)，这与有效作用量中发现的是相同的.
+
+\subsection*{\centerline{Enhanced gauge symmetries(增强的规范对称性)} }
+迄今为止，所有事情都与一个维度紧致化的场论完全相同. 26维引力子产生了25维引力子加矢量加模. 唯一的弦效应是携带 $B_{\mu, 25}$荷的缠绕态.\\
+进一步的且更神奇的效应来自于特殊的紧致半径. 我们对无质量频谱的讨论省略了，仅对半径$R $的特殊值，态才是无质量的. 最丰富的情况是$R=\alpha^{1 / 2}$, 这样 $k_{L, R}^{25}=(n \pm w) \alpha^{\prime-1 / 2}$，而无质量态的条件是
+\begin{equation}
+	(n+w)^{2}+4 N=(n-w)^{2}+4 \tilde{N}=4
+\end{equation}
+除了一般解$n=w=0, N=\tilde{N}=1$, 现在还有
+\begin{equation}
+	n=w=\pm 1, N=0, \tilde{N}=1, \quad n=-w=\pm 1, N=1, \tilde{N}=0
+\end{equation}
+以及
+\begin{equation}
+	n=\pm 2, w=N=\tilde{N}=0, \quad w=\pm 2, n=N=\tilde{N}=0
+\end{equation}
+态 (8.3.9) 引入了4个规范玻色子，其顶点算符
+\begin{equation}
+	: \bar{\partial} X^{\mu} e^{i k \cdot X} \exp \left[\pm 2 i \alpha^{\prime-1 / 2} X_{L}^{25}\right]:, \quad: \partial X^{\mu} e^{i k \cdot X} \exp \left[\pm 2 i \alpha^{\prime-1 / 2} X_{R}^{25}\right]:
+\end{equation}
+指数算符精确定义与上节相同. 这些态拥有内部动量与缠绕数，所以它们携带 Kaluza-Klein荷以及反对称张量规范荷. 带荷的无质量矢量的唯一相容理论是non-Abelian规范理论, 所以新的规范玻色子必须与旧有规范玻色子结合形成non-Abelian理论. 现在用 $\partial X^{25} \bar{\partial} X^{\mu}$ 荷 $\partial X^{\mu} \bar{\partial} X^{25}$ 处理之前的矢量将是方便的. 其中第一个与$k_{L}^{25}$耦合，在这个耦合下， (8.3.11)中的第一对态携带荷 $\pm 1$，而第二对是中性的 . 第二个 $k_{R}^{25}$ 耦合，之后情况类似. 这表明规范群是 $S U(2) \times S U(2)$, 那三个包含 $\bar{\partial} X^{\mu}$ 的矢量构成 $S U(2)$ . 而另三个则构成另一个 $S U(2)$. 为了呈现这个$S U(2) \times S U(2)$，定义3个(1,0)流
+\begin{subequations}
+\begin{equation}
+j^{1}(z)=: \cos \left[2 \alpha^{-1 / 2} X_{L}^{25}(z)\right]: 
+\end{equation}
+\begin{equation}
+j^{2}(z)=: \sin \left[2 \alpha^{\prime-1 / 2} X_{L}^{25}(z)\right]: 
+\end{equation}
+\begin{equation}
+j^{3}(z)=i \partial X_{L}^{25}(z) / \alpha^{\prime 1 / 2}
+\end{equation}
+\end{subequations}
+它们可以被归一化，使得OPE
+\begin{equation}
+	j^{i}(z) j^{j}(0) \sim \frac{\delta^{i j}}{2 z^{2}}+i \frac{\epsilon^{i j k}}{z} j^{k}(0)
+\end{equation}
+对于 $(0,1)$ 流 $\tilde{\jmath}^{i} $，有类似的OPE. 单极点项暗示了相应的荷构成 $S U(2)$ 代数. 实际上，既然这些流是全纯的，存在由Laurent coefficients构成的无限维代数
+\begin{subequations}
+\begin{equation}
+		j^{i}(z) =\sum_{m=-\infty}^{\infty} \frac{j_{m}^{i}}{z^{m+1}} 
+\end{equation}
+\begin{equation}		
+		\left[j_{m}^{i}, j_{n}^{j}\right] =\frac{m}{2} \delta_{m,-n} \delta^{i j}+i \epsilon^{i j k} j_{m+n}^{k}
+\end{equation}
+\end{subequations}
+这被称为流代数，仿射Lie代数，或Kac-Moody代数. 我们会在第11章开头频繁地遇到这样的代数. 将会证明 $z^{-2}$ 的系数是量子化的，而(8.3.13)中的是最小值. 所以这被称为阶1 $S U(2)$ 流代数.\\
+这一 $S U(2) \times S U(2)$ 对称性首次表明了弦论看到时空几何方式与我们在场论中所用的完全不同，在场论中只有 $U(1) \times U(1)$对称性在任意半径下都是显然的.  $j^{3}$ 与$j^{1,2}$ 起源完全不同，它们分别是振子激发和缠绕数-动量激发，它们表示成 $X^{25}$的形式也完全不同，但是在它们对弦频谱的作用中，它们通过对称性彼此相关. 由于内动量和缠绕数的能量被负的零点能抵消了，额外的矢量是无质量的. 这种情况不仅发生在快子理论中，在卷II还会有其他情况.
+
+\subsection*{\centerline{Scales and couplings(标度与耦合)}}
+在 $S U(2) \times S U(2)$ 半径，关系 $(8.1 .11)$ 变成
+\footnote{ To be precise, this was the coupling of an $(n, w)=(1,0)$ state. The non-Abelian gauge bosons have $(|n|,|w|)=(1,1)$ and so their coupling, which is the conventional particle physics definition of the $S U(2)$ coupling, is $g_{S U(2), 25}^{2}=4 \kappa_{25}^{2} / \alpha^{\prime}$. We will see in chapter 18 that this holds for all level one current algebras. }
+\begin{equation}
+	g_{25}^{2}=2 \kappa_{25}^{2} / \alpha^{\prime}
+\end{equation}
+如果我们对多个维度做紧致化，每个维度以相同方式重新标度. 所以，特别地，在4维中
+\begin{equation}
+	g_{4}^{2}=2 \kappa_{4}^{2} / \alpha^{\prime}
+\end{equation}
+在自然界中，non-Abelian规范耦合的量级在1左右，这暗示了弦长 $\alpha^{1 / 2}$与引力长度 $\kappa_{4}$相差不远.\\
+我们也可以如下方式思考此事. 4维规范耦合无量纲，但4维引力耦合有量纲. 定义有效无量纲引力耦合，它依赖于能量标度 $E$
+\begin{equation}
+	g_{\mathrm{G}, 4}^{2}(E)=\kappa_{4}^{2} E^{2}
+\end{equation}
+它随着能量平方增长. 显然，无量纲规范耦合随着能量跑动，但这又慢于引力耦合的量纲标度. 那么通过 (8.3.16), 弦的质量标度是规范与引力耦合粗略相等的地方， $g_{\mathrm{G}, 4}^{2}(E) \approx g_{4}^{2}$.\\
+同样有益的是考察紧致化到4维的可能性，其中的一些紧致化维度可能远大于另一些. 这最好通过从低能开始然后向上进发进行分析，在低能存在无量纲规范耦合 $g_{4}^{2}$. 在能量 $\rho_{5}^{-1}$, 一个紧致维度变成可见维度，而物理变成5维(简单起见，我们在这一标度下只考察这一个维度). 有效5维耦合是
+\begin{equation}
+	g_{5}^{2}=2 \pi \rho_{5} g_{4}^{2}
+\end{equation}
+和(8.1.12)一样，这源于有效作用量. 耦合 $g_{5}^{2}$ 有长度量纲. 即，5维 Yang-Mills 理论，同4维引力一样，不可重整. 相应的，有效无量纲耦合是
+\begin{equation}
+	\hat{g}_{5}^{2}=g_{5}^{2} E=2 \pi \rho_{5} E g_{4}^{2}
+\end{equation}
+它随能量线性增长. 然而 $g_{4}^{2}$在自然界并非远小于1，所以耦合在高能处很快变强；据推测，这时就需弦论使得短距行为变得合理. 所以这一紧致化标度必须接近于引力标度. 这种分析在开弦理论中被修正了，而在那时，在强耦合弦理论的现代理解被考虑在内. 有非常低的可能性，弦或Kaluza-Klein 激发远低于Planck标度.
+
+\subsection*{\centerline{Higgs mechanism(Higgs机制)}}
+令$R$远离 $S U(2) \times S U(2)$ 半径. 考察会发生什么是最有启发性的. 额外的规范玻色子现在获得质量
+\begin{equation}
+	m=\frac{\left|R^{2}-\alpha^{\prime}\right|}{R \alpha^{\prime}} \approx \frac{2}{\alpha^{\prime}}\left|R-\alpha^{\prime 1 / 2}\right|
+\end{equation}
+这一近似是半径R很接近于 $S U(2) \times S U(2)$半径 $\alpha^{\prime 1 / 2}$ . 在这一半径附近，质量远小于弦标度，我们应该用低能场论来理解物理.\\
+只有一种方式能赋予规范玻色子这样的质量，自发对称性破缺，这正是所发生的. 当 $R=\alpha^{1 / 2}$，存在10个无质量标量，伸缩子，模 $G_{25,25}$,  (8.3.9)中的4个态，以及 $(8.3 .10)$中的4个态，后9个由如下的顶点算符产生
+\begin{equation}
+	: j^{i}(z) \tilde{\jmath}^{j}(\bar{z}) e^{i k \cdot X(z, \bar{z})}:
+\end{equation}
+指标$i$ 是左移$S U(2)$ 下的矢量，指标 $j$ 是右移$S U(2)$下的矢量. 即，它们在$S U(2) \times S U(2) $下按照 $(3,3)$表示变换. 特别地，半径的模是 $j^{3} \tilde{\jmath}^{3}$ . 远离 $S U(2) \times S U(2)$半径会给予这个场期望值，所以将规范对称性破缺至$U(1) \times U(1)$ ，使得z轴不变. 诚然这正是一般半径时的规范群. 在 $S U(2)$半径附近，质量 $(8.3 .20)$ 关于模的量纲 $\left|R-\alpha^{11 / 2}\right|$是是线性的，这和通常的自发破缺一样. \\
+我们把与这9个标量场相对应的时空场记作$M_{i j} $. 所不同的是， $M_{33} \neq 0$,但是在 $S U(2) \times S U(2)$点附近，对更一般的背景做些调查是很有启发性的. 这些无质量场的相互作用会由某个时空作用量进行描述，而这个作用量会包含一个势$U(M) $. 这些场在对称点没有质量，所以$U$中没有$M^{2}$ 项，但可能有 $(S U(2) \times S U(2))$不变的立方项
+\begin{equation}
+	U(M) \propto \epsilon^{i j k} \epsilon^{i^{i} j^{\prime} k^{\prime}} M_{i i^{\prime}} M_{j j^{\prime}} M_{k k^{\prime}}=\operatorname{det} M
+\end{equation}
+从弦的三点振幅不能证明这一项确实存在. 但是玻色子的三次项无下界，不过同快子一样，这是玻色弦论的人工产物.\\
+忽略这个势对小变分不稳定的事实，寻找它的静态经典解是有意义的. 为了拥有静态背景解，引力子与伸缩子的场方程要求势为零，而$M_{i j}$ 的场方程要求势是稳定的
+\begin{equation}
+	U(M)=\frac{\partial U(M)}{\partial M_{i j}}=0
+\end{equation}
+利用$S U(2) \times S U(2)$ 旋转对角化 $M$,条件 $(8.3 .23)$ 变成
+\begin{equation}
+	M_{11} M_{22} M_{33}=M_{11} M_{22}=M_{11} M_{33}=M_{22} M_{33}=0
+\end{equation}
+因此，只能有一个对角分量可以不为零. 通过 $S U(2) \times S U(2)$转动，我们可以取其为$M_{33} $ . 所以我们没构建任何物理的新的弦背景.\\
+静态背景解的连续族称为平坦方向. 这里有9个无质量标量，它们可以通过 $S U(2) \times S U(2)$ 旋转约化至3个对角场，但是只有一个平坦方向 (规范等价的方向没有算进来). 当然，我们只计算了场中的立方项，但在一般情况下，这可以为零. 而高次项依旧非零. 为了构建一个精确的平坦方向，我们还需要更加专门的讨论，即，对于任意的$R$值，我们可以构建出自由CFT. 注意到如果我们将 $j^{1} \tilde{\jmath}^{1}$或 $j^{2} \tilde{\jmath}^{2}$ 视为模，由于它们是 $X^{25}$的正弦和余弦，世界面作用量看起来会非常复杂，但是由于它等价于变分$R$获得的自由理论，所以世界面理论是可解的.
+
+\subsection*{\centerline{T -duality(T对偶)}}
+从质量公式
+\begin{equation}
+	m^{2}=\frac{n^{2}}{R^{2}}+\frac{w^{2} R^{2}}{\alpha^{\prime 2}}+\frac{2}{\alpha^{\prime}}(N+\tilde{N}-2)
+\end{equation}
+我们看到随着 $R \rightarrow \infty$ 缠绕态的质量变成无限大，而紧致动量趋于连续谱，这正是对于非紧致维度所预期的. 考察相反的极限 $R \rightarrow 0$, 有紧致动量的态拥有了无穷大的质量，但是缠绕态的频谱现在趋于连续————将弦缠绕在小圆上不会耗费太多的能量. 因此，随着半径趋于零，频谱同非紧致维度一样又一次趋于连续. 这和场论行为完全不同，在场论中只有紧致动量$n$ 没有缠绕数 $w$, 并且在$R \rightarrow 0$时，没有态变轻.
+事实上， $R \rightarrow 0$和$R \rightarrow \infty$ 极限在物理上是等价的. 频谱 (8.3.25) 在如下变换下不变
+\begin{equation}
+	R \rightarrow R^{\prime}=\frac{\alpha^{\prime}}{R}, \quad n \leftrightarrow w
+\end{equation}
+这一等价性同时扩展至相互作用. 注意调换 $n$和 $w$ 等价于
+\begin{equation}
+	p_{L}^{25} \rightarrow p_{L}^{25}, \quad p_{R}^{25} \rightarrow-p_{R}^{25}
+\end{equation}
+在半径 $R$处考察这个理论. 回忆分解$X^{25}(z, \bar{z})=$ $X_{L}^{25}(z)+X_{R}^{25}(\bar{z})$, 定义
+\begin{equation}
+	X^{\prime 25}(z, \bar{z})=X_{L}^{25}(z)-X_{R}^{25}(\bar{z})
+\end{equation}
+场$X^{\prime 25}$ 的OPE和能动张量与$X^{25}$相同，负号总会成对出现. 用 $X^{\prime 25}$替换 $X^{25}$ 对CFT造成的唯一改变是它引起了符号变化 $(8.3 .27)$, 而这将为半径为 $R$的理论的频谱转化成半径为 $R^{\prime}$的理论的频谱. 即，它们是相同的理论，只不过一个写成$X^{25}$ 另一个写成$X^{\prime 25} $ .\\
+这种等价性称为 $T$对偶. 即 $R \rightarrow 0$ 极限与 $R \rightarrow \infty$ 在物理上完全等价，这与点粒子的行为完全不同，这也是在短程的弦的几何完全不同的又一佐证.  不等价理论的空间是射线$R \geq \alpha^{\prime 1 / 2} $ . 我们也可将范围取成$0 \leq R \leq \alpha^{1 / 2}$ ，但是取较大的那个更自然些. 对我们而言，动量连续区要比缠绕连续区更熟悉. 并且在大 $R$ picture下，定域性的问题会更加清楚. 因此，最小的半径是自对偶半径
+\begin{equation}
+	R_{\text {self-dual }}=R_{S U(2) \times S U(2)}=\alpha^{\prime 1 / 2}
+\end{equation}
+最小距离尺度是弦长量级. 这一现象会在弦微扰论中反复出现. 但是非微扰地，我们将会看到短程的结构. $T$ 的很多应用体现在它对弦伸缩子$\Phi$的非平庸作用. 考察既无缠绕又无紧致动量的引力子的散射振幅，这些态在$T$ 对偶下不变，所以振幅也必须如此. 后者可以从低能作用量 (8.1.9)读出，所以25维耦合 $\kappa_{25}$必须在对偶下不变. 而26维耦合 $\kappa=(2 \pi \rho)^{1 / 2} \kappa_{25}$, 对偶的作用为
+\begin{equation}
+	\rho^{\prime}=\frac{\alpha^{\prime}}{\rho}, \quad \kappa^{\prime}=\frac{\alpha^{\prime 1 / 2}}{\rho} \kappa
+\end{equation}
+既然 $\kappa \propto e^{\Phi}$, 这暗示
+\begin{equation}
+	e^{\Phi^{\prime}}=\frac{\alpha^{1 / 2}}{\rho} e^{\Phi}
+\end{equation}
+$T$对偶是一种对称性，它将单个理论中的不同态(背景)关联起来. 事实上，它是规范对称性. 我们看到模 $\delta R$ 是 $(3,3)$场的33分量，绕其中的一个$S U(2)$ 1轴旋转 $\pi$角会反射模的符号. 所以自 $S U(2) \times S U(2)$ 半径减小$R$规范等价于提升它. 因此，对偶的 $\mathbf{Z}_{2}$对称性是  $S U(2) \times S U(2)$ 规范对称性的一小部分. 这进一步暗示了对偶不仅是弦微扰论的对称性，而且是精确理论的对称性. 如果我们在领头近似下有  无质量规范玻色子，即便是对对称性微小的显式破坏也会导致不相容 (自发对称性破缺不是问题，这时T对偶已经自发破缺，远离了自对偶半径).\\
+最后的讨论例证了一个重要思想，弦与时空讨论的互补作用. 增广对称性的出现是纯弦论现象. 我们对弦理论并没有非微扰的理解. 但是我们对低能场论却知之甚丰，哪怕是非微扰的也是如此，我们可利用这点.
+
+\section{各种维度的紧致化}%{8.4 Compactification of several dimensions}
+现在将分析推广到$k$ 个周期维
+\begin{equation}
+	X^{m} \cong X^{m}+2 \pi R, \quad 26-k \leq m \leq 25
+\end{equation}
+设 $d=26-k$是非紧致维度的个数. 现在时空是 $M^{d} \times T^{k}$. 暂且假定坐标周期性 (8.4.1)保持不变，但 $k$ 环面的真实几何实际上依赖于内部度规 $G_{m n}$. 当紧致维度大于1时，反对称张量也拥有标量分量$B_{m n} $ . 这总共给出 $k^{2}$个标量. 同样还有Kaluza-Klein规范玻色子 $A_{\mu}^{m}$ 和反对称张量规范玻色子 $B_{m \mu} $ . 低能有效作用量是
+\begin{equation}
+	\begin{aligned}
+		\boldsymbol{S}=& \frac{(2 \pi R)^{k}}{2 \kappa_{0}^{2}} \int d^{d} x\left(-G_{d}\right)^{1 / 2} e^{-2 \Phi_{d}}\left[\boldsymbol{R}_{d}+4 \partial_{\mu} \Phi_{d} \partial^{\mu} \Phi_{d}\right.\\
+		&-\frac{1}{4} G^{m n} G^{p q}\left(\partial_{\mu} G_{m p} \partial^{\mu} G_{n q}+\partial_{\mu} B_{m p} \partial^{\mu} B_{n q}\right) \\
+		&\left.-\frac{1}{4} G_{m n} F_{\mu \nu}^{m} F^{n \mu v}-\frac{1}{4} G^{m n} H_{m \mu v} H_{n}^{\mu v}-\frac{1}{12} H_{\mu \nu \lambda} H^{\mu v \lambda}\right]
+	\end{aligned}
+\end{equation}
+其中 $\Phi_{d}=\Phi-\frac{1}{4} \ln \operatorname{det} G_{m n}$.
+
+\subsection*{\centerline{The string spectrum(弦频谱)}}
+主要的新问题是反对称张量背景 $B_{m n} $. 这一项对世界面Lagrangian密度的贡献正比于
+\begin{equation}
+	B_{m n} \partial_{a}\left(g^{1 / 2} \epsilon^{a b} X^{m} \partial_{b} X^{n}\right)
+\end{equation}
+若 $B_{m n}$为常数，这是全导数. 它没有定域效应，世界面理论依旧是CFT，但它改变了弦频谱. 我们将用正则方法和路径积分来考察这一点.\\
+在正则方法中，集中于零模对世界面作用量的贡献
+\begin{equation}
+	X^{m}\left(\sigma^{1}, \sigma^{2}\right)=x^{m}\left(\sigma^{2}\right)+w^{m} R \sigma^{1}
+\end{equation}
+将其代入世界面作用量
+\begin{equation}
+	L=\frac{1}{2 \alpha^{\prime}} G_{m n}\left(\dot{x}^{m} \dot{x}^{n}+w^{m} w^{n} R^{2}\right)-\frac{i}{\alpha^{\prime}} B_{m n} \dot{x}^{m} w^{n} R
+\end{equation}
+加点代表对世界面时间 $\sigma^{2}$求导. 正则动量是
+\begin{equation}
+	p_{m}=-\frac{\partial L}{\partial v^{m}}=\frac{1}{\alpha^{\prime}}\left(G_{m n} v^{n}+B_{m n} w^{n} R\right)
+\end{equation}
+其中 $v^{m}=i \dot{x}^{m} $. 出现了一些不太熟悉的符号是因为我们使用了Euclidean时间. 延拓到 Minkowski时间, $v^{m}$ 变成速度 $\partial_{0} x^{m} $. 波函数的周期性暗示了正则动量的量子化, $p_{m}=n_{m} / R$, 因而
+\begin{equation}
+	v_{m}=\alpha^{\prime} \frac{n_{m}}{R}-B_{m n} w^{n} R
+\end{equation}
+零模对世界面Hamiltonian贡献是
+\begin{equation}
+	\frac{1}{2 \alpha^{\prime}} G_{m n}\left(v^{m} v^{n}+w^{m} w^{n} R^{2}\right)
+\end{equation}
+而闭弦质量
+\begin{subequations}
+\begin{equation}
+		m^{2} =\frac{1}{2 \alpha^{\prime 2}} G_{m n}\left(v_{L}^{m} v_{L}^{n}+v_{R}^{m} v_{R}^{n}\right)+\frac{2}{\alpha^{\prime}}(N+\tilde{N}-2) 
+\end{equation}
+\begin{equation}		
+		v_{L, R}^{m} =v^{m} \pm w^{m} R
+\end{equation}
+\end{subequations}
+因此，由于 $v^{m}$ 依赖 $B_{m n}$， $B_{m n}$背景偏移了缠绕态的质量.  $L_{0}-\tilde{L}_{0}$约束是
+\begin{equation}
+	\begin{aligned}
+		0 &=G_{m n}\left(v_{L}^{m} v_{L}^{n}-v_{R}^{m} v_{R}^{n}\right)+4 \alpha^{\prime}(N-\tilde{N}) \\
+		&=4 \alpha^{\prime}\left(n_{m} w^{m}+N-\tilde{N}\right)
+	\end{aligned}
+\end{equation}
+另一方面，考察配分函数的环面路径积分. 反对称张量项定域上看是全导数，所以只依赖于构型的拓扑. 考察构型
+\begin{equation}
+	X^{m}=\left(w_{1}^{m} \sigma^{1}+w_{2}^{m} \sigma^{2}\right) R
+\end{equation}
+环面上的空间方向缠绕每个周期时空维 $w_{1}^{m}$次，而时间方向上缠绕 $w_{2}^{m}$ 次.  $B_{m n}$ 世界面作用量是
+\begin{equation}
+	2 \pi i b_{m n} w_{1}^{m} w_{2}^{n}
+\end{equation}
+其中$b_{m n}=B_{m n} R^{2} / \alpha^{\prime} $. 可以通过Poisson重求和公式证明，对相位为 (8.4.12) 的路径积分截面求和与偏移频谱 (8.4.9)的配分函数相关.\\
+在之上的描述中，度规$G_{m n}$ 出现在世界面场的作用量中. 对顶点算符计算，保留通常的作用量会更加方便. 将度规写成$e_{m}^{r}$的形式
+\begin{equation}
+	G_{m n}=e_{m}^{r} e_{n}^{r}
+\end{equation}
+其中 $r, s, \ldots$是切空间坐标. 坐标 $X^{r}=e_{m}^{r} X^{m}$ 的OPE就是标准的. 顶点算符动量是
+\begin{equation}
+	k_{r L}=e_{r}^{m} \frac{v_{m L}}{\alpha^{\prime}}, \quad k_{r R}=e_{r}^{m} \frac{v_{m R}}{\alpha^{\prime}}
+\end{equation}
+其中 $e_{r}^{m} $ 是逆标架. 质壳条件变成
+\begin{subequations}
+\begin{equation}
+		m^{2} =\frac{1}{2}\left(k_{r L} k_{r L}+k_{r R} k_{r R}\right)+\frac{2}{\alpha^{\prime}}(N+\tilde{N}-2) 
+\end{equation}
+\begin{equation}		
+		0 =\alpha^{\prime}\left(k_{r L} k_{r L}-k_{r R} k_{r R}\right)+4(N-\tilde{N})
+\end{equation}
+\end{subequations}
+在下文中，我们在顶点算符的任何讨论中将使用坐标 $X^{r}$.
+
+\subsection*{\centerline{Narain compactification(Narain紧致化)}}
+对一般环向紧致化，有个非常优美的描述. 考察缠绕态顶点算符 $e^{i k_{L} \cdot X_{L}+i k_{R} \cdot X_{R}}$. 对于任何给定的紧致化，动量谱$\left(k_{r L}, k_{r} R\right)$ 构成 $2 k$ 维动量空间 $\mathbf{R}^{2 k}$中的晶格. 即，动量谱由 $2 k$个相互独立的基矢量的所有整系数线性组合构成. 我们现在用无量纲动量 $l_{L, R}=k_{L, R}\left(\alpha^{\prime} / 2\right)^{1 / 2}$进行处理，我们将相应晶格记为 $\Gamma $. 两个顶点算符的OPE是
+\begin{equation}
+	\begin{gathered}
+		: e^{i k_{L} \cdot X_{L}(z)+i k_{R} \cdot X_{R}(\bar{z})}:: e^{i k_{L}^{\prime} \cdot X_{L}(0)+i k_{R}^{\prime} \cdot X_{R}(0)}: \\
+		\sim z^{l_{L} \cdot l_{L}^{\prime}} \bar{z}^{l_{R} \cdot l_{R}^{\prime}}: e^{i\left(k_{L}+k_{L}^{\prime}\right) \cdot X_{L}(0)+i\left(k_{R}+k_{R}^{\prime}\right) \cdot X_{R}(0)}
+	\end{gathered}
+\end{equation}
+当一个顶点算符绕另一个顶点算符一圈，这个乘积会给出相位
+$$\exp \left[2 \pi i\left(l_{L} \cdot l_{L}^{\prime}-l_{R} \cdot l_{R}^{\prime}\right)\right] $$
+. 算符乘积的单值性要求
+\begin{equation}
+	l_{L} \cdot l_{L}^{\prime}-l_{R} \cdot l_{R}^{\prime} \equiv l \circ l^{\prime} \in \mathbf{Z}
+\end{equation}
+其中 $l$ 和$l^{\prime}$ 属于 $\Gamma$. 我们定义了内积$\circ$, 它在 $\mathbf{R}^{2 k} $中特征为 $(k, k)$ in，而对偶晶格 $\Gamma^{*}$定义是$\mathbf{R}^{2 k}$中与 $\Gamma$中的点的$\circ$权为整数值. 那么单值性条件相当于
+\begin{equation}
+	\Gamma \subset \Gamma^{*}
+\end{equation}
+模不变性同时也约束了 $\Gamma $. 在7.2节证明了在 $\tau \rightarrow \tau+1$的不变性要求 $L_{0}-\tilde{L}_{0}$是整数 . 那么
+\begin{equation}
+	l \circ l \in 2 \mathbf{Z} \quad \text { for all } l \in \Gamma
+\end{equation}
+
+\fbox{\noindent\parbox{0.9\textwidth}{Note:
+		$$
+		L_0-\tilde{L}_0=\frac{\alpha^{\prime}}{4}\left(k_{r L} k_{r L}-k_{r R} k_{r_{R}}\right)=\frac{1}{2}\left(l_{rL}l_{r R}-l_{r R} l_{rR}\right)=\frac{1}{2} l\circ l
+		$$}}\\
+
+ (8.4.19) 实际上暗示 (8.4.17), 它由OPE的封闭性给出
+\begin{equation}
+	2 l \circ l^{\prime}=\left(l+l^{\prime}\right) \circ\left(l+l^{\prime}\right)-l \circ l-l^{\prime} \circ l^{\prime} \in 2 \mathbf{Z}
+\end{equation}
+在 $\tau \rightarrow-1 / \tau$ 下的模不变性需要更加细致的计算. 紧致维的配分函数是
+\begin{equation}
+	Z_{\Gamma}(\tau)=|\eta(\tau)|^{-2 k} \sum_{l \in \Gamma} \exp \left(\pi i \tau l_{L}^{2}-\pi i \tau l_{R}^{2}\right)
+\end{equation}
+为了确定$Z_{\Gamma}$的变换性质，利用Poisson重求和，写成
+\begin{equation}
+	\sum_{l^{\prime} \in \Gamma} \delta\left(l-l^{\prime}\right)=V_{\Gamma}^{-1} \sum_{l^{\prime \prime} \in \Gamma^{*}} \exp \left(2 \pi i l^{\prime \prime} \circ l\right)
+\end{equation}
+这里, $V_{\Gamma}$ 是晶格 $\Gamma$的单位晶胞的体积.  (8.4.22)类似Fourier级数：仅当 $l \in \Gamma$, 相位平均才不为零，而归一化通过对单位元胞的积分给出. 利用$(8.4 .22)$,  $(8.4 .21)$可写成
+\begin{equation}
+	\begin{aligned}
+		Z_{\Gamma}(\tau) &=V_{\Gamma}^{-1}|\eta(\tau)|^{-2 k} \sum_{l^{\prime \prime} \in \Gamma^{*}} \int d^{2 k} l \exp \left(2 \pi i l^{\prime \prime} \circ l+\pi i \tau l_{L}^{2}-\pi i \bar{\tau} l_{R}^{2}\right) \\
+		&=V_{\Gamma}^{-1}(\tau \bar{\tau})^{-k / 2}|\eta(\tau)|^{-2 k} \sum_{l^{\prime \prime} \in \Gamma^{*}} \exp \left(-\pi i l_{L}^{\prime \prime 2} / \tau+\pi i l_{R}^{\prime \prime 2} / \bar{\tau}\right) \\
+		&=V_{\Gamma}^{-1} Z_{\Gamma^{*}}(-1 / \tau)
+	\end{aligned}
+\end{equation}
+在最后一行我们使用了模变换 (7.2.44). 那么模不变性的充分条件
+\begin{equation}
+	\Gamma=\Gamma^{*}
+\end{equation}
+由于 $V_{\Gamma}=V_{\Gamma^{*}}^{-1}$ ，所以如果 (8.4.24) 成立，它就等于1. 如果模不变性对所有 $\tau$成立，则可进一步证明这是充分条件.\\
+相容性条件可以总结为两个要求.  $\Gamma$ 是特征为 $(k, k)$的偶自对偶晶格. 但是晶格性质 (8.4.19) ，自对偶则是$(8.4 .24)$.\\
+所有这种晶格已经被分类了. 注意到相容性条件 (8.4.19)和 $(8.4 .24)$ 通过$\circ$积依赖于动量 $l$ ，它在$2 k$维空间的Lorentz boosts， $O(k, k, \mathbf{R})$ 变换下不变. 如果 $\Gamma$是偶自对偶晶格，那么
+\begin{equation}
+	\Gamma^{\prime}=\Lambda \Gamma
+\end{equation}
+也是偶自对偶晶格. 其中 $\Lambda $是 $O(k, k, \mathbf{R})$ 变换. 注意，$O(k, k, \mathbf{R})$ 不是理论的对称性. 质壳条件和算符乘积也包含单独的点积$l_{L} \cdot l_{L}^{\prime}$ 和 $l_{R} \cdot l_{R}^{\prime}$ ，因而仅在 $O(k, \mathbf{R}) \times O(k, \mathbf{R})$下不变. 所以，大多数 $O(k, k, \mathbf{R})$变换产生不等价的理论.\\
+考察 $k=1$的情况，其中
+\begin{equation}
+	l_{L, R}=\frac{n}{r} \pm \frac{m r}{2}
+\end{equation}
+ $r=R\left(2 / \alpha^{\prime}\right)^{1 / 2}$是无量纲半径. 这确实是偶自对偶晶格. 变换
+\begin{equation}
+	l_{L}^{\prime}=l_{L} \cosh \lambda+l_{R} \sinh \lambda, \quad l_{R}^{\prime}=l_{L} \sinh \lambda+l_{R} \cosh \lambda
+\end{equation}
+将晶格变成$r^{\prime}=r e^{-\lambda}$的晶格.\\
+若给定Lorentzian特征，所有偶自对偶晶格都可通过 $O(k, k, \mathbf{R})$ 变换从一个晶格获得，从一个给定解开始. 例如所有紧致维互相正交，且处在 $S U(2)$ 半径 $B_{m n}=0 $ . 相对应的动量晶格 $\Gamma_{0}$ 被称为 $k P_{2}$ ，并给出规范群 $S U(2)^{2 k}$. 正如前面讨论的，如果 $\Lambda^{\prime} \in O(k, \mathbf{R}) \times O(k, \mathbf{R})$，那么两个 $O(k, k, \mathbf{R})$ 变换 $\Lambda$ 和 $\Lambda^{\prime} \Lambda$给出等价的弦理论. 所以，以这种方式获得的不等价理论的空间是
+\begin{equation}
+	\frac{O(k, k, \mathbf{R})}{O(k, \mathbf{R}) \times O(k, \mathbf{R})}
+\end{equation}
+还有一些离散的等价关系，我们之后稍作讨论. 这等价于之前用$G_{m n}$ 和 $B_{m n} $ 进行描述. 特别地，陪集 $(8.4 .28)$ 的参量个数
+\begin{equation}
+	\frac{2 k(2 k-1)}{2}-k(k-1)=k^{2}
+\end{equation}
+这与$G_{m n}$ 和$B_{m n}$中的分量个数相同.\\
+与一维紧致化相比， $T$ 对称性被大大扩充了. 在这一抽象描述中，$O(k, k, \mathbf{R})$ 有一些离散子群将晶格 $\Gamma_{0}$变到自身.这些子群习惯上记成 $O(k, k, \mathbf{Z})$. 如果 $\Lambda^{\prime \prime}$属于这一子群，那么显然$\Lambda \Gamma_{0}$ 和 $\Lambda \Lambda^{\prime \prime} \Gamma_{0}$是同一晶格. 综上，我们有如下的等价关系
+\begin{subequations}
+\begin{equation}
+		\Lambda \Gamma_{0} \cong \Lambda^{\prime} \Lambda \Lambda^{\prime \prime} \Gamma_{0} 
+\end{equation}
+\begin{equation}		
+		\Lambda^{\prime} \in O(k, \mathbf{R}) \times O(k, \mathbf{R}), \quad \Lambda^{\prime \prime} \in O(k, k, \mathbf{Z})
+\end{equation}
+\end{subequations}
+那么不等价晶格以及不等价背景的空间就是
+\begin{equation}
+	\frac{O(k, k, \mathbf{R})}{O(k, \mathbf{R}) \times O(k, \mathbf{R}) \times O(k, k, \mathbf{Z})}
+\end{equation}
+需要注意的是，分母中的连续群是左作用，而离散群是右作用. 从背景的形式，$T$对偶群 $O(k, k, \mathbf{Z})$包含几种变换. 一种是单个轴上的$R \rightarrow \alpha^{\prime} / R$对偶 ，另一种是反映周期性的大坐标变换
+\begin{equation}
+	x^{\prime \prime m}=L_{n}^{m} x^{n}
+\end{equation}
+其中 $L_{n}^{m}$ 是整数且 $\mathrm{det}L=1$. 这是群 $S L(k, \mathbf{Z})$ . 最后就是反对称张量背景的偏移
+\begin{equation}
+	b_{m n} \rightarrow b_{m n}+N_{m n}
+\end{equation}
+其中 $N_{m n}$ 是整数. 从正则结果 (8.4.7) 或者路径积分相位 (8.4.12)可以看出这些保持频谱不变. 这些合起来生成了整个$T$ 对偶群.\\
+对于一般的 $\Lambda$, 分母群中不存在 $\Lambda_{1,2}$ 使得$\Lambda_{1} \Lambda \Lambda_{2}=\Lambda$, 所以不存在 $T$ 对偶使得覆盖空间上的点不动. 在一些特殊的 $\Lambda$，存在$\Lambda_{1} \Lambda \Lambda_{2}=\Lambda$的解，而它们是 $T$ 对偶元素 $\Lambda_{2}$的不同点. 在一维情况下，我们可以发现这样的点，这同时也是增广规范对称性的那一点. 在高维情况下，除了 $S U(2)$ , 在不同点会产生更大的规范群，我们将在11章进一步讨论.\\
+如果存在由标量场$\phi^{i}$参数化的模空间时，动能项
+\begin{equation}
+	-\frac{1}{2} g_{i j}(\phi) \partial_{\mu} \phi^{i} \partial^{\mu} \phi^{j}
+\end{equation}
+定义了模空间上的自然度规. 确切一些，一个明确的定义要求先进行Weyl变换，就像 (3.7.25) 那样. 使得引力作用量的系数模独立并消掉模与时空度规之间的混合. 在低能作用量 $(8.4 .2)$中，相应的标量动能项正比于
+\begin{equation}
+	\frac{16}{d-2} \partial_{\mu} \Phi \partial^{\mu} \Phi+G^{m n} G^{p q}\left(\partial_{\mu} G_{m p} \partial^{\mu} G_{n q}+\partial_{\mu} B_{m p} \partial^{\mu} B_{n q}\right)
+\end{equation}
+陪集空间 (8.4.31) 有一个唯一的 $O(k, k, \mathbf{R})$不变度规，它正是(8.4.35)中的第二项. 这一 $O(k, k, \mathbf{R})$不是整个理论的对称性；只有它的离散$T$ 对偶子群 $O(k, k, \mathbf{Z})$ 才是. 二者的差异在低能下是看不见的————它来自于弦零模的量子化，所以只影响有质量的频谱. 因此$O(k, k, \mathbf{R})$ 只是低能理论的偶然对称性. 在这个例子中，模空间是伸缩子模空间与紧致化模空间的乘积.
+
+\subsection*{\centerline{An example(例子)}}
+两个紧致化维度是一个很好的例子. 4个模 $G_{24,24}$, $G_{24,25}$, $G_{25,25}$, 和 $B_{24,25}$ 通常组合为两个复场 $\tau=\tau_{1}+i \tau_{2}$ 和 $\rho=\rho_{1}+i \rho_{2}$. 定义
+\begin{equation}
+	\begin{aligned}
+		\rho &=\frac{R^{2}}{\alpha^{\prime}}\left(B_{24,25}+i \operatorname{det}^{1 / 2} G_{m n}\right) \\
+		&=b_{24,25}+i \frac{V}{4 \pi^{2} \alpha^{\prime}}
+	\end{aligned}
+\end{equation}
+其中$V$ 是紧致2-环面的体积. 将紧致度规参数化为
+\begin{equation}
+	d s^{2}=\frac{\alpha^{\prime} \rho_{2}}{R^{2} \tau_{2}}\left|d X^{24}+\tau d X^{25}\right|^{2}
+\end{equation}
+坐标变换 (8.4.32) 在时空2-环面上的作用正如模群在世界面2-环面上的作用，生成了$\tau$ 上的$P S L(2, \mathbf{Z})$ 并保持 $\rho$ 不变. 反对称张量偏移 (8.4.33)是 $\rho \rightarrow \rho+N_{24,25}$ 而 $\tau$ 保持不变. 同时在 $X^{24,25}$上使用T对偶，使得 $\rho \rightarrow-1 / \rho$ 而 $\tau$ 保持不变. 后两个变换生成了P上的 $P S L(2, \mathbf{Z})$. 另外， $X^{24}$ 上的T对偶给出$(\tau, \rho) \rightarrow(\rho, \tau)$，而时空宇称$X^{24} \rightarrow-X^{24}$ 给出 $(\tau, \rho) \rightarrow(-\bar{\tau},-\bar{\rho}) $ . 整个T对偶群是
+\begin{equation}
+	P S L(2, \mathbf{Z}) \times P S L(2, \mathbf{Z}) \rtimes \mathbf{Z}_{2}^{2}
+\end{equation}
+进一步的等价关系来自世界面宇称 $(\tau, \rho) \rightarrow$ $(\tau,-\bar{\rho}) $ ，它翻转了$\circ$乘积的符号. \\
+模空间因此是两个环面模空间的乘积，再加上一些离散等价关系. 动能项正比于
+\begin{equation}
+	\frac{\partial_{\mu} \tau \partial^{\mu} \bar{\tau}}{\tau_{2}^{2}}+\frac{\partial_{\mu} \rho \partial^{\mu} \bar{\rho}}{\rho_{2}^{2}}
+\end{equation}
+在亏格为零的振幅中会遇到 $d^{2} \tau / \tau_{2}^{2}$. 连续群 $P S L(2, \mathbf{R})$ 把上半平面的 $\tau$ 变至另一个，而$U(1)$ 子群保持每个 $\tau$ 不变. 因此上半平面可以视为 $P S L(2, \mathbf{R}) / U(1)$, 整个模空间是
+\begin{equation}
+	\frac{P S L(2, \mathbf{R}) \times P S L(2, \mathbf{R})}{U(1) \times U(1) \times P S L(2, \mathbf{Z}) \times P S L(2, \mathbf{Z}) \times \mathbf{Z}_{2}^{2}}
+\end{equation}
+这与之前的结果(8.4.31)相同. 特别地，定域上看, $P S L(2, \mathbf{R}) \times P S L(2, \mathbf{R})$ 与 $O(2,2, \mathbf{R})$相同，这和 $S U(2) \times S U(2)$ 与 $O(4, \mathbf{R})$定域相同类似.
+
+
+\section{轨形}%{8.5 Orbifolds}
+现在我们考察 $X^{25}$的周期等价之外的一种等价性，即反射等价性
+\begin{equation}
+	X^{25} \cong-X^{25}
+\end{equation}
+现在的基本区域是射线 $X^{25} \geq 0$, 而超平面 $X^{25}=0$ 变成边界. 这个超平面被摘出来是因为它上面的点在反射(8.5.1)下不动. 更一般地，我们可以考察$k$ 个坐标的同时反演
+\begin{equation}
+	X^{m} \rightarrow-X^{m}, \quad 26-k \leq m \leq 25
+\end{equation}
+同样，依旧存在不动点的空间， $X^{26-k}=\ldots=X^{25}=0 $ . 当 $k \geq 2$时，这个空间是奇异的. 特别地，当 $k=2$，这是有负角 $\pi$的圆锥奇点.\\
+通过结合反射与周期等价关系$X^{25} \cong X^{25}+2 \pi R $，我们可以构建紧致空间，我们称前者为$r$ ，后者为$t$ . 可以认为首先通过 $t$的等价关系构成圆 $S^{1}$, 然后再通过 $r$等价圆周上的点. 相应的紧致空间是线段$0 \leq X^{25} \leq \pi R$. 线段的两端均是固定点，点 $\pi R$ 被tr固定. 综合起来，实线上的等价关系构成群
+\begin{subequations}
+\begin{equation}
+		t^{m}:  X^{25} \cong X^{25}+2 \pi R m 
+\end{equation}
+\begin{equation}		
+		t^{m} r:  X^{25} \cong 2 \pi R m-X^{25}
+\end{equation}
+\end{subequations}
+其中 $m$为任意整数.\\
+类似地，可以给$k$ 环面强加反射(8.5.2). 这一情况下，就有 $2^{k}$ 个不同的固定点. 以这种方式获得的奇异空间称为轨形. 通过等价关系(8.5.2) 再非紧致空间获得的空间是 $\mathbf{R}^{k} / \mathbf{Z}_{2}$；如果是紧致空间$k$环面，那么获得的是 $T^{k} / \mathbf{Z}_{2}$.\\
+弦论在这种奇异空间应该有意义这一点并不显然. 但我们将会看到弦论在这种空间中确实是有意义的. 它与环向紧致化并非完全不一致. 但它破除了更多的对称性 (包括之后的超对称) ，所以在构建弦模型时非常有价值.\\
+等价关系 (8.5.1)或 (8.5.2)有两个效应. 其一是波函数必须在反演下不变，在等价点相同. 其二，在闭弦频谱中有新截面，其中 
+\begin{equation}
+	X^{25}\left(\sigma^{1}+2 \pi\right)=-X^{25}\left(\sigma^{1}\right)
+\end{equation}
+这是由于它们在等价时空中是相同点. 这一截面中的弦被称为扭态(twisted states). 这平行于周期等价性. 这时，波函数的不变性使得动量离散，而仅差周期等价后的闭弦(缠绕弦) 出现了. 类比图8.1，可证明扭弦可以从非扭弦中产生. 在下文我们将会看到，模不变性要求在频谱中出现这些弦.\\
+我们将集中于紧致一维轨形 $S^{1} / \mathbf{Z}_{2}$. 首先验证非扭截面. 周期理论的频谱要投射到不变态上. 这会使得其约化. $r$ 在一般态上的效应
+\begin{equation}
+	\left|N, \tilde{N} ; k^{\mu}, n, w\right\rangle \rightarrow(-1)^{\sum_{m=1}^{\infty}\left(N_{m}^{25}+\tilde{N}_{m}^{25}\right)}\left|N, \tilde{N} ; k^{\mu},-n,-w\right\rangle
+\end{equation}
+特别地，r的效应反转了紧致缠绕与紧致动量. 我们必须要构建这个变换下不变的线性组合. 在一般 $R$ 的无质量态有 $n=w=0$, 射影因而只要求25维的激发数为偶. 因此在这个射影下幸存的有时空引力子，反对称张量，伸缩子以及快子. 模 $\alpha_{-1}^{25} \tilde{\alpha}_{-1}^{25}\left|0 ; k^{\mu}, 0,0\right\rangle$ 也依旧存在————这是可以预言的，既然 $R$可取任意值. 然而Kaluza-Klein规范玻色子规范玻色子不再存在. 自对偶点时的其余无质量态相当有趣，我们在下文进行细致讨论.\\
+在r扭转的截面中， $X^{25}$ 是反周期的，因而有一个半整数的模展开
+\begin{equation}
+	X^{25}(z, \bar{z})=i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty}^{\infty} \frac{1}{m+1 / 2}\left(\frac{\alpha_{m+1 / 2}^{25}}{z^{m+1 / 2}}+\frac{\tilde{\alpha}_{m+1 / 2}^{25}}{\bar{z}^{m+1 / 2}}\right)
+\end{equation}
+反周期性使得质心坐标以及动量为零，所以弦无法离开不动点 $X^{25}=0$ ：若弦振动很小，则有 $X^{25}(z, \bar{z}) \approx 0 $ . 还存在围绕其他不动点的扭弦
+\begin{equation}
+	X^{25}\left(\sigma^{1}+2 \pi\right)=2 \pi R-X^{25}\left(\sigma^{1}\right)
+\end{equation}
+场在围绕一圈后被$t r$所改变. 模展开与上面的区别只是多了常数项 $\pi R $ . 所有其他不动点 $n \pi R$ 均是 $t$变换下的像.\\
+根据2.9节的零点能讨论， $X^{25}$的零点能从周期玻色子$-\frac{1}{24}$偏移至反周期玻色子的  $\frac{1}{48}$ ，净增 $+\frac{1}{16}$. 在扭态中，质壳条件是
+\begin{equation}
+	m^{2}=\frac{4}{\alpha^{\prime}}\left(N-\frac{15}{16}\right), \quad N=\tilde{N}
+\end{equation}
+另外，25维振子对能级 $N$的贡献为半整数.  $r$ -射影又一次要求25维激发的总数为偶，这同样可以从能级匹配条件 $N=\tilde{N}$推导出来. 在扭挠截面中，基态是 $\left|T_{1,2}\right\rangle$, 下标指代两个不动点，它们是快子，它们的第一激发态$\alpha_{-1 / 2}^{25} \tilde{\alpha}_{-1 / 2}^{25}\left|T_{1,2}\right\rangle $ 也是快子. 不存在无质量的扭态. 到更一般情况 (8.5.2)是直接的. 尽管时空中有奇点，但量子化完全是相容的.\\
+轨形所带来的一个困难是：扭态顶点算符不像缠绕态那样那么简单，不存在像自由场指数这样的显式公式. 对于两个扭弦以及任意多个非扭弦，树图振幅可以写成算符形式 $\left\langle T\left|\mathscr{V}_{U} \mathscr{V}_{U} \ldots\right| T\right\rangle$, 这里只使用了非扭顶点算符. 对于4个或更多的扭态顶点算符(为使路径积分有意义，扭态顶点算符必须有偶数个).\\
+有两种方法可供使用. 其一是应力张量方法，我们在7.2节用这个方法计算了配分函数. 其二是去 $X^{25}$为单值的覆盖空间 (若球面有 $2 g+2$ 个扭态顶点算符，覆盖空间就是亏格为$g$ 的曲面) ，然后计算路径积分.\\
+非扭态的树图耦合有一个简单结果. 在球面上，若所有外态非扭，扭挠以及射影根本不会进入计算中，振幅与非扭理论相同. 例如，无质量非扭场的低能有效作用量与我们在环面紧致化中所得到的相同，不同的仅是矢量场的缺失. 这一性质通常在分析轨形理论的物理时非常有用：这通常称为继承原理(inheritance principle).\\
+现在来考察$X^{25}$ CFT的配分函数. 在非扭截面中，要投射到$r=+1$的态上
+\begin{equation}
+	(q \bar{q})^{-1 / 24} \operatorname{Tr}_{U}\left(\frac{1+r}{2} q^{L_{0}} \bar{q}^{\tilde{L}_{0}}\right)
+\end{equation}
+投影算符的第一项给出的就是环向紧致化配分函数 (8.2.9)的一半，而对于有$r$ 的那一项， $r$ 的对角元必须有$n=w=0$, 而 $(-1)^{N^{25}+\tilde{N}^{25}}$ 将振子和改成 $1-q+q^{2}-q^{3}+$ $\ldots=(1+q)^{-1} $. 那么，非扭态的配分函数是
+\begin{equation}
+	\frac{1}{2} Z_{\mathrm{tor}}(R, \tau)+\frac{1}{2}(q \bar{q})^{-1 / 24} \prod_{m=1}^{\infty}\left|1+q^{m}\right|^{-2}
+\end{equation}
+而扭挠截面的贡献来自半整数模振子的和
+\begin{equation}
+	\begin{aligned}
+		&(q \bar{q})^{1 / 48} \operatorname{Tr}_{T}\left(\frac{1+r}{2} q^{L_{0}} \bar{q}^{\tilde{L}_{0}}\right) \\
+		=&(q \bar{q})^{1 / 48}\left[\prod_{m=1}^{\infty}\left|1-q^{m-1 / 2}\right|^{-2}+\prod_{m=1}^{\infty}\left|1+q^{m-1 / 2}\right|^{-2}\right]
+	\end{aligned}
+\end{equation}
+扭挠截面的个数会给出因子2，恰好与投影算符中的 $\frac{1}{2}$抵消. 合起来，配分函数可以写成
+\begin{equation}
+	Z_{\text {orb }}(R, \tau)=\frac{1}{2} Z_{\text {tor }}(R, \tau)+\left|\frac{\eta(\tau)}{\vartheta_{10}(0, \tau)}\right|+\left|\frac{\eta(\tau)}{\vartheta_{01}(0, \tau)}\right|+\left|\frac{\eta(\tau)}{\vartheta_{00}(0, \tau)}\right|
+\end{equation}
+已知第一项是模不变的，由7.2节的模变换性质可知后三项的和是模不变的. 以环面上路径积分形式， $Z_{\text {tor }}(R, \tau)$ 是平移后周期的场给出的.  $\vartheta_{a b}$来自路径积分
+\begin{subequations}
+\begin{equation}
+		X^{25}\left(\sigma^{1}+2 \pi, \sigma^{2}\right) =(-1)^{a+1} X^{25}\left(\sigma^{1}, \sigma^{2}\right) 
+\end{equation}
+\begin{equation}		
+		X^{25}\left(\sigma^{1}+2 \pi \tau_{1}, \sigma^{2}+2 \pi \tau_{2}\right) =(-1)^{b+1} X^{25}\left(\sigma^{1}, \sigma^{2}\right)
+\end{equation}
+\end{subequations}
+例如， $\vartheta_{10}$ 项来自迹中有 $r$ 的非扭截面. 即在时间方向上反周期，在空间方向上周期. 而 $\vartheta_{01}$项，则是扭挠截面中迹中带1的项，其有相反的边界条件，它们在 $\tau \rightarrow-1 / \tau$交换. 因此，扭挠截面必须是模不变的.
+
+\subsection*{\centerline{Twisting(扭挠)}}
+轨形紧致化与环向紧致化是一种非常有用的构造的两个例子，这种构造称为扭挠(twisting), 这种方法被用来从旧的弦论中构造出新的弦论. 在一给定CFT中，若它的对称性包含某个离散群 $H$, 我们可以经过两步得到一个新的CFT. 
+首先，增加扭挠截面，在这个截面中，闭弦世界面场在相差某个 $h \in H$后是周期的
+\begin{equation}
+	\phi\left(\sigma^{1}+2 \pi\right)=h \cdot \phi\left(\sigma^{1}\right)
+\end{equation}
+其中$\phi$指一般的世界面场. 
+然后，将频谱限制在 $H$不变态上. 尽管(8.5.14)不再是周期的，但由于射影，顶点算符是周期的，并且由于 $H$不变算符的乘积仍旧是$H$ 不变的，它还是封闭的. 在配分函数中，我们要对扭曲$h_{1}$求和，并引入到不变态上的射影
+\begin{equation}
+	P_{H}=\frac{1}{\operatorname{order}(H)} \sum_{h_{2} \in H} \hat{h}_{2}
+\end{equation}
+迹中的算符 $\hat{h}_{2}$ 使得场在时间方向上的周期差$h_{2}$, 所以在最后我们要对环面上时间方向和空间方向的扭曲求和
+\begin{equation}
+	Z=\frac{1}{\operatorname{order}(H)} \sum_{h_{1}, h_{2} \in H} Z_{h_{1}, h_{2}}
+\end{equation}
+对边界条件的求和在偏移求和变量后是模不变的. 模变换 $\tau \rightarrow-1 / \tau$使得 $\left(h_{1}, h_{2}\right)$ 变到 $\left(h_{2}, h_{1}^{-1}\right)$, 而$\tau \rightarrow \tau+1$ 使得 $\left(h_{1}, h_{2}\right)$变到 $\left(h_{1}, h_{1} h_{2}\right) $ . 因此，如果我们通过对 $h_{2}$求和投影到 $H$ 不变态上，我们还得到对扭挠截面的求和. 在更一般情况下，特别是右-左不对称的理论中，相位问题可能会毁掉对边界条件求和的天然模不变性.\\
+在环向紧致化的情况中，原始理论是非紧致理论.  $H$由$t^{m}=\exp (2 \pi i R m p)$ 构成，其中m为整数. 这恰好有无限阶，但我们可以通过将理论放在盒子中进行正规化. 对于轨形，我们可以认为从环向理论出发，然后被 $r$扭曲.\\
+若$H$ 是non-Abelian, 对于不对易的 $h_{1}$ ， $h_{2}$ ，路径积分边界条件不相容，并且路径积分为零. 这也可从正则表达式 (8.5.15)得出. 如果 $\phi$有空间扭曲 $h_{1}$, 那么
+\begin{equation}
+	\phi^{\prime}\left(\sigma^{1}\right)=h_{2} \cdot \phi\left(\sigma^{1}\right)
+\end{equation}
+有一个不同的空间扭曲
+\begin{equation}
+	\phi^{\prime}\left(\sigma^{1}+2 \pi\right)=h_{1}^{\prime} \cdot \phi^{\prime}\left(\sigma^{1}\right)
+\end{equation}
+其中
+\begin{equation}
+	h_{1}^{\prime}=h_{2} h_{1} h_{2}^{-1}
+\end{equation}
+所以$\hat{h}_{2}$的对角元为零. 我们同时看到由$h_{1}$ 和 $h_{1}^{\prime}$ 扭曲的截面是不独立的————它们通过到 $h_{2}$ 不变态上的投影相关. 因此，独立的扭挠截面与 $H$的共轭类一一对应.\\
+扭曲可以视为对离散群$H$的规范化，这并不显然. 由于离散性，规范参量必须为常数. 特别地，没有相应的规范场. 这里的关键在于，在有非平庸闭合路径的世界面上，仅需要规范不变的量是周期的. 所以场的周期性可以差一个 $H$ 变换. 对离散对称性的规范化给路径积分中加入了新的截面，并对应地投影到不变态上. 这仅是扭曲构造. 同样也可以对连续世界面对称性规范化以产生新的CFT，我们会在第15章讨论.
+对一般的扭曲理论，继承原理依旧成立.\\
+
+\centerline{\Large c=1 C F T s}	
+
+我们发现了两类紧致且 $c=1$的 CFT，它们是环向紧致化. 半径限制在 $R \geq \alpha^{\prime 1 / 2}$ 以及 $R$范围相同的轨形紧致化. 这两类理论互相联系. 从 $S U(2) \times S U(2)$ 半径 $R=\alpha^{1 / 2}$出发，进一步扭曲
+\begin{equation}
+	r^{\prime}: \quad X^{25} \rightarrow X^{25}+\pi \alpha^{1 / 2}
+\end{equation}
+这给出了$R=\alpha^{1 / 2} / 2$的环面理论. 通过$T$ 对偶，它等价于 $R=2 \alpha^{\prime 1 / 2} $ . 以$S U(2)$ 流(8.3 .12)的形式,  $r^{\prime}$翻转了 $j^{1,2}$ 和$\tilde{\jmath}^{1,2}$ 的符号，所以它是在每个 $S U(2) $中绕着3轴转$\pi$ 角. 轨形 $r$ 翻转了$j^{2,3}$和 $\tilde{J}^{2,3}$的符号，所以它是$S U(2) $中绕着1轴角度为$\pi$的旋转. 但是，显然这些旋转在$S U(2) \times S U(2)$下是等价的，所以相应的理论是等价的. $R=2 \alpha^{\prime 1 / 2}$ 的环面与$R=\alpha^{1 / 2}$的轨形，相应的配分函数是相等的
+\begin{equation}
+	Z_{\text {orb }}\left(\alpha^{1 / 2}, \tau\right)=Z_{\text {tor }}\left(2 \alpha^{\prime 1 / 2}, \tau\right)
+\end{equation}
+这也是theta函数等式所证明的.\\
+这种等价性仅在这些半径处成立. 例如，一般的$R$，环向理论只有 $U(1) \times U(1)$规范对称性，而轨形没有规范对称性. 因此，二者模空间的联系如图\ref{Fig8.2}所示. 
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 1086 777
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=814.5,natheight=582.75]{Fig8.2.jpg}\\
+		\caption{Fig. 8.2. Moduli space of $c=1$ CFTs. The toroidal branch is horizontal and the orbifold branch is vertical. The special points obtained by twisting by a discrete subgroup of $S U(2)$ are indicated, including the three isolated points obtained from the tetrahedral, octahedral, and icosahedral groups. Other special radii, such as the torus at $R=\left(2 \alpha^{\prime}\right)^{1 / 2}$, will arise later.}\label{Fig8.2}
+	\end{center}
+\end{figure}
+
+有不同分支的模空间在特殊的点处会合. 在超对称理论中，这一结构拥有非常普遍且重要的特征. 一般而言，在每一个分支会有不同的低能有效理论，在这里的表现是低能规范对称性. 在特殊点的附近存在更多的轻场. 随着我们沿着不同分支远离特殊点，它们的不同子集会变得有质量.\\
+环向分支与轨形分支交叉点附近的低能物理很有启发意义. 用$r^{\prime}$扭曲的 $S U(2)$ 理论来描述它. 在这一扭曲下留存的无质量标量是 $j^{3} \tilde{\jmath}^{3}$ 以及 $j^{i} \tilde{\jmath}^{j}$，其中$i, j \in\{1,2\} $ . 既然它们是非扭的，势与扭曲之前相同，即 $\mathrm{det} M$. 标量场 $M_{i j}$依旧可以通过 $U(1) \times U(1)$ 旋转对角化. 并且仅当一个对角元非零时，势是平坦的. 然而，现在模 $M_{33}$ 无法旋转至 $M_{11}$ 或 $M_{22}$ ，所以这些方向在物理上不同. 模$M_{33}$保持 $U(1) \times U(1)$ 不破坏，并对应于沿着环向分支的移动. 模$M_{11}$ 或 $M_{22}$破缺了规范对称，并对应于沿着轨形分支的移动. 既然这个模是带荷的，它的符号反转是规范变换，所以物理上不同的轨形终于分支的交叉点. 我们无法同时变换两个模，因为它们的线性组合不是平坦方向. 轨形上的弦理论等价于圆上的弦理论，这是相当可观的. 这表明弦看待时空几何的方式与我们并非完全相同.\\
+沿着环向分支进行移动，在 $S U(2)$半径的整数倍 $R=k \alpha^{1 / 2} $ 会有额外的无质量态. 这些态有 $(n, w)=(\pm 2 k, 0)$. 我们可以认为这些点是这样获得的，在$T$ 对偶处理下， $R=\alpha^{1 / 2} / k$, 它们又是通过用$\mathbf{Z}_{k}$对称性扭曲 $S U(2) \times S U(2)$理论得到
+\begin{equation}
+	X^{25} \rightarrow X^{25}+\frac{2 \pi \alpha^{1 / 2}}{k}
+\end{equation}
+这给 $j^{1}+i j^{2}$ 和 $\tilde{\jmath}^{1}+i \tilde{\jmath}^{2}$ 乘上了 $\exp (2 \pi i / k)$ ，因而幸存的无质量标量是
+\begin{equation}
+	j^{3} \tilde{\jmath}^{3}, \quad j^{1} \tilde{\jmath}^{1}+j^{2} \tilde{\jmath}^{2}, \quad j^{1} \tilde{\jmath}^{2}-j^{2} \tilde{\jmath}^{1}
+\end{equation}
+这些中的第一个改变了环面的半径，因而总是平坦方向. 然而，从这些点中不再浮现其他分支，因为在方向$M_{11}=M_{22}$ 或 $M_{12}=-M_{21}$上不会遇到势的平坦性条件 (8.3.23) .\\
+偏移 $(8.5 .22)$ 生成了$S U(2) \times S U(2) $的$\mathbf{Z}_{k}$子群. 我们来考察其他子群的扭曲. 二面体群$\mathbf{D}_{k}$ 由偏移 $(8.5 .22)$ 和反射 $X^{25} \rightarrow-X^{25}$ 构成，这给出了半径$k \alpha^{1 / 2}$处的轨形. 其他三个离散子群是四面体群、八面体群以及二十面体群. 它们从CFT中移除了所有模. 所以扭曲CFT是孤立点，没有连续族中的成员. 不像 $\mathbf{Z}_{k}$ 即 $\mathbf{D}_{k}$ 扭曲，它们可以在所有半径处定义，而这些包含 $S U(2)$元素的离散子群仅在离散半径处存在，因而半径不能在扭曲后变化. 有这种紧致化空间的弦论只会有一个标量————伸缩子. 
+这是所有已知的 $c=1$的 CFT，因而给出了所有已知的25维玻色弦背景.
+
+
+\section{开弦}%{8.6 Open strings}
+在开弦的环向紧致化中有一个新特征，即有可能存在非平庸的Wilson线，规范场的平坦背景. 首先研究一些带有带荷场的$U(1)$规范理论，考察常背景
+\begin{equation}
+	A_{25}\left(x^{M}\right)=-\frac{\theta}{2 \pi R}=-i \Lambda^{-1} \frac{\partial \Lambda}{\partial x^{25}}, \quad \Lambda\left(x^{25}\right)=\exp \left(-\frac{i \theta x^{25}}{2 \pi R}\right)
+\end{equation}
+其中$\theta$是常数. 定域上看，这是纯规范，场强为零，场方程是平庸的. 然而，规范参量 $\Lambda$ 不满足时空周期性，所以背景有物理效应. 衡量这一效应的规范不变量是Wilson线
+\begin{equation}
+	W_{q}=\exp \left(i q \oint d x^{25} A_{25}\right)=\exp (-i q \theta)
+\end{equation}
+首先考察电荷为$q$的点粒子，它的规范固定作用量
+\begin{equation}
+	S=\int d \tau\left(\frac{1}{2} \dot{X}^{M} \dot{X}_{M}+\frac{m^{2}}{2}-i q A_{M} \dot{X}^{M}\right)
+\end{equation}
+规范作用量就是$-i q \int d x^{M} A_{M}$, 所以绕紧致维度一周的路径会挑出等于Wilson线 $W_{q} $的相位. 正则动量是
+\begin{equation}
+	p_{25}=-\frac{\partial L}{\partial v^{25}}=v^{25}-\frac{q \theta}{2 \pi R}
+\end{equation}
+其中，同(8.4.6)一样，$v^{25}=i \dot{X}^{25}$ . 波函数在紧致维度中必须是周期的，所以 $p_{25}=l / R$ ， $l$为整数，并且
+\begin{equation}
+	v_{25}=\frac{2 \pi l+q \theta}{2 \pi R}
+\end{equation}
+湮灭物理态的Hamiltonian是
+\begin{equation}
+	H=\frac{1}{2}\left(p_{\mu} p^{\mu}+v_{25}^{2}+m^{2}\right)
+\end{equation}
+由于 $v_{25}$ 依赖$\theta$，所以 $-p_{\mu} p^{\mu}$ 发生了偏移. 相同的频谱可以在场描述下获得. 注意， $v_{25}$ 正是规范不变动量$-i \partial_{25}-q A_{25}$.\\
+我们也可做规范变换 $\Lambda^{-1}$令 $A_{25}$为零，这一规范下带荷场不再是周期的，在$x^{25} \rightarrow x^{25}+2 \pi R$挑出相位 $\exp (i q \theta)$ . 物理量依旧是周期的，正则动量现在偏移了，我们有
+\begin{equation}
+	v_{25}=p_{25}=\frac{2 \pi l+q \theta}{2 \pi R}
+\end{equation}
+与之前一样，对于规范不变动量 $v_{25}$获得了相同结果.\\
+现在我们回到弦，引入 $U(n)$ Chan-Paton 因子. 一般常数 $A_{25}$可以通过规范变换对角化
+\begin{equation}
+	A_{25}=-\frac{1}{2 \pi R} \operatorname{diag}\left(\theta_{1}, \theta_{2}, \ldots, \theta_{n}\right)
+\end{equation}
+这个规范场处在$U(n)$的对角群中的，即$U(1)^{n} $ . 规范场与一般态的Chan-Paton因子的耦合为 $\left[A_{M}, \lambda\right]$, 所以Chan-Paton 态 $|i j\rangle$ 中的弦在$U(1)_{i}$下有荷+1，在$U(1)_{j}$下有荷-1.在其他情况下为中性，因此它有
+\begin{equation}
+	v_{25}=\frac{2 \pi l-\theta_{j}+\theta_{i}}{2 \pi R}
+\end{equation}
+那么开弦频谱就是
+\begin{equation}
+	m^{2}=\frac{\left(2 \pi l-\theta_{j}+\theta_{i}\right)^{2}}{4 \pi^{2} R^{2}}+\frac{1}{\alpha^{\prime}}(N-1)
+\end{equation}
+考察规范玻色子，这是 $l=0$ 且 $N=1$ ，因此
+\begin{equation}
+	m^{2}=\frac{\left(\theta_{j}-\theta_{i}\right)^{2}}{4 \pi^{2} R^{2}}
+\end{equation}
+在一般背景下，所有 $\theta \mathrm{s}$都不同，仅有的无质量矢量是对角的， $i=j $ . 在这一情况下，未破缺规范群是 $U(1)^{n} $ . 如果 $r$个 $\theta$ 相等，相应的矢量的 $r \times r$矩阵是无质量的，携带规范对称性$U(r) $ . 将 $n \theta$分到集合 $r_{i}$中，规范对称性是
+\begin{equation}
+	U\left(r_{1}\right) \times \ldots \times U\left(r_{s}\right), \quad \sum_{i=1}^{s} r_{i}=n
+\end{equation}
+像之前一样，这有一个低能解释. 规范场$A_{25}$是 $U(n)$伴随表示中的25维标量，而它的真空期望值将对称性破缺至$U\left(r_{1}\right) \times \ldots \times U\left(r_{s}\right)$.
+读者可以填补低能有效作用量的细节. 需要注意的是，若紧致维度有 $k$个，势中会包含
+\begin{equation}
+	\operatorname{Tr}\left(\left[A_{m}, A_{n}\right]^{2}\right)
+\end{equation}
+它来自26维Yang-Mills作用量中的场强，这迫使不同方向的规范场在静态解中对易，使得它们可同时对角化. 规范场中会给出 $k n$ 个模，度规和反对称张量会给出 $k^{2}$ 个模.
+
+\subsection*{\centerline{T-duality(T对偶)}}
+现在考察开弦频谱的 $R \rightarrow 0$ 极限. 若开弦的边界是Neumann边界，它没有类似于 $w$的量子数；它们总可以从紧致维上解开. 所以，当 $R \rightarrow 0$ 时，动量不为零的态获得无限大质量，但不再有新的连续态. 这与场论中的行为一致：相应的态在25个时空维中移动.\\
+我们知道有开弦的理论必有闭弦，这貌似会产生矛盾. 这使得在 $R \rightarrow 0$的极限下，闭弦在26个时空维中移动，而开弦在25个时空维中移动. 由此可推理出发生了如下事情：开弦的内部与闭弦相同，由同一“物质”构成，所以依旧在26维振动. 区分开弦的正是它们的端点. 所以它们必须限制在一个25维超平面上. 事实确实如此，我们可以用新的嵌入坐标来描述$T$ 对偶理论
+\begin{equation}
+	X^{\prime 25}(z, \bar{z})=X_{L}^{25}(z)-X_{R}^{25}(\bar{z})
+\end{equation}
+那么
+\begin{equation}
+	\partial_{n} X^{25}=-i \partial_{t} X^{\prime 25}
+\end{equation}
+其中 $n$是边界的方向， $t$是边界的切向. 原始坐标上的 Neumann 边界就是对偶坐标上的Dirichlet边界：每个弦端点的 $X^{\prime 25}$坐标坐标是固定的. \\
+我们先来考察没有 Wilson线的紧致化. 那么所有端点都约束在同一超平面上. 为看到这一点，积分
+\begin{equation}
+	\begin{aligned}
+		X^{\prime 25}(\pi)-X^{\prime 25}(0) &=\int_{0}^{\pi} d \sigma^{1} \partial_{1} X^{\prime 25}=-i \int_{0}^{\pi} d \sigma^{1} \partial_{2} X^{25} \\
+		&=-2 \pi \alpha^{\prime} v^{25}=-\frac{2 \pi \alpha^{\prime} l}{R}=-2 \pi l R^{\prime}
+	\end{aligned}
+\end{equation}
+ $X^{\prime 25}$在两个端点之间的总变化是对偶维周期$2 \pi R^{\prime}$的整数倍，所以末端处在周期 $T$对偶空间的同一超平面上. 对于两个不同的开弦，它们之间交换引力子会给出连通世界面. 我们可以对此进行相同的讨论. 所以，所有弦的端点都处在同一超平面上，见图\ref{Fig8.3}. 端点在其他24维依旧是随意移动的.
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 761 723
+		%1px=0.75pt
+		\includegraphics[width=0.7\textwidth,natwidth=532.7,natheight=530]{Fig8.3.jpg}\\
+		\caption{Fig. 8.3. Open strings with endpoints attached to a hyperplane. The dashed planes are periodically identified. Two strings are shown, with winding numbers zero and one.}\label{Fig8.3}
+	\end{center}
+\end{figure}
+
+现在我们来看Wilson线的效应. 由于$v_{25}$中有偏移 (8.6.9)， (8.6.16) 被换成
+\begin{equation}
+	\Delta X^{\prime 25}=X^{\prime 25}(\pi)-X^{\prime 25}(0)=-\left(2 \pi l-\theta_{j}+\theta_{i}\right) R^{\prime}
+\end{equation}
+换句话说，除去一个额外的归一化， $i$ 态上的端点处在
+\begin{equation}
+	X^{\prime 25}=\theta_{i} R^{\prime}=-2 \pi \alpha^{\prime} A_{25, i i}
+\end{equation}
+因此，一般会有 $n$个不同的超平面，见图\ref{Fig8.4}.
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 938 756
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=656.6,natheight=555]{Fig8.4.jpg}\\
+		\caption{Fig. 8.4. $n=3$ hyperplanes at different positions, with various strings attached. Ignoring the tachyon, the lightest strings with both ends on the same hyperplane are massless, while strings stretched between noncoincident hyperplanes are massive due to their tension. When two hyperplanes become coincident, the lightest strings stretched between them become massless.}\label{Fig8.4}
+	\end{center}
+\end{figure}
+
+我们来考察Chan-Paton态 $|i j\rangle$的模式展开，并假定它在紧致维数上缠绕了$l$ 次
+\begin{equation}
+	\begin{aligned}
+		X^{\prime 25}(z, \bar{z}) &=\theta_{i} R^{\prime}-\frac{i R^{\prime}}{2 \pi}\left(2 \pi l-\theta_{j}+\theta_{i}\right) \ln (z / \bar{z})+i\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \sum_{m=-\infty \atop m \neq 0}^{\infty} \frac{\alpha_{m}^{25}}{m}\left(z^{-m}-\bar{z}^{-m}\right) \\
+		&=\theta_{i} R^{\prime}+\frac{\sigma^{1}}{\pi} \Delta X^{\prime 25}-\left(2 \alpha^{\prime}\right)^{1 / 2} \sum_{m=-\infty \atop m \neq 0}^{\infty} \frac{\alpha_{m}^{25}}{m} \exp \left(-m \sigma^{2}\right) \sin m \sigma^{1}
+	\end{aligned}
+\end{equation}
+%\includegraphics[max width=\textwidth]{468c0600eb7a4b587a4fd08fa7d85633-37(1)}
+
+频谱 $(8.6 .10)$ 变成
+\begin{equation}
+	m^{2}=\left(\frac{\Delta X^{\prime 25}}{2 \pi \alpha^{\prime}}\right)^{2}+\frac{1}{\alpha^{\prime}}(N-1)
+\end{equation}
+其中 $\Delta X^{\prime 25}$由(8.6.17)给定. 它是弦在给定截面中的最短长度.\\
+现在来考察，如果有多个紧致维，这个图景怎么推广. 设 $X^{m}$ ， $p+1 \leq m \leq 25$是周期维. 我们将周期维写成对偶坐标的形式. $X^{m}$上的Neumann条件又一次变成对偶坐标 $X^{\prime m}$上的Dirichlet条件, 所以开弦端点拘束在$n$ 个平行的 $(p+1)$维子空间中. 对于每个子空间，不同方向的Wilson线变成独立坐标.\\
+由于平移不变性被开弦边界条件破坏了，对偶背景相当古怪. 这反映了如下事实：在原始开弦理论中，缠绕数不守恒，而缠绕数$T$对偶到动量. $T$对偶只是同一理论的不同描述. 更进一步，当紧致半径很小时，那么就应该自然地使用$T$对偶图景.
+
+\section{D膜}%{8.7 D-branes}
+我们现在知道，当开弦理论紧致化在一个小环面上时，它的物理可以描述成在大环面上的紧致化，但是开弦的端点约束在空间中. 事实上，这些子空间本身是新的动力学客体.\\
+考察一般构形下，无质量开弦的频谱. 在这种构形下，所有$\theta_{i}$ 都不同，简单起见，只取一个坐标是对偶化的. 忽视快子，质量 $(8.6 .20)$仅在$N=1$且 $\Delta X^{\prime 25}=0 $ 时为零. 即，两个端点处在同一超平面且缠绕数为零. 因而我们有无质量态
+\begin{subequations}
+\begin{equation}
+		\alpha_{-1}^{\mu}|k ; i i\rangle,  \mathscr{V}=i \partial_{t} X^{\mu} 
+\end{equation}
+\begin{equation}
+\alpha_{-1}^{25}|k ; i i\rangle,  \mathscr{V}=i \partial_{t} X^{25}=\partial_{n} X^{\prime 25}
+\end{equation}
+\end{subequations}
+它们显然同原始理论中相同是无质量态, $T$对偶只是给了同一频谱的不同图景. 对于一般的Wilson 线，唯一的无质量开弦态将是$n$ 个无质量 $U(1)$矢量. 在(8.7.1)中，我们根据它们是切于超平面还是垂直于超平面将其分类. 有切向极化的25个态构成了处在超平面上的规范场. 而它在 $T$对偶理论中有一个简单且重要的解释：它是超平面形状的坐标集. 从常数规范场 (8.6.18) 对应于超平面的均匀平移就可以看到这一点. $x^{\mu}$ 相关的背景可以转至一个 $x^{\mu}$ 相关的平移. 一个弯曲的超平面，而场 $A_{i i}^{25}$ 的的量子对应超平面的微小振荡.\\
+这与时空上发生的现象相同. 我们从平坦背景中的弦出发，发现无质量闭弦态对应几何的涨落. 在这里，我们首先发现超平面，然后发现特定的开弦态对应于超平面的涨落. 超平面有了动力学，对此我们不应该惊讶. 弦论包含引力. 引力波穿越超平面时将会扰动时空本身，所以超平面很难保持刚性.\\
+因此，超平面确实是动力学客体，这是D膜. 对于$25-p$ 个维度做对偶会得到p维膜，称为 Dp-膜. 利用这个terminology, 原始的 $U(n)$ 开弦理论会包含 $n$个 D25-膜. D25-膜填满了空间，所以弦端点没有约束，它仅对应普遍的 Chan-Paton因子.\\
+既然$T$ 对偶交换了Neumann与Dirichlet边界条件，在与Dp膜相切的方向上做 $T$对偶会将其约化至 $\mathrm{D}(p-1)$ 膜，而在垂直方向上做 $T$ 对偶则将其约化至$\mathrm{D}(p+1)$ 膜. 非平庸角的情况也会立刻出现. \\
+我们本可以通过研究Dirichlet边界本身出发. 这里我们所采取的路线是从$T$对偶发现它们，这一方法能更好的发展它们的性质. 也可证明，通过一个连续的过程，我们能从“普通”态到达包含D膜的态. 即，取普通理论的$R \rightarrow 0$极限，这使得非紧致空间中有$n$个D膜. 在超弦中，我们将用这一点来论证D膜是理论的非微扰定义中的重要部分. 对于玻色弦，由于没有很强的证据表明它有非微扰定义，我们不做这个讨论. 玻色弦论有可能仅是作为超弦的部分而存在.\\
+我们来看一下T对偶图景中的 $U(n)$对称性破缺. 当没有D膜重合时，仅在每个D膜上有无质量矢量，这给出规范群 $U(1)^{n}$. 如果有 $r$个 D膜重合，那么会有额外的无质量态，连接这些膜的弦长为零. 当$n=0$时，若 $i$ 与$j$均在集合$r$中，质量公式(8.6.20)中的 $\Delta X^{\prime 25}$为零. 因此，存在$r^{2}$ 个矢量，构成$U(r)$ 规范群的伴随表示. 这与对偶Wilson线图景中发现的相同. 然而，令人惊奇的是，在垂直D膜的方向上会有$r^{2}$个无质量标量. 我们会在下面讨论它的意义.
+
+\subsection*{\centerline{The D-brane action(D膜作用量)}}
+在Dp膜的世界体上，无质量场是$U(1)$矢量和描述涨落的 $25-p$ 世界膜标量. 这个系统的低能有效作用量总是值得考察的. 我们取对偶半径$R^{\prime}$为无穷，只考虑相应26维时空中的单个D膜. 世界膜场与无质量闭弦场有相互作用，而它的作用量在3.7节讨论过. 引入膜上的坐标 $\xi^{a}, a=0, \ldots p$. 膜上的场是嵌入 $X^{\mu}(\xi)$ 以及规范场$A_{a}(\xi) $. 我们声明作用量
+\begin{equation}
+	\boldsymbol{S}_{p}=-T_{p} \int d^{p+1} \xi e^{-\Phi}\left[-\operatorname{det}\left(G_{a b}+B_{a b}+2 \pi \alpha^{\prime} F_{a b}\right)\right]^{1 / 2}
+\end{equation}
+其中$T_{p}$是待定常数. 这里
+\begin{equation}
+	G_{a b}(\xi)=\frac{\partial X^{\mu}}{\partial \xi^{a}} \frac{\partial X^{v}}{\partial \xi^{b}} G_{\mu v}(X(\xi)), \quad B_{a b}(\xi)=\frac{\partial X^{\mu}}{\partial \xi^{a}} \frac{\partial X^{v}}{\partial \xi^{b}} B_{\mu v}(X(\xi))
+\end{equation}
+是膜上的诱导度规以及诱导反对称张量.\\
+基于一般推理就可以理解 (8.7.2) 的所有特征. 首先，只考察时空度规以及嵌入，最简单且导数最少的坐标无关作用量是 $\left(-\operatorname{det} G_{a b}\right)^{1 / 2}$的积分，即世界体积. 注意到，这一项经由诱导场(8.7.3)对$X^{\mu}(\xi)$ 有隐式关系. 围绕一个平坦D膜做展开，这给出涨落的作用量，就像Nambu-Goto作用量作用量描述了弦的涨落.\\
+伸缩子依赖性 $e^{-\Phi} \propto g_{\mathrm{c}}^{-1}$会出现是因为这是开弦树图作用量，开弦场的相互作用，以及它们与闭弦场的耦合，最初来自于圆盘.\\
+对 $F_{a b}$的依赖性可以通过$T$对偶理解. 考察沿 $X^{1}$ 和 $X^{2}$ 方向铺展的D膜，其他方向未指定. 并令上面有一个常数规范场 $F_{12}$ . 去往规范 $A_{2}=X^{1} F_{12}$. 现在沿$X^{2}$方向取$T$ 对偶. 在这一方向的Neumann条件就变成了Dirichlet条件. 所以，D膜少了一个维数. 然而，势与坐标之间的关系 (8.6.18)暗示了D膜在 (1-2)-平面中是倾斜的
+\begin{equation}
+	X^{\prime 2}=-2 \pi \alpha^{\prime} X^{1} F_{12}
+\end{equation}
+这个倾斜赋予了作用量一个几何因子
+\begin{equation}
+	\int d X^{1}\left[1+\left(\partial_{1} X^{\prime 2}\right)^{2}\right]^{1 / 2}=\int d X^{1}\left[1+\left(2 \pi \alpha^{\prime} F_{12}\right)^{2}\right]^{1 / 2}
+\end{equation}
+对任意D膜，通过推动使其与坐标轴对齐，并进行旋转，使 $F_{a b}$ 变成对角形式，可以将作用量约化至每一平面中的因子(8.7.5) 的积，等价于行列式中的 $F_{a b}$项. 规范场构成的行列式将Born-Infeld作用量，它最初是为了解决量子电动力学的短程发散问题， 不过失败了.\\
+最后，对 $B_{a b}$ 的依赖关系由如下讨论给出. 在弦的世界面作用量中，闭弦场$B_{\mu v}$与开弦场$A^{\mu}$以如下形式出现.
+\footnote{For the reader familiar with differential forms, this is
+	$$\frac{i}{2 \pi \alpha^{\prime}} \int_{M} B+i \int_{\partial M} A$$
+The reader can translate the subsequent equations similarly.}
+
+\begin{equation}
+	\frac{i}{4 \pi \alpha^{\prime}} \int_{M} d^{2} \sigma g^{1 / 2} \epsilon^{a b} \partial_{a} X^{\mu} \partial_{b} X^{v} B_{\mu v}+i \int_{\partial M} d X^{\mu} A_{\mu}
+\end{equation}
+这些场中的每一个都会连带一个时空规范不变性，为了与时空理论相容，必须予以保留. 通常的规范变换
+\begin{equation}
+	\delta A_{\mu}=\partial_{\mu} \lambda
+\end{equation}
+是作用量 $(8.7 .6)$的一个不变性，边界项会差一个全导数的积分. 反对称张量变分
+\begin{equation}
+	\delta B_{\mu v}=\partial_{\mu} \zeta_{v}-\partial_{v} \zeta_{\mu}
+\end{equation}
+会使得“块”作用量差一个全导数，但在有边界的世界面上，这给出表面项. 要使得它抵消，在张量规范对称性，开弦场 $A_{\mu}$ 也要变换
+\begin{equation}
+	\delta A_{\mu}=-\zeta_{\mu} / 2 \pi \alpha^{\prime}
+\end{equation}
+现在，只有组合
+\begin{equation}
+	B_{\mu v}+2 \pi \alpha^{\prime} F_{\mu v} \equiv 2 \pi \alpha^{\prime} \mathscr{F}_{\mu v}
+\end{equation}
+在两个对称下是不变的，因此出现在作用量中的必须是这个组合，因此，作用量的形式$(8.7 .2)$就完全确定了 .
+作为检验，很自然地，组合$G_{\mu v}+B_{\mu v}$ 应该出现，既然相同的组合出现在共形规范下的世界面作用量中，也可以取各种开弦振幅以及开弦-闭弦振幅的低能极限来决定作用量 (8.7.2) ，但这会费劲得多.\\
+对于$n$个分立的D膜，作用量是$n$份儿单个D膜作用量. 然而，我们已经看到，当D膜重合时，膜上会有 $n^{2}$ 个，而不是 $n$个无质量矢量和标量，我们将写下这一情况的有效作用量. 场 $X^{\mu}(\xi)$以及 $A_{a}(\xi)$ 现在将是 $n \times n$ 矩阵. 对于规范场，含义是显然的————它变成了non-Abelian $U(n)$ 规范场. 然而，对于坐标集 $X^{\mu}$, 含义是不清楚的：$n$ 个D膜到时空的嵌入坐标集扩展成 $n \times n$ 矩阵矩阵. 已经证明，非对易几何在D膜的动力学中扮演了重要角色，这里有一个猜想，它是时空特性的一个重要线索.\\
+通过考察有效作用量，我们可以获得更多启发. 作用量中现在有了非导数项，它是坐标集的势，这可以从 $A_{m}$ 场的 $T$ 对偶中推断出来. 对于这样的矢量势，场强就是$\left[A_{m}, A_{n}\right]$, 它在T对偶图景中变成了$\left(2 \pi \alpha^{\prime}\right)^{-2}\left[X_{m}, X_{n}\right]$ . 在场强中展开，作用量的领头阶大约是
+\begin{equation}
+	V \propto \operatorname{Tr}\left(\left[X_{m}, X_{n}\right]\left[X^{m}, X^{n}\right]\right)
+\end{equation}
+这个势在$X^{m}=0$处的二阶导数为零，这使得所有$k n^{2}$个标量均无质量；同以往一样 $k=25-p$ 是对偶维数. 然而平坦维数的空间更小些. 势是平方和，所以只在所有 $\left[X^{m}, X^{n}\right]$为零时为零. 我们可以用 $U(n)$对称性去往 $X^{m}$ 都对角的规范. 因此会有 $k n$ 个平坦方向，正是对角元个数. 
+这样， $k n$ 个对角元可以解释成 $n $个Dp膜坐标集. 因此 (8.7.11)正确地正确地介入了分离D膜与重合D膜的物理.\\
+当 $X^{m}$ 对易时，作用量应该退化到$n$个分立的D膜，所以有
+\begin{equation}
+	\begin{gathered}
+		\boldsymbol{S}_{p}=-T_{p} \int d^{p+1} \xi \operatorname{Tr}\left\{e^{-\Phi}\left[-\operatorname{det}\left(G_{a b}+B_{a b}+2 \pi \alpha^{\prime} F_{a b}\right)\right]^{1 / 2}\right. \\
+		\left.+O\left(\left[X^{m}, X^{n}\right]^{2}\right)\right\}
+	\end{gathered}
+\end{equation}
+行列式取在世界体指标 $a b$上，迹取在 $n$个 Chan-Paton指标上. 迹是合适的 $U(n)$ 不变量. 对于对角矩阵，它退化成对分离D膜求和. 对对易子的完整依赖关系要比简单的势 (8.7.11)复杂得多，其中会包含与其他场的耦合，以及对易子的高阶修正. 然而，关键性质，平坦方向的形式是不受影响的. 通过从完全Neumann情况下的 Born-Infeld 作用量出发，并进行$T$对偶，我们可得到完全的依赖性. 附带地，包含场强对易子的高阶导数项不能仅用 $T$ 对偶就决定下来.
+
+\subsection*{\centerline{The D-brane tension(D膜张力)}}
+计算常数$T_{p}$是很有意义的，并且对于超弦，它的精确值非常重要. 在进行显式的计算之前，注意到从T对偶可得到 $T_{p}$ 的递推关系. 注意到，在常数伸缩子背景下，Dp膜的张力是 $T_{p} e^{-\Phi}$：这是静态Tp膜单位体积内作用量的相反数. 现在考察这样的Dp膜. 与该Dp膜相切的 $p$ 个方向周期等价. 即，Dp膜绕在时空中的一个$p$ 环面上. 它的质量是它的张力乘以它的环面的面积
+\begin{equation}
+	T_{p} e^{-\Phi} \prod_{i=1}^{p}\left(2 \pi R_{i}\right)
+\end{equation}
+现在，对其中一个周期方向 $X^{p}$取T对偶. 这样不改变质量，只是同样一个态的新描述. 以T对偶理论的伸缩子 (8.3.31)，质量 $(8.7 .13)$ 是
+\begin{equation}
+	2 \pi \alpha^{\prime 1 / 2} T_{p} e^{-\Phi^{\prime}} \prod_{i=1}^{p-1}\left(2 \pi R_{i}\right)
+\end{equation}
+\begin{remark}
+利用了$\sqrt{\alpha^\prime}\exp ^{-\Phi^\prime}/R_p=\exp ^{-\Phi}$	
+\end{remark}
+然而，在对偶理论中，这相当于是 $\mathrm{D}(p-1)$ 膜缠绕在$(p-1)$环面上，所以它的质量：
+\begin{equation}
+	T_{p-1} e^{-\Phi^{\prime}} \prod_{i=1}^{p-1}\left(2 \pi R_{i}\right)
+\end{equation}
+联立 (8.7.14) 和(8.7.15) 给出
+\begin{equation}
+	T_{p}=T_{p-1} / 2 \pi \alpha^{\prime 1 / 2}
+\end{equation}
+除了一个总的归一化外，这完全决定了 $T_{p}$.\\
+为了决定D膜张力的实际值，我们需要计算弦振幅. 例如，我们可以从D膜的引力耦合将其推断出来. 这个振幅由一个带有引力子顶点算符的圆盘给出. 然而，这将包含一个未知的比值 $g_{\mathrm{c}} / g_{\mathrm{o}}^{2}$, 闭弦耦合来自于顶点算符，而开弦源于圆盘. 我们可以用另一方法获得绝对归一化. 考察两个平行的D膜，它们分别在 $X_{1}^{m}=0$和$X_{2}^{m}=y^{m} $ 处. 通过交换闭弦，这二者可以感到彼此的存在，如图\ref{Fig8.5}所示. 
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 609 717
+		%1px=0.75pt
+		\includegraphics[width=0.6\textwidth,natwidth=426.3,natheight=520]{Fig8.5.jpg}\\
+		\caption{Fig. 8.5. Exchange of a closed string between two D-branes. Equivalently, a vacuum loop of an open string with one end on each D-brane.}\label{Fig8.5}
+	\end{center}
+\end{figure}
+
+弦振幅是圆环，没有顶角算符，可以用上一章的方法计算出来. 那么，交换引力子和伸缩子给出的极点，就给出了闭弦态与D膜的耦合 $T_{p}$ .\\
+在7.4节中，我们开弦圈计算了圆环真实振幅，但从模积分的 $t \rightarrow 0$ 极限中发现了闭弦极点. 这正是我们感兴趣的极点，但计算振幅的最简单方法是视其为开弦圈. 事实上，只要稍许改变，就能把之前的结果 (7.4.1)拿过来. 动量积分的数目从26减少到$p+1$ . 类似地， $V_{26}$ 变成 $V_{p+1} $，权重 $h_{i}$ 由于拉伸开弦获得额外项 $y^{2} / 4 \pi^{2} \alpha^{\prime}$ ；Chan-Paton 权重 $n^{2}$ 变成2 (因为弦连接的方向有两个). 因此有
+\begin{equation}
+	\begin{aligned}
+		\mathscr{A}=i V_{p+1} \int_{0}^{\infty} \frac{d t}{t}\left(8 \pi^{2} \alpha^{\prime} t\right)^{-(p+1) / 2} \exp \left(-t y^{2} / 2 \pi \alpha^{\prime}\right) \eta(i t)^{-24} \\
+		=\frac{i V_{p+1}}{\left(8 \pi^{2} \alpha^{\prime}\right)^{(p+1) / 2}} \int_{0}^{\infty} d t t^{(21-p) / 2} \exp \left(-t y^{2} / 2 \pi \alpha^{\prime}\right) \\
+		\times[\exp (2 \pi / t)+24+\ldots]
+	\end{aligned}
+\end{equation}
+其中渐近展开以7.4节方法获得. 第一项是快子交换，所以是玻色人工产物；对第二项积分给出
+\begin{equation}
+	\begin{aligned}
+		\mathscr{A} &=i V_{p+1} \frac{24}{2^{12}}\left(4 \pi^{2} \alpha^{\prime}\right)^{11-p} \pi^{(p-23) / 2} \Gamma\left(\frac{23-p}{2}\right)|y|^{p-23} \\
+		&=i V_{p+1} \frac{24 \pi}{2^{10}}\left(4 \pi^{2} \alpha^{\prime}\right)^{11-p} G_{25-p}(y)
+	\end{aligned}
+\end{equation}
+其中 $G_{d}(y)$ 是$d$ 维中无质量标量的Green函数， $-\nabla^{2}$的逆.\\
+我们现在要与相同振幅的场论作一比较. 既然反对称张量不与D膜耦合，从时空作用量 (3.7.25)中，相关项是
+\begin{equation}
+	\boldsymbol{S}=\frac{1}{2 \kappa^{2}} \int d^{26} X(-\tilde{G})^{1 / 2}\left(\tilde{\boldsymbol{R}}-\frac{1}{6} \nabla_{\mu} \tilde{\Phi} \tilde{\nabla}^{\mu} \tilde{\Phi}\right)
+\end{equation}
+加波浪线是指Einstein度规；由于这一形式的作用量与伸缩子退耦，所以比较方便. 加波浪线的伸缩子已经进行了偏移，使得它的真空期望值为零. 以同一变量的形式，D膜作用量 $(8.7 .2)$ 中的相关项是
+\begin{equation}
+	\boldsymbol{S}_{p}=-\tau_{p} \int d^{p+1} \xi \exp \left(\frac{p-11}{12} \tilde{\Phi}\right)\left(-\operatorname{det} \tilde{G}_{a b}\right)^{1 / 2}
+\end{equation}
+我们定义了 $\tau_{p}=T_{p} e^{-\Phi_{0}} $ ；当伸缩子的背景值是 $\Phi_{0}$时，这是Dp膜的真实物理张力.\\
+类比图\ref{Fig8.5}的场论图是在D膜之间交换伸缩子或引力子. 为了获得传播子，我们将时空作用量展至$h_{\mu v}=\tilde{G}_{\mu v}-\eta_{\mu v}$ 和 $\tilde{\Phi}$的二阶. 另外，对于引力计算，我们需要选择规范. 对于微扰计算，最简单的规范是
+\begin{equation}
+	F_{v} \equiv \partial^{\hat{\mu}} h_{\mu v}-\frac{1}{2} \partial_{v} h^{\hat{\mu}}_{\mu}=0
+\end{equation}
+其中，“hat”是指用平坦度规 $\eta^{\mu v} $升降的指标. 将作用量展开至二阶， 并加上规范固定项 $-F_{v} F^{\hat{v}} / 4 \kappa^{2}$, 时空作用量变成
+\begin{equation}
+	\boldsymbol{S}=-\frac{1}{8 \kappa^{2}} \int d^{26} X\left(\partial_{\mu} h_{v \lambda} \partial^{\hat{\mu}} h^{\hat{v} \hat{\lambda}}-\frac{1}{2} \partial_{\mu} h_{v} \hat{\nu}_{\nu} \hat{\mu}^{\hat{\mu}} h_{\lambda}^{\hat{\lambda}}+\frac{2}{3} \partial_{\mu} \tilde{\Phi} \partial^{\hat{\mu}} \tilde{\Phi}\right)
+\end{equation}
+观察动能项，由此获得动量空间传播子
+\begin{subequations}
+\begin{equation}
+		\langle\tilde{\Phi} \tilde{\Phi}\rangle =-\frac{(D-2) i \kappa^{2}}{4 k^{2}} 
+\end{equation}
+\begin{equation}	
+		\left\langle h_{\mu v} h_{\sigma \rho}\right\rangle =-\frac{2 i \kappa^{2}}{k^{2}}\left(\eta_{\mu \sigma} \eta_{v \rho}+\eta_{\mu \rho} \eta_{v \sigma}-\frac{2}{D-2} \eta_{\mu v} \eta_{\sigma \rho}\right)
+\end{equation}
+\end{subequations}
+为了之后参考，我们给出了一般的$D$. 围绕一般平坦构形展开，D膜作用量是
+\begin{equation}
+	\boldsymbol{S}_{p}=-\tau_{p} \int d^{p+1} \xi\left(\frac{p-11}{12} \tilde{\Phi}-\frac{1}{2} h_{a a}\right)
+\end{equation}
+注意这里的$h_{\mu v}$ 仅对与D膜相切的方向求迹. 我们已经取 $\xi$ 为度规为$\delta_{a b}$
+的直角坐标.\\
+我们现在可读出Feynman 图
+\begin{equation}
+	\begin{aligned}
+		\mathscr{A} &=\frac{i \kappa^{2} \tau_{p}^{2}}{k_{\perp}^{2}} V_{p+1}\left\{6\left[\frac{p-11}{12}\right]^{2}+\frac{1}{2}\left[2(p+1)-\frac{1}{12}(p+1)^{2}\right]\right\} \\
+		&=\frac{6 i \kappa^{2} \tau_{p}^{2}}{k_{\perp}^{2}} V_{p+1}
+	\end{aligned}
+\end{equation}
+\begin{remark}
+来自于$\langle S_p S_p \rangle$.
+\end{remark}
+与 (8.7.18) 比较给出
+\begin{equation}
+	\tau_{p}^{2}=\frac{\pi}{256 \kappa^{2}}\left(4 \pi^{2} \alpha^{\prime}\right)^{11-p}
+\end{equation}
+这与T对偶给出的递推关系一致.\\
+作为一个应用，考察有 $n $个25膜的态，这与普通的$n $值Chan-Paton 因子相同. 将25膜作用量 $(8.7 .12)$展至规范场的二阶，给出
+\begin{equation}
+	\frac{\tau_{25}}{4}\left(2 \pi \alpha^{\prime}\right)^{2} \operatorname{Tr}\left(F_{\mu \nu} F^{\mu v}\right)
+\end{equation}
+这关联了开弦规范耦合与闭弦引力耦合. 利用(6.5.14), (6.5.16), (6.6.15), 和 (6.6.18), 我们可以将其写为顶点算符归一化 $g_{\mathrm{c}}$ 与 $g_{\mathrm{o}}$之间的关系
+\begin{equation}
+	\frac{g_{0}^{2}}{g_{\mathrm{c}}}=\frac{4 \pi \alpha^{\prime} g_{0}^{\prime 2}}{\kappa}=2^{18} \pi^{25 / 2} \alpha^{6}
+\end{equation}
+它拥有正确的形式. 开弦耦合的平方正比于闭弦耦合，但现在有了数值系数. 我们经由幺正性，从圆环中分解出闭弦极点，或参看习题7.9
+
+
+\section{非定向弦的T对偶}%{8.8 T-duality of unoriented theories}
+在非定向的弦理论中， $R \rightarrow 0$的极限也会给出有趣的新物理. 首先考察闭弦理论. 为了构成非定向理论，我们在态上强加$\Omega=+1$ . 沿用8.5节的讨论，我们也可认为这是规范化 $\Omega$. 特别地，用来构建世界面的跃迁函数现在会方向反转. 并且这产生了非定向世界面.\\
+T对偶理论是通过用坐标$X^{\prime m}(z, \bar{z})=$ $X_{L}^{m}(z)-X_{R}^{m}(\bar{z})$替换 $X^{m}(z, \bar{z})=X_{L}^{m}(z)+X_{R}^{m}(\bar{z}) $获得的. 在原始描述中，我们规范化世界面宇称 $\Omega$, 它的作用
+\begin{equation}
+	\Omega: X_{L}^{M}(z) \leftrightarrow X_{R}^{M}(z)
+\end{equation}
+以T对偶坐标，这是
+\begin{subequations}
+	\begin{equation}
+		\Omega: \quad X^{\prime m}(z, \bar{z})  \leftrightarrow-X^{\prime m}(\bar{z}, z) 
+	\end{equation}
+	\begin{equation}
+		X^{\mu}(z, \bar{z})  \leftrightarrow X^{\mu}(\bar{z}, z)
+	\end{equation}
+\end{subequations}
+同之前一样， $m$ 标记取T对偶的坐标，$\mu$ 标记不取T对偶的坐标. 在对偶图景中，对称性(8.8.2)因此是世界面宇称变换和时空反演的乘积. 我们看到规范化世界面宇称仅产生非定向理论，而规范化反演仅产生轨形. 组合投射的结果称为定向形(orientifold).\\
+定向形与轨形非常类似. 将弦的波函数分成它的内部以及依赖质心$x^{m}$的部分，取内部波函数为 $\Omega$的本征态，那么到 $\Omega=+1$ 的投射就表明 $-x^{m}$处的弦波函数与 $x^{m}$处相同，所差的仅是一个符号. 例如度规与反对称张量的分量满足
+\begin{subequations}
+\begin{equation}
+		G_{\mu v}\left(x^{\prime}\right) =G_{\mu v}(x),  B_{\mu \nu}\left(x^{\prime}\right)=-B_{\mu v}(x) 
+\end{equation}
+\begin{equation}		
+		G_{\mu n}\left(x^{\prime}\right) =-G_{\mu n}(x),  B_{\mu n}\left(x^{\prime}\right)=B_{\mu n}(x) 
+\end{equation}
+\begin{equation}		
+		G_{m n}\left(x^{\prime}\right) =G_{m n}(x),  B_{m n}\left(x^{\prime}\right)=-B_{m n}(x)
+\end{equation}
+\end{subequations}
+其中 $\left(x^{\mu}, x^{m}\right)^{\prime}=\left(x^{\mu},-x^{m}\right) $.  对于每个 $m, n$ 会有一个负号，对于 $B_{M N}$会有另一个负号. 这与轨形完全相同. 换句话说，T对偶时空是环面$T^{k}$ 模掉k个紧致维中的 $\mathbf{Z}_{2}$ 反射，与轨形的构建完全相同. 例如，如果只有一个周期性，对偶时空是线段 $0 \leq x^{25} \leq \pi R^{\prime}$, 端点处是定向形固定平面.\\
+注意到，当远离定向形不动平面时，定域物理是定向弦论的物理. 不像原始的非定向理论，在那里投射定域地移除一半的态. 在这里它将任意点的弦波函数与它在镜像点的值关联起来，就像(8.8.3)中那样.\\
+轨形构造与定向形构造的一个不同之处在于后者没有扭态的直接类比，原因是Klein瓶没有模变换 $\tau \rightarrow-1 / \tau$. 考察图\ref{Fig8.6}，它给出了环面与Klein瓶. 
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 1072 381
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=750.4,natheight=266.7]{Fig8.6.jpg}\\
+		\caption{Fig. 8.6. Identifications defining (a) the torus and (b) the Klein bottle.}\label{Fig8.6}
+	\end{center}
+\end{figure}
+
+在环面上，投射算符在图\ref{Fig8.6}a的类时方向上插入了一个扭转；将这个图转$90^{\circ}$, 这变成了空间方向上的扭转，暗示了频谱中有扭态. 然而，如果图\ref{Fig8.6}b的Klein瓶转了 $90^{\circ}$, 相对边上的时间方向无法匹配. 所以在这个道上没有中间态的解释. 由此要注意的是，定向形平面不能是动力学的. 不像D膜的情况，没有弦模拴在定向形平面上来代表它的形状的涨落. 我们的启发性讨论————引力波迫使D膜在这里振荡，并不适用于定向形平面. 最终，等价关系 (8.8.3) 变成不动平面上的边界条件，使得入射波与反射波抵消. 对于D膜，反射波是弦耦合的高阶量.\\
+在画定向弦时，我们用箭头表示方向. 在非定向理论中，我们即可省略箭头，也可取两个方向的线性组合. 后一个图景与规范化离散对称性的想法更一致，并且更广泛：在定向形中，宇称算符要伴随一个时空变换，所以我们不能仅仅忘掉箭头.\\
+尽管我们经由T对偶引入了定向形构造，也可考察那种不是环向紧致化T对偶的更一般定向形，将世界面宇称与各种时空对称性组合以规范化一个群.
+
+\subsection*{\centerline{Open strings(开弦)}}
+在开弦的情况中，情况是类似的. 简单起见，我们仅考察一个紧致维的情况. 同之前一样，在0和 $\pi R^{\prime}$处有定向形不动平面. 引入 $S O(n)$ Chan-Paton 因子 (辛对称性类似),一般的Wilson线可变成对角形式. 当 $n$ 为偶数时，本征值两两配对：
+\begin{equation}
+	W=\operatorname{diag}\left(e^{i \theta_{1}}, e^{-i \theta_{1}}, e^{i \theta_{2}}, e^{-i \theta_{2}}, \cdots, e^{i \theta_{n / 2}}, e^{-i \theta_{n / 2}}\right)
+\end{equation}
+因此，在对偶图景中，在线段 $0 \leq X^{\prime 25} \leq \pi R^{\prime}$中有 $\frac{1}{2} n$ 个D膜，另外 $\frac{1}{2} n$ 个在镜像点. 弦可以在D膜和镜像之间张开, 如图\ref{Fig8.7}所示. 
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 1030 767
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=721,natheight=555]{Fig8.7.jpg}\\
+		\caption{Fig. 8.7. Orientifold planes at 0 and $\pi R^{\prime}$, D-branes at $\theta_{1} R^{\prime}$ and $\theta_{2} R^{\prime}$, and Dbrane images at $-\theta_{1} R^{\prime}$ and $-\theta_{2} R^{\prime} .$ The twist operator $\Omega$ acts on any string by a combination of a spacetime reflection and reversing the orientation arrow, so that the string running from 2 to the image of 1 becomes a string running from 1 to the image of 2.}\label{Fig8.7}
+	\end{center}
+\end{figure}
+
+一般规范群是 $U(1)^{n / 2}$. 同定向理论中相同，如果$r$个D膜重合，存在$U(r)$ 规范群. 如果现在这 $r$个D膜还在其中一个不动平面上，那么在这些膜中的一个与镜像膜之间张开的弦也是无质量的. 我们就有额外态的正确频谱以填补 $S O(2 r) $ . 如果所有膜都在一个定向面上，就恢复了最大 $S O(n)$.\\
+如果$n$是奇数，$W$ 的最后一个本征值是$\pm 1$, 使得在 $T$ 对偶图景中，固定在两个定向面中的一个. 没有镜像，这实际是半D膜，像它的质量测量. 另外如果我们考察 $n=2$ 的Wilson线 $\operatorname{diag}(1,-1)$ (这在 O(2) 而非SO(2)中), 那么出现的就不是一个D膜和它的像，而是两个半D膜.\\
+同D膜一样，定向平面会与伸缩子和度规耦合，振幅与上节相同；只不过要用Klein瓶和 Möbius 带替换圆环. 实际上，我们已经在第7章做过相关计算. 在那里我们发现总伸缩子耦合对于$S O\left(2^{13}\right) $抵消了. 在T对偶图景中， $2^{12}$ D的总伸缩子耦合抵消了 (镜像未参与计数). 如果我们对$k=25-p$ 个维度紧致化，就会有 $2^{k}$个不动平面，它们的坐标是0和$\pi R_{m}^{\prime} $的所有组合. 因此单个不动平面的有效作用量是
+\begin{equation}
+	2^{12-k} T_{p} \int d^{p+1} \xi e^{-\Phi}\left(-\operatorname{det} G_{a b}\right)^{1 / 2}
+\end{equation}
+积分跑遍不动平面.\\
+尽管定向形没有扭转截面的直接类比，但是某种意义下，扭态是开弦. 既然这个类比不是完全的，我们不倾向于强调这一点：规范化 $\Omega$ 自身并不引入世界面边界. 然而，在定向形理论中加入开弦，以抵消伸缩子蝌蚪，却有一定的物理意义. 这个抵消在超弦中将扮演重要角色.

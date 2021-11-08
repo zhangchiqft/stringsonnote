@@ -1,0 +1,1145 @@
+\chapter{杂化弦}
+
+\section{世界面超对称性}
+
+在上一章, 我们看到了通过增加超流$ T_{F}(z) $和$ \tilde{T}_{F}(\bar{z}) $的方法来扩大世界面约束代数. 现在我们来看一下这个想法能走多远, 具体来说, 就是寻找全纯流或反全纯流的集合使得它们的\,Laurent\,系数构成封闭的代数.
+
+我们先来指明整体对称性和约束的区别. 世界面上的整体对称性就像时空中的整体对称性, 它暗示了质量和振幅之间的关系. 然而, 我们通常也会挑出一部分对称性作为{\emph{约束}}附加到系统上, 这意味着物理态必须要被这些约束湮灭. 在玻色弦中, 时空\,Poincar\'{e}\,对称性是世界面理论的一个整体对称性, 而共形对称性是约束. 我们目前的兴趣是约束代数, 事实上我们发现的可能的集合非常小, 但后面我们会遇到一些加性代数, 它们是作为整体对称性出现的. 
+
+首先要注意到, 能够作为世界面对称性代数的集合非常大. 举例来说, 在玻色弦中, 因子$ \partial^{n}X^{\mu} $的任意乘积都是全纯流. 在大多数情况下, 这种流的\,OPE\,会生成无限多个新流. 即使限制到个数有限的流上, 依然留下了无限多的可能性.
+
+我们先集中在全纯流上. 在幺正\,CFT\,中, 仅当算符的权重为$ (h,0) $且$ h>0$, 这个算符才能是全纯的.(全纯要求$ \tilde{h}=0$, 幺正性给出$ h>0$.) 尽管完整的世界面理论因带有鬼场和类时振子而没有正定的范数, 空间部分却确实是幺正的, 所以它处在对称性的一个幺正表示中. 由于$ \tilde{h}=0$, 流的自旋也等于$ h$. (注意, $h+\tilde{h}$ 决定流的标度行为, $h-\tilde{h} $决定流的标度行为, 这是因为$ z\bar{z}=r^{2}$, $ z/\bar{z}=\me^{2\mi\varphi}$, 其中$ z=r\me^{\mi\varphi}$.) 我们假定流是厄密的, 现在在考察如下的可能性:
+
+{\emph{自旋}}$ h\geq 2$, 对于自旋$ >2 $的流的代数, 我们通常称其为$ W ${\emph{代数}}. 大多数是已知的, 包括几类无限大的代数, 但是还没有完整的分类. 有过将其中的一些代数用作约束代数的尝试. 其中的一个困难就是, 生成元的对易子一般是生成元的非线性函数, 这使得\,BRST\,算符的构造变得非常不平庸. 少数几个被构造出的例子在规范固定后被发现只是玻色弦的特殊情况. 另一个困难是几何解释不清楚. 所以我们将把我们的注意力放在$ h\leq 2 $的代数上. 另外, CFT\,可以拥有多个$ (2,0) $流作为整体对称性. 玻色弦至少有\,27\,个, 即鬼场的能动量张量和\,26\,个$ X^{\mu} $场的能动量张量. 然而只有它们的和有作为共形不变性的几何解释, 因此我们将假定只有一个$(2,0)$约束流, 即总的能动量张量.
+
+{\emph{自旋$ h $不是$ \frac{1}{2} $的整数倍}}. 对于自旋为$ h $的流$ j$,
+\begin{equation}
+    j(z)j(0)\sim z^{-2h} \label{11.1.1}
+\end{equation}
+如果$ 2h $不是整数, 这将是多值的. 尽管已经已知有很多\,CFT\,拥有这样的流, 但如果我们尝试把这样的流作为约束时, 非定域性会带来困难. 构造这种{\emph{分数弦}}的尝试给出了部分结果, 但是这样的理论是否存在依旧是不清楚的. 所以我们限制在$ h $是$ \frac{1}{2} $的整数倍.
+
+有了这些约束, 可能的代数被极大的限制了, 自旋只能是$ 0,\frac{1}{2},1,\frac{3}{2},2$. Jacobi\,恒等式允许的代数列在表\ref{tab:11.1}中. 前两个显然是我们研究过的共形代数和$ N=1 $超共形代数. 3\,个$ N=4 $的代数彼此相关. 其中, 第二个代数是第一个代数的特殊情况, 即第一个代数的$ U(1) $流是某个标量的梯度. 第三个则是第二个的子代数.
+
+\begin{table}[ht]
+\caption{世界面超共形代数. 表中列出了每个自旋流的数目, 总的鬼场中心荷, 自旋\,1\,流生成的整体对称性, 以及超荷在这些对称性下的变换.}
+\label{tab:11.1}%
+\centering
+\begin{tabular}[c]{cccccll}
+\hline\hline
+ $\vphantom{\Big[}n_{3/2}=N$ & $n_{1}$ & $n_{1/2}$ & $n_{0}$ & $c^{\text{g}}$ & symmetry & $T_{F}\:$rep. \\
+\hline
+ 0 & 0 & 0 & 0 & $-26$ & &  \\
+ 1 & 0 & 0 & 0 & $-15$ & &  \\
+ 2 & 1 & 0 & 0 & $-6$ & $U(1)$ & $\pm1$  \\
+ 3 & 3 & 1 & 0 & 0 & $SU(2)$ & $\mathbf{3}$  \\
+ 4 & 7 & 4 & 0 & 0 & $SU(2)\times SU(2)\times U(1)$ & $(\mathbf{2},\mathbf{2},0)$  \\
+ 4 & 6 & 4 & 1 & 0 & $SU(2)\times SU(2)$ & $(\mathbf{2},\mathbf{2})$  \\
+ 4 & 3 & 0 & 0 & 12 & $SU(2)$ & $\mathbf{2}$  \\
+ \hline\hline
+\end{tabular}
+\end{table}
+
+鬼场中心荷由每个自旋的流的数目决定, 对自旋为$ h $的流相关的鬼场中心荷是
+\begin{subequations}
+    \begin{align}
+        c_{h}&=(-1)^{2h+1}[3(2h-1)^{2}-1] \: , \label{11.1.2a} \\
+        c_{2}&=-26\:,\qquad c_{3/2}=+11\:,\qquad c_{1}=-2\:,\qquad c_{1/2}=-1\:, \qquad c_{0}=-2\:. \label{11.1.2b}
+    \end{align} \label{11.1.2}
+\end{subequations}
+符号$ (-1)^{2h+1} $是将鬼场的统计考虑在内的结果, 对于整数自旋反对易, 对于半整数自旋对易. 由于物质场中心荷$ c^{\text{m}} $是$ -c^{\text{g}}$, 所以只有一种新代数有临界维数, 即$ N=2$.
+
+对于$ N=2$, 将两个实超流组合成一个复超流将是方便的
+\begin{equation}
+    T_{F}^{\pm} = 2^{-1/2}(T_{F1}\pm \mi T_{F2}) \:. \label{11.1.3}
+\end{equation}
+这样, $N=2 $代数在算符积形式下就是
+\begin{subequations}
+    \begin{align}
+        T_{B}(z)T_{F}^{\pm}(0)&\sim \frac{3}{2z^{2}} T_{F}^{\pm}(0) + \frac{1}{z}\partial T_{F}^{\pm}(0)\:,\label{11.1.4a} \\
+        T_{B}(z) j(0) &\sim \frac{1}{z^{2}} j(0) +\frac{1}{z}\partial j(0) \:, \label{11.1.4b} \\
+        T_{F}^{+}(z)T_{F}^{-}(0)&\sim \frac{2c}{3z^{3}}+\frac{2}{z^{2}}j(0)+\frac{2}{z}T_{B}(0)+\frac{1}{z}\partial j(0) \:,\label{11.1.4c} \\
+        T^{+}_{F}(z)T^{+}_{F}(0)& \sim T^{-}_{F}(z)T^{-}_{F}(0) \sim 0 \:, \label{11.1.4d} \\
+        j(z)T_{F}^{\pm}(0) &\sim \pm \frac{1}{z} T_{F}^{\pm}(0) \:, \label{11.1.4e} \\
+        j(z)j(0) &\sim \frac{c}{3z^{2}}\:. \label{11.1.4f}
+    \end{align}
+\end{subequations}
+这暗示了$ T_{F}^{\pm} $和$ j $是\,primary field, $T_{F}^{\pm} $在$ j $生成的$ U(1) $下拥有荷$ \pm1$. 根据\,Jacobi\,恒等式, $T_{F}^{+}T_{F}^{-} $和$ jj $中的常数$ c $必须是中心荷.
+
+$N=2 $代数的最小线性表示拥有两个实标量场和两个费米子, 我们将其组合成一个复标量$ Z $和复费米子$ \psi$. 作用量是
+\begin{equation}
+    S=\frac{1}{2\pi} \int \dif^{2}z\Bigl( \partial \overline{Z}\bar{\partial}Z 
+    +\overline{\psi}\bar{\partial}\psi + \tilde{\overline{\psi}}\partial\tilde{\psi}\Bigr)\:. \label{11.1.5}
+\end{equation}
+流是
+\begin{subequations}
+    \begin{align}
+        T_{B} &= -\partial\overline{Z}\partial Z -\frac{1}{2}(\overline{\psi}\partial\psi+\psi\partial\overline{\psi})\:,\qquad j=-\overline{\psi}\psi \:,\label{11.1.6a} \\
+        T_{F}^{+} &= 2^{1/2} \mi\psi \partial\overline{Z} \:, \qquad 
+        T_{F}^{-} = 2^{1/2} \mi\overline{\psi} \partial Z\:. \label{11.1.6b}
+    \end{align} \label{11.1.6}
+\end{subequations}
+同时还存在反全纯流, 所以这个$ Z\psi\tilde{\psi} $CFT\,拥有$(2,2)$超共形对称性.
+
+$Z\psi\tilde{\psi} $ CFT 的中心荷是\,3, 所以两个这样的\,CFT\,将会抵消鬼场中心荷. 由于每个\,CFT\,中有两个实标量场, 所以临界维数是\,4. 然而这些维数组合成复对, 所以时空只能是纯欧几里得时空或者$ (2,2) $时空, 但是不可能是闵可夫斯基$ (3,1) $时空. 更进一步, 这个理论只有\,4\,维平移不变性但是没有\,4\,维\,Lorentz\,不变性. 这里的对称性是$ U(2) $或$ U(1,1)$. 最后, 这里的频谱非常小. 约束完全确定了两组$ Z\psi\tilde{\psi} $振子. 因此只剩下了单态的质心运动. 这有一些数学上的兴趣, 但它是否有物理应用仍然是不清楚的.
+
+这样我们又回到了原始的$ N=0 $代数和$ N=1 $代数. 然而, 存在另一种推广, 即闭弦的左移和右移有不同的代数. 全纯代数和反全纯代数彼此对易, 所以没有什么理由使得它们必须是相等的. 在开弦中, 边界条件将全纯部分和反全纯部分关联在一起, 所以开弦没有类似的构造.
+
+这给出了一种新的可能性, $(N,\tilde{N})=(0,1)$ {\emph{杂化弦}}; $(N,\tilde{N})=(1,0)$ 与它同构, 不再单独考察. 另外$ (0,2) $杂化弦论和$ (1,2) $杂化弦论有一些数学上的兴趣.
+
+应该强调的是, 本节的分析有很多显式和隐式的假设, 在我们找到所有弦论这些应该谨慎对待这些假设. 事实上, 确实有一些理论没有落在这个分类中. 一个是超弦的\,Green-Schwarz\,形式. 它们没有简单的协变规范固定, 但在光锥规范下, 经由玻色化可以证明它实际上等价于\,RNS\,超弦. 另一个例外是{\emph{拓扑弦理论}}, 它在协变约束下不满足我们假定的自旋-统计. 这个弦理论没有物理自由度, 但由于它的可观测量是拓扑的, 所以它在数学上有一些有趣的应用.
+
+
+
+
+\section{\texorpdfstring{$SO(32)$ 和 $E_{8}\times E_{8}$ 杂化弦}{The SO(32) and E8 X E8 heterotic strings}}
+
+(0,1)\,杂化弦结合了左移玻色弦和右移\,II\,型弦的鬼场和约束. 事实上我们可以更进一步, 将玻色弦的左移和\,II\,型弦的右移组合在一起, 这样左边就是26个平坦维, 右边是10个平坦维. 这是可以实现的, 但是它的物理含义不清楚, 因此我们在两边保持相同的维数. 因而是10. 我们从如下的场出发
+\begin{equation}
+    X^{\mu}(z,\bar{z})\:,\qquad \tilde{\psi}^{\mu}(\bar{z}) \:, \qquad \mu = 0,\cdots,9\:, \label{11.2.1}
+\end{equation}
+总的中心荷是$ (c,\tilde{c})=(10,15)$. 鬼场中心荷是$(c^{\text{g}},\tilde{c}^{\text{g}})=(-26,-15)$, 所以剩余的物质场有$(c,\tilde{c})=(16,0)$. 最简单的可能性是取\,32\,个左移自旋$ \frac{1}{2} $场
+\begin{equation}
+    \lambda^{A}(z) \:, \qquad A=1,\cdots,32\:. \label{11.2.2}
+\end{equation}
+总的物质场作用量是
+\begin{equation}
+    S=\frac{1}{4\pi} \int \dif^{2}z\: \biggl( \frac{2}{\alpha^{\prime}}\partial X^{\mu}\bar{\partial}X_{\mu}
+    +\lambda^{A}\bar{\partial}\lambda^{A}+\tilde{\psi}^{\mu}\partial\tilde{\psi}_{\mu}\biggr)\:.\label{11.2.3}
+\end{equation}
+算符积是
+\begin{subequations}
+    \begin{align}
+        X^{\mu}(z,\bar{z})X^{\nu}(0,0) &\sim -\eta^{\mu\nu} \frac{\alpha^{\prime}}{2} \ln\lvert z\rvert^{2} \:,\label{11.2.4a} \\
+        \lambda^{A}(z)\lambda^{B}(z) &\sim \delta^{AB}\frac{1}{z} \:, \label{11.2.4b} \\
+        \tilde{\psi}^{\mu}(\bar{z})\tilde{\psi}^{\nu}(0) &\sim \eta^{\mu\nu}\frac{1}{\bar{z}} \:.\label{11.2.4c}
+    \end{align}
+\end{subequations}
+能动量张量和超流是
+\begin{subequations}
+    \begin{align}
+        T_{B} &= -\frac{1}{\alpha^{\prime}}\partial X^{\mu}\partial X_{\mu} -\frac{1}{2}\lambda^{A}\partial\lambda^{A}\:,\label{11.2.5a} \\
+        \tilde{T}_{B}&= -\frac{1}{\alpha^{\prime}}\bar{\partial}X^{\mu}\bar{\partial}X_{\mu} 
+        -\frac{1}{2}\tilde{\psi}^{\mu}\bar{\partial}\tilde{\psi}_{\mu} \:, \label{11.2.5b} \\
+        \tilde{T}_{F}&= \mi(2/\alpha^{\prime})^{1/2}\tilde{\psi}^{\mu}\bar{\partial}X_{\mu} \:.\label{11.2.5c}
+    \end{align} \label{11.2.5}
+\end{subequations}
+
+世界面理论拥有对称性$ SO(9,1)\times SO(32)$. $SO(32)$ 作用在$ \lambda^{A} $上, 它是内部对称性. $\lambda^{A}$ 不能有类时的特征, 这是因为它们费米约束来消除掉负范态. 所以, 尽管$ \lambda^{A} $的作用量和\,RNS\,超弦的$ \psi $的作用量相同, 但是由于约束不同, 这两个理论之间差异很大.
+
+右移鬼和\,RNS\,超弦相同, 左移鬼和玻色弦相同. 幂零\,BRST\,荷和无鬼定理的证明是直接的. 
+
+为了完成对这个理论的描述, 我们需要指定场上的边界条件以及频谱中的截面. 现在的情况要比\,II\,型弦更加复杂, 现在Poincar\'{e}不变性和\,BRST\,不变性并没有要求所有$ \lambda^{A} $有相同的边界条件. $T_{B} $周期性仅要求$ \lambda^{A} $在差一个$O(32)$旋转的意义下是周期的,
+\begin{equation}
+    \lambda^{A}(w+2\pi) = O^{AB}\lambda^{B}(w) \:. \label{11.2.6} 
+\end{equation}
+我们不对相容理论做系统的分析, 但是会给出所有已知的理论. 基于作用量(\ref{11.2.3})已知有\,9\,个理论, 其中\,6\,个有快子. 在剩下的\,3\,个无快子的理论中, 两个有时空超对称性, 这两个理论将是我们的主题.
+
+在\,IIA\,型和\,IIB\,型超弦中, GSO\,投射分别作用在左移和右移上. 在任何超对称杂化理论中, 这也是成立的. 带有时空对称性的世界面流是方程(\ref{10.4.25})中的$ \mathscr{V}_{\mathbf{s}}$, 其中$ \mathbf{s} $属于$ \mathbf{16}$. 为了使相应的荷是合理定义的, 这个流与任何顶点算符的\,OPE\,必须是单值的. 对于这个顶点算符的右移旋量部分, 自旋本征值$ \mathbf{s}^{\prime} $对于任何$ \mathbf{s}\in\mathbf{16} $必须满足
+\begin{equation}
+    \mathbf{s}\cdot \mathbf{s}^{\prime} + \frac{l}{2} \in \mathds{Z} \:, \label{11.2.7}
+\end{equation}
+其中\,NS\,截面中$ l $等于$ -1$, R\,截面中$ l $等于$ -\frac{1}{2}$. 取$ \mathbf{s}=(\frac{1}{2},\frac{1}{2},\frac{1}{2},\frac{1}{2},\frac{1}{2})$, 这个条件精确是右移\,GSO\,投射
+\begin{equation}
+    \exp(\pi\mi\tilde{F})=1\: ; \label{11.2.8}
+\end{equation}
+任何其它的$ \mathbf{s}\in\mathbf{16} $给出相同的条件.
+
+现在我们对左移旋量也附加\,GSO\,投射. 即我们对所有\,32\,个分量取相同的周期性
+\begin{equation}
+    \lambda^{A}(w+2\pi)=\pm\lambda^{A}(w)  \:, \label{11.2.9}
+\end{equation}
+并对左移费米子数附加
+\begin{equation}
+    \exp(\pi\mi F)=1\:. \label{11.2.10}
+\end{equation}
+通过玻色化的方法很容易证明\,OPE\,是定域且封闭的, 方法和\,IIA\,弦和\,IIB\,弦相同. 将\,32\,个实费米子组合成\,16\,个复费米子给出
+\begin{equation}
+    \lambda^{K\pm}=2^{-1/2}(\lambda^{2K-1}\pm\mi\lambda^{2K})\:, \qquad K=1,\cdots,16 \:. \label{11.2.11}
+\end{equation}
+这些可以玻色化用\,16\,个左移标量$ H^{K}(z) $表示. 通过类比\,II\,型弦中 $F$ 的定义, 定义
+\begin{equation}
+    F=\sum_{K=1}^{16}q_{K} \:, \label{11.2.12}
+\end{equation}
+其中$ \lambda^{K\pm} $有$ q_{K}=\pm1$. $F $是加性的, 所以\,OPE\,是封闭的, 而投射(\ref{11.2.10})保证了与\,R\,截面顶点算符没有分支切割. 在玻色化的描述中, 我们有\,26\,个左移玻色子和$ 10 $个右移玻色子, 所以(\ref{11.2.3})实际上是玻色弦和\,II\,型弦的融合(fusion). 
+
+模不变性是直接的. $\lambda $的配分函数是
+\begin{equation}
+    Z_{16}(\tau)= \frac{1}{2}\Bigl[
+    Z^{0}{}_{0}(\tau)^{16}+ Z^{0}{}_{1}(\tau)^{16}+Z^{1}{}_{0}(\tau)^{16}+Z^{1}{}_{1}(\tau)^{16}
+    \Bigr] \:. \label{11.2.13}
+\end{equation}
+模变换的效果仅是对这四项的置换, 在 $\tau\to -1/\tau $下没有相位, 而在$ \tau\to\tau+1 $下会产生$ \exp(2\pi\mi/3) $的相位. 这个相位会与$ \tilde{\psi} $的配分函数$ Z_{\psi}^{+}(\tau)^{\ast} $的相位相抵消. (\ref{11.2.13})的形式类似于\,II\,型弦的$ Z_{\psi}^{+}(\tau)$, 但是现在所有项的符号为正号. 从几方面看, 这个符号是必然的. 现在有\,32\,个费米子而非\,8\,个, 所以模变换中的符号要提升四次, 所以前三个符号符号必须相同. 而$ Z^{1}{}_{1} $项变换到自身, 所以同往常一样, 它的符号依赖于\,R\,截面的手征性. 其它三个理论是通过翻转单边或双边\,R\,截面定义的, 它们在物理上等价. 另外, $Z_{\psi}^{+}(\tau) $中的第一项和第二项有相反的符号是因为超共形鬼场的$ F$, 而对于杂化弦, 左边时没有这种鬼场的. 第一项和第三项的相对符号来自于时空统计, 但 $\lambda $是时空标量, 所以它们的\,R\,截面态也是. 所以模不变性, OPE\,对 $F$ 守恒, 以及时空自旋统计均与配分函数(\ref{11.2.13})自洽.
+
+我们现在来找最轻的态. 右移部分与\,II\,型弦相同, 没有快子, 最低能级处在$ \mathbf{8}_{v}+\mathbf{8} $上. 在左移这一边, 左移横向哈密顿量 $H^{\bot}=\alpha^{\prime}m^{2}/4 $中的正规编序常数(normal ordering constant)是
+\begin{equation}
+    \text{NS}:\quad -\frac{8}{24}-\frac{32}{48} =-1\:, \qquad \text{R}:\quad -\frac{8}{24}+\frac{32}{24}=+1\:.\label{11.2.14} 
+\end{equation}
+\begin{tcolorbox}
+注意, R\,截面的正规编序常数已经是 $+1$ 了, 这意味着在\,R\,截面中, 即使最轻的态也是有质量的.
+\end{tcolorbox}
+\noindent 所以左移\,NS\,基态是快子. 第一激发态是
+\begin{equation}
+    \lambda^{A}_{-1/2}\lvert 0\rangle_{\text{NS}}  \label{11.2.15}
+\end{equation}
+有 $H^{\bot}=-\frac{1}{2}$, 但是它被投射(\ref{11.2.10})移除了: 由于现在没有鬼场的贡献, 所以\,NS\,基态上现在有 $\exp(\pi\mi F)=+1$.
+$H^{\bot}=0 $的态现在可以以两种方式获得:
+\begin{equation}
+\alpha_{-1}^{i}\lvert 0\rangle_{\text{NS}}\:,\qquad \lambda_{-1/2}^{A}\lambda_{-1/2}^{B}\lvert 0\rangle_{\text{NS}} \:. \label{11.2.16}    
+\end{equation}
+$\lambda^{A} $在内部$ SO(32) $对称性下进行变换. 在全部对称性$ SO(8)_{\text{spin}}\times SO(32) $下, NS\,基态是不变的$(\mathbf{1},\mathbf{1})$. (\ref{11.2.16})中的第二个态在$ A\leftrightarrow B $下是反对称的, 所以无质量态(\ref{11.2.16})的变换是$(\mathbf{8}_{v},\mathbf{1})+(\mathbf{1},[2])$. 反对称张量表示是 $SO(32) $的伴随表示, 它的维数是$ 32\times 31/2=\mathbf{496}$. 
+
+\begin{table}[h]
+\caption{杂化弦的低能态}
+\label{tab:11.2}%
+\centering
+\begin{tabular}[c]{ccccc}
+\hline\hline
+ $\vphantom{\Bigl[}m^{2}$ & NS & R & $\widetilde{\text{NS}}$ & $\widetilde{\text{R}}$  \\
+\hline
+ $-4/\alpha^{\prime}$ & $(\mathbf{1},\mathbf{1})$ & - & - &  -  \\
+ 0 & $(\mathbf{8}_{v},\mathbf{1})+(\mathbf{1},\mathbf{496})$ & - & $\mathbf{8}_{v}$ & $\mathbf{8}$   \\
+ \hline\hline
+\end{tabular}
+\end{table}
+
+表\ref{tab:11.2}总结了两边的快子态和无质量态. 其中左移部分由它们的$ SO(8)\times SO(32) $量子数表示, 而右移部分则是它们的$ SO(8) $量子数. 闭弦要结合质量相同的左移态和右移态. 左移部分同玻色弦一样本来有一个快子, 但是由于右边没有快子态与之配对, 所以这个理论是无快子的. 在无质量能级, 乘积
+\begin{equation}
+    (\mathbf{8}_{v},\mathbf{1})\times (\mathbf{8}_{v}+\mathbf{8}) =
+    (\mathbf{1},\mathbf{1})+(\mathbf{28},\mathbf{1})+(\mathbf{35},\mathbf{1})+(\mathbf{56},\mathbf{1})+(\mathbf{8}^{\prime},\mathbf{1})\label{11.2.17}
+\end{equation}
+是\,I\,型弦的超引力多重态. 乘积
+\begin{equation}
+    (\mathbf{1},\mathbf{496})\times (\mathbf{8}_{v}+\mathbf{8}) = (\mathbf{8}_{v},\mathbf{496}) + (\mathbf{8},\mathbf{496})\label{11.2.18}
+\end{equation}
+是$ SO(32) $伴随表示中的 $N=1$ 规范多重态. 因此后者是时空中的规范对称性.
+
+这与\,I\,型开弦加闭弦 $SO(32) $理论的无质量频谱精确相同. 然而, 这两个理论的有质量频谱不同. 在开弦中, 规范量子数有端点的$ SO(32) $矢量携带, 所以, 即使是在有质量能级, 除了该规范群2秩张量表示外, 不会存在比之更高的表示. 但是在杂化弦中, 规范量子数由场携带, 它们在整个世界面上传播. 在有质量能级, 这样的激发可以有任意个, 这就会给出任意大的规范群表示. 然而, 我们会在14章看到, I\,型理论和杂化$ SO(32) $理论实际上是相同的.
+
+第二种杂化弦理论是将$ \lambda^{A} $分成两组, 每组各\,16\,个, 并在每组上附加相互独立的边界条件,
+\begin{equation}
+    \lambda^{A}(w+2\pi) = \left\{
+    \begin{array}{l}
+         \eta \lambda^{A}(w) \: ,\\
+         \eta^{\prime} \lambda^{A}(w) \:, 
+    \end{array} \quad 
+    \begin{array}{l}
+         A=1,\cdots,16\:,  \\
+         A=17,\cdots,32 \:, 
+    \end{array}
+    \right. \label{11.2.19}
+\end{equation}
+其中$ \eta $和$ \eta^{\prime} $各为$ \pm1$. 对应地, 存在算符
+\begin{equation}
+    \exp(\pi\mi F_{1}) \:, \qquad \exp(\pi\mi F_{1}^{\prime}) \:, \label{11.2.20} 
+\end{equation}
+它们分别与第一组$ \lambda^{A} $和第二组$ \lambda^{A} $反对易. 分别对右移和两个左移取\,GSO\,投射. 即, 在投射
+\begin{equation}
+    \exp(\pi\mi F_{1}) =\exp (\pi\mi F_{1}^{\prime}) =\exp(\pi\mi \tilde{F}) = 1  \label{11.2.21}
+\end{equation}
+下对$ 2^{3}=8 $个不同的周期性组合求和. OPE\,的封闭性和定域性以及模不变性都很容易证明. 特别地, 配分函数
+\begin{equation}
+    Z_{8}(\tau)^{2} = \frac{1}{4} \Bigl[Z^{0}{}_{0}(\tau)^{8} + Z^{0}{}_{1}(\tau)^{8}
+    +Z^{1}{}_{0}(\tau)^{8} + Z^{1}{}_{1}(\tau)^{8} \Bigr]^{2} \label{11.2.22}
+\end{equation}
+的变换与 $Z_{\psi}^{\pm}$ 和$ Z_{16} $相同. 这里重要的是, 费米子以16个为一组, 这使得$ Z_{\psi}^{\pm} $中的符号被平方了.
+
+和之前一样, 右边最轻的态是无质量的$ \mathbf{8}_{v}+\mathbf{8}$. 在左边, 截面\,NS-NS$^{\prime}$ 仍然有正规编序常数$ -1$, 所以基态是快子态, 但是右边没有态与之匹配. 第一激发态处在$ m^{2}=0 $, 它是
+\begin{align}
+    & \alpha_{-1}^{i}\lvert0\rangle_{\text{NS,NS}^{\prime}} \:, \nonumber \\
+    & \lambda^{A}_{-1/2}\lambda^{B}_{-1/2} \lvert0\rangle_{\text{NS,NS}^{\prime}} \:, \quad
+    1\leq A,B\leq 16 \text{ or } 17\leq A,B \leq 32 \:. \label{11.2.23}
+\end{align}
+这与$ SO(32) $的情况有一个差别: 因为两组$ \lambda $上有各自的\,GSO\,投射, $A $和$ B $必须来自同一组$ \lambda$. 由于$ SO(32) $被边界条件部分破缺, 我们根据剩余的$ SO(16)\times SO(16) $对态分类. 态(\ref{11.2.23})对每个$ SO(16) $\\包含一个反对称张量伴随表示, 维数是$ 16\times 15/2=\mathbf{120}$. 
+
+在左移\,R-NS$^{\prime} $截面中, 正规编序尝试是
+\begin{equation}
+    -\frac{8}{24} + \frac{16}{24} - \frac{16}{48} =0 \:, \label{11.2.24}
+\end{equation}
+所以基态是无质量的. 用8个上升算符和8个下降算符组出\,16\,个$ \lambda^{A} $零模会给出第一个$ SO(16) $的\,256\,维旋量表示. GSO\,投射将其分成两个不可约表示, $\mathbf{128}+\mathbf{128}^{\prime}$, 前者处在频谱中. NS-R$^{\prime}$ 截面给出了另一个$ SO(16) $的$ \mathbf{128}$, R-R$^{\prime}$截面依然没有无质量态.
+
+总结一下, 左手边无质量的$ SO(8)\text{ spin }\times SO(16)\times SO(16)$表示是
+\begin{equation}
+    (\mathbf{8}_{v},\mathbf{1},\mathbf{1})+(\mathbf{1},\mathbf{120},\mathbf{1})
+    +(\mathbf{1},\mathbf{1},\mathbf{120})+(\mathbf{1},\mathbf{128},\mathbf{1})
+    +(\mathbf{1},\mathbf{1},\mathbf{128}) \:. \label{11.2.25}
+\end{equation}
+与右移的$ \mathbf{8}_{v} $组合对于每个 $SO(16)$ 给出无质量矢量玻色子, 它们的变换是$ \mathbf{120}+\mathbf{128}$. 时空理论的自洽性要求无质量矢量按照规范的{\emph{伴随}}表示变换. 而例外群$ E_{8} $满足这个要求, $SO(16) $是它的一个子群, 并且在这个子群下$ E_{8} $按照$ \mathbf{120}+\mathbf{128} $变换. 显然, 第二个杂化弦理论拥有规范群$ E_{8}\times E_{8}$. 即使在当前的描述下只有$ SO(16)\times SO(16) $对称性在世界面理论上是明显的, 但是世界面理论拥有全部的$ E_{8}\times E_{8} $对称性. 额外的流由玻色化给出
+\begin{equation}
+    \exp \left[ \mi\sum_{K=1}^{16}q_{K}H^{K}(z) \right] \:. \label{11.2.26}
+\end{equation}
+这是一个自旋场, 和费米子顶点算符(\ref{10.4.25})中的自旋场相同. 对于第一个$ E_{8}$, 荷是
+\begin{equation}
+    q_{K} = \left\{
+    \begin{array}{l}
+         \pm\tfrac{1}{2} \:,  \\
+         0  \:,
+    \end{array} \quad
+    \begin{array}{l}
+         K=1,\cdots,8  \\
+         K=9,\cdots, 16 
+    \end{array} \:,
+    \qquad 
+    \sum_{K=1}^{16} q_{K}\in 2\mathds{Z} \:, \label{11.2.27}
+    \right.
+\end{equation}
+对于第二个类似. 它们确实是$ (1,0) $算符. 无质量频谱是$ d=10,N=1 $超引力多重态加上$ E_{8}\times E_{8} $规范多重态. 无质量场的$ SO(8)_{\text{spin}}\times E_{8}\times E_{8} $量子数是
+\begin{align}
+    &\quad (\mathbf{1},\mathbf{1},\mathbf{1})+(\mathbf{28},\mathbf{1},\mathbf{1})+(\mathbf{35},\mathbf{1},\mathbf{1})
+    +(\mathbf{56},\mathbf{1},\mathbf{1})+(\mathbf{8}^{\prime},\mathbf{1},\mathbf{1})  \nonumber \\
+    &+(\mathbf{8}_{v},\mathbf{248},\mathbf{1})+(\mathbf{8},\mathbf{248},\mathbf{1})
+    +(\mathbf{8}_{v},\mathbf{1},\mathbf{248})+(\mathbf{8},\mathbf{1},\mathbf{248}) \:. \label{11.2.28}
+\end{align}
+
+自洽性要求费米子以\,16\,个为一组. 我们可以用\,8\,个为一组的费米子给出模不变的理论, 这样左移配分函数就是$ (Z_{\psi}^{\pm})^{4}$. 然而, 我们已经看到, 模不变性要求了$ Z_{\psi}^{\pm} $中的相对符号. 这些符号将赋予左移\,R\,截面以负权重, 并对应于\,NS\,截面上有投射 $\exp(\pi\mi F)$. 前者与自旋统计不自洽, 因为这些态是时空标量, 而后者与\,OPE\,的封闭性不自洽, 这使得相互作用不自洽. 所以 $SO(32) $和$ E_{8}\times E_{8} $理论是\,10\,维中唯一的超对称杂化弦. 
+
+\section{其他十维杂化弦}
+
+通过\,8.5\,节引入的扭变构造, 其它杂化弦理论可以从一个理论中构造出来. ``最小扭变理论'', 即路径积分截面最少的理论, 对应的是对角模不变量
+\begin{align}
+    &\frac{1}{2}\Bigl[
+    Z^{0}{}_{0}(\tau)^{16}Z^{0}{}_{0}(\tau)^{\ast 4}- Z^{0}{}_{1}(\tau)^{16}Z^{0}{}_{1}(\tau)^{\ast 4} \nonumber \\
+    &\qquad \qquad - Z^{1}{}_{0}(\tau)^{16}Z^{1}{}_{0}(\tau)^{\ast 4}-Z^{1}{}_{1}(\tau)^{16}Z^{1}{}_{1}(\tau)^{\ast 4}
+    \Bigr]  \:. \label{11.3.1}
+\end{align}
+与这个模不变量对应的是, 对所有的费米子, $\lambda^{A} $和$ \tilde{\psi}^{\mu}$, 对环面的每个闭链(cycle)同时取成周期或反周期. 写成频谱就是, 世界面费米子不是全部都为\,R\,就是全部都为\,NS, 对角投影是
+\begin{equation}
+    \exp[\pi\mi(F+\tilde{F})] =1 \:. \label{11.3.2}
+\end{equation}
+除了一个快子外, 这个理论是自洽的, 态
+\begin{equation}
+    \lambda_{-1/2}^{A}\lvert 0\rangle_{\text{NS,NS}}\:, \qquad m^{2}=-\frac{2}{\alpha^{\prime}}\:,\qquad
+    \exp(\pi\mi F)=\exp(\pi\mi\tilde{F})=-1\:,  \label{11.3.3}
+\end{equation}
+按照$ SO(32) $下的一个矢量变换. 在无质量能级, 态是
+\begin{equation}
+    \alpha^{i}_{-1}\tilde{\psi}^{j}_{-1/2} \lvert0\rangle_{\text{NS,NS}} \:, \qquad
+    \lambda^{A}_{-1/2}\lambda_{-1/2}^{B}\tilde{\psi}^{j}_{-1/2}\lvert 0\rangle_{\text{NS,NS}} \:, \label{11.3.4}
+\end{equation}
+它们是引力子, 伸缩子, 反对称张量以及$ SO(32) $规范玻色子. 频谱中有费米子, 但是最轻的态处在$ m^{2}=4/\alpha^{\prime}$.
+
+现在我们来考察各种扭变. 首先考察$ \exp(\pi\mi \tilde{F}) $生成的$ \mathds{Z}_{2}$. 结合对角投射(\ref{11.3.2}), 这给出总投射
+\begin{equation}
+    \frac{1+\exp[\pi\mi(F+\tilde{F})]}{2}\cdot \frac{1+\exp(\pi\mi\tilde{F})}{2}
+    = \frac{1+\exp(\pi\mi F)}{2}\cdot \frac{1+\exp(\pi\mi\tilde{F})}{2} \:. \label{11.3.5}
+\end{equation}
+这等同于投射(\ref{11.2.8})加上(\ref{11.2.10}), 这些投射定义了超对称$ SO(32) $杂化弦. 另外, $\exp(\pi\mi\tilde{F}) $给出的空间扭变所附加的截面中, $\lambda^{A} $和$ \tilde{\psi}^{\mu} $有相反的周期性. 因此这个扭变理论是$ SO(32) $杂化弦. 用$\exp(\pi\mi\tilde{F}) $扭变效果相同.
+
+现在考察被$ \exp(\pi\mi F_{1}) $扭变的对角理论, $\exp(\pi\mi F_{1}) $反转了前\,16\,个$ \lambda^{A} $的符号并且它被用来构造$ E_{8}\times E_{8} $杂化弦. 相应的理论不是超对称的------就像方程(\ref{11.2.8})中那样, 一个理论当且仅当投射包含$ \exp(\pi\mi \tilde{F}) $时才将是超对称的. 它有规范群$ E_{8}\times SO(16) $并在$ (\mathbf{1},\mathbf{16}) $中有一个快子. (\textcolor{red}{给出证明.}) 再用$ \exp(\pi\mi\tilde{F}) $做一次扭变会给出超对称$ E_{8}\times E_{8} $杂化弦.
+
+通过将$ \lambda^{A} $分别分成\,8,4,2,1\,一个一组, 这一步可以继续下去. 将$ SO(32) $指标$ A $写成二进制, $A=1+d_{1}d_{2}d_{3}d_{4}d_{5}$, 其中每个数位$ d_{i} $是\,0\,或\,1. 对$ i=1,\ldots,5 $定义算符$ \exp(\pi\mi F_{i})$, 使得该算符与那些$ d_{i}=0 $的$ \lambda_{A} $反对易, 与那些$ d_{i}=1 $的$ \lambda_{A} $对易. 显然有五种可能的扭变群, 它们分别有\,2,4,8,16,32\,个群元, 通过从$ \exp(\pi\mi F_{i}) $中选择\,1,2,3,4,5\,个并构造各种乘积生成. 第一个给出刚才描述的$ E_{8}\times SO(16) $理论; 进一步扭变产生规范群$ SO(24)\times SO(8)$, $E_{7}\times E_{7}\times SO(4)$, $SU(16)\times SO(2) $和$ E_{8}$. 这些理论中没有一个是超对称的, 并且都有快子. 进一步用$ \exp(\pi\mi\tilde{F}) $扭变会给出超对称理论, 这些理论不是$ SO(32) $理论就是$ E_{8}\times E_{8} $理论. 在这个构造中规范群是不显然的, 更多的流来自于\,R\,截面.
+
+我们来回顾一下扭变构造的逻辑. 对于被群元$ h $扭变的截面, 与之对应的顶点算符会在场中产生一个分支切割, 但是到$ h $-不变态上的投射意味着这些分支切割不会出现在顶点算符的乘积中. 由于$ h $是对称性, 投射被相互作用保护. 在环面上, 对类时扭变和类空扭变的和是模不变的, 而这可以推广到任意亏格. 然而我们在10.7节了解到, 由于模变换中有反常相位,  这个对路径积分边界求和的想当然模不变性是不够的. 仅对于右-左对称的路径积分, 相位才会自动抵消.
+
+在一圈, 反常相位仅在变换$ \tau\to\tau+1 $中出现, 它们被解释成能级匹配条件$ L_{0}-\tilde{L}_{0}\in\mathds{Z} $没有被满足. 进一步有一个定理, 对于阿贝尔扭变群(像这里考察的$ \mathds{Z}_{2} $的乘积), 如果每个扭变截面在附加投射之前有无限多个能级匹配态, 那么一圈振幅, 实际上是所有振幅, 都精确是模不变的. 在杂化弦中, 取这样的截面: $k $个$ \lambda^{A} $满足\,R\,边界条件, $32-k $个$ \lambda^{A} $满足\,NS\,边界条件, 零点能(注: 右移部分是零, 这里只考虑了左移)是
+\begin{equation}
+    {-}\frac{8}{24}+\frac{k}{24}-\frac{(32-k)}{48}=-1+\frac{k}{16} \:. \label{11.3.6}
+\end{equation}
+振子会将能量提高$ \frac{1}{2} $的整数倍, 所以左移部分的能量是$ \frac{1}{16}k\operatorname{mod}\frac{1}{2}$. 在右移这一边, 为了\,Lorentz\,不变性, 我们仍对所有费米子取共同的边界条件, 所以能量是$ \frac{1}{2} $的整数倍. 因此, 如果$ k $是 $8$ 的整数倍, 能级匹配条件是精确满足的. 而正如我们所看到的, OPE\,的封闭性以及时空自旋-统计实际上要求$ k $是$ 16 $的整数倍. 定义扭变$ \exp(\pi\mi F_{i}) $使得它们中的任意乘积正好与\,16\,个$ \lambda^{A} $反对易, 这样就满足了这个条件.
+
+
+当能级匹配条件被满足时, 实际上可以存在多个模不变且相容的理论. 考察一个扭变理论, 它有配分函数
+\begin{equation}
+    Z=\frac{1}{\operatorname{order}(H)}\sum_{h_{1},h_{2}\in H}Z_{h_{1},h_{2}} \:, \label{11.3.7}
+\end{equation}
+其中$ h_{1} $和$ h_{2} $是环面上的类时周期和类空周期. 那么, 配分函数是
+\begin{equation}
+    Z=\frac{1}{\operatorname{order}(H)}\sum_{h_{1},h_{2}\in H}\epsilon(h_{1},h_{2}) Z_{h_{1},h_{2}} \:, \label{11.3.8}
+\end{equation}
+也是相容的(模不变且有封闭和定域的\,OPE), 其中相位$ \epsilon(h_{1},h_{2}) $满足
+\begin{subequations}
+\begin{align}
+    \epsilon(h_{1},h_{2}) &= \epsilon(h_{2},h_{1})^{-1} \:, \label{11.3.9a} \\
+    \epsilon(h_{1},h_{2})\epsilon(h_{1},h_{3}) &= \epsilon(h_{1},h_{2}h_{3}) \:,\label{11.3.9b} \\
+    \epsilon(h,h) &= 1 \:. \label{11.3.9c}
+\end{align} \label{11.3.9}
+\end{subequations}
+写成原始扭变理论中的$ \hat{h}_{2}$, 新理论不再投射到 $H$-不变态上, 而是投射到满足
+\begin{equation}
+\hat{h}_{2}\lvert\psi\rangle_{h_{1}} = \epsilon(h_{1},h_{2})^{-1}\lvert \psi\rangle_{h_{1}} \label{11.3.10}    
+\end{equation}
+换句话说, 态现在是$ \hat{h} $的本征矢量, 且相位与截面相关; 等价地, 我们有一个与截面相关的重定义
+\begin{equation}
+    \hat{h}\to \epsilon(h_{1},h)\hat{h} \:. \label{11.3.11}
+\end{equation}
+相因子$ \epsilon(h_{1},h_{2}) $被称作{\emph{离散挠率}}(\emph{discrete torsion}).
+
+在前面的理论中, 即由$ \exp(\pi\mi F_{1}) $和$ \exp{\pi\mi \tilde{F}} $生成的群, 这个群从对角理论中生成了$ E_{8}\times E_{8}$弦, 离散挠率有一种有趣的可能性. 对于
+\begin{equation}
+   (h_{1},h_{2})= \Bigl(\exp[\pi\mi(k_{1}F_{1}+l_{1}\tilde{F})],
+   \exp[\pi\mi(k_{2}F_{1}+l_{2}\tilde{F})]\Bigr) \label{11.3.12} 
+\end{equation}
+相位
+\begin{equation}
+    \epsilon(h_{1},h_{2})= (-1)^{k_{1}l_{2}+k_{2}l_{1}} \label{11.3.13}
+\end{equation}
+满足条件(\ref{11.3.9}). 它把产生超对称$ E_{8}\times E_{8} $弦的投射
+\begin{equation}
+    \exp(\pi\mi F_{1})=\exp(\pi\mi F_{1}^{\prime}) = \exp(\pi\mi\tilde{F})=1\:, \label{11.3.14}
+\end{equation}
+修正成
+\begin{equation}
+    \exp[\pi\mi (F_{1}+\alpha_{1}^{\prime}+\tilde{\alpha})]
+    =\exp[\pi\mi(F_{1}^{\prime}+\alpha_{1}+\tilde{\alpha})] 
+    = \exp[\pi\mi(\tilde{F}+\alpha_{1}+\alpha_{1}^{\prime})]=1\:, \label{11.3.15}
+\end{equation}
+这里的符号约定与方程(\ref{10.7.11})中的类似: 在$ w\to w+2\pi $的变换下, $\tilde{\psi}^{\mu}$, 前\,16\,个$ \lambda^{A}$, 后\,16\,个$ \lambda^{A} $分别挑出相位$ -\exp(-\pi\mi\tilde{\alpha})$, $-\exp(-\pi\mi\alpha_{1}) $和$ -\exp(-\pi\mi\alpha_{1}^{\prime})$. 这些$ \alpha $在\,OPE\,下守恒, 所以这个投射是自洽的. 换句话说, 频谱由如下截面构成
+\begin{align*}
+    &(\mathrm{NS}+,\mathrm{NS}+,\mathrm{NS}+) \:, \\
+    &(\mathrm{NS}-,\mathrm{NS}-,\mathrm{R}+)\:,\quad (\mathrm{NS}-,\mathrm{R}+,\mathrm{NS}-)\:,\quad
+    (\mathrm{NS}+,\mathrm{R}-,\mathrm{R}-)\:, \\
+    &(\mathrm{R}+,\mathrm{NS}-,\mathrm{NS}-)\:,\quad (\mathrm{R}-,\mathrm{R}-,\mathrm{NS}+)\:, \quad
+    (\mathrm{R}-,\mathrm{NS}+,\mathrm{R}-) \:, \\
+    &(\mathrm{R}+,\mathrm{R}+,\mathrm{R}+) 
+\end{align*}
+其中三个符号分别指$ \tilde{\psi}^{\mu}$, 前\,16\,个$ \lambda^{A} $和后\,16\,个$ \lambda^{A}$.
+
+引力微子在$ (\mathrm{R}\pm,\mathrm{NS}+,\mathrm{NS}+) $截面中, 所以它不在这个频谱中. 快子在$ (\mathrm{NS}-,\mathrm{NS}-,\mathrm{NS}+) $截面和$ (\mathrm{NS}-,\mathrm{NS}+,\mathrm{NS}-) $截面, 所以它也不在这个频谱中. 这个扭变留下了$ SO(16)\times SO(16) $规范对称性. 根据态的$ SO(8)_{\text{spin}}\times SO(16)\times SO(16) $量子数对它们进行分类, 我们发现了如下无质量频谱
+\begin{align*}
+    (\mathrm{NS}+,\mathrm{NS}+,\mathrm{NS}+)&\::\quad (\mathbf{1},\mathbf{1},\mathbf{1}) 
+    + (\mathbf{28},\mathbf{1},\mathbf{1}) + (\mathbf{35},\mathbf{1},\mathbf{1})
+    + (\mathbf{8}_{v},\mathbf{120},\mathbf{1}) + (\mathbf{8}_{v},\mathbf{1},\mathbf{120}) \:, \\
+    (\mathrm{R}+,\mathrm{NS}-,\mathrm{NS}-)&\::\quad (\mathbf{8},\mathbf{16},\mathbf{16})\: , \\
+    (\mathrm{R}-,\mathrm{R}-,\mathrm{NS}+)&\::\quad  (\mathbf{8}^{\prime},\mathbf{128}^{\prime},\mathbf{1})\:, \\
+    (\mathrm{R}-,\mathrm{NS}+,\mathrm{R}-)&\::\quad (\mathbf{8}^{\prime},\mathbf{1},\mathbf{128}^{\prime})\:.
+\end{align*}
+这表明没有超对称性的理论是可能不含快子的.
+
+
+\section{一点 Lie 代数}
+
+\subsection*{Basic definitions}
+
+Lie\,代数是装备反对易乘积$ [T,T^{\prime}] $的矢量空间. 以基$ T^{a} $的形式, 这个乘积是
+\begin{equation}
+    [T^{a},T^{b}] = \mi f\indices{^a^b_c}T^{c} \:, \label{11.4.1}
+\end{equation}
+其中$ f\indices{^a^b_c} $是{\emph{结构常数}}. 这个乘积被要求满足\,Jacobi\,恒等式
+\begin{equation}
+    [T^{a},[T^{b},T^{c}]] + [T^{b},[T^{c},T^{a}]] + [T^{c},[T^{a},T^{b}]] =0 \:.\label{11.4.2}
+\end{equation}
+相应的\,Lie\,群由指数
+\begin{equation}
+    \exp(\mi\theta_{a}T^{a}) \:, \label{11.4.3}
+\end{equation}
+生成, 其中$ \theta_{a} $是实数. 对于紧\,Lie\,群, 相应的紧\,Lie\,代数拥有正定的内积
+\begin{equation}
+    (T^{a},T^{b}) = d^{ab} \:, \label{11.4.4}
+\end{equation}
+它是不变的,
+\begin{equation}
+    ([T,T^{\prime}],T^{\prime\prime}) + (T^{\prime},[T,T^{\prime\prime}]) =0\:. \label{11.4.5}
+\end{equation}
+不变性的等价陈述是$ f^{abc} $全反对称的, 指标用$ d^{ab} $进行升降.
+
+我们感兴趣的是单纯\,Lie\,代数, 它们没有不平庸的不变子代数(理想). 一般紧致代数是单代数与$ U(1) $的直和. 对于单代数, 内积在相差一个归一化的意义下唯一, 并存在生成元的一组基使得它就是$ \delta^{ab}$。 对于\,Lie\,代数的任何表示$ r $(任何一组满足$ f\indices{^a^b_c} $给定的(\ref{11.4.1})的矩阵$ t^{a}_{r,ij}$), 它的基是不变的, 因此对于单纯\,Lie\,代数, 它正比于$ d^{ab}$,
+\begin{equation}
+    \operatorname{Tr}(t_{r}^{a}t_{r}^{b}) = T_{r}d^{ab} \label{11.4.6}
+\end{equation}
+其中$ T_{r} $是某个常数. 另外, $t_{r}^{a}t_{r}^{b}d_{ab} $与所有$ t_{r}^{c} $所以它正比于单位算符,
+\begin{equation}
+    t_{r}^{a}t_{r}^{b}d_{ab} = Q_{r}  \label{11.4.7}
+\end{equation}
+$Q_{r}$ 是表示$ r $的\,\emph{Casimir}\,{\emph{不变量}}.
+\begin{tcolorbox}
+先来证明$ t_{r}^{a}t_{r}^{b}d_{ab} $与所有$ t_{r}^{c} $对易, 
+\begin{align*}
+    [d_{ab}t_{r}^{a}t_{r}^{b},t_{r}^{c}] &= d_{ab}[t_{r}^{a},t_{r}^{c}]t_{r}^{b} 
+    + d_{ab}t_{r}^{a}[t_{r}^{b},t_{r}^{c}] 
+    =\mi \, d_{ab} (f\indices{^a^c_d}t_{r}^{d}t_{r}^{b}+ f\indices{^b^c_d}t_{r}^{a}t_{r}^{d}) \\
+    &=\mi \, (f\indices{_b^c_d}t_{r}^{d}t_{r}^{b}+ f\indices{_a^c_d}t_{r}^{a}t_{r}^{d}) 
+    =\mi \, (f\indices{^b^c^d}t_{r\,d}t_{r\,b}+ f\indices{^a^c^d}t_{r\,a}t_{r\,d}) \\
+     &=\mi \, (f\indices{^b^c^d}t_{r\,d}t_{r\,b}+ f\indices{^d^c^b}t_{r\,d}t_{r\,b}) =0
+\end{align*}
+再根据\,Schur\,引理就得到了(\ref{11.4.7}).
+\end{tcolorbox}
+
+典型\,Lie\,代数有
+\begin{itemize}
+    \item $SU(n)$: 生成元是无迹厄米$ n\times n $矩阵. 相应的群由行列式为\,1\,的幺正矩阵构成. 这个代数也被记成$ A_{n-1}$.
+    \item $SO(n)$: 生成元是反对称厄米$ n\times n $矩阵. 相应的群$ SO(n,\mathds{R}) $由行列式为$ 1 $的实正交矩阵构成. 当$ n=2k $时, 这个代数也被记做$ D_{k}$. 当$ n=2k+1 $时, 它被记做$ B_{k}$.
+    \item $Sp(k)$: 生成元是$ 2k\times 2k $厄米矩阵, 不过拥有额外结构
+    \begin{equation}
+        M T M^{-1} = - T^{\mathrm{T}} \:. \label{11.4.8}
+    \end{equation}
+    这里的上标$ \mathrm{T} $指转置, 并且
+    \begin{equation}
+        M = \mi \begin{bmatrix}
+        0 & I_{k} \\ -I_{k} & 0 
+        \end{bmatrix} \label{11.4.9}
+    \end{equation}
+    其中$ I_{k} $是$ k\times k $单位矩阵. 相应的群也由幺正矩阵$ U $构成, 不过满足额外的性质
+    \begin{equation}
+        M U M^{-1} = (U^{\mathrm{T}})^{-1} \:. \label{11.4.10}
+    \end{equation}
+    有时候也用$ Sp(2k) $标记这个群. 它同时被记做$ C_{k}$.
+\end{itemize}
+
+对于每个紧致群, 通过给它的一些生成元乘以$ \mi$, 我们可以获得各种非紧群. 例如, 无迹{\emph{虚}}矩阵生成了$ SL(n,\mathds{R}) $群, 它是行列式为\,1\,的实矩阵构成的群. 保\,Lorentz\,型内积的群$ SO(m,n,\mathds{R}) $可以类似地从$ SO(m+n) $获得. 另外一个非紧群的生成元也满足辛条件(\ref{11.4.8}), 但是生成元是虚矩阵而非厄米矩阵, 这个群由满足(\ref{11.4.10})的实矩阵构成. 这个非紧群也别记做$ Sp(k) $或$ Sp(2k)$; 有时用$ USp(2k) $来区分紧致幺正的情况.
+
+这种非紧群不会出现在\,Yang-Mills\,理论中(相应的结果将不会是幺正的), 但是它们有其它应用. 在紧致化弦论中, 一些$ SL(n,\mathds{R}) $和$ SO(m,n,\mathds{R}) $会作为低能对称性出现. 而在经典力学中, $Sp(k) $的实形式会作为\,Poisson\,括号的一个不变量出现.
+
+\subsection*{Roots and weights}
+
+对任何\,Lie\,代数$ h$, 选成最大的一组互相对易的生成元$ H^{i}$, $i=1,\cdots,\operatorname{rank}(g)$. 剩下的生成元$ E^{\alpha} $可以取成在$ H^{i} $在有确定的荷,
+\begin{equation}
+    [H^{i},E^{\alpha}]=\alpha^{i}E^{\alpha} \:. \label{11.4.11}
+\end{equation}
+$\operatorname{rank}(g)$-维矢量$ \alpha^{i} $被称为{\emph{根}}. 有一个定理, 对于一个给定的根只有一个生成元, 所以记号$ E^{\alpha} $是没有歧义的. Jacobi\,恒等式定下了剩下的代数是
+\begin{equation}
+    [E^{\alpha},E^{\beta}] = 
+    \begin{cases}
+     \epsilon(\alpha,\beta) E^{\alpha+\beta} &\qquad \text{如果}\,\alpha+\beta\,\text{是根} \:, \\
+     2\alpha\cdot H/\alpha^{2} &\qquad \text{如果}\,\alpha+\beta=0\:, \\
+     0 &\qquad \text{其它情况} \:.
+    \end{cases} \label{11.4.12}
+\end{equation}
+乘积$ \alpha\cdot H $与$ \alpha^{2} $利用与$ d_{ij} $收缩定义, $d_{ij} $是内积(\ref{11.4.4})限制在对易子代数上的逆. 取与$ H^{i} $的迹, 第二个方程定出了归一化$ (E^{\alpha},E^{-\alpha})=2/\alpha^{2}$. 常数$ \epsilon(\alpha,\beta) $只能取值$ \pm1$.
+\begin{tcolorbox}
+现在来证明(\ref{11.4.12}), 利用\,Jacobi\,恒等式
+\begin{align*}
+    [H^{i},[E^{\alpha},E^{\beta}]] &= [E^{\alpha},[H^{i},E^{\beta}]] + [E^{\beta},[E^{\alpha},H^{i}]]
+    = \beta^{i}[E^{\alpha},E^{\beta}] - \alpha^{i} [E^{\beta},E^{\alpha}] \\
+    &= (\alpha^{i}+\beta^{i})[E^{\alpha},E^{\beta}] \:,
+\end{align*}
+这说明$ [E^{\alpha},E^{\beta}] $要么是$ H^{i} $的本征矢, 要么为零, 即情况3. 如果$ \alpha+\beta $不为零, 那么它就是根, $[E^{\alpha},E^{\beta}] $就是相应的$ E^{\alpha+\beta}$, 这里还有一个归一化系数尚待确定. 如果$ \alpha+\beta $为零, 则说明$ [E^{\alpha},E^{\beta}] $与$ H^{i} $互相对易, 那么$ [E^{\alpha},E^{\beta}] $只能是$ H^{i} $的线性组合. 于是设$ [E^{\alpha},E^{-\alpha}]= a_{j}H^{j}$, 那么根据(\ref{11.4.5}),
+\begin{align*}
+    (H^{i},[E^{\alpha},E^{-\alpha}])&= -([E^{\alpha},H^{i}],E^{-\alpha}) \\
+        a^{i} & = \alpha^{i}(E^{\alpha},E^{-\alpha}) 
+\end{align*}
+令$ (E^{\alpha},E^{-\alpha}) $归一化到$ 2/\alpha^{2} $就获得了想要的结果. 而第一项的结果任意, 这里取系数为$ \pm1$.
+\end{tcolorbox}
+
+表示$ H^{i} $的矩阵$ t_{r}^{i} $可以取成对角的. 它们的共同本征值$ w^{i}$, 组合成矢量
+\begin{equation}
+    (w^{1},\cdots, w^{\operatorname{rank}(g)}) \:, \label{11.4.13}
+\end{equation}
+这个矢量称为权, 它的个数等于表示的维数. 在伴随表示中, 根和权是相同的.
+\begin{tcolorbox}
+由于$ H^{i} $互相对易, 它们可以同时对角化, 拥有共同的本征矢量$ \lvert\lambda\rangle$, $\lvert\lambda\rangle $张开了表示空间, 本征矢量的个数就是表示的维数. 对于伴随表示, $\lvert\lambda\rangle $就是$ E^{\alpha}$.
+\end{tcolorbox}
+
+\noindent 例子:
+\begin{itemize}
+    \item 对于$ SO(2k)=D_{k}$, 考察沿着对角线的$ k $个$ 2\times2 $分块, 令$ H^{i} $是第$ i $个分块为
+    \begin{equation}
+        \begin{bmatrix}
+        0 & \mi \\ -\mi & 0
+        \end{bmatrix}  \label{11.4.14}
+    \end{equation}
+    其它地方都为零的矩阵. 这是最大的互相对易集合. 在这$ k $个$ H^{i} $下, $2k$-矢量$ (1,\pm\mi,0,\cdots,0) $拥有本征值
+    \begin{equation}
+    (\pm 1, 0^{k-1}) \:; \label{11.4.15}
+    \end{equation}
+    它们是这个矢量表示的权. 其它的权只不过把$ \pm1 $换到其它位置.
+    
+    伴随表示是反对称张量, 它被包含在两个矢量表示的乘积中. 权具有相加性, 所以, 通过将任何两个不同(由于反对称性)的矢量权加在一起就得到了根. 这给出
+    \begin{equation}
+        (+1,+1,0^{k-2})\:,\quad (+1,-1,0^{k-2})\:,\quad (-1,-1,0^{k-2})\:, \label{11.4.16}
+    \end{equation}
+    和它们的所有置换. 通过将任何权和它相反的权加在一起, 我们就获得了$ k $个零根, 而它们就是$ H^{i}$.
+    \begin{tcolorbox}
+    考察\,2\,个 $2k$ -矢量$,\lvert \lambda_{1,2}\rangle$的反对称积$ \lvert\lambda_{1}\rangle\wedge \lvert\lambda_{2}\rangle$, 并假定$ \lvert\lambda_{1,2}\rangle $分别只在$ H^{1,2} $下有本征值$ +1$, 那么
+    \begin{align*}
+        &H^{1}\lvert \lambda_{1} \rangle \wedge \lvert \lambda_{2} \rangle = 1\\
+        &H^{2} \lvert \lambda_{1} \rangle \wedge \lvert \lambda_{2} \rangle =1
+    \end{align*}
+    由此就得到了(\ref{11.4.16})
+    \end{tcolorbox}
+    在旋量表示中, 权$ w^{i} $由所有分量为$ \frac{1}{2} $的$ k $-矢给出, 其中$ \mathbf{2^{k-1}} $有偶数个$ -\frac{1}{2}$, 而$ \mathbf{2^{k-1}}^{\prime} $有奇数个.
+    \item 对于$ SO(2k+1)=B_{k}$, 可以取相同的对角生成元, 只不过最后一列和最后一行为零. 矢量表示中的权与上基本相同, 不过多了一个来自于最后一行的$ (0^{k})$. 多出的生成元有根
+    \begin{equation}
+        (\pm1,0^{k-1}) \label{11.4.17}
+    \end{equation}
+    以及所有的置换.
+    \item $Sp(k)=C_{k} $的伴随是{\emph{对称}}张量, 所以会获得与$ SO(2k) $相同的根, 不同的是矢量权重不需要是不同的. 相应的根是$ SO(2k) $的根和
+    \begin{equation}
+        (\pm2,0^{k-1}) \label{11.4.18}
+    \end{equation}
+    以及置换. 通常会对这个跟做归一化使得最长的根的长度是$ \sqrt{2}$, 所我们要对所有根除以$ 2^{1/2}$.
+    \item 对于$ SU(n)=A_{n-1}$, 先来讨论$ U(n) $会比较方便, 尽管它的代数不是单代数. $n$ 个互相对易的生成元$ H^{i} $可以取成在位置$ ii $为$ 1 $在其它位置为零. 那么在位置$ ij $为$ 1 $的带荷生成元对于$ H^{i} $有本征值$ +1 $, 对于$ H^{j} $有本征值$ -1$: 根是
+    \begin{equation}
+        (+1,-1,0^{n-2})  \label{11.4.19}
+    \end{equation}
+    的所有置换. 注意到所有根都处在超平面$ \sum_{i} a^{i}=0 $上; 这是因为$ U(1) $生成元的所有本征值为零. $SU(n) $的根就是$ U(n) $中被认为处在这个超平面上的那些根.
+    \item 我们说过 $E_{8} $生成元分解成$ SO(16) $的伴随表示和旋量表示. $SO(16) $的对易生成元也可以取成$ E_{8} $的对易生成元, 所以$ E_{8} $的根就是$ SO(16) $的根加上旋量的根, 即根(\ref{11.4.16})的所有置换加上
+    \begin{equation}
+        (+\tfrac{1}{2},+\tfrac{1}{2},+\tfrac{1}{2},+\tfrac{1}{2},+\tfrac{1}{2},
+        +\tfrac{1}{2},+\tfrac{1}{2},+\tfrac{1}{2}) \label{11.4.20}
+    \end{equation}
+    以及对这个根做偶数次翻号得到的根. 等价的这个集合可以描述成
+    \begin{subequations}
+    \begin{align}
+         &\text{对于所有的}\,i,\qquad \alpha^{i}\in \mathds{Z} \:\text{或}\: \alpha^{i}\in\mathds{Z}+\tfrac{1}{2}\:,
+         \label{11.4.21a} \\
+         \noalign{\hbox{和}}
+         &\sum_{i=1}^{8}\alpha^{i}\in 2\mathds{Z}\:,\qquad \sum_{i=1}^{8}(\alpha^{i})^{2}=2 \:. \label{11.4.21b}
+    \end{align}
+    \end{subequations} \label{11.4.21}
+\end{itemize}
+
+对于$ A_{n},$ $D_{k} $和$ E_{8} $(以及我们还没有描述的$ E_{6} $和$ E_{7}$), 所有根都是等长的. 它们被称为{\emph{单链}}(\emph{simply-laced})代数. 对于$ B_{k} $和$ C_{k} $(以及$ F_{4} $和$ G_{2} $), 有两种不同长度的根, 所以被称为长根和短根.
+
+后面一个非常有用的量是\,Lie\,代数$ g $的{\emph{对偶}}\,{\emph{Coxeter}}\,{\emph{数}}$ h(g)$, 定义成
+\begin{equation}
+    -\sum_{c,d} f\indices{^a^c_d}f\indices{^b^d_c}=h(g)\psi^{2}d^{ab} \: \label{11.4.22}
+\end{equation}
+这里的$ \psi $是任意的长根. 作为参考, 我们在表\ref{tab:11.3}中给出所有单\,Lie\,代数的相应值. 因为$ \psi^{2}=\psi^{i}\psi^{j}d_{ij} $中出现了$ d^{ab} $的逆, 所以定义(\ref{11.4.22})使得$ h(g) $独立于内积$ d^{ab} $的任何归一化.
+
+\begin{table}[h]
+\caption{单纯\,Lie\,代数的维数和\,Coxeter\,数}
+\label{tab:11.3}%
+\centering
+\begin{tabular}[c]{rcccccccc}
+\hline\hline
+ \quad\vphantom{\Big(} & $SU(n)$ &  $SO(n),\:n\geq 4$ & $Sp(k)$ & $E_{6}$ & $E_{7}$ & $E_{8}$ & $F_{4}$ & $G_{2}$  \\
+\hline
+$\overset{}{\operatorname{dim}(g)}$ & $n^{2}-1$ & $n(n-1)/2$ & $2k^{2}+k$ & 78 & 133 & 248 & 52 &14 \\
+$h(g)$ & $n$ & $n-2$ & $k+1$ & 12 & 18 & 30 & 9 & 4 \\
+ \hline\hline
+\end{tabular}
+\end{table}
+
+
+\subsection*{Useful facts for grand unification}
+
+例外群$ E_{8} $通过数个子群与大统一中出现的群相联系. 这会在杂化弦的紧致化中起到作用. 
+
+第一个子群是
+\begin{equation}
+    E_{8} \to SU(3) \times E_{6} \:. \label{11.4.23}
+\end{equation}
+$E_{6} $表示的进一步分解参看表\ref{tab:11.4}. 在$ E_{8}\times E_{8} $弦的简单紧致化中, 标准模型的费米子可以认为全部来自于其中一个$ E_{8} $的$ \mathbf{248} $维伴随表示. 因此追踪这个表示在连续数个对称性破缺下的命运是有益的. 在$ E_{8}\to SU(3)\times E_{6}$,
+\begin{equation}
+    \mathbf{248} \to (\mathbf{8},\mathbf{1})+ (\mathbf{1},\mathbf{78})+ (\mathbf{3},\mathbf{27})
+    +(\bar{\mathbf{3}},\bar{\mathbf{27}}) \:. \label{11.4.24}
+\end{equation}
+即, $E_{8} $的伴随表示包含子群的伴随表示((\ref{11.4.24})中的前两个表示), 在剩下的\,162\,个生成元中, 一半按照$ SU(3) $的三重态和$ E_{6} $的复$ \mathbf{27} $维表示变换, 另一半是前者的共轭. 进一步的子群参看表\ref{tab:11.4}. 前三个子群代表$ E_{6} $经过数个较小的大统一子群破缺值标准模型群; 第四个是另一种破缺模式.
+
+\begin{table}[h]
+\caption{大统一群的子群和表示}
+\label{tab:11.4}%
+\centering
+\begin{tabular}[c]{rcl}
+\hline\hline
+$E_{6}$ & $\to$ &  $SO(10)\times U(1)$  \\
+$\mathbf{78}$ &  $\to$ & $\mathbf{45}_{0}+\mathbf{16}_{-3}+\overline{\mathbf{16}}_{3}+\mathbf{1}_{0}$ \\
+$\mathbf{27}$ &  $\to$ & $\mathbf{1}_{4}+\mathbf{10}_{-2}+\mathbf{16}_{1}$ \\
+\hline
+$SO(10)$ & $\to$ &  $SU(5)\times U(1)$  \\
+$\mathbf{45}$ & $\to$ & $\mathbf{24}_{0}+\mathbf{10}_{4}+\overline{\mathbf{10}}_{-4}+\mathbf{1}_{0}$ \\
+$\mathbf{16}$ & $\to$ & $\mathbf{10}_{-1} + \bar{\mathbf{5}}_{3}+\mathbf{1}_{-5}$ \\
+$\mathbf{10}$ & $\to$ & $\mathbf{5}_{2}+\bar{\mathbf{5}}_{-2}$ \\
+\hline
+$SU(5)$ & $\to$ &  $SU(3)\times SU(2)\times U(1)$  \\
+$\mathbf{10}$ & $\to$ & $(\mathbf{3},\mathbf{2})_{1}+(\bar{\mathbf{3}},\mathbf{1})_{-4}
++(\mathbf{1},\mathbf{1})_{6}$ \\
+ $\bar{\mathbf{5}}$ & $\to$ & $(\bar{\mathbf{3}},\mathbf{1})_{2} + (\mathbf{1},\mathbf{2})_{-3}$ \\
+\hline
+ $E_{6}$ & $\to$ &  $SU(3)\times SU(3)\times SU(3)$  \\
+ $\mathbf{78}$ & $\to$ & $(\mathbf{8},\mathbf{1},\mathbf{1})+ (\mathbf{1},\mathbf{8},\mathbf{1}) 
++(\mathbf{1},\mathbf{1},\mathbf{8}) + (\mathbf{3},\mathbf{3},\mathbf{3})
++(\bar{\mathbf{3}},\bar{\mathbf{3}},\bar{\mathbf{3}}) $ \\
+ $\mathbf{27}$ & $\to$ & $(\mathbf{3},\bar{\mathbf{3}},\mathbf{1}) + (\mathbf{1},\mathbf{3},\bar{\mathbf{3}})
++(\bar{\mathbf{3}},\mathbf{1},\mathbf{3})$ \\
+ \hline\hline
+\end{tabular}
+\end{table}
+
+在大统一中, 精确有夸克和轻子的一个$ SU(3)\times SU(2)\times U(1) $落入到$ SU(5) $的$ \mathbf{10} $%
+加$ \bar{\mathbf{5}} $中. 进一步往回追溯, 我们看到这种代落入到$ SO(10) $的表示$ \mathbf{16} $, 其中还剩下一个态$ \mathbf{1}_{-5}$. 这个额外的态在$ SU(5) $下中性的, 所以在$ SU(3)\times SU(2)\times U(1) $下也是中性的, 它可以被认作右手中微子. 回溯到$ E_{6}$, $\mathbf{27} $包含单代的$ 15 $个态, 除此之外还有\,12\,个态. 与$ SU(5) $大统一相比, $SO(10) $和$ E_{6} $要更统一一些, 也就是说这个代被包含在单个表示中, 但是不太经济的是, 这个表示中还包含其它没有看到的态. 事实上, 后者可能不是那么难. 为了看到原因, 考察$ E_{6} $的$ \mathbf{27} $在$ SU(3)\times SU(2)\times U(1)\subset SU(5)\subset SO(10)\subset E_{6} $下的分解:
+\begin{align}
+    \mathbf{27} &\to (\mathbf{3},\mathbf{2})_{1} + (\bar{\mathbf{3}},\mathbf{1})_{-4}
+    +(\mathbf{1},\mathbf{1})_{6} + (\bar{\mathbf{3}},\mathbf{1})_{2}+(\mathbf{1},\mathbf{2})_{-3} \nonumber \\
+    &\quad + [\mathbf{1}_{0}] \nonumber \\
+    &\quad +[(\bar{\mathbf{3}},\mathbf{1})_{2}+(\mathbf{3},\mathbf{1})_{-2}]
+    +[(\mathbf{1},\mathbf{2})_{-3}+(\mathbf{1},\mathbf{2})_{3}] + [\mathbf{1}_{0}] \:. \label{11.4.25}
+\end{align}
+第一行列出了一代, 第二行是$ SO(10) $的$ \mathbf{16} $中出现的额外的态, 第三行是$ E_{6} $的$ \mathbf{27} $中额外的态. 每对方括号中的子集是$ SU(3)\times SU(2)\times U(1) $的一个实表示. 重点在于, 对于实表示$ r$, $ \textsf{CPT} $共轭也在表示$ r $中, 所以对于粒子和它们的反粒子, 这个组合规范加上$ SO(2) $螺旋度表示是$ (r,+\frac{1}{2})+(r,-\frac{1}{2})$. 这与表示$ r $中的{\emph{有质量}}自旋-$\frac{1}{2} $粒子是相同的, 所以规范与时空对称性与这些粒子有质量是自洽的. 在最一般的不变作用量中, $[\:] $括号中的所有粒子都将有很大(大统一能标)的质量. 值得注意的是, 对于$ SU(5) $的$ \mathbf{10}+\bar{\mathbf{5}}$, $SO(10) $的$ \mathbf{16}$, 或者$ E_{6} $的$ \mathbf{27}$, 自然的$ SU(3)\times SU(2)\times U(1) $频谱在这三者中的任何一个都是标准的夸克和轻子代.
+
+\section{流代数}
+
+在杂化弦中, 规范玻色子顶点算符的形式是$ j(z)\tilde{\psi}^{\mu}(\bar{z})\me^{\mi k\cdot X}$, 其中$ j(z) $是费米子双线性型$ \lambda^{A}\lambda^{B} $或自旋场(\ref{11.2.26}). 类似地, 对于环面紧致化的玻色弦, 规范玻色子顶点算符的形式是$ j(z)\bar{\partial}X^{\mu}(\bar{z})\me^{\mi k\cdot X}$, 其中$ j(z) $对于\,Kaluza-Klein\,规范玻色子是$ \partial X^{m} $对于扩展规范对称性是指数$ \exp[\pm 2\mi\alpha^{\prime}X^{m}_{L,R}]$. 所有这些流都是全纯$ (1,0) $算符.
+
+我们在一般的\,CFT\,中考察$ (1,0) $流$ j^{a}(z) $的集合. 共形不变性要求它们的\,OPE\,必须采取如下形式
+\begin{equation}
+    j^{a}(z)j^{b}(0) \sim \frac{k^{ab}}{z^{2}} + \frac{\mi c\indices{^a^b_c}}{z}\,j^{c}(0) \label{11.5.1}
+\end{equation}
+其中$ k^{ab} $和$ c\indices{^a^b_c} $是常数. 从量纲上讲, $z^{-2} $项的系数必须是常数, $z^{-1} $项的系数必须正比于一个流. Laurent\,系数
+\begin{equation}
+    j^{a}(z) = \sum_{m=-\infty}^{\infty} \frac{j_{m}^{a}}{z^{m+1}} \label{11.5.2}
+\end{equation}
+因此满足一个封闭的代数
+\begin{equation}
+    [j_{m}^{a},j_{n}^{b}]=mk^{ab}\delta_{m,-n}+\mi c\indices{^a^b_c}j^{c}_{m+n} \:. \label{11.5.3}
+\end{equation}
+\begin{tcolorbox}
+现在来证明(\ref{11.5.3}), 利用
+\[
+j_{m}^{a} = \oint_{0}\dif z\: j^{a}(z)z^{m} \:,
+\]
+方程(\ref{11.5.3})的左边可以写成
+\begin{align*}
+     [j_{m}^{a},j_{n}^{b}] &= \frac{1}{(2\pi\mi)^{2}}\oint_{0} \dif w\: w^{n} \oint_{w}\dif z\: z^{m}
+     \biggl\{\frac{k^{ab}}{(z-w)^{2}}+\frac{\mi c\indices{^a^b_c}}{z-w}j^{c}(w) \biggr\} \\
+     &=\frac{1}{2\pi\mi} \oint_{0} \dif w\: w^{n} \biggl\{mw^{m-1}k^{ab}+ \mi c\indices{^a^b_c}w^{m}j^{c}(w) \biggr\}\\
+     &=mk^{ab}\delta_{m,-n}+\mi c\indices{^a^b_c}j^{c}_{m+n} \:.
+\end{align*}
+\end{tcolorbox}
+\noindent 特别地,
+\begin{equation}
+    [j^{a}_{0},j^{b}_{0}] = \mi c\indices{^a^b_c}j_{0}^{c} \:. \label{11.5.4}
+\end{equation}
+即, $m=0 $的模构成了\,Lie\,代数$ g$, 并且
+\begin{equation}
+    c\indices{^a^b_c}=f\indices{^a^b_c} \:. \label{11.5.5}
+\end{equation}
+我们首先限制在$ g $是单代数的情况. $j_{1}^{a}j_{0}^{b}j_{-1}^{c} $的\,Jacobi\,恒等式要求
+\begin{equation}
+    f\indices{^b^c_d}k^{ad}+f\indices{^b^a_d}k^{dc} = 0 \:. \label{11.5.6}
+\end{equation}
+\begin{tcolorbox}
+\begin{align*}
+    0 &= [j_{1}^{a},[j_{0}^{b},j_{-1}^{c}]]+[j_{0}^{b},[j_{-1}^{c},j_{1}^{a}]]
+    +[j_{-1}^{c},[j_{1}^{a},j_{0}^{b}]] \\
+    &= [j_{1}^{a},\mi c\indices{^b^c_d}j^{d}_{-1}]+ [j_{0}^{b},-k^{ca}+\mi c\indices{^c^a_d}j_{0}^{d}]
+    +[j_{-1}^{c},\mi c\indices{^a^b_d}j_{1}^{d}]\\
+    &=\mi c\indices{^b^c_d}(k^{ad}+\mi c\indices{^a^d_e}j^{e}_{0})+\mi c\indices{^c^a_d}\mi c\indices{^b^d_e}j^{e}_{0}
+    +\mi c\indices{^a^b_d}(-k^{cd}+\mi c\indices{^c^d_e}j^{e}_{0})
+\end{align*}
+由定义可知$ k^{ab} $关于$ a,b $是对称的而$ c\indices{^a^b_c} $关于$ a,b $是反对称的, 再对$ c\,c $项利用平常的\,Jacobi\,恒等式就证明了(\ref{11.5.6}).
+\end{tcolorbox}
+\noindent 这个关系与定义\,Lie\,代数内积$ d^{ab} $的方程(\ref{11.4.5})相同, 而我们又假定$ g $是单的, 它必须是
+\begin{equation}
+    k^{ab}=\hat{k}d^{ab} \:, \label{11.5.7}
+\end{equation}
+其中$ \hat{k} $是某个常数. 代数(\ref{11.5.3})有各种名字, {\emph{流代数}}, {\emph{仿射李代数}}, ({\emph{仿射}})\,\emph{Kac-Moody}\,{\emph{代数}}. 流是$ (1,0) $张量, 所以
+\begin{equation}
+    [L_{m},j_{n}^{a}] = -nj_{m+n}^{a} \:. \label{11.5.8}
+\end{equation}
+
+物理上讲, $j_{n}^{a} $生成了位置相关的$ g $-变换. 由于存在定域流, 所以这在量子场论中是可能的. 在幺正理论中, {\emph{中心扩张}}或\emph{\,Schwinger\,}{\emph{项}}$ \hat{k} $必须永远是正的. 为了证明这点, 注意到
+\begin{equation}
+\hat{k}d^{aa}= \langle 1\rvert\,[j_{1}^{a},j_{-1}^{a}]\,\lvert 1 \rangle = \lVert\,j_{-1}^{a}\lvert1\rangle\,\rVert^{2}  \label{11.5.9}
+\end{equation}
+(没有对$ a $求和.) 对于紧\,Lie\,代数, $d^{aa} $是正的, 所以$ \hat{k} $必须是非负的. 而它仅当$ j_{-1}^{a}\lvert1\rangle=0 $时为零, 但是$ j_{-1}^{a}\lvert1\rangle $的顶点算符就是流$ j^{a} $: $j^{a} $的任何矩阵元可以通过将$ j_{-1}^{a} $粘进世界面中获得. 因此仅当流恒等为零时, $\hat{k}=0$.
+
+系数$ \hat{k} $是量子化的. 为了证明这点, 考察任意的根$ \alpha$. 定义
+\begin{equation}
+    J^{3} =\frac{\alpha\cdot H}{\alpha^{2}}\:, \qquad J^{\pm}=E^{\pm\alpha} \:, \label{11.5.10}
+\end{equation}
+利用一般形式(\ref{11.4.12})可以验证它们满足$ SU(2) $代数
+\begin{equation}
+    [J^{3},J^{\pm}]=J^{\pm}\:, \qquad [J^{+},J^{-}]=2J^{3} \:. \label{11.5.11}
+\end{equation}
+可以验证
+\begin{subequations}
+\begin{align}
+    &\frac{\alpha\cdot H_{0}}{\alpha^{2}}\:, \qquad E_{0}^{\alpha}\:,\qquad E_{0}^{-\alpha} \:, \label{11.5.12a}\\
+    &\frac{\alpha\cdot H_{0}+\hat{k}}{\alpha^{2}}\:, \qquad E_{1}^{\alpha}\:, \qquad E_{-1}^{-\alpha} \:\label{11.5.12b}
+\end{align} \label{15.5.12}
+\end{subequations}
+也满足$ SU(2) $代数. 第一个就是通常的质心\,Lie\,代数, 而第二个被称为{\emph{赝自旋}}(\emph{pseudospin}). 而$ SU(2) $中的$ 2J_{3} $的本征值又必须是整数, 所以$ 2\hat{k}/\alpha^{2} $也必须是整数.如果$ \alpha $取得是代数中的长根(记做$ \psi $), 这个条件是最强的. 这样{\emph{等级}}
+\begin{equation}
+    k=\frac{2\hat{k}}{\psi^{2}} \label{11.5.13}
+\end{equation}
+就是非负整数, 对于不平庸的流就是正的.
+
+习惯上将\,Lie\,代数的内积归一化成使得长根的长度为$ \sqrt{2}$, 这使得$ \hat{k}=k $是\,OPE\,领头项的系数. 附带地, 由此得出, 在这个归一化下, 生成元(\ref{11.4.14})是归一化的, 所以$ SO(n) $内积是矢量表示迹的一半. 类似地, $SU(n)$ 的内积等于基础表示中的迹. 从此之后, 我们取生成元的一组基使得$ d^{ab}=\delta^{ab}$.
+
+
+等级表示的是\,OPE\,中$ z^{-2} $项和$ z^{-1} $项的相对大小. 对于$ U(1)$, 结构常数为零, 仅$ z^{-2}$项出现. 因此对于$ U(1) $没有类似等级这样的东西. 将所有 $U(1) $流归一化成
+\begin{equation}
+    j^{a}(z)j^{b}(0) \sim \frac{\delta^{ab}}{z^{2}} \label{11.5.14}
+\end{equation}
+将会比较方便. 从这个\,OPE\,以及全纯性可以得出每个$ U(1) $流代数同构于一个自由玻色\,CFT,
+\begin{equation}
+    j^{a}=\mi\partial H^{a} \:. \label{11.5.15}
+\end{equation}
+
+在杂化弦中, 流代数由$ n $个是费米子$ \lambda^{A}(z) $构成. 流
+\begin{equation}
+\mi\lambda^{A}\lambda^{B} \:. \label{11.5.16}
+\end{equation}
+构成了$ SO(n) $代数. 对易流的最大集合是$ \mi\lambda^{2K-1}\lambda^{2K}$, 其中$ K=1,\cdots,[n/2]$. 这些对应于生成元(\ref{11.4.14}), 它们的归一化使得根(\ref{11.4.16})的长度为$ \sqrt{2}$. 等级就是\,OPE\,中领头项的系数; 领头项是$ 1/z^{2}$, 所以等级是$ k=1$. $n=3 $的情况是一个例外: 不存在长根, 只有短根$ \pm1$, 所以我们必须将对角流重新调整成$ 2^{1/2}\mi\lambda^{1}\lambda^{2}$, 等级就是$ k=2$.
+
+对于任意\,Lie\,代数的任意实表示$ r$, 我们可以用$ \operatorname{dim}(r) $个实费米子构建流
+\begin{equation}
+    \frac{1}{2}\lambda^{A}\lambda^{B}\,t_{r,AB}^{a} \:. \label{11.5.17}
+\end{equation}
+它们满足等级为$ k=T_{r}/\psi^{2} $的流代数, 其中$ T_{r} $由方程(\ref{11.4.6})定义. 上一段中的情况是$ SO(n) $的$ n $维矢量表示, 对于这个表示$ T_{R}=\psi^{2}$. 另一个例子是, $nk $个费米子按照$ k $重矢量表示变换, 这给出等级$ k$.
+
+作为最后一个例子, 我们来考察在环形紧致化自对偶点的 $SU(2) $ 对称性. 它的流是 $ \exp[2^{1/2}\mi H(z)]$. 那么流$ \mi\partial H $就归一化成权重是$ 2^{1/2}$, 长度为$ \sqrt{2}$. $\mi\partial H $与自身的\,OPE\,从$ 1/z^{2} $开始, 所以等级依旧是$ k=1$.
+
+在一些情形中, 可能存在流不是周期性的截面, $j^{a}(w+2\pi)=R^{ab}\,j^{b}(w)$, 其中$ R^{ab} $是代数的任意自同构. 在这些情况中, 流的模式是分数的, 并满足{\emph{扭变}}仿射\,Lie\,代数.
+
+\subsection*{The Sugawara construction}
+
+在有共形对称性的流代数中, 在能动量张量和流之间有一个显著的联系, 这给出很多有趣的结构. 定义算符
+\begin{equation}
+    :jj(z_{1}):=\lim_{z_{2}\to z_{1}}\Biggl(j^{a}(z_{1})j^{a}(z_{2})-\frac{\hat{k}\operatorname{dim}(g)}{z_{12}^{2}}\Biggr) \:, \label{11.5.18}
+\end{equation}
+其中暗含了对$ a $的求和. 我们首先希望证明, 在相差一个归一化的意义下, $:jj: $与$ j^{a} $的\,OPE\,与$ T_{B} $与$ j^{a} $的\\OPE\,是相同的. 
+
+乘积$ :jj: $的\,OPE\,并不是\,OPE\,的乘积, 这是因为与第三个流相比, $:jj: $中的两个流距离彼此更近; 我们必须要使用全纯性来做一个不太直接的讨论. 考察如下的乘积:
+\begin{align}
+    j^{a}(z_{1})j^{a}(z_{2})j^{c}(z_{3})&=\frac{\hat{k}}{z_{31}^{2}}j^{c}(z_{2})+\frac{\mi f^{cad}}{z_{31}}j^{d}(z_{1})j^{a}(z_{2})+\frac{\hat{k}}{z_{32}^{2}}j^{c}(z_{1}) \nonumber \\
+    &\quad +\frac{\mi f^{cad}}{z_{32}}j^{a}(z_{1})j^{d}(z_{2})+ \text{terms holomorphic in } z_{3} \:. \label{11.5.19}
+\end{align}
+我们已经使用流-流\,OPE\,定出$ z_{3} $趋于$ z_{1} $或$ z_{2} $时的奇异性. 在这一关系中取$ z_{2}\to z_{1} $并做$ z_{21} $的\,Laurent\,\\展开，保留$ z_{21}^{0} $阶项, 获得
+\begin{align}
+    :jj(z_{1}):j^{c}(z_{3}) &\sim \frac{2\hat{k}}{z_{13}^{2}}j^{c}(z_{1})+\frac{f^{cad}f^{ead}}{z_{13}^{2}}\,j^{e}(z_{1}) \nonumber\\
+    &=\frac{2\hat{k}+h(g)\psi^{2}}{z_{13}^{2}}j^{c}(z_{1}) \nonumber \\
+    &=(k+h(g))\psi^{2}\biggl[\frac{1}{z_{13}^{2}}j^{c}(z_{3})+\frac{1}{z_{13}}\partial j^{c}(z_{3})\biggr] \:. \label{11.5.20}
+\end{align}
+这里的$ h(g) $是对偶\,Coxeter\,数. 定义
+\begin{equation}
+    T_{B}^{\mathrm{s}}(z) =\frac{1}{(k+h(g))\psi^{2}}\,:jj(z):\:. \label{11.5.21}
+\end{equation}
+$T_{B}^{\mathrm{s}} $与流的\,OPE\,和能动量张量$ T_{B}(z)$与流的\,OPE\,相同,
+\begin{equation}
+    T_{B}^{\mathrm{s}}(z)j^{c}(0)\sim
+    T_{B}(z)j^{c}(0) \:. \label{11.5.22}
+\end{equation}
+
+现在, 将$ j^{c}(z_{3}) $替换成$ T_{B}^{\mathrm{s}} $并重复上面的讨论,
+\begin{align}
+    &j^{a}(z_{1})j^{a}(z_{2})T_{B}^{\mathrm{s}}(z_{3})=\frac{1}{z_{31}^{2}}j^{a}(z_{1})j^{a}(z_{2})
+    +\frac{1}{z_{31}}\partial j^{a}(z_{1}) j^{a}(z_{2}) \nonumber \\
+    &\quad +\frac{1}{z_{32}^{2}} j^{a}(z_{1})j^{a}(z_{2})+\frac{1}{z_{32}}j^{a}(z_{1})\partial j^{a}(z_{2})
+    +\text{terms holomorphic in } z_{3} \:. \label{11.5.23}
+\end{align}
+再次展成$ z_{21} $并保留$ z_{21}^{0} $阶项, 这给出
+\begin{equation}
+    T_{B}^{\mathrm{s}}(z_{1})T_{B}^{\mathrm{s}}(z_{3}) \sim \frac{c^{g,k}}{2z_{13}^{4}}+\frac{2}{z_{13}^{2}}T_{B}^{\mathrm{s}}(z_{3})+\frac{1}{z_{13}}\partial T_{B}^{\mathrm{s}}(z_{3}) \label{11.5.24}
+\end{equation}
+其中
+\begin{equation}
+    c^{g,k}=\frac{k\operatorname{dim}(g)}{k+h(g)} \:. \label{11.5.25}
+\end{equation}
+这是中心荷为$ c^{g,k} $的能动量张量的标准形式. Laurent\,系数是
+\begin{subequations}
+\begin{align}
+    L_{0}^{\mathrm{s}} &= \frac{1}{(k+h(g))\psi^{2}}\biggl(j_{0}^{a}j_{0}^{a}
+    +2\sum_{n=1}^{\infty}j_{-n}^{a}j_{n}^{a}\biggr) \:, \label{11.5.26a} \\
+    L_{m}^{\mathrm{s}} &= \frac{1}{(k+h(g))\psi^{2}}\sum_{n=-\infty}^{\infty}j_{n}^{a}j_{m-n}^{a}\:,\qquad m\neq0\:,
+    \label{11.5.26b}
+\end{align} \label{11.5.26}
+\end{subequations}
+也满足有这个中心荷的\,Virasoro\,代数. 注意到, 由于全纯性要求$ L_{0}^{\mathrm{s}} $和$ n\geq0 $的$ j_{n}^{a} $湮灭态$ \lvert 1\rangle$, 所以$ L_{0}^{\mathrm{s}} $中的正规编序常数为零.
+
+我们已经用$ jj $ OPE\,定出了$ :jj::jj:$ OPE. 我们不能直接这样做, 这是因为仅当两个算符之间的距离相比任何其它算符之间的距离要近时, $jj$ OPE\,才是成立的, 而在这一情况中, 邻近位置总有两个额外的流. 想当然地使用\,OPE\,将会给出$ T^{\mathrm{s}} $和$ c^{g,k} $错误的归一化. 上面的讨论仅在\,OPE\,成立的时候才使用它, 然后利用了全纯性的优势. 从两个流的乘积中构造出来的算符$ T_{B}^{\mathrm{s}} $被称为\,\textit{Sugawara}\,能动量张量.
+
+找到\,U(1)\,流代数的\,Sugawara\,张量很简单. 在归一化(\ref{11.5.14})下, 它就是
+\begin{equation}
+    T_{B}^{\mathrm{s}} =\frac{1}{2}\,:jj: \:, \label{11.5.27}
+\end{equation}
+通过将其写成自由玻色子的流$ j=\partial H $也可以看到这一点. 
+
+张量$ T_{B}^{\mathrm{s}} $可能也可能不等于\,CFT\,的总$ T_{B}$. 定义
+\begin{equation}
+    T_{B}^{\prime} = T_{B} - T_{B}^{\mathrm{s}} \:. \label{11.5.28}
+\end{equation}
+由于$ T_{B} $和$ T_{B}^{\mathrm{s}} $与$ j^{a} $的\,OPE\,有相同的奇异项, 这给出
+\begin{equation}
+    T_{B}^{\prime}(z_{1})j^{a}(z_{2})\sim 0 . \label{11.5.29}
+\end{equation}
+由于$ T_{B}^{\mathrm{s}} $自身是用流构造的, 这暗示了$ T_{B}^{\mathrm{s}}T_{B}^{\prime}\sim 0$. 那么
+\begin{align}
+    T_{B}^{\prime}(z)T_{B}^{\prime}(0) &= T_{B}(z)T_{B}(0)-T_{B}^{\mathrm{s}}(z)T_{B}^{\mathrm{s}}(0)
+    -T_{B}^{\prime}(z)T_{B}^{\mathrm{s}}(0) - T_{B}^{\mathrm{s}}(z)T_{B}^{\prime}(0) \nonumber \\
+    &\sim \frac{c^{\prime}}{2z^{4}}+\frac{2}{z^{2}}T_{B}^{\prime}(0) +\frac{1}{z}\partial T_{B}^{\prime}(0)\:,
+    \label{11.5.30}
+\end{align}
+这是中心荷为
+\begin{equation}
+    c^{\prime}=c-c^{g,k} \label{11.5.31}
+\end{equation}
+的标准$ TT $ OPE. 
+
+因此内部理论分成了两个退耦的\,CFT. 一个拥有完全从流构建出来的能动量张量$ T_{B}^{\mathrm{s}}$, 而另一个能动量张量$ T_{B}^{\prime} $与流对易. 既然两个\,CFT\,完全相互独立, 我们将用术语{\emph{流代数}}来指代第一个. 对于一个幺正的\,CFT, $c^{\prime} $必须非负, 所以
+\begin{equation}
+    c^{g,k}\leq c \:, \label{11.5.32}
+\end{equation}
+如果
+\begin{equation}
+    c^{g,k}=c \:, \label{11.5.33}
+\end{equation}
+$T_{B}^{\prime} $就是精确平庸的, 在这一情况下, $T_{B}=T_{B}^{\mathrm{s}}$.
+
+我们现在来考察几个例子. 对偶\,Coxeter\,数可以写成根的求和. 对于任何单链代数, $h(g)+1=\operatorname{dim}(g)/\operatorname{rank}(g)$, 所以
+\begin{equation}
+    c^{g,k} = \frac{k\operatorname{dim}(g)\operatorname{rank}(g)}{\operatorname{dim}(g)+(k-1)\operatorname{rank}(g)}
+    \:. \label{11.5.34}
+\end{equation}
+对于任何处在$ k=1 $单链代数, 中心荷就是
+\begin{equation}
+    c^{g,1}=\operatorname{rank}(g) \:. \label{11.5.35}
+\end{equation}
+对于$ E_{8}\times E_{8} $和$ SO(32) $杂化弦, 这和自由费米子表示的中心荷相同, 而对于下一节的自由玻色子表示: 它们是\,Sugawara\,理论. 算符$ :jj: $看起来关于费米子好像是二次的, 但通过使用\,OPE\,和费米子的反对称性, 可以看到$ T_{B}^{\mathrm{s}} $退化至通常的$ -\tfrac{1}{2}\lambda^{A}\partial\lambda^{A}$.
+
+另一个例子是$ SU(2)=SO(3)$, 它有($\operatorname{dim}(g)=3$, $\operatorname{rank}(g)=1$)
+\begin{equation}
+    c^{g,k}=\frac{3k}{2+k} = 1,\:\frac{3}{2},\:\frac{9}{5},\:2,\:\frac{15}{7},\cdots\to3 \:. \label{11.5.36}
+\end{equation}
+我们已经见过这个序列中的第一个\,CFT\,(环形紧致化的自对偶点)和第二个(自由费米子). 大多数等级没有自由场表示. 对于任何流代数, 中心荷所处的范围是
+\begin{equation}
+    \operatorname{rank}(g)\leq c^{g,k} \leq \operatorname{dim}(g) \:. \label{11.5.37}
+\end{equation}
+第一个等号仅对于等级\,1\,的单链代数成立, 而第二个仅对于阿贝尔代数或者在$ k\to\infty $的极限下成立.
+
+\subsection*{Primary fields}
+
+通过反复作用$ n>0 $的下降算符$ j_{n}^{a}$, 我们可以得到流代数的{\emph{最高权重}}态或称{\emph{初级}}态, 这个态被所有$ n>0 $的$ j_{n}^{a} $湮灭. 因此它也被$ n>0 $的$ L_{n}^{\mathrm{s}} $方程(\ref{11.5.26})湮灭, 所以也是\,Virasoro\,代数的最高权重态. 质心生成元$ j_{0}^{a} $将初级态变成初级态, 所以后者构成了代数$ g $的一个表示,
+\begin{equation}
+    j_{0}^{a}\lvert r,i\rangle = \lvert r,j\rangle t_{r,ji}^{a} \label{11.5.38}
+\end{equation}
+其中$ r $(没有求和)标记表示. 由此得出
+\begin{align}
+    L_{0}^{\mathrm{s}}\lvert r,i\rangle &= \frac{1}{(k+h(g))\psi^{2}} \lvert r,k \rangle t_{r,kj}^{a}t_{r,ji}^{a} \nonumber\\ 
+    &= \frac{Q_{r}}{(k+h(g))\psi^{2}} \lvert r,i \rangle \:, \label{11.5.39}
+\end{align}
+其中$ Q_{r} $是\,Casimir\,(\ref{11.4.7}). 初级态的权重因此由代数, 等级和表示决定
+\begin{equation}
+    h_{r} = \frac{Q_{r}}{(k+h(g))\psi^{2}} = \frac{Q_{r}}{2\hat{k}+Q_{g}} \:. \label{11.5.40}
+\end{equation}
+其中$ Q_{g} $是伴随表示的\,Casimir. 对于等级$ k $的$ SU(2)$, 自旋$ j $初级场的权重是
+\begin{equation}
+    h_{j} = \frac{j(j+1)}{k+2} \:. \label{11.5.41}
+\end{equation}
+
+
+在任何给定的等级上, 初级态最多只有有限多个表示. 对于$ g $的任何根$ \alpha $和$ r $的任何权重$ \lambda$, $ SU(2) $代数(\ref{11.5.12b})暗示了
+\begin{align}
+    \langle r,\lambda \rvert\, [E_{1}^{\alpha},E_{-1}^{-\alpha}]\,\lvert r,\lambda\rangle 
+    &= 2\,\langle r,\lambda \rvert (\alpha \cdot H_{0}+\hat{k})\rvert r,\lambda \rangle/\alpha^{2} \nonumber \\
+    &=2(\alpha \cdot \lambda + \hat{k})/\alpha^{2} \:. \label{11.5.42}
+\end{align}
+左边是$ \lVert E_{-1}^{-\alpha}\lvert r,\lambda\rangle \rVert^{2}\geq 0$, 所以$ \hat{k}\geq -\alpha\cdot \lambda$. 对于$ -\alpha $也是一样, 这给出, 对于$ r $的任何权重$ \lambda$,
+\begin{equation}
+    \hat{k} \geq \lvert \alpha \cdot \lambda \rvert \:. \label{11.5.43}
+\end{equation}
+取$ \alpha $为长根$ \psi$, 那么等级必须满足
+\begin{equation}
+    k \geq \frac{2\lvert \psi \cdot \lambda \rvert}{\psi^{2}} = 2\lvert J^{3}\rvert \:, \label{11.5.44}
+\end{equation}
+其中$ J^{3} $指从荷$ j_{0}^{a} $和根$ \psi $构建的 $SU(2)$ 代数(\ref{11.5.12a}). 对于$ g=SU(2)$, 表述就是任何初级态的自旋$ j $最多是$ \tfrac{1}{2}k$. 例如在$ k=1 $时, 只有表示$ \mathbf{1} $和$ \mathbf{2} $是可能的. 对于$ k=1 $处的$ g=SU(3)$, 只有$ \mathbf{1}$, $\mathbf{3} $和$ \bar{\mathbf{3}} $能出现. 对于等级$ k $的$ g=SU(n)$, 能够出现的表示的杨表的列数不大于$ k$.
+
+初级场的期望值完全由对称性决定. 我们会在第\,15\,章给出细节.
+
+最后, 我们用同等抽象的语言简要地讨论一下\,I\,型理论的规范对称性. 规范顶点算符的物质部分是边界上的
+\begin{equation}
+    \dot{X}^{\mu}\lambda^{a}\me^{\mi k\cdot X} \label{11.5.45}
+\end{equation}
+其中$ \lambda^{a} $是权重为$ 0 $的场. 在幺正\,CFT\,中, 这种$ \lambda^{a} $必须用运动方程构建. 那么\,OPE\,就是
+\begin{equation}
+    \lambda^{a}(y_{1})\lambda^{b}(y_{2}) = \Bigl[\theta(y_{1}-y_{2})d\indices{^a^b_c}+
+    \theta(y_{2}-y_{1})d\indices{^b^a_c}\Bigr] \lambda^{c}(y_{2}) \:, \label{11.5.46}
+\end{equation}
+所以$ \lambda^{a} $构成了结构常数为$ d\indices{^a^b_c} $的乘性代数. $d\indices{^a^b_c} $的反对称部分是规范\,Lie\,代数的结构常数. 这是\,Chan-Paton\,因子的一个抽象描述. $\lambda^{a} $代数必须是结合的这一要求会排除掉规范群$ E_{8}\times E_{8}$.
+
+
+\section{The bosonic construction and toroidal compactification}
+
+在\,8.2\,节构造缠绕态顶点算符时, 我们看到我们可以单独考虑左移标量和右移标量. 现在我们来尝试构造有\,26\,个左移和\,10\,个右移的杂化弦, 它与$ \psi^{\mu} $一起给出了正确的中心荷. 主要的问题是$ k_{L,R} $的频谱; 同\,8.4\,节一样, 在绝大多数讨论中, 我们将使用无量纲动量
+\begin{equation}
+    l_{L,R} = (\alpha^{\prime}/2)^{1/2} k_{L,R} \:. \label{11.6.1}
+\end{equation}
+普通的不紧张维对应的是$ l_{L}^{\mu}=l_{R}^{\mu}=l^{\mu} $的左移加右移, 它们可以取连续值; 令$ d\leq 10 $是不紧致的维数. 剩下的动量,
+\begin{equation}
+    (l_{L}^{m},l_{R}^{n}) \:, \qquad d\leq m \leq 25 \:, \: d\leq n \leq 9 \:, \label{11.6.2}
+\end{equation}
+在格点$ \Gamma $上取值. 从\,8.4\,节的\,Narain\,紧致化的讨论中我们知道, 自洽\,CFT\,的要求是\,OPE\,的定域性加上模不变性. 在对右移取\,GSO\,投射后, $\Gamma $上的条件精确就是玻色情况. 定义乘积
+\begin{equation}
+    l \circ l^{\prime} = l_{L}\cdot l_{L}^{\prime} - l_{R} \cdot l_{R}^{\prime} \:, \label{11.6.3}
+\end{equation}
+格点必须是{\emph{特征为$ (26-d,10-d) $的偶自对偶洛伦兹型格点}},
+\begin{subequations}
+\begin{align}
+    l \circ l & \in 2\mathds{Z} \qquad \text{for all } l\in\Gamma \:, \label{11.6.4a} \\
+    \Gamma &= \Gamma^{\ast} \:. \label{11.6.4b}
+\end{align} \label{11.6.4}
+\end{subequations}
+
+和玻色情况一样, 那里的特征是$ (26-d,26-d)$, 所有这样的格点都被分类了. 首先考察非紧致维的最大数目, $d=10$, 在这一情况下, $\circ $乘积只有正号, 所以$ l_{L}^{m} $形成了一个\,16\,维的偶自对偶欧几里得型格点. 偶自对偶欧几里得型格点仅在维数是\,8\,的倍数的时候才会存在, 对于\,16\,维, 精确有两种这样的格点, $\Gamma_{16} $和$ \Gamma_{8}\times \Gamma_{8}$. 格点$ \Gamma_{16} $是如下形式的所有点的集合
+\begin{subequations}
+\begin{align}
+    &(n_{1},\cdots,n_{16})\quad \text{or} \quad (n_{1}+\tfrac{1}{2},\cdots ,n_{16}+\tfrac{1}{2}) \:, \label{11.6.5a} \\
+    &\sum_{i}n_{i} \in 2\mathds{Z} \:, \label{11.6.5b}
+\end{align}  \label{11.6.5}
+\end{subequations}
+其中$ n_{i} $是任意整数. 类似地, 格点$ \Gamma_{8} $就是
+\begin{subequations}
+\begin{align}
+    &(n_{1},\cdots,n_{8})\quad \text{or} \quad (n_{1}+\tfrac{1}{2},\cdots ,n_{8}+\tfrac{1}{2}) \:, \label{11.6.6a} \\
+    &\sum_{i}n_{i} \in 2\mathds{Z} \:. \label{11.6.6b}
+\end{align} \label{11.6.6}
+\end{subequations}
+
+
+左移零点能和玻色弦中一样是$ -1$, 所以无质量态将有左移顶点算符$ \partial X^{\mu}$, $\partial X^{m} $或满足$ l_{L}^{2}=2 $的$ \me^{\mi k_{L}\cdot X(z)}$.  与通常的右移$ \mathbf{8}_{v}+\mathbf{8} $做张量积, 第一个给出通常的引力子, 伸缩子和反对称张量. 16\,个$\partial X^{m} $流构成了对易$ m $-动量的最大对易集合. 动量$ l_{L}^{m} $就是这个流下的荷, 因此它们是规范群的根. 对于$ \Gamma_{16}$, 长度为$ \sqrt{2} $的点就是$ SO(32) $的根(\ref{11.4.16}). 对于$ \Gamma_{8}$, 长度为$ \sqrt{2} $的点是$ E_{8} $的根(\ref{11.4.21}). 因此两种可能的格点刚好给出前面发现的两个规范群, $SO(32) $和$ E_{8}\times E_{8}$. 对易的流有奇点$ 1/z_{2}$, 所以再次$ k=1$.
+
+很容易看到之前的费米构造和现在的玻色构造在玻色化下是等价的. 格点(\ref{11.6.5})和(\ref{11.6.6})上的整数点映射到流代数的\,NS\,截面, 半整数点则映射到\,R\,截面. 总$ k_{L}^{m} $必须是偶数这个约束是每个理论中在左移上的\,GSO\,投射. 在上一节我们看到, 流代数的动力学是完全由它的对称性决定的, 所以我们可以给出左移一个表示独立的描述, 将其描述为 $SO(32) $或$ E_{8}\times E_{8} $等级\,1\,的流代数.
+
+我们来回顾\,Lie\,代数和格点的一些一般结果. Lie\,代数$ g $的根的所有整系数线性组合构成的集合被称为$ g $的{\emph{根格点}}$ \Gamma_{g}$. 现在取任意表示$ r $并让$ \lambda $是$ r $的任意权重. 对于所有$ v\in\Gamma_{g}$, 点$ \lambda+v $的集合被记住$ \Gamma_{r}$. 通过考察各种$ SU(2) $子群可以证明, 对于有$ \sqrt{2} $根长的单链\,Lie\,代数,
+\begin{equation}
+    \Gamma_{r} \subset \Gamma_{g}^{\ast} \:. \label{11.6.7}
+\end{equation}
+所有$ \Gamma_{r} $的并集是权重格点$ \Gamma_{w}$, 并且
+\begin{equation}
+    \Gamma_{w}=\Gamma_{g}^{\ast} \:.
+\end{equation}
+例如, $SO(2n) $的权重格点有\,4\,个子格点:
+\begin{subequations}
+\begin{align}
+     &(0)\::\quad 0+\text{any root}\:; \label{11.6.9a} \\
+     &(v)\::\quad (1,0,0,\cdots,0)+\text{any root}\:; \label{11.6.9b} \\
+     &(s)\::\quad (\tfrac{1}{2},\tfrac{1}{2},\tfrac{1}{2},\cdots,\tfrac{1}{2})+\text{any root}\:; \label{11.6.9c} \\
+     &(c)\::\quad (-\tfrac{1}{2},\tfrac{1}{2},\tfrac{1}{2},\cdots,\tfrac{1}{2})+\text{any root}\:; \label{11.6.9d} 
+\end{align} \label{11.6.9}
+\end{subequations}
+它们分别是根格点, 包含矢量表示权重的格点, 两个包含$ 2^{n-1} $维旋量表示权重的格点.  格点$ \Gamma_{8} $是$ E_{8} $的根格点, 同时由于它是自对偶的, 所以它是权格点. $SO(32) $个根格点给出$ \Gamma_{16} $中的整数格点. 整个$ \Gamma_{16} $是根格点加上$ SO(32) $的一个旋量格点.
+
+对于任何单链\,Lie\,代数$ g$, 它的等级\,1\,的流代数可以被$ \operatorname{rank}(g) $个左移玻色子表示, 随着根重标度成长度$ \sqrt{2}$, 动量格点就变成$ g $的根格点. Lie\,代数(\ref{11.4.12})中出现的常数$ \epsilon(\alpha,\beta) $就可以被顶点算子\,OPE\,决定; 当需要上闭链的显式形式时, 就是这样的情况. 通过同时取 $\operatorname{rank}(g) $个右移玻色子, 我们可以获得模不变的\,CFT, 动量格点变成
+\begin{equation}
+    \Gamma=\sum_{r}\Gamma_{r}\times \tilde{\Gamma}_{r} \:. \label{11.6.10}
+\end{equation}
+即, 频谱取遍权格点的所有子格点, 于此同时, 左移动量和右移动量在同一子格点中取值.
+
+\subsection*{Toroidal compactification}
+
+同玻色情况一样, 任何特征为$ (26-d,10-d) $的偶自对偶晶格可以从任何单晶格通过$ O(26-d,10-d,\mathds{R}) $获得. 再次从任意给定的解$ \Gamma_{0} $出发; 例如它可以是所有紧致化维度都正交且处在$ SU(2)\times SU(2) $半径上的一个十维理论. 那么任何晶格
+\begin{equation}
+    \Gamma=\Lambda\Gamma_{0} \:,\qquad \Lambda\in O(26-d,10-d,\mathds{R}) \label{11.6.11}
+\end{equation}
+定义了自洽的杂化弦论. 同玻色情况一样, 存在等价关系
+\begin{equation}
+    \Lambda_{1}\Lambda\Lambda_{2}\Gamma_{0} \cong \Lambda\Gamma_{0} \label{11.6.12}
+\end{equation}
+其中
+\begin{equation}
+    \Lambda_{1} \in O(26-d,\mathds{R})\times O(10-d,\mathds{R}) \:,\qquad
+    \Lambda_{2} \in O(26-d,10-d,\mathds{Z}) \:. \label{11.6.13}
+\end{equation}
+那么模空间就是
+\begin{equation}
+    \frac{ O(26-d,10-d,\mathds{R})}{ O(26-d,\mathds{R})\times O(10-d,\mathds{R})\times  O(26-d,10-d,\mathds{Z})}\:.
+    \label{11.6.14}
+\end{equation}
+$\Gamma_{0} $上保持不变的离散 $T$ -对偶群$ O(26-d,10-d,\mathds{Z}) $被理解成作用在右边.
+
+现在考察未破缺的规范对称性. 有 $26{-}d$ 个顶点算符为$ \partial X^{m}\tilde{\psi}^{\mu} $的规范玻色子和$ 10{-}d $个顶点算符为$ \partial X^{\mu}\tilde{\psi}^{m} $的规范玻色子.  它们是来自十维理论的原始\,16\,个对易对称性和$ 10-d $个\,Kaluza-Klein\,规范玻色子, 另外 $10-d $个反对称张量的紧致化. 对于晶格$ \Gamma $上满足
+\begin{equation}
+l_{L}^{2}=2 \:, \qquad l_{R}=0 \:, \label{11.6.15}    
+\end{equation}
+的每个点, 还有额外的规范玻色子$ \me^{\mi k_{L}\cdot X_{L}}\tilde{\psi}_{\mu}$. $l_{R}\neq 0 $的点上没有规范玻色子, 这是因为这种态的质量至少是$ \frac{1}{2}l_{R}^{2}$. 对于一般的增速$ \Lambda$, 给出的是模空间上的一般点, $\Gamma $中不存在$ l_{R}=0 $的点, 因而没有额外的规范玻色子; 规范群是$ U(1)^{36-2d}$. 通过在不带\,Wilson\,线的环面上紧致化原始的十维理论, 显然可以得到$ SO(32)\times U(1)^{20-2d} $或$ E_{8}\times E_{8}\times U(1)^{20-2d}$, 和场论中一样. 然而, 和玻色弦论相同, 在模空间中的特殊点上存在弦化的扩充规范对称性. 例如, 仿照晶格$ \Gamma_{8} $和$ \Gamma_{16} $定义的晶格$ \Gamma_{26-d,10-d} $会给出$ SO(52-2d)\times U(1)^{10-d}$. 类似于玻色情况, 扩展对称性所在点附近的低能物理是\,Higgs\,机制. 所有以这种方式获得的群的秩是$ 36-2d$. 这是微扰论中的最大值, 但是非微扰效应会导致更大的规范对称性. (参看第\,19\,章.)
+
+模的数目来自于$ SO $群的维数, 它是
+\begin{equation}
+    \frac{1}{2}\Bigl[(36-2d)(35-2d)-(26-d)(25-d)-(10-d)(9-d)\Bigr]=(26-d)(10-d) \:. \label{11.6.16}
+\end{equation}
+和玻色弦一样, 它们可以解释成十维规范理论的背景场. 度规和反对称张量的紧致化分量像以前一样总共给出$ (10-d)^{2} $个. 另外还可以有\,Wilson\,线, 即规范场$ A_{m} $的常数背景. 正如第\,8\,章中所讨论的, 由于势$ \operatorname{Tr}([A_{m},A_{n}]^{2})$, 不同方向上的场沿着平坦方向对易, 所以可以被选成处在一个$ U(1)^{16} $子群中. 因此总共的$ (26-d)(10-d) $中$ A_{m} $的参量有$ 16(10-d) $个.
+
+在第\,8\,章我们研究了有反对称张量和开弦\,Wilson\,线背景的量子化. 这里略去细节直接给出结果. 如果我们在常数背景$ G_{mn}$, $B_{mn}$ 和$ A_{m}^{I} $下做紧致化$ x^{m}\cong x^{m}+2\pi R$, 那么正则量子化给出
+\begin{subequations}
+\begin{align}
+    k_{Lm}&= \frac{n_{m}}{R}+\frac{w^{n}R}{\alpha^{\prime}}(G_{mn}+B_{mn})-q^{I}A_{m}^{I}-\frac{w^{n}R}{2}A_{n}^{I}A_{m}^{I}\:,\label{11.6.17a}\\
+    k_{L}^{I} &= (q^{I}+w^{m}RA_{m}^{I})(2/\alpha^{\prime})^{1/2} \:, \label{11.6.17b} \\
+    k_{Rm}&= \frac{n_{m}}{R}+\frac{w^{n}R}{\alpha^{\prime}}(-G_{mn}+B_{mn})-q^{I}A_{m}^{I}-\frac{w^{n}R}{2}A_{n}^{I}A_{m}^{I}\:,\label{11.6.17c}
+\end{align}
+\end{subequations}
+其中$ n_{m} $和$ w^{m} $是整数, 取决于被紧致化的是哪种弦, $q^{I} $处在$ \Gamma_{16} $或$ \Gamma_{8}\times\Gamma_{8} $上. 注意到, 当规范场设为零后, 这个结果退化到玻色结果(\textcolor{blue}{8.4.7}). $k_{Lm} $和$ k_{Rm} $中$ A^{I} $的线性项来自于\,Wilson\,线在周期性上的效应, 同(\textcolor{blue}{8.6.7})一样. $k_{L}^{I} $中$ A^{I} $的线性项来源如下. 对于某个沿着紧致维缠绕的弦, Wilson\,线意味着流代数费米子不再是周期的. 相应的顶点代数(\ref{10.3.25})表明动量被偏移了. 最后, $A^{I} $的二次项可以通过查验$ \alpha^{\prime}k\circ k/2 $为偶轻松地验证.
+
+为了比较这个频谱与\,Narain\,描述, 我们必须去往$ G_{m^{\prime}n^{\prime}}=\delta_{m^{\prime}n^{\prime}} $的坐标, 这使得$ k_{m^{\prime}}=e_{m^{\prime}}{}^{n}k_{n}$, 标架被定义成$ \delta_{p^{\prime}q^{\prime}}=e_{p^{\prime}}{}^{m}e_{q^{\prime}}{}^{n}G_{mn}$. 离散 $T$ -对偶群由各个轴上的$ T $-对偶, 有限大时空坐标变换, 以及反对称张量背景和\,Wilson\,线的量子偏移生成.
+
+这里有趣的一点是. 由于陪集空间(\ref{11.6.14})是相容性条件的通解, 无论我们紧致化的是$ SO(32) $理论还是$ E_{8}\times E_{8} $理论, 我们必须获得同一族理论. 从另一方面看, 注意到陪集空间由于其洛伦兹特征因而是不紧的------我们可以去往无限\,Narain\,增速极限. 其中一个这样的极限给出十维$ SO(32) $理论, 而另一个给出十维$ E_{8}\times E_{8} $理论. 显然我们可以认为所有不同的环向紧致化杂化弦是同一个理论中的不同态. 那么这两个十维理论就是这个理论的两个不同的极限.
+
+我们现在让这些理论之间的联系更显然些. 在一个半径为$ R $的圆上紧致化$ SO(32) $理论, 设这个圆有$ G_{99}=1 $和\,Wilson\,线
+\begin{equation}
+    RA_{9}^{I}=\operatorname{diag}\Bigl(\tfrac{1}{2}^{8},0^{8}\Bigr)
+    \label{11.6.18}
+\end{equation}
+一个指标取$ 1\leq A\leq 16 $而另一个指标取$ 17\leq A\leq 32 $的伴随态由于\,Wilson\,线因而是反周期的, 所以规范对称性就退化至$ SO(16)\times SO(16)$. 现在考察$ E_{8}\times E_{8} $理论, 这次圆的半径设为$ R^{\prime}$, 并有$ G_{99}=1 $和\,Wilson\,线
+\begin{equation}
+    R^{\prime}A_{9}^{I}=\operatorname{diag}\Bigl(1,0^{7},1,0^{7}\Bigr) \:.
+    \label{11.6.19}
+\end{equation}
+在每个$ E_{8} $中, 来自$ SO(16) $根格点的整数荷态仍然是周期的, 但来自$ SO(16) $旋量格点的半整数态变成反周期的. 像上面一样, 规范对称性依旧是$ SO(16)\times SO(16)$. 为了看到这两个理论之间的联系, 我们只关注那些在$ SO(16)\times SO(16) $下是中性的态，即那些$ k_{L}^{I}=0 $的态. 在这两个理论中, 由于$ k_{L}^{I} $中的偏移, 它们仅对于偶数的$ w=2m $才呈现出来. 两个中性频谱分别是
+\begin{equation}
+    k_{L,R}=\frac{\tilde{n}}{R} \pm \frac{2mR}{\alpha^{\prime}}\:,\qquad k_{L,R}^{\prime} =\frac{\tilde{n}^{\prime}}{R^{\prime}} \pm \frac{2m^{\prime}R^{\prime}}{\alpha^{\prime}}\:,
+\end{equation}
+我们没有写出指标\,9. 撇号指$ E_{8}\times E_{8} $理论, 并有$ \tilde{n}=n+2m,$ $\tilde{n}^{\prime}=n^{\prime}+2m^{\prime}$. 我们在每种情况中使用了\,Wilson\,线的显式形式以及$ k_{L}^{I}=0$. 在$ (\tilde{n},m)\leftrightarrow (m^{\prime},\tilde{n}^{\prime}) $和$ (k_{L},k_{R})\leftrightarrow (k_{L}^{\prime},-k_{R}^{\prime}) $下, 如果$ RR^{\prime}=\alpha^{\prime}/2$, 那么这两个频谱是等同的. 这个对称性扩展到整个频谱.
+
+最后, 我们看一下通过紧致化到\,4\,维所获得的理论有多现实. 在模空间的一般点, 无质量频谱通过维度约化获得, 态被它们的\,4\,维对称性分类. 用\,4\,维 $SO(2)$ 螺旋度分析这个频谱, $SO(8) $自旋分解成
+\begin{subequations}
+    \begin{align}
+        \mathbf{8}_{v} &\to +1,\,0^{6},\,-1\:, \label{11.6.21a}  \\
+        \mathbf{8} &\to +\tfrac{1}{2}^{4},\,-\tfrac{1}{2}^{4} \:, \label{11.6.21b}
+    \end{align}
+\end{subequations}  
+因而
+\begin{subequations}
+    \begin{align}
+        \mathbf{8}_{v}\times\mathbf{8}_{v} &\to +2,\,+1^{12},\,0^{38},\,-1^{12},\,-2\:, \label{11.6.22a} \\
+        \mathbf{8}\times \mathbf{8}_{v} &\to \tfrac{3}{2}^{4},\,\tfrac{1}{2}^{28},\,-\tfrac{1}{2}^{28},\,-\tfrac{3}{2}^{4} \:. \label{11.6.22b}
+    \end{align}
+\end{subequations}
+在这个超引力多重态中有一个螺旋度为$ \pm2 $的引力子, 4\,个螺旋度为$ \pm\frac{3}{2} $的引力微子. 环向紧致化不破坏任何超对称. 由于超荷在\,4\,维中有\,4\,个分量, 16\,个超对称性约化成$ d=4$, $N=4 $的超对称. 对于这个紧致化, 这个超引力多重态还引入了\,12\,个\,Kaluza-Klein\,和反对称张量规范玻色子, 一些费米子和\,36\,个模. 最后两个自旋零的态是伸缩子和轴子. 在\,4\,维中, 2\,阶张量$ B_{\mu\nu} $等价于一个标量. 这是轴子, 它的物理将在第\,18\,章进一步讨论.
+
+在十维中, 唯一携带规范荷的场是规范场和规范微子. 它们约化至一个$ N=4 $的矢量多重态------一个规范场, 4\,个\,Weyl\,旋量和\,6\,个标量, 全部处在伴随表示中. 对于没有在十维中呈现出来的扩充规范对称性, 由于超对称性获得的仍然是同一个$ N=4 $矢量多重态. 在有$ N=4 $超对称性的紧致化中, 由于费米子一定处在规范群的伴随表示中, 所以它不可能给出标准模型. 我们会在\,16.2\,节仔细解释, 一个引力微子是好的, 但\,4\,个引力微子就过头了. 我们会在第\,16\,章看到, 一个相当简单的轨形紧致化将这一对称性约化至$ N=1$ 并给出一个比较现实的频谱.
+
+\subsection*{Supersymmetry and BPS states}
+
+稍微想一下就知道环向紧致化理论的超对称代数必须采取如下形式
+\begin{equation}
+    \{Q_{\alpha},Q^{\dag}_{\beta}\} = 2P_{\mu}(\Gamma^{\mu}\Gamma^{0})_{\alpha\beta} +2P_{Rm}(\Gamma^{m}\Gamma^{0})_{\alpha\beta} \:. \label{11.6.23}
+\end{equation}
+它与十维代数的简单维数约化的不同之处在于我们把$ P_{m} $替换成了$ P_{Rm}$, 即一个给定态中所有弦的总右移动量$ k_{Rm}$. 它们仅在总缠绕数为零时相等. 这个代数必须要采取这个形式是因为时空超对称性只包含杂化弦的右移部分.
+
+我们现在来寻找\,Bogomolnyi-Prasad-Sommerfield\,(BPS)态, 即被某些$ Q_{\alpha} $湮灭的态. 对质量为$ M $的单个弦, 在静止参考系中取代数(\ref{11.6.23})在任意态$ \lvert \psi\rangle $上的真空期望值. 左手边是非负矩阵. 右边是
+\begin{equation}
+    2(M+k_{Rm}\Gamma^{m}\Gamma^{0})_{\alpha\beta} \:. \label{11.6.24}
+\end{equation}
+这个矩阵的零本征矢是湮灭$ \lvert\psi\rangle $的超对称性. 由于$ (k_{Rm}\Gamma^{m}\Gamma^{0})^{2}=k_{R}^{2}$, 矩阵的本征值是
+\begin{equation}
+    2(M\pm\lvert k_{R}\rvert) \:, \label{11.6.25}
+\end{equation}
+其中两种符号各一半. 因此\,BPS\,态有$ M^{2}=k_{R}^{2}$. 回忆杂化弦右移边的质壳条件,
+\begin{equation}
+    M^{2} = \begin{cases}
+        k_{R}^{2}+4(\tilde{N}-\tfrac{1}{2})/\alpha^{\prime} & \quad(\text{NS})\:, \\
+        k_{R}^{2}+4\tilde{N}/\alpha^{\prime} &\quad (\text{R})\:,
+    \end{cases} \label{11.6.26}
+\end{equation}
+所以\,BPS\,态是那些右移处在\,R\,基态或者处在被$ \psi_{-1/2} $激发一次的\,NS\,态中的态. 后者是在\,GSO\,投射下留存的最低态, 所以这里改变术语称它们是基态也是讲得通的. 那么\,BPS\,态就是右移处在$ \mathbf{8}_{v}+\mathbf{8} $基态的那些态, 但有任意大的$ k_{R}$. 它们可以匹配多种可能的左移态. 左移质壳条件是
+\begin{equation}
+    M^{2}=k_{L}^{2}+4(N-1)/\alpha^{\prime} \label{11.6.27}
+\end{equation}
+或者
+\begin{equation}
+    N=1+\alpha^{\prime}(k_{R}^{2}-k_{L}^{2})/4=1-n_{m}w^{m}-q^{I}q^{I}/2 \:. \label{11.6.28}
+\end{equation}
+只要紧致化动量和缠绕数满足条件(\ref{11.6.28}), 任意的左移振子态都是可能的. 对于任何给定的左移态, 16\,个左移态$ \mathbf{8}_{v}+\mathbf{8} $构成了超对称代数的极短多重态, 与之相对的是处在正常有质量多重态中的\,256\,个态.
+
+现在来看一下修正超对称代数(\ref{11.6.23})的十维起源. 将这个代数重写成
+\begin{equation}
+    \{Q_{\alpha},Q^{\dag}_{\beta}\}=2P_{M}(\Gamma^{M}\Gamma^{0})_{\alpha\beta}-2\frac{\Delta X_{m}}{2\pi\alpha^{\prime}}(\Gamma^{m}\Gamma^{0})_{\alpha\beta}\:,\label{11.6.29}
+\end{equation}
+其中$ \Delta X^{m} $是弦的总缠绕数. 考察紧致化半径变成宏观可视的极限, 这使得一个缠绕弦也变得宏观可视. 超对称代数中的中心荷项必须正比于一个守恒荷, 所以我们要寻找一个正比于弦长$ \Delta X $的荷. 实际上, 弦与反对称张量的耦合是
+\begin{subequations}
+    \begin{align}
+        \frac{1}{2\pi\alpha^{\prime}}\int_{M} B &=\frac{1}{2}\int \dif^{10}x\:j^{MN}(x)B_{MN}(x) \label{11.6.30a} \\
+        j^{MN}(x) &= \frac{1}{2\pi\alpha^{\prime}} \int_{M}\dif^{2}\sigma\: (\partial_{1}X^{M}\partial_{2}X^{N}-\partial_{1}X^{N}\partial_{2}X^{M})\delta^{10}(x-X(\sigma))\:.\label{11.6.30b}
+    \end{align}
+\end{subequations}
+在固定时刻积掉流给出荷
+\begin{equation}
+    Q^{M} = \int\dif^{9}x\:j^{M0}=\frac{1}{2\pi\alpha^{\prime}}\int\dif X^{M} \:, \label{11.6.31}
+\end{equation}
+沿着弦的世界线的积分. 整个超对称代数就是
+\begin{equation}
+    \{Q_{\alpha},Q^{\dag}_{\beta}\}=2(P_{M}-Q_{M})(\Gamma^{M}\Gamma^{0})_{\alpha\beta}\:. \label{11.6.32}
+\end{equation}
+
+在十维非紧致时空中, 荷(\ref{11.6.31})对于有限的闭弦为零但对于无限长的弦非零, 例如一个无限长的弦可以作为一个缠绕弦的$ R\to\infty $的极限. 考虑这样的宏观弦通常是有用的, 它显然有无限大的总质量和总荷, 但单位长度上的均值是有限的. 在紧致化中, 组合$ P_{m}-Q_{m} $是右移规范荷. 左移荷不出现在超对称代数中.
+
+一个很自然的问题是代数(\ref{11.6.32})现在是否是完整的, 事实上它不是. 考察在模空间一般点上到四维时空的紧致化, 这时规范群破缺至$ U(1)^{28}$. 在标准模型的$ U(1) $被嵌入单群的大统一理论中, 它总有对拓扑不平庸经典解量子化产生的磁单极. 弦论不是一个普通的大统一理论, 但它也有磁单极. 杂化弦的紧致化会给出三种规范对称性: 十维对称性, Kaluza-Klein\,对称性, 反对称张量对称性. 对于每一种对称性, 都有相应的单极解: 't Hooft-Polyakov\,单极解, Kaluza-Klein\,单极, 和 $H$-单极. 当然, 由于各种荷可以被$ O(22,6,\mathds{Z})\,T $-对偶交换, 单极比必须同样如此. 单极荷出现在超对称代数中; 在现有的情况中, 它还是出现右移荷中. 在低能超引力理论中, 有一种交换电荷和磁荷的对称性, 所以它们必须以一种对称的方式出现在超对称代数中.  

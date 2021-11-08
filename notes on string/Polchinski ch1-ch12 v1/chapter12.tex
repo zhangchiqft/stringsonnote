@@ -1,0 +1,672 @@
+
+\chapter{超弦相互作用}
+
+可以从两种观点来看超弦的相互作用. 一种是研究无质量自由度的相互作用, 它们被超对称性高度约束. 第一节将讨论树级相互作用, 而第二节讨论一种重要的一圈效应: 定域时空对称性中的反常. 然后我们会发展超弦微扰论. 我们会引入超场和超黎曼面以赋予超共形对称性一个几何解释, 并计算数个树级和一圈振幅.
+
+
+
+\section{低能超引力}
+
+十维超对称弦论要么有\,32\,个超对称生成元, 要么有\,16\,个超对称生成元. 这么多超对称性完全决定了低能作用量.
+
+\subsection*{Type IIA superstring}
+
+我们先来讨论拥有可能最大时空超对称性和\,Poincar\'{e}\,对称性的场论, 即\,11\,维超引力. 维数有上界是因为非平庸的场论不能有自旋大于2的无质量粒子.
+
+\begin{tcolorbox}
+    4\,维时空中最大超对称性是$ N=8$, 即最多有\,32\,个超荷, 而作为超引力理论, 10\,维和11\,维最少有$ 2\times 2^{5}=32 $个超荷.
+\end{tcolorbox}
+
+这个理论看似与要求十维时空的超弦理论没有直接联系. 我们对它有兴趣的一个直接原因是它与\,IIA\,理论有相同的超对称代数. 因此后者的作用量可以通过对前者做维数约化得到. (环向紧致化仅保留与紧致维数无关的场.)
+
+十一维超引力理论有两个玻色场, 度规$ G_{MN}$以及场强为$ F_{\textit{4}} $的\,3\,-形式势$ A_{MNP}=A_{\textit{3}}$. 高维超引力包含多种不同的$ p $-形式场; 为了区分它们, 我们用斜体下标来标记秩, 用罗马体写数值张量指标. 写成无质量态的$ SO(9) $自旋, 度规给出有\,44\,个态的无迹对称张量, 而\,3\,-形式给出有\,84\,个态的\,3\,秩反对称张量. 玻色态的总数就是\,128, 等于$ SO(9) $矢量-旋量引力微子的维数.
+
+作用量的玻色部分是
+\begin{equation}
+    2\kappa_{11}^{2}\bm{S}_{11}=\int\dif^{11}x\:(-G)^{1/2}\biggl(R-\frac{1}{2}\lvert F_{\textit{4}}\rvert^{2}\biggr)-\frac{1}{6}\int A_{\textit{3}}\wedge F_{\textit{4}}\wedge F_{\textit{4}} \:. \label{12.1.1}
+\end{equation}
+形式作用量完全写出来正比于
+\begin{equation}
+    \int\dif^{d}x\:(-G)^{1/2}\lvert F_{p}\rvert^{2} = \int \dif^{d}x\:\frac{(-G)^{1/2}}{p!}\,G^{M_{1}N_{1}}\cdots G^{M_{p}N_{p}}F_{M_{1}\cdots M_{p}}F_{N_{1}\cdots N_{p}} \:. \label{12.1.2}
+\end{equation}
+$p! $抵消了对指标置换的求和, 这使得每个独立分量的系数都是\,1.  把形式写成带有下指标的张量是为了让它们的规范变换不包含度规.
+\begin{tcolorbox}
+    注意
+    \[(A_{p}\wedge B_{q})_{\mu_{1}\cdots\mu_{p+q}} = \frac{(p+q)!}{p!q!}A_{[\mu_{1}\cdots \mu_{p}}B_{\mu_{p+1}\cdots\mu_{p+q}]} \:.\]
+\end{tcolorbox}
+
+我们不加推导地从文献中拿出结果. 我们感兴趣的是各种作用量的普遍性质, 并且我们不会写出全部费米项或者超对称变换. 对于来自弦论的超引力, 可以通过比对弦振幅的低能极限来证明作用量. 另外, 很多重要特征, 例如伸缩子的耦合, 将从更一般的推理来理解.
+
+现在像\,8.1\,节那样做维度约化. 在\,10\,-方向上的平移下不变的一般度规是
+\begin{align}
+    \dif s^{2} &= G_{MN}^{11}(x^{\mu})\dif x^{M}\dif x^{N} \nonumber \\
+    &= G_{\mu\nu}^{10}(x^{\mu})\dif x^{\mu}\dif x^{\nu} + \exp(2\sigma(x^{\mu}))[\dif x^{10}+A_{\nu}(x^{\mu})\dif x^{\nu}]^{2} \:. \label{12.1.3}
+\end{align}
+这里的 $M,N$ 从\,0\,取到\,10, 而$ \mu,\nu $从\,0\,取到\,9. 我们在之前的超引力作用量中的度规上加了上标\,11, 并引入新的十维度规$ G_{\mu\nu}^{10}\neq G_{\mu\nu}^{11}$. 后面用的都是十维度规, 所以后面会略去上标\,10.
+
+11\,维度规(\ref{12.1.3})约化至一个\,10\,维度规, 一个规范场$ A_{\textit{1}}$, 和一个标量$ \sigma$. 势$ A_{\textit{3}} $约化成两个势$ A_{\textit{3}} $和$ A_{\textit{2}}$, 后一个来自于一个指标是紧致\,10\,-方向的分量. (\ref{12.1.1})中的三项变成
+\begin{subequations}
+    \begin{align}
+        \bm{S}_{1} &=\frac{1}{2\kappa_{10}^{2}}\int \dif^{10}x\:(-G)^{1/2}\biggl(\me^{\sigma}R-\frac{1}{2}\me^{3\sigma}\lvert F_{\textit{2}}\rvert^{2}\biggr) \:, \label{12.1.4a} \\
+        \bm{S}_{2} &=-\frac{1}{4\kappa_{10}^{2}}\int \dif^{10}x\:(-G)^{1/2}\Bigl(\me^{-\sigma}\lvert F_{\textit{3}}\rvert^{2}-\me^{\sigma}\lvert \tilde{F}_{\textit{4}}\rvert^{2}\biggr) \:, \label{12.1.4b} \\
+         \bm{S}_{3} &= - \frac{1}{4\kappa_{10}^{2}}\int A_{\textit{2}}\wedge  F_{\textit{4}} \wedge F_{\textit{4}}
+         = - \frac{1}{4\kappa_{10}^{2}}\int A_{\textit{3}}\wedge  F_{\textit{3}} \wedge F_{\textit{4}} \:. \label{12.1.4c}
+     \end{align}  \label{12.1.4}
+\end{subequations}
+我们在坐标周期为$ 2\pi R $的圆上紧致化这个理论并定义$ \kappa_{10}^{2}=\kappa_{11}^{2}/2\pi R$. 动能项的归一化对$ 2\kappa_{10}^{2}=1 $是正则的.
+
+\begin{tcolorbox}
+方程(\ref{12.1.4a})的简单推导. 首先注意到
+\[
+ G_{MN}^{11}=\begin{pmatrix}
+     G_{\mu\nu}^{10}+\me^{2\sigma} A_{\mu}A_{\nu} & \me^{2\sigma}A_{\mu} \\
+     \me^{2\sigma} A_{\nu} &\me^{2\sigma}
+ \end{pmatrix}    
+ \]
+ 所以
+ \[
+    G^{11}=\operatorname{det} \left(\begin{pmatrix}
+        1 & -A_{\nu} \\
+        0 & 1
+    \end{pmatrix}    \begin{pmatrix}
+        G_{\mu\nu}^{10}+\me^{2\sigma} A_{\mu}A_{\nu} & \me^{2\sigma}A_{\mu} \\
+        \me^{2\sigma} A_{\nu} &\me^{2\sigma}
+    \end{pmatrix}    \right)   = G^{10} \me^{2\sigma}
+\]
+根据(\textcolor{foo}{8.1.8}),
+\[
+            R_{11}=R_{10}-2\me^{-\sigma} \nabla^{2} \me^{\sigma} -\frac{1}{4}\me^{2\sigma}F_{\mu\nu}F^{\mu\nu}  
+\]
+第二项与测度结合后是 
+\[ 
+    (-G^{11})^{1/2}\me^{-\sigma} \nabla^{2} \me^{\sigma}=(-G^{10})^{1/2}\nabla^{2}\me^{\sigma}=\partial_{\mu}(\sqrt{-G^{10}}G^{10\mu\nu}\partial_{\nu}\me^{\sigma})
+\]    
+是全导数项, 所以无需考虑.
+\end{tcolorbox}
+   
+在作用量(\ref{12.1.4})中, 我们定义了
+\begin{equation}
+    \tilde{F}_{\textit{4}}= \dif A_{\textit{3}}-A_{\textit{1}}\wedge F_{\textit{3}} \:, \label{12.1.5}
+\end{equation}
+其中第二项来源于\,4\,-形式作用量(\ref{12.1.2})中的分量$ G^{\mu\,10}$. 我们将用$ F_{p+\textit{1}}=\dif A_{p} $代表一个势的外导数, 而有额外项的场强则会像方程(\ref{12.1.5})中那样加一个波浪符进行区分. 注意, 作用量中有几项出现的是$ p $-形式, 而不是它们的外导数, 但它们仍然是规范不变的. 它们被称为\,\textit{Chern--Simons}\,项, 并且我们看到两类. 一类是一个势与任意多个场强的楔积, 它的规范不变性是场强的\,Bianchi\,恒等式的结果. 另一类出现在修正场强(\ref{12.1.5})的动能项中. $\tilde{F}_{\textit{4}} $的第二项有规范变分
+\begin{equation}
+    {-}\dif\lambda_{\textit{0}} \wedge F_{\textit{3}} = - \dif(\lambda_{\textit{0}}\wedge F_{\textit{3}}) \:. \label{12.1.6}
+\end{equation}
+它被通常$\delta A_{\textit{3}}=\dif\lambda_{\textit{2}} $以外的另一个变换
+\begin{equation}
+    \delta^{\prime}A_{\textit{3}}=\lambda_{\textit{0}}\wedge F_{\textit{3}} \label{12.1.7}
+\end{equation}
+抵消了. 在现在的情况中, Kaluze-Klein\,规范变换$ \lambda_{\textit{0}} $来源于$ x^{10} $的再参数化, 而变换(\ref{12.1.7})就是\,11\,维张量变换的一部分. 由于$ \tilde{F}_{\textit{4}} $在$ \lambda_{\textit{0}} $和$ \lambda_{\textit{2}} $变换下都是不变的, 我们应该认为它是物理场强, 但满足一个不标准的\,Bianchi\,恒等式
+\begin{equation}
+    \dif \tilde{F}_{\textit{4}}=-F_{\textit{2}}\wedge F_{\textit{3}}
+\end{equation}
+形式理论的\,Poincar\'{e}\,对偶交换两种\,Chern-Simons\,项.
+
+约化理论的场与\,IIA\,弦的玻色场相同. 特别的, 在相差某个场重定义的意义下, 标量$ \sigma $必须是伸缩子$ \Phi$. 弦耦合由伸缩子的的值决定. 这意味在合适的场重定义后, 树级时空作用量要乘以一个总因子$ \me^{-2\Phi}$, 而其它对$ \Phi $的依赖只是对它导数的依赖, (见\,3.7\,节). ``合适的重定义''是指场与弦世界面 $\sigma $模型作用量中的场相同.
+
+由于, 我们没有参考弦论就得到了作用量(\ref{12.1.4}), 我们不知道这些场与世界面作用量中的那些场是如何关联的. 我们将通过猜测继续, 然后再用世界面项解释结果. 首先重定义
+\begin{equation}
+    G_{\mu\nu}=\me^{-\sigma}\,G_{\mu\nu}(\text{new})\:, \qquad \qquad \sigma=\frac{2\Phi}{3}\:.\label{12.1.9}
+\end{equation}
+原始度规不会再出现, 所以我们不会在新度规上加撇. 那么
+\begin{subequations}
+    \begin{align}
+        \bm{S}_{\text{IIA}} &= \bm{S}_{\text{NS}}+ \bm{S}_{\text{R}}+\bm{S}_{\text{CS}} \:, \label{12.1.10a} \\
+        \bm{S}_{\text{NS}} &= \frac{1}{2\kappa_{10}^{2}}\int \dif^{10}x\:(-G)^{1/2}\me^{-2\Phi}\Bigl(R+4\partial_{\mu}\Phi\partial^{\mu}\Phi-\frac{1}{2}\lvert H_{\textit{3}}\rvert^{2} \Bigr) \:,  \label{12.1.10b} \\
+        \bm{S}_{\text{R}}&=-\frac{1}{4\kappa_{10}^{2}}\int\dif^{10}x\:(-G)^{1/2}\Bigl(\lvert F_{\textit{2}}\rvert^{2}+\lvert \tilde{F}_{\textit{4}}\rvert^{2}\Bigr) \:, \label{12.1.10c}\\
+        \bm{S}_{\text{CS}}&=-\frac{1}{4\kappa_{10}^{2}}\int\dif^{10}x\:B_{\textit{2}}\wedge
+        F_{\textit{4}}\wedge F_{\textit{4}} \:. \label{12.1.10d}
+    \end{align} \label{12.1.10}
+\end{subequations}
+注意$ R\to \me^{\sigma}R+\cdots$, $(-G)^{1/2}\to \me^{-5\sigma}(-G)^{1/2}$, 以及形式作用量(\ref{12.1.2})被因子$  \me^{(p-5)\sigma} $重新标度.
+
+根据场处在弦论的\,NS--NS\,区域还是\,R--R\,区域, 我们对这些项进行了重新组合; Chern-Simons\,项两种都包含. 区分\,R--R\,形式和\,NS--NS\,形式是有用的, 所以对于\,R--R\,场, 我们从此之后用$ C_{\textit{p}} $和$ F_{\textit{p+1}} $表示势和场强, 对\,NS--NS\,场则是用$ B_{\textit{2}} $和$ H_{\textit{3}}$. 另外, 我们将用$ A_{\textit{1}} $和$ F_{\textit{2}} $表示开弦和杂化规范场, 用$ B_{\textit{2}} $和$ H_{\textit{3}} $表示杂化反对称张量.
+
+NS\,作用量现在以正确的形式包含伸缩子. 方程(\ref{12.1.9})是唯一实现这点的重定义. R\,作用量没有期待的因子$ \me^{-2\Phi}$, 但可以通过进一步的重定义
+\begin{equation}
+    C_{\textit{1}} =\me^{-\Phi}\,C_{\textit{1}}^{\prime} \label{12.1.11}
+\end{equation}
+变成这种形式, 在这之后,
+\begin{subequations}
+    \begin{align}
+        \int \dif^{10}x\:(-G)^{1/2}\lvert F_{\textit{2}}\rvert^{2} &= \int \dif^{10}x\: (-G)^{1/2}\me^{-2\Phi}\lvert F_{\textit{2}}^{\prime}\rvert^{2} \:, \label{12.1.12a} \\
+        F_{\textit{2}}^{\prime} &\equiv \dif C_{\textit{1}}^{\prime}-\dif\Phi\wedge C_{\textit{1}}^{\prime} \:, \label{12.1.12b}
+    \end{align} \label{12.1.12}
+\end{subequations}
+对$ F_{\textit{3}} $和$ C_{\textit{4}} $类似. 作用量(\ref{12.1.12})使得圈展开的伸缩子依赖性变得显然, 但代价是\,Bianchi\,恒等式和规范变换变得复杂
+\begin{equation}    
+    \dif F_{\textit{2}}^{\prime} = \dif \Phi\wedge F_{\textit{2}}^{\prime}\:,\qquad\qquad 
+    \delta C_{\textit{1}}^{\prime} =\dif \lambda_{\textit{0}}^{\prime}- \lambda_{\textit{0}}^{\prime}\,\dif\Phi \:. \label{12.1.13}
+\end{equation}  
+由于这个原因, 经常使用的形式是(\ref{12.1.10}). 例如, 在时间相关的伸缩子场中, 与不加撇场耦合的荷是守恒的.
+
+我们现在与弦论联系起来并看一下为什么世界面作用量中出现的背景\,R--R\,场有更加复杂的性质(\ref{12.1.13}). 我们在线性化的级别下进行处理, 写成顶点算符的形式是
+\begin{equation}
+    \mathscr{V}_{\alpha}\tilde{\mathscr{V}}_{\beta}(C\Gamma^{\mu_{1}\cdots\mu_{p}})_{\alpha\beta}\,e_{\mu_{1}\cdots\mu_{p}}(X) \:. \label{12.1.14}
+\end{equation}
+这里$ \mathscr{V}_{\alpha} $是\,R\,背景态顶点算符(\ref{10.4.25})而$ \Gamma^{\mu_{1}\cdots\mu_{p}}=\Gamma^{[\mu_{1}}\cdots\Gamma^{\mu_{p}]}$. 非平庸的物理态条件来自$ G_{0}\sim p_{\mu}\psi_{0}^{\mu} $和$ \tilde{G}_{0}\sim p_{\mu}\tilde{\psi}_{0}^{\mu}$， 并归结于两个\,Dirac\,方程, 一个作用在左手旋量指标上而另一个作用在右手上:
+\begin{equation}
+    \Gamma^{\nu}\Gamma^{\mu_{1}\cdots\mu_{p}}\partial_{\nu}e_{\mu_{1}\cdots \mu_{p}}(X)=
+    \Gamma^{\mu_{1}\cdots\mu_{p}}\Gamma^{\nu}\partial_{\nu}e_{\mu_{1}\cdots \mu_{p}}(X)=0\:.\label{12.1.15}
+\end{equation}
+通过反对称化所有 $p+1$ 个 $\Gamma $指标并保留反对易子, 我们得到
+\begin{subequations}
+    \begin{align}
+        \Gamma^{\nu}\Gamma^{\mu_{1}\cdots\mu_{p}}&=\Gamma^{\nu\mu_{1}\cdots\mu_{p}}+p\eta^{\nu[\mu_{1}}\Gamma^{\mu_{2}\cdots\mu_{p}]}\:, \label{12.1.16a} \\  
+        \Gamma^{\mu_{1}\cdots\mu_{p}}\Gamma^{\nu}&=(-1)^{p}\Gamma^{\nu\mu_{1}\cdots\mu_{p}}+(-1)^{p+1}p\eta^{\nu[\mu_{1}}\Gamma^{\mu_{2}\cdots\mu_{p}]}\:, \label{12.1.16b} 
+    \end{align} \label{12.1.16}
+\end{subequations}
+那么\,Dirac\,方程(\ref{12.1.15})就等价于
+\begin{equation}
+    \dif e_{p} = \dif\ast e_{p}=0 \:. \label{12.1.17}
+\end{equation}
+不像之前我们对玻色场遇到的二阶微分方程, 它们是一阶微分方程. 事实上, 它们与$ p $-形式场强的场方程和\,Bianchi\,恒等式有相同的形式. 因此, 我们把出现在顶点算符中的函数$ e_{\mu_{1}\cdots \mu_{p}}(X) $视为\,R--R\,{\kaishu{场强}}而非势. 为了证实这点, 注意到在\,IIA\,理论中, R--R\,顶点算符(\ref{12.1.14})中的旋量手征性相反, 所以它们在表\,\ref{tab:10.1}\,中的乘积包含偶数秩的形式, 与\,IIA\,R--R\,场强相同.
+
+这有一个在后面很重要的结果. R--R\,形式的振幅总会包含动量的幂函数因而在零动量处为零. 一个规范场的零动量耦合衡量了荷的大小, 所以这意味着{\kaishu{弦在所有\,R--R\,规范场下是中性的}}.
+
+场方程(\ref{12.1.17})的推导是针对平坦背景的. 现在我们来考虑伸缩子梯度的效应. 线性伸缩子背景给出自由\,CFT\,(\ref{10.1.22}),
+\begin{subequations}
+    \begin{align}
+        T_{F}&=\mi(2/\alpha^{\prime})^{1/2}\psi^{\mu}\partial X_{\mu}-2\mi(\alpha^{\prime}/2)^{1/2}\Phi_{,\mu}\partial\psi^{\mu} \:, \label{12.1.18a} \\
+        G_{0}&\sim (\alpha^{\prime}/2)^{1/2}\psi_{0}^{\mu}(p_{\mu}+\mi\Phi_{,\mu}) \:, \label{12.1.18b}
+    \end{align} \label{12.1.18}
+\end{subequations}
+对$ \tilde{T}_{F} $和$ \tilde{G}_{0} $类似. 场方程被修正成
+\begin{equation}
+    (\dif-\dif\Phi\wedge) e_{p}=(\dif-\dif\Phi\wedge)\ast e_{p} =0\:. \label{12.1.19}
+\end{equation}
+因此弦背景场的\,Bianchi\,恒等式和场方程被修正成了从作用量中推导出的那种形式. NS--NS\,张量没有这种修正. 它通过它的势
+\begin{equation}
+    \frac{1}{2\pi\alpha^{\prime}} \int_{M}B_{\textit{2}} \label{12.1.20}
+\end{equation}
+与世界面耦合. 它在独立于伸缩子的$ \delta B_{\textit{2}}=\dif\lambda_{\textit{1}} $下是不变的, 因此 $H_{\textit{3}}=\dif B_{\textit{2}} $是不变的并且$ \dif H_{\textit{3}}=0$ .
+
+\subsection*{Massive IIA supergravity}
+
+IIA\,超引力理论有一个与\,11\,维超引力没有简单联系的推广, 但这个推广仍在弦论中起到一定作用. 这个\,IIA\,理论有\,2\,-形式和\,4\,-形式场强, 以及通过\,Poincar\'{e}\,对偶得到的\,6\,-形式和\,8\,-形式
+\begin{equation}
+    \tilde{F}_{\textit{6}}=\ast\tilde{F}_{\textit{4}}\:,\qquad \qquad 
+    \tilde{F}_{\textit{8}}=\ast F_{\textit{2}}\:; \label{12.1.21}
+\end{equation}
+波浪符是指场强满足不标准的\,Bianchi\,恒等式. 从这个规律来看, 我们还应考虑一个\,10\,-形式$ F_{\textit{10}}=\dif C_{\textit{9}}$. 自由场方程将是
+\begin{equation}
+    \dif \ast F_{\textit{10}} =0 \:, \label{12.1.22}
+\end{equation}
+由于$ \ast F_{\textit{10}} $是标量, 这意味着
+\begin{equation}
+    \ast F_{\textit{10}} = \text{常数}\:. \label{12.1.23}
+\end{equation}
+因此它没有传播自由度. 然而, 由于它携带能量密度, 它有物理效应. 这与\,2\,维时空中的电场$ F_{\textit{2}}$ 很像, 它没有传播自由度, 但有一个能量密度和一个禁闭电荷的线性势.
+
+这种场确实可以被纳入进\,IIA\,超引力中. 作用量是
+\begin{equation}
+    \bm{S}_{\text{IIA}}^{\prime}=\tilde{\bm{S}}_{\text{IIA}}-\frac{1}{4\kappa_{10}^{2}}\int\dif^{10}x\: (-G)^{1/2}M^{2}+\frac{1}{2\kappa_{10}^{2}}\int M\,F_{\textit{10}}\:. \label{12.1.24}
+\end{equation}
+这里的$\tilde{\bm{S}}_{\text{IIA}}$是之前的\,IIA\,作用量(\ref{12.1.10})做替换
+\begin{equation}
+    F_{\textit{2}}\to F_{\textit{2}}+MB_{\textit{2}}\:, \qquad 
+    F_{\textit{4}}\to F_{\textit{4}}+\frac{1}{2}MB_{\textit{2}}\wedge B_{\textit{2}}\:,\qquad \tilde{F}_{\textit{4}}\to\tilde{F}_{\textit{4}}+\frac{1}{2}MB_{\textit{2}}\wedge B_\textit{2} \label{12.1.25}
+\end{equation}
+后的结果. 标量$ M $是辅助场. 因此它可以被积掉, 代价是引入一个对$ B $的非线性依赖.
+
+我们会在下一章看到, 这个有质量超引力确实出现在\,IIA\,弦论中. 为了把\,9\,-形式势变得更透彻, 观测到在十维中能给出传播场的秩最大的势是\,8\,-形式, 它的\,9\,形式场强与一个\,1\,-形式对偶. 后者就是\,R--R\,标量场$ C_{\textit{0}} $的梯度. 10\,形式也能填进\,10\,维时空中但不给出能传播的态. 我们在\,10.8\,节看到这在\,I\,型弦中确实存在, 所以我们不奇怪这个\,9\,-形式也将出现在弦论中.
+
+
+\subsection*{Type IIB superstring}
+ 
+对低能\,IIB\,超引力, 有一个自对偶场强$ F_{\textit{5}}=\ast F_{\textit{5}} $引起的问题. 这样的场没有协变作用量, 当如下形式很接近
+\begin{subequations}
+\begin{align}
+    \bm{S}_{\text{IIB}}&=\bm{S}_{\text{NS}}+\bm{S}_{\text{R}}+\bm{S}_{\text{CS}} \:, \label{12.1.26a} \\
+    \bm{S}_{\text{NS}}&=\frac{1}{2\kappa_{10}^{2}}\int\dif^{10}x\:(-G)^{1/2}\me^{-2\Phi}
+    \biggl(R+4\partial_{\mu}\Phi\partial^{\mu}\Phi-\frac{1}{2}\lvert H_{3}\rvert^{2}\biggr) \:,\label{12.1.26b} \\
+    \bm{S}_{\text{R}}&=- \frac{1}{4\kappa_{10}^{2}} \int \dif^{10}x\:(-G)^{1/2}\biggl(\lvert F_{\textit{1}}\rvert^{2}+\lvert\tilde{F}_{\textit{3}}\rvert^{2}+\frac{1}{2}\lvert\tilde{F}_{\textit{5}}\rvert^{2}\biggr) \:, \label{12.1.26c} \\
+    \bm{S}_{\text{CS}}&=-\frac{1}{4\kappa_{10}^{2}}\int C_{\textit{4}}\wedge H_{\textit{3}}\wedge F_{\textit{3}} \:,
+\end{align}
+\end{subequations}
+其中
+\begin{subequations}
+\begin{align}
+    \tilde{F}_{\textit{3}} &= F_{\textit{3}}- C_{\textit{0}}\wedge H_{\textit{3}} \:, \label{12.1.27a}\\
+    \tilde{F}_{\textit{5}} &= F_{\textit{5}} -\frac{1}{2}C_{\textit{2}}\wedge H_{\textit{3}} +\frac{1}{2}B_{\textit{2}}\wedge F_{\textit{3}} \:. \label{12.1.27b}
+\end{align}
+\end{subequations}
+
+
+
+\subsection*{Type I superstring}
+
+\subsection*{Heteroric strings}
+
+\begin{equation}
+    \tilde{H}_{\textit{3}}=\dif B_{\textit{2}} - \frac{\kappa_{10}^{2}}{g_{10}^{2}}\omega_{\textit{3}}  \:, \qquad
+        \delta B_{\textit{2}} = \frac{\kappa_{10}^{2}}{g_{10}^{2}}\operatorname{Tr}_{\mathrm{v}}(\lambda\dif A_{\textit{1}})\label{12.1.40}
+\end{equation}
+
+
+\section{反常}
+
+\begin{equation}
+    \delta Z[A] = -\pi \int \dif^{2}z\:\lambda^{a}(z,\bar{z})
+    \Bigl[\hat{k}_{L}\partial_{z}A_{\bar{z}}^{a}(z,\bar{z})+\hat{k}_{R}\partial_{\bar{z}}A_{z}^{a}(z,\bar{z})\Bigr]\:.
+    \label{12.2.3}
+\end{equation}
+
+\section{超空间和超场}
+
+为了构造超弦微扰论, 先给超共形对称性一个更加几何的解释是更有益的. 为了做到这点, 我们需要{\emph{超流形}}, 它是有一个普通复坐标$ z $和一个反对易复坐标$ \theta $的世界面, 其中
+\begin{equation}
+    \theta^{2}=\bar{\theta}^{2} = \{\theta,\bar{\theta}\} = 0 \:. \label{12.3.1}
+\end{equation}
+由于反对易性, 对于$ \theta $和$ \bar{\theta} $的任意函数, 它的\,Taylor\,展开是截断的. 这样, 我们就可以把超流形上的任意函数看成是\,Taylor\,展开中出现的普通函数的集合. 然而, 就像算符``$\int\theta$''的有很多普通积分的性质, 因而我们称它为积分, $\theta $的行为也很像一个坐标, 所以将其看成是一个既有普通坐标又有反对易坐标的流形是有用的.
+
+我们可以这样看待普通的共形变换. 在世界面坐标的广义变换$ z^{\prime}(z,\bar{z}) $下, 导数的变换是
+\begin{equation}
+    \partial_{z} = \frac{\partial z^{\prime}}{\partial z} \partial_{z^{\prime}}
+    +\frac{\partial \bar{z}^{\prime}}{\partial z} \partial_{\bar{z}^{\prime}} \:.\label{12.3.2}
+\end{equation}
+共形变换就是那些将$ \partial_{z} $变成自身的倍数的变换.
+
+定义{\emph{超导数}},
+\begin{equation}
+    D_{\theta} = \partial_{\theta} + \theta \partial_{z}\:, \qquad \quad 
+    D_{\bar{\theta}} = \partial_{\bar{\theta}}+ \bar{\theta}\partial_{\bar{z}} \:, \label{12.3.3}
+\end{equation}
+它有如下的性质
+\begin{equation}
+    D_{\theta}^{2} = \partial_{z}\:, \qquad D_{\bar{\theta}}^{2} = \partial_{\bar{z}}\:,\qquad
+    \{D_{\theta},D_{\bar{\theta}}\} = 0 \:. \label{12.3.4}
+\end{equation}
+\begin{tcolorbox}
+注意到
+\begin{align*}
+    (\partial_{\theta}+\theta\partial_{z})^{2}f =\partial_{\theta}\Bigl(\theta \partial_{z}f\Bigr)
+    +\theta \partial_{z}\partial_{\theta} f = \partial_{z}f - \theta \partial_{\theta}\partial_{z}f
+    +\theta \partial_{z}\partial_{\theta} f \:,
+\end{align*}
+第一等号中没有二次项是因为$ \theta $的反对易性, 第二个等号中第二项的负号也是因为如此.
+\begin{align*}
+    \{D_{\theta},D_{\bar{\theta}}\} &=\partial_{\theta}\partial_{\bar{\theta}}f+ \theta\bar{\theta}\partial_{z}\partial_{\bar{z}}f+\theta\partial_{\bar{\theta}}\partial_{z}f
+    -\bar{\theta}\partial_{\theta}\partial_{\bar{z}}f \\
+    &\quad +\partial_{\bar{\theta}}\partial_{\theta}f+ \bar{\theta}\theta\partial_{z}\partial_{\bar{z}}f
+    +\bar{\theta}\partial_{\theta}\partial_{\bar{z}}f -\theta\partial_{\bar{\theta}}\partial_{z}f =0
+\end{align*}
+\end{tcolorbox}
+\noindent 超共形变换$ z^{\prime}(z,\theta)$, $\theta^{\prime}(z,\theta) $就是将$ D_{\theta} $变成自身倍数的变换. 从
+\begin{equation}
+    D_{\theta} = D_{\theta} \theta^{\prime} \partial_{\theta^{\prime}}
+    +D_{\theta}z^{\prime}\partial_{z^{\prime}} + D_{\theta}\bar{\theta}^{\prime}\partial_{\bar{\theta}^{\prime}}
+    +D_{\theta}\bar{z}^{\prime}\partial_{\bar{z}^{\prime}} \:, \label{12.3.5}
+\end{equation}
+得出超共形变换满足
+\begin{equation}
+     D_{\theta}\bar{\theta}^{\prime}=D_{\theta}\bar{z}^{\prime}=0\:, \qquad \quad
+     D_{\theta}z^{\prime} = \theta^{\prime}D_{\theta}\theta^{\prime} \:, \label{12.3.6}
+\end{equation}
+因而
+\begin{equation}
+    D_{\theta}= (D_{\theta}\theta^{\prime})D_{\theta^{\prime}} \:. \label{12.3.7}
+\end{equation}
+\begin{tcolorbox}
+首先证明(\ref{12.3.5}) 
+\begin{align*}
+    D_{\theta} = \frac{\partial}{\partial \theta} + \theta \frac{\partial}{\partial z}
+    &= \frac{\partial \theta^{\prime}}{\partial \theta} \frac{\partial}{\partial \theta^{\prime}}
+    + \frac{\partial z^{\prime}}{\partial \theta} \frac{\partial}{\partial z^{\prime}} 
+    +\frac{\partial \bar{\theta}^{\prime}}{\partial \theta} \frac{\partial}{\partial \bar{\theta^{\prime}}}
+    + \frac{\partial \bar{z}^{\prime}}{\partial \theta} \frac{\partial}{\partial \bar{z}^{\prime}} \\
+    &\quad+ \theta \frac{\partial \theta^{\prime}}{\partial z}\frac{\partial}{\partial \theta^{\prime}}
+    +\theta \frac{\partial z^{\prime}}{\partial z}\frac{\partial}{\partial z^{\prime}}
+    + \theta \frac{\partial \bar{\theta}^{\prime}}{\partial z}\frac{\partial}{\partial \bar{\theta}^{\prime}}
+    +\theta \frac{\partial \bar{z}^{\prime}}{\partial z}\frac{\partial}{\partial \bar{z}^{\prime}} \\
+    &=D_{\theta} \theta^{\prime} \partial_{\theta^{\prime}}
+    +D_{\theta}z^{\prime}\partial_{z^{\prime}} + D_{\theta}\bar{\theta}^{\prime}\partial_{\bar{\theta}^{\prime}}
+    +D_{\theta}\bar{z}^{\prime}\partial_{\bar{z}^{\prime}} ,
+\end{align*}
+对(\ref{12.3.5})使用(\ref{12.3.6})就得到
+\begin{align*}
+    D_{\theta} \theta^{\prime} \partial_{\theta^{\prime}}
+    +D_{\theta}z^{\prime}\partial_{z^{\prime}} + D_{\theta}\bar{\theta}^{\prime}\partial_{\bar{\theta}^{\prime}}
+    +D_{\theta}\bar{z}^{\prime}\partial_{\bar{z}^{\prime}}
+    =D_{\theta} \theta^{\prime} \partial_{\theta^{\prime}}
+    +\theta^{\prime}D_{\theta}\theta^{\prime}\partial_{z^{\prime}}=(D_{\theta}\theta^{\prime})D_{\theta^{\prime}}\:.
+\end{align*}
+\end{tcolorbox}
+\noindent 利用$ D_{\theta}^{2}=\partial_{z} $可以得出
+\begin{equation}
+    \partial_{\bar{z}}z^{\prime}=\partial_{\bar{\theta}}z^{\prime}=\partial_{\bar{z}}\theta^{\prime}
+    =\partial_{\bar{\theta}}\theta^{\prime} =0  \label{12.3.8}
+\end{equation}
+以及它的共轭关系. 由此我们可以解出超共形变换, 并用全纯对易函数$ f(z) $和全纯反对易函数$ g(z) $将其表示出来,
+\begin{subequations}
+\begin{align}
+    z^{\prime}(z,\theta) &= f(z)+\theta g(z)h(z) \:, \qquad 
+    \theta^{\prime}(z,\theta)=g(z)+\theta h(z) \:, \label{12.3.9a} \\
+    h(z) &= \pm\Bigl[\partial_{z}f(z)+g(z)\partial_{z}g(z)\Bigr]^{1/2} \label{12.3.9b}
+\end{align} \label{12.3.9}
+\end{subequations}
+无限小形式是
+\begin{equation}
+    \delta z= \epsilon[v(z)-\mi\theta\eta(z)] \:, \qquad 
+    \delta \theta =\epsilon[-\mi\eta(z)+\tfrac{1}{2}\theta\partial v(z)]  \label{12.3.10}
+\end{equation}
+其中$ \epsilon $和$ v $是对易的, $ \eta $反对易. 它们满足超共形代数(\ref{10.1.11})
+\begin{tcolorbox}
+首先$ z^{\prime} $肯定是(\ref{12.3.9a})中的形式. 我们可以把$ \theta^{\prime} $写成
+\[
+\theta^{\prime}(z,\theta)=g^{\prime}(z)+\theta h^{\prime}(z)
+\]
+再利用(\ref{12.3.6})
+\begin{align*}
+    D_{\theta}z^{\prime} &= (\partial_{\theta}+\theta\partial_{z})(f+\theta gh)= gh+\theta \partial_{z} f \\
+    \theta^{\prime}D_{\theta}\theta^{\prime} &=(g^{\prime}+\theta h^{\prime})(\partial_{\theta}+\theta\partial_{z})
+    (g^{\prime}+\theta h^{\prime})
+    =(g^{\prime}+\theta h^{\prime})(h^{\prime}+\theta \partial_{z} g^{\prime}) \\
+    &=g^{\prime}h^{\prime}+\theta (h^{\prime}h^{\prime}-g^{\prime}\partial_{z} g^{\prime})
+\end{align*}
+由此不难得到
+\[
+g^{\prime}h^{\prime}=gh \:, \qquad h^{\prime}h^{\prime}=g^{\prime}\partial_{z} g^{\prime}+\partial f 
+\]
+完全可以选择$ g^{\prime}=g $和$ h^{\prime}=h$, 这样就得到了(\ref{12.3.9}).
+
+对于无限小形式, 不难看到$ f\sim O(z)$, $h\sim O(1) $以及$ g\sim O(\epsilon)$, 这意味着(\ref{12.3.9b})要取正号, 因此不妨取$ f=z+\epsilon v(z) $和$ g=-\mi\epsilon\eta(z) $, 那么(\ref{12.3.9b})就给出了$ h$
+\[
+h=1+\tfrac{1}{2}\epsilon\partial_{z}v(z) \:.
+\]
+\end{tcolorbox}
+
+
+类比共形张量的变换, 权重为$ (h,\tilde{h}) $的{\emph{张量超场}}的变换是
+\begin{equation}
+    (D_{\theta}\theta^{\prime})^{2h}(D_{\bar{\theta}}\bar{\theta}^{\prime})^{2\tilde{h}}
+    \bm{\phi}^{\prime}(\bm{z}^{\prime},\bar{\bm{z}}^{\prime}) = \bm{\phi}(\bm{z},\bar{\bm{z}}) \:, \label{12.3.11}
+\end{equation}
+其中$ \bm{z} $代表$ (z,\theta)$. 在无限小超共形变换$ \delta \theta=\epsilon\eta(z)$,
+\begin{equation}
+    \delta\bm{\phi}(\bm{z},\bar{\bm{z}})=-\epsilon
+    \Bigl[2h\theta\partial\eta(z)+\eta(z)Q_{\theta}+2\tilde{h}\bar{\theta}\bar{\partial}\bar{\eta}(\bar{z})
+    +\bar{\eta}(\bar{z})Q_{\bar{\theta}}\Bigr]\bm{\phi}(\bm{z},\bar{\bm{z}}) \:, \label{12.3.12}
+\end{equation}
+其中 $Q_{\theta}=\partial_{\theta}-\theta\partial_{z} $以及%
+$ Q_{\bar{\theta}}=\partial_{\bar{\theta}}-\bar{\theta}\partial_{\bar{z}}$.
+\begin{tcolorbox}
+$\delta\theta = \epsilon\eta(z) $相当于在(\ref{12.3.9a})中取$ g(z)=\epsilon\eta(z),\,h(z)=1 $以及$ f(z)=z $, 那么$ z^{\prime}=z+\epsilon\theta\eta(z)$, 这样$ \delta \bm{\phi} $就是(简单起见只考虑全纯部分)
+\begin{align*}
+    \delta\bm{\phi}&= \bm{\phi}^{\prime}(\bm{z})-\bm{\phi}(\bm{z}) = \bm{\phi}^{\prime}(z^{\prime}-\epsilon\theta\eta,\theta^{\prime}-\epsilon\eta)-\bm{\phi}(z,\theta) \\
+    &=\bm{\phi}^{\prime}(z^{\prime},\theta^{\prime})
+    -\epsilon\theta\eta\partial_{z^{\prime}}\bm{\phi}^{\prime}(z^{\prime},\theta^{\prime})
+    -\epsilon\eta\partial_{\theta^{\prime}}\bm{\phi}^{\prime}(z^{\prime},\theta^{\prime}) -\bm{\phi}(z,\theta)\\
+    &=(D_{\theta}\theta^{\prime})^{-2h}\bm{\phi}(\bm{z})-\bm{\phi}(\bm{z})
+    -\epsilon\eta Q_{\theta}\Bigl((D_{\theta}\theta^{\prime})^{-2h}\bm{\phi}(\bm{z})\Bigr) \\
+    &= -2h\epsilon\theta(\partial_{z}\eta) \bm{\phi} -\epsilon\eta Q_{\theta}\bm{\phi}
+\end{align*}
+注意我们使用了$ (D_{\theta}\theta^{\prime})^{-2h}=(1+\epsilon\theta\partial\eta)^{-2h}=1-2h\epsilon\theta\partial\eta$, 在第三个等号中我们使用了$ \theta $和$ \eta $的反对易性, 所以得到的是$ Q_{\theta} $而不是$ D_{\theta}$.
+\end{tcolorbox}
+展成$ \theta $的幂级数, 简单起见只关注全纯部分, 我们有
+\begin{equation}
+    \bm{\phi}(\bm{z}) = \mathcal{O}(z)+\theta \varPsi(z) \:. \label{12.3.13}
+\end{equation}
+那么无限小变换(\ref{12.3.12})就是
+\begin{equation}
+    \delta \mathcal{O} = -\epsilon\eta\varPsi\:, \qquad 
+    \delta \varPsi=-\epsilon[2h\partial\eta \mathcal{O}+\eta\partial\mathcal{O}] \:. \label{12.3.14}
+\end{equation}
+写成\,OPE\,系数(\ref{10.3.4}), 这是
+\begin{subequations}
+\begin{align}
+    G_{-1/2}\cdot \mathcal{O} &= \varPsi\:, \qquad G_{r}\cdot \mathcal{O}=0\:, \quad r\geq \tfrac{1}{2} \:,\label{12.3.15a} \\ 
+    G_{-1/2}\cdot \varPsi &= \partial\mathcal{O}\:, \qquad G_{1/2}\cdot \varPsi = 2h\mathcal{O}\:,
+    \qquad G_{r}\cdot\varPsi=0\:,\quad r\geq \tfrac{3}{2} \:. \label{12.3.15b}
+\end{align}\label{12.3.15}
+\end{subequations}
+无论是通过使用\,NS\,代数, 还是通过考虑纯共形变换$ \delta z=\epsilon v(z)$, 可以发现$ \mathcal{O} $是权重为$ h $的张量, 而$ \varPsi $是权重为$ h+\tfrac{1}{2} $的张量, 所以它们都被所有\,Virasoro\,下降生成元湮灭. 这个张量超场的最低分量$ \mathcal{O} $是{\emph{超共形初级场}}, 它被\,NS\,代数的所有下降生成元湮灭.
+
+对比刚性平移, 现在刚性世界面超对称平移, $\delta\theta =-\mi\epsilon\eta$, $\delta z=-\mi\epsilon\theta\eta$. $T_{F} $的\,Ward\,恒等式给出了相应的生成元
+\begin{equation}
+    G_{-1/2}\cdot \sim -\mi Q_{\theta} = -\mi(\partial_{\theta}-\theta\partial_{z}) \label{12.3.16}
+\end{equation}
+这推广了\,CFT\,中获得的$ L_{-1}\cdot \sim \partial_{z}$.
+
+\subsection*{Actions and backgrounds}
+
+变换(\ref{12.3.9})的超雅克比矩阵是
+\begin{equation}
+    \dif z^{\prime}\,\dif\theta^{\prime} = \dif z\,\dif\theta\,D_{\theta}\theta^{\prime}\:. \label{12.3.17}
+\end{equation}
+为了构造一个超共形不变的作用量, 拉格朗日密度必须是权重为$ (\tfrac{1}{2},\tfrac{1}{2}) $的张量超场. 两个张量超场的乘积也是张量超场, 其权重是原来两个权重的和, $(h,\tilde{h})=(h_{1},\tilde{h}_{1})+(h_{2},\tilde{h}_{2})$. 另外, 超导数$ D_{\theta} $将$ (0,\tilde{h}) $的张量超场变成$ (\tfrac{1}{2},\tilde{h}) $的张量超场, 而$ D_{\bar{\theta}} $将$ (h,0) $的张量超场变成$ (h,\tfrac{1}{2}) $的张量超场.
+
+我们可以从$ d $个权重为$ (0,0) $的张量$ \bm{X}^{\mu}(\bm{z},\bar{\bm{z}}) $来构建不变作用量:
+\begin{equation}
+    S= \frac{1}{4\pi} \int \dif^{2}z\,\dif^{2}\theta\: D_{\bar{\theta}}\bm{X}^{\mu}D_{\theta}\bm{X}_{\mu}\:.\label{12.3.18} 
+\end{equation}
+$\bm{X}^{\mu}$ 关于$ \theta $的\,Taylor\,展开是
+\begin{equation}
+    \bm{X}^{\mu}(\bm{z},\bar{\bm{z}})=X^{\mu}+\mi\theta \psi^{\mu}+\mi\bar{\theta}\tilde{\psi}^{\mu}
+    +\theta\bar{\theta}F^{\mu} \:. \label{12.3.19}
+\end{equation}
+其中设$ \alpha^{\prime}=2$, 可以通过$ X^{\mu}\to X^{\mu}(2/\alpha^{\prime})^{1/2} $恢复. 作用量中对$ \dif^{2}\theta=\dif\theta\,\dif\bar{\theta} $的积分挑出了$ \bar{\theta}\theta $的系数
+\begin{equation}
+    S=\frac{1}{4\pi}\int\dif^{2}z\:\Bigl(\partial_{\bar{z}}X^{\mu}\partial_{z}X_{\mu}+\psi^{\mu}\partial_{\bar{z}}\psi_{\mu}+\tilde{\psi}^{\mu}\partial_{z}\tilde{\psi}_{\mu}+F^{\mu}F_{\mu}\Bigr) \:. \label{12.3.20}
+\end{equation}
+场$ F^{\mu} $是辅助场, 它完全由运动方程决定, 在这里就是零. 作用量的剩余部分与之前的(\ref{10.1.5})相同.
+
+很多之前的结果可以重铸成超场的形式, 运动方程是
+\begin{equation}
+    D_{\theta}D_{\bar{\theta}}\bm{X}^{\mu}(\bm{z},\bar{\bm{z}})=0\:. \label{12.3.21}
+\end{equation}
+对于\,OPE, 平移和刚性超对称变换下的不变性告诉我们它只能是$ z_{1}-z_{2}-\theta_{1}\theta_{2}$, $\theta_{1}-\theta_{2} $以及它们的共轭的函数. 在这一情况下,
+\begin{equation}
+    \bm{X}^{\mu}(\bm{z}_{1},\bar{\bm{z}}_{1})\bm{X}^{\nu}(\bm{z}_{2},\bar{\bm{z}}_{2})\sim
+    -\eta^{\mu\nu}\ln\lvert z_{1}-z_{2}-\theta_{1}\theta_{2}\rvert^{2} \:, \label{12.3.22}
+\end{equation}
+通过展成分量场可以证明上式.
+\begin{tcolorbox}
+平移和$ \theta $的刚性超对性变换告诉我们$ z $和$ \theta $只能以$ z_{1}-z_{2} $和$ \theta_{1}-\theta_{2} $的方式出现. 然后$ z $的刚性超对称变换给出
+\[
+\delta_{\text{super}}(z_{1}-z_{2}) = -\mi\epsilon\theta_{1}\eta+\mi\epsilon\theta_{2}\eta \:,
+\]
+而$ \theta_{1}\theta_{2} $的刚性超对称变换给出
+\[
+\delta_{\text{super}}(\theta_{1}\theta_{2})= \delta(\theta_{1})\theta_{2}+\theta_{1}\delta(\theta_{2})
+=\theta_{1}(-\mi\epsilon\eta)+(-\mi\epsilon\eta)\theta_{2}
+\]
+二者恰好相抵.
+\end{tcolorbox}
+超共形鬼场作用量是用权重分别为$ (\lambda-\frac{1}{2}) $和$ (1-\lambda,0) $的张量超场$ B $和$ C $构建的,
+\begin{equation}
+    S_{BC}=\frac{1}{2\pi}\int \dif^{2}z\,\dif^{2}\theta\: B D_{\bar{\theta}}C \:. \label{12.3.23}
+\end{equation}
+运动方程是
+\begin{equation}
+    D_{\bar{\theta}}B= D_{\bar{\theta}}C=0 \:. \label{12.3.24}
+\end{equation}
+用$ D_{\bar{\theta}} $作用这个方程给出$ \partial_{\bar{z}}B=\partial_{\bar{z}}C=0$, 因而也就有$ \partial_{\bar{\theta}}B=\partial_{\bar{\theta}}C=0$. 因此运动方程给出了
+\begin{equation}
+    B(\bm{z})=\beta(z)+\theta b(z) \:, \qquad C(\bm{z})=c(z)+\theta\gamma(z)\:. \label{12.3.25}
+\end{equation}
+这与理论(\ref{10.1.17})是相同的. OPE\,是
+\begin{equation}
+    B(\bm{z}_{1})C(\bm{z}_{2})\sim \frac{\theta_{1}-\theta_{2}}{z_{1}-z_{2}-\theta_{1}\theta_{2}}
+    =\frac{\theta_{1}-\theta_{2}}{z_{1}-z_{2}} \:. \label{12.3.26}
+\end{equation}
+超场形式使得写下非线性 $\sigma$ 模型作用量变得很简单
+\begin{align}
+    S &= \frac{1}{4\pi}\int\dif^{2}z\,\dif^{2}\theta\:[G_{\mu\nu}(\bm{X})+B_{\mu\nu}(\bm{X})]
+    D_{\bar{\theta}}\bm{X}^{\nu}D_{\theta}\bm{X}^{\mu} \nonumber \\ 
+    &=\frac{1}{4\pi}\int \dif^{2}z\:\Bigl\{[G_{\mu\nu}(X)+B_{\mu\nu}(X)]\partial_{z}X^{\mu}\partial_{\bar{z}}X^{\nu}
+    \nonumber \\
+    &\qquad \quad+G_{\mu\nu}(X)(\psi^{\mu}\mathscr{D}_{\bar{z}}\psi^{\nu}+\tilde{\psi}^{\mu}\mathscr{D}_{z}\tilde{\psi}^{\nu})+\tfrac{1}{2}R_{\mu\nu\rho\sigma}(X)\psi^{\mu}\psi^{\nu}\tilde{\psi}^{\rho}\tilde{\psi}^{\sigma}\Bigr\}\:,
+    \label{12.3.27}
+\end{align}
+在第二个等号中消掉了辅助场. Christoffel\,联络和反对称张量场强组成协变导数
+\begin{subequations}
+\begin{align}
+    \mathscr{D}_{\bar{z}}\psi^{\nu} &= \partial_{\bar{z}}\psi^{\nu}
+    +\Bigl[\Gamma\indices{^\nu_\rho_\sigma}(X)+\tfrac{1}{2}H\indices{^\nu_\rho_\sigma}(X)\Bigr]\partial_{\bar{z}}X^{\rho}\psi^{\sigma} \:, \label{12.3.28a} \\
+    \mathscr{D}_{z}\tilde{\psi}^{\nu} &= \partial_{z}\tilde{\psi}^{\nu} 
+    +\Bigl[\Gamma\indices{^\nu_\rho_\sigma}(X)-\tfrac{1}{2}H\indices{^\nu_\rho_\sigma}(X)\Bigr]
+    \partial_{z}X^{\rho}\tilde{\psi}^{\sigma} \:. \label{12.3.28b}
+\end{align} \label{12.3.28}
+\end{subequations}
+这描述了两种\,II\,型超弦理论中的一般\,NS-NS\,背景. R-R\,背景由于超共形变换在算符上有分支切割所以很难在这一框架下描述. 伸缩子没有出现在平坦世界面作用量中, 但确实在超共形生成元中出现了.
+
+上面全部可以应用到杂化弦中, 这时只使用$ \bar{\theta} $不使用$ \theta$. 现在需要超场
+\begin{subequations}
+\begin{align}
+    \bm{X}^{\mu} &= X^{\mu}+\mi\bar{\theta}\tilde{\psi}^{\mu} \:, \label{12.3.29a} \\
+    \bm{\lambda}^{A} &= \lambda^{A} + \bar{\theta}G^{A} \:. \label{12.3.29b} 
+\end{align} \label{12.3.29}
+\end{subequations}
+$G^{A} $是辅助场. 非线性$ \sigma $模型是
+\begin{align}
+    S&= \frac{1}{4\pi} \int \dif^{2}z\,\dif\bar{\theta}\:\Bigl\{[G_{\mu\nu}(\bm{X})+B_{\mu\nu}(\bm{X})]
+    \partial_{z}\bm{X}^{\mu}D_{\bar{\theta}}\bm{X}^{\nu} 
+    - \bm{\lambda}^{A}\mathscr{D}_{\bar{\theta}}\bm{\lambda}^{A} \Bigr\} \nonumber \\
+    &=\frac{1}{4\pi} \int \dif^{2}z\:\Bigl\{ [G_{\mu\nu}(X)+B_{\mu\nu}X]\partial_{z}X^{\mu}\partial_{\bar{z}}X^{\nu}
+    +G_{\mu\nu}(X)\tilde{\psi}^{\mu}\mathscr{D}_{z}\tilde{\psi}^{\nu} \nonumber \\
+    &\phantom{=\frac{1}{4\pi} \int \dif^{2}z\:\Bigl\{ [G_{\mu\nu}}+\lambda^{A}\mathscr{D}_{\bar{z}}\lambda^{A}
+    +\tfrac{\mi}{2}F_{\rho\sigma}^{AB}(X)\lambda^{A}\lambda^{B}\tilde{\psi}^{\rho}\tilde{\psi}^{\sigma}\Bigr\}\:,
+    \label{12.3.30}
+\end{align}
+其中$ \mathscr{D}_{z}\tilde{\psi}^{\nu} $和上面一样, 并有
+\begin{subequations}
+\begin{align}
+    \mathscr{D}_{\bar{\theta}}\bm{\lambda}^{A}&=D_{\bar{\theta}}\bm{\lambda}^{A}
+    -\mi A_{\mu}^{AB}(\bm{X})D_{\bar{\theta}}\bm{X}^{\mu}\bm{\lambda}^{B} \:, \label{12.3.31a} \\
+    \mathscr{D}_{\bar{z}}\lambda^{A} &= \partial_{\bar{z}}\lambda^{A} 
+    - \mi A_{\mu}^{AB}(X)\partial_{\bar{z}}X^{\mu}\lambda^{B} \:. \label{12.3.31b}
+\end{align} \label{12.3.31}
+\end{subequations}
+值得注意的是, 在时空反常的抵消中扮演重要角色的\,2\,-形式势的修正规范变换, 以世界面反常的形式, 它有一个简单起源. 
+时空规范变换
+\begin{equation}
+    \delta A_{\mu}^{AB}= D_{\mu}\chi^{AB} \:, \qquad \delta\lambda^{A} = \mi \chi^{AB}\lambda^{B} \label{12.3.32}
+\end{equation}
+使得经典作用量不变. 然而, 它仅作用在左移世界面费米子上因此在世界面路径积分中有一个反常. 我们可以使用结果(\ref{12.2.3}), 令$ \hat{k}_{L}=1$, $\hat{k}_{R}=0$, 以及 
+\begin{equation}
+    A_{\bar{z}}^{AB}(z,\bar{z})=\frac{1}{2\pi}A_{\mu}^{AB}(X)\partial_{\bar{z}}X^{\mu} \:, \label{12.3.33}
+\end{equation}
+因子$ 2\pi $修正了\,CFT\,中\,Noether\,流的非标准归一化. 那么再加上抵消项后,
+\begin{equation}
+    \delta Z[A] = \frac{1}{8\pi}\int \dif^{2}z\: \operatorname{Tr}_{\mathrm{v}}[\chi(X)F_{\mu\nu}(X)]\partial_{z}X^{\mu}\partial_{\bar{z}}X^{\nu} \:. \label{12.3.34}
+\end{equation}
+如果我们同时改变背景
+\begin{equation}
+    \delta B_{\mu\nu} = \frac{1}{2}\operatorname{Tr}_{\mathrm{v}}(\chi F_{\mu\nu}) \:, \label{12.3.35}
+\end{equation}
+这被精确抵消了. 与超引力结果(\ref{12.1.40})比较给出
+\begin{equation}
+    \frac{\kappa_{10}^{2}}{g_{10}^{2}} = \frac{1}{2} \to \frac{\alpha^{\prime}}{4} \:. \label{12.3.36}
+\end{equation}
+注意到左移这边有量纲$ L^{2}$, 我们通过引入$ \alpha^{\prime}/2 $这个因子来恢复$ \alpha^{\prime}$. 这是杂化弦中引力与规范耦合之间的正确结果. 为了将来的参考, 注意到, 如果我们研究有非零伸缩子的真空, 物理耦合会与作用量中的参量相差一个$ \me^{\Phi}$, 这同样使得
+\begin{equation}
+    \frac{\kappa^{2}}{g^{2}_{\mathrm{YM}}} \equiv \frac{\me^{2\Phi}\kappa_{10}^{2}}{\me^{2\Phi}g_{10}^{2}}=\frac{\alpha^{\prime}}{4} \:. \label{12.3.37}
+\end{equation}
+
+\subsection*{Vertex operators}
+
+玻色弦顶点算符来自于两种形式. 态-算符映射给出的是$ \tilde{c}c $乘以一个 $(1,1)$ 物质张量. 在规范固定的\,Polyakov\,路径积分中, 这是坐标被固定的顶点算符的合适形式. 对于要被积分的顶点算符, $c\tilde{c} $被省略了, 被代之以$ \dif^{2}z$. 超弦的顶点算符有类似的形式, 或者说{\emph{图景}}.
+
+第\,10\,章的态-算符对应给出的\,NS-NS\,顶点算符是
+\begin{equation}
+    \delta(\gamma)\delta(\tilde{\gamma}) = \me^{-\phi-\tilde{\phi}} \label{12.3.38}
+\end{equation}
+乘以一个$ (\tfrac{1}{2},\tfrac{1}{2}) $超共形张量.  它们是固定玻色顶点算符的类似物. 我们已经看到超共形张量是超场的最低阶分量, 它确实对应于超场的$ \theta $和$ \bar{\theta} $被固定到$ 0 $时的值. 称这一算符为$ \mathcal{O}$, 方程给出要对$ \theta $和$ \bar{\theta} $积分的顶点算符是
+\begin{equation}
+    \mathscr{V}^{0,0}= G_{-1/2}\tilde{G}_{-1/2} \cdot\mathcal{O} \:. \label{12.3.39}
+\end{equation}
+这个算符出现时不带$ \delta(\gamma)\delta(\tilde{\gamma})$. 非线性 $\sigma$ 模型整个有这个形式, 对$ (\tfrac{1}{2},\tfrac{1}{2}) $超场做$ \dif^{2}\theta $积分. 用顶点算符的$ \phi $和$ \tilde{\phi} $荷来标记它们是比较方便的, 这里就是这样. 这使得荷为$ (q,\tilde{q}) $的算符被称为处在$ (q,\tilde{q}) ${\emph{图景}}中. $\theta $-积分的算符(\ref{12.3.39})处在\,(0,0)\,图景中, 而固定算符
+\begin{equation}
+    \mathscr{V}^{-1,-1} = \me^{-\phi-\tilde{\phi}}\mathcal{O} \label{12.3.40}
+\end{equation}
+处在$(-1,-1)$绘景中. 这些当然可以扩展到开弦和杂化弦, 那里只有一个超共形代数, 所以只有$ -1 $和$ 0 $图景.
+
+作为一个例子, 我们来考察无质量态
+\begin{equation}
+    \psi_{-1/2}^{\mu}\tilde{\psi}_{-1/2}^{\nu} \lvert 0;k\rangle_{\text{NS}} \:, \label{12.3.41}
+\end{equation}
+它的顶点算符是
+\begin{equation}
+    \mathscr{V}^{-1,-1} = g_{\mathrm{c}}\me^{-\phi-\tilde{\phi}}\psi^{\mu}\tilde{\psi}^{\nu}\,\me^{\mi k\cdot X}\:. \label{12.3.42}
+\end{equation}
+要积分还是要固定的玻色坐标与费米坐标独立, 所以方便起见我们取它们是要积分的. 从
+\begin{align}
+    & G_{-1/2}\tilde{G}_{-1/2}\psi_{-1/2}^{\mu}\tilde{\psi}_{-1/2}^{\nu}\lvert 0;k\rangle_{\text{NS}} \nonumber\\
+    &=-(\alpha_{-1}^{\mu}+\alpha_{0}\cdot \psi_{-1/2}\psi_{-1/2}^{\mu})
+    (\tilde{\alpha}^{\nu}_{-1}+\tilde{\alpha}_{0}\cdot \tilde{\psi}_{-1/2}\tilde{\psi}_{-1/2}^{\nu})\lvert 0;k\rangle_{\text{NS}} \:, \label{12.3.43}
+\end{align}
+我们获得了要积分的顶点算符
+\begin{equation}
+    \mathscr{V}^{0,0} = -\frac{2g_{\mathrm{c}}}{\alpha^{\prime}}(\mi\partial_{z}X^{\mu}+
+    \tfrac{1}{2}\alpha^{\prime}k\cdot \psi\,\psi^{\mu})(\mi\partial_{\bar{z}}X^{\nu}
+    +\tfrac{1}{2}\alpha^{\prime}k\cdot\tilde{\psi}\,\tilde{\psi}^{\nu}) \me^{\mi k\cdot X} \:. \label{12.3.44}
+\end{equation}
+注意到这里与无质量玻色顶点算符的相似性, 不过这里有额外的费米项. 这些额外项对应于非线性 $\sigma $模型中的联络和曲率部分. 对于无质量开弦矢量,
+\begin{subequations}
+\begin{align}
+    \mathscr{V}^{-1} &= g_{\mathrm{o}}\me^{-\phi}t^{a}\psi^{\mu}\me^{\mi k\cdot X} \:, \label{12.3.45a} \\
+    \mathscr{V}^{0} &= g_{\mathrm{o}}(2\alpha^{\prime})^{-1/2}t^{a}(\mi \dot{X}^{\mu}
+    +2\alpha^{\prime}k\cdot\psi\,\psi^{\mu})\me^{\mi k\cdot X} \:, \label{12.3.45b}
+\end{align} \label{12.3.45}
+\end{subequations}
+其中$ t^{a} $是\,Chan-Paton\,因子. 对于杂化弦矢量
+\begin{subequations}
+\begin{align}
+    \mathscr{V}^{-1} &= g_{\mathrm{c}}\me^{-\tilde{\phi}}\hat{k}^{-1/2}j^{a}\tilde{\psi}^{\mu}\me^{\mi k\cdot X} \:, \label{12.3.46a}\\
+    \mathscr{V}^{0} &= g_{\mathrm{c}}(2/\alpha^{\prime})^{1/2}\hat{k}^{-1/2}j^{a}
+    (\mi\bar{\partial}X^{\mu}+\tfrac{1}{2}\alpha^{\prime}k\cdot \tilde{\psi}\,\tilde{\psi}^{\mu})\me^{\mi k\cdot X}\:.
+    \label{12.3.46b}
+\end{align} \label{12.3.46}
+\end{subequations}
+为了之后的参考, 我们给出顶点算符归一化和\,12.1\,节低能作用量中的各种耦合之间的关系:
+\begin{subequations}
+\begin{align}
+    \text{type I}:&\quad g_{\mathrm{o}}=g_{\mathrm{YM}}(2\alpha^{\prime})^{1/2}; \qquad 
+    g_{\mathrm{YM}}\equiv g_{10}\me^{\Phi/2} \:, \label{12.3.47a} \\
+    \text{heterotic}:&\quad g_{\mathrm{c}}=\frac{\kappa}{2\pi}=\frac{\alpha^{\prime1/2}g_{\mathrm{YM}}}{4\pi};
+    \quad \kappa\equiv \kappa_{10}\me^{\Phi}\:,\quad g_{\mathrm{YM}}\equiv g_{10}\me^{\Phi}\:,\label{12.3.47b} \\
+    \text{type I/II}:&\quad g_{\mathrm{c}}=\frac{\kappa}{2\pi}\:; \qquad \kappa\equiv \kappa_{10}\me^{\Phi}\:.\label{12.3.47c} 
+\end{align} \label{12.3.47}
+\end{subequations}
+这些结果可以通过比较场论和弦论振幅获得. 
+
+
+
+\section{树级振幅}
+
+我们希望得到的是几个玻色坐标或费米坐标被固定的顶点算符乘积在球面或圆盘上的期望值. 在玻色弦中, 在球面上, 由于存在三个$ c $零模和三个$ \tilde{c} $零模, 必须要固定三个顶点算符. 而在球面上有两个$ \gamma $零模和两个$ \tilde{\gamma} $零模, 即$ 1,z $和$ 1,\bar{z}$: 对于一个权重$ -\frac{1}{2} $的场, 它们在无穷远处是全纯的. 我们需要这么多的$ \delta(\gamma) $和$ \delta(\tilde{\gamma}) $因子, 否则零模积分发散. 因此我们将固定两个顶点算符的$ \theta,\bar{\theta} $坐标. 在圆盘上类似, 我们必须固定两个开弦顶点算符的$ \theta $坐标.
+
+我们也可以从玻色化的形式中看到这点. $\phi $流中的反常要求总的$ \phi $荷是$ -2 $而总的$ \tilde{\phi} $荷是$ -2$. 因此我们需要两个顶点算符处在$(-1,-1)$图景中, 而其余顶点算符处在$(0,0)$图景中. 对于圆盘上的开弦(或者球面上的杂化弦), 我们需要两个在$ -1 $图景中, 其余的在$ 0 $图景中.
+
+从鬼场背景态(\ref{10.4.24})中, R\,截面顶点算符拥有$ \phi $荷$ -\tfrac{1}{2}$. 这介于固定图景和积分图景中间, 没有这样简单的解释. 然而, $\phi $荷的守恒告诉我们$ \phi $荷的总和必须是 $-2$. 因此对于两个费米子和任意多个玻色子的振幅, 我们可以对两个费米子使用图景$ -\tfrac{1}{2}$, 对一个玻色子使用图景$-1$, 对剩余的玻色子使用图景$ 0$. 对于\,4\,个费米子和任意多个玻色子的振幅, 我们可以对费米子使用$ -\frac{1}{2} $图景, 对所有玻色子使用$ 0 $图景. 对于\,6\,个费米子或更多费米子的散射, 将在下一节讨论.
+
+\subsection*{Three-point amplitudes}
+
+\paragraph*{Type I disk amplitudes}: 根据上面的讨论, I\,型\,3\,玻色子振幅是
+\begin{equation}
+    \frac{1}{\alpha^{\prime}g_{\mathrm{o}}^{2}}\Bigl\langle c\mathscr{V}_{1}^{-1}(x_{1})c\mathscr{V}^{-1}_{2}(x_{2})
+    c\mathscr{V}_{3}^{0}(x_{3}) \Bigr\rangle + (\mathscr{V}_{1}\leftrightarrow\mathscr{V}_{2})\:, \label{12.4.1}
+\end{equation}
+其中我们取了$ x_{1}>x_{2}>x_{3}$. 对于无质量振幅, $bc$, $\beta\gamma$ 和$ \psi $CFT\,中的相关期望值是
+\begin{subequations}
+\begin{align}
+    \langle c(x_{1})c(x_{2})c(x_{3})\rangle =x_{12}x_{13}x_{23} \:, \label{12.4.2a} \\
+    \Bigl\langle \me^{-\phi}(x)\me^{-\phi}(x_{2})\Bigr\rangle = x_{12}^{-1} \:, \label{12.4.2b} \\
+    \langle \psi^{\mu}(x_{1})\psi^{\nu}(x_{2})\rangle =\eta^{\mu\nu}\,x_{12}^{-1} \:, \label{12.4.2c}
+\end{align} \label{12.4.2}
+\end{subequations}
+在$ X\psi $的组合\,CFT\,中则是
+\begin{align}
+    &\Bigl\langle \psi^{\mu}\me^{\mi k_{1}\cdot X}(x_{1})\,\psi^{\nu}\me^{\mi k_{2}\cdot X}(x_{2})\,
+    (\mi \dot{X}_{\rho}+2\alpha^{\prime}k_{3}\cdot\psi\,\psi^{\rho})\me^{\mi k_{3}\cdot X}(x_{3})\Bigr\rangle \nonumber\\
+    &\qquad=2\mi\alpha^{\prime}(2\pi)^{10}\delta^{10}(\sum\nolimits_{i}k_{i})
+    \biggl(-\frac{\eta^{\mu\nu}k_{1}^{\rho}}{x_{12}x_{13}}-\frac{\eta^{\mu\nu}k_{2}^{\rho}}{x_{12}x_{23}}
+    +\frac{\eta^{\mu\rho}k_{3}^{\nu}-\eta^{\nu\rho}k_{3}^{\mu}}{x_{13}x_{23}}\biggr) \label{12.4.3}
+\end{align}
+
+
+\section{一般振幅}
+待补充……
+\section{单圈振幅}
+未完待续……

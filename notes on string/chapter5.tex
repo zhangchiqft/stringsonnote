@@ -1,0 +1,600 @@
+% \setcounter{section}{0}%更改chapter的计数器值
+% %\numberwithin{equation}{chapter}%公式计数器从属于节计数器
+% \numberwithin{equation}{section}%公式计数器从属于节计数器
+% \numberwithin{figure}{section}%图计数器从属于节计数器
+% % \setcounter{chapter}{4}
+% \numberwithin{figure}{section}%图计数器从属于节计数器
+
+\chapter{\texorpdfstring{弦的$S$-矩阵}{5 The string S-matrix}} \label{cha:5}
+
+在第\ref{cha:3}章, 我们将$S$-矩阵写为二维紧致平面上带有顶点算符的路径积分, 在本章我们会将这一路径积分约化至规范固定形式.
+
+
+\section{\texorpdfstring{圆和环面}{5.1 The circle and the torus}} \label{sec:5.1}
+
+就像图\ref{Fig:3.7}中那样, 我们将一个规范切片视为从每个(diff $\times $ Weyl) 等价类中选择一个构型. 定域地, 我们通过固定度规实现这一点, 
+但整体上在度规空间与世界面规范群之间存在一个微小的错配.
+
+又一次, 我们从点粒子出发. 我们希望计算欧几里得路径积分
+\begin{equation}
+\int[\dif e\, \dif X] \exp \left[-\frac{1}{2} \int \dif \tau\: (e^{-1} \dot{X}^{\mu} \dot{X}_{\mu}+e m^{2})\right] \:. \label{5.1.1}
+\end{equation}
+考察在时空中形成闭合圈的路径, 所以拓扑是圆, 参量$\tau$可以在0和1之间取值, 其中端点是等价的. 即$X^{\mu}(\tau)$与$e(\tau)$在$0 \leq \tau \leq 1$上有周期性. 
+标架$e(\tau)$有一个分量, 并存在定域对称性, 将标价完全确定下来. 标架变换为$e^{\prime} \dif \tau^{\prime}=e \dif \tau $. 
+因而规范选择给出$\tau^{\prime}(\tau)$的微分方程
+\begin{equation}
+\frac{\partial \tau^{\prime}}{\partial \tau}=e(\tau) \:. \label{5.1.2}
+\end{equation}
+对其积分, 边界条件 $\tau^{\prime}(0)=0$ 决定了
+\begin{equation}
+	\tau^{\prime}(\tau)=\int_{0}^{\tau} \dif \tau^{\prime \prime}\: e(\tau^{\prime \prime}) \:. \label{5.1.3}
+\end{equation}
+
+问题是, 一般情况 $\tau^{\prime}(1) \neq 1$, 所以周期性不被保护. 事实上
+\begin{equation}
+	\tau^{\prime}(1)=\int_{0}^{1} \dif \tau \: e(\tau)=l \label{5.1.4}
+\end{equation}
+是圆的不变长度. 所以我们不能令 $e^{\prime}=1$ 的同时保持坐标区域不变. 我们可以保持坐标区域不变, 令$e^{\prime}$为常数值 $e^{\prime}=l$, 或令 $e^{\prime}=1$ 而让坐标区域变化:
+\begin{subequations} \label{5.1.5}
+\begin{equation}
+e^{\prime}=l, \quad 0 \leq \tau \leq 1 \:, \label{5.1.5a}
+\end{equation}
+或者
+\begin{equation}
+e^{\prime}=1, \quad 0 \leq \tau \leq l \:. \label{5.1.5b}
+\end{equation}
+\end{subequations}
+无论在哪种情况, 在固定规范不变性后, 我们留下了对 $l$的一般积分. 换句话说, 不是圆上所有标架等价. 存在不等价标架的一个单参量族, 由$l$参量化.
+
+\eqref{5.1.5}的两个描述在弦中均有类比. 实际上, 我们将用类似\eqref{5.1.5a}的描述来定义路径积分, 其中场是固定坐标区域上的函数, 然后转化到类似\eqref{5.1.5b}的描述中, 
+其中度规是固定的, 而模被编码进坐标范围.
+
+还有一个与规范固定相关的困难. 条件$e=\text{常数}$被刚性平移
+\begin{equation}
+	\tau \rightarrow \tau+v \bmod 1 \label{5.1.6}
+\end{equation}
+所保护. 即在圆上, 我们无法说清楚原点在哪. 因而, 固定度规留下一小部分还没有固定的定域对称性. 所以在\emph{两个}方向上存在错误匹配, 
+度规之间不是规范等价的, 以及选择度规并没有固定规范变换.
+
+转移到弦, 我们取圆环面为例, 其中会有相同的困难产生. 从坐标区域开始
+\begin{equation}
+	0 \leq \sigma^{1} \leq 2 \pi \:, \qquad 0 \leq \sigma^{2} \leq 2 \pi \:, \label{5.1.7}
+\end{equation}
+其中$X^{\mu}(\sigma^{1}, \sigma^{2})$和$g_{a b}(\sigma_{1}, \sigma_{2})$ 在两个方向都是周期的. 等价地, 我们可以视其为在 $\sigma$ 平面上有等价关系
+\begin{equation}
+	(\sigma^{1}, \sigma^{2}) \cong (\sigma^{1}, \sigma^{2})+2 \pi(m, n) \:, \label{5.1.8}
+\end{equation}
+其中$m$和$n$为整数.
+
+场空间diff $\times$ Weyl 冗余到何种程度? 有这样一个定理: 不可能通过一个保持周期性\eqref{5.1.7}不变的diff $\times$ Weyl变换, 将一个一般度规变成单位形式, 但能够将其变为
+\begin{equation}
+	\dif s^{2}=\lvert \dif \sigma^{1}+\tau \dif \sigma^{2}\rvert^{2} \label{5.1.9}
+\end{equation}
+其中 $\tau$ 是复常数. 当 $\tau=\mi$ 时, 这是单位度规 $\delta_{a b}$.
+
+为了看到这一点, 重复\ref{sec:3.3}节定域讨论中所使用的步骤. 首先, 我们可以用一个满足$2 \nabla^{2} \omega=R $的Weyl变换使度规平坦. 
+通过展开$\nabla^{2}$的本征模, 可以看到在有周期边界条件下, 在相差一个常数的意义下, $\omega$有唯一解. 在这里重要的是 $\int \dif^{2} \sigma \,g^{1 / 2} R$, 即 $4 \pi$ 乘以欧拉数, 对于环面为零. 到新坐标 $\tilde{\sigma}^{a}$ 的变换将度规变成单位形式. 然而, 就像点粒子的情况, 无法保证这会遵守原始的周期性. 相反, 现在我们可以有
+\begin{equation}
+	\tilde{\sigma}^{a} \cong \tilde{\sigma}^{a}+2 \pi(m u^{a}+n v^{a}) \label{5.1.10}
+\end{equation}
+其中$u^{a}$, $v^{a} $为一般平移. 通过旋转和缩放坐标系, 并对$\omega$做一个偏移以保持度规归一化, 我们总可以令$u=(1,0)$. 这留下两个参量, 即$v$的分量. 
+定义$w=\tilde{\sigma}^{1}+\mi \tilde{\sigma}^{2}$, 度规是 $\dif w \dif \bar{w}$, 周期性是
+\begin{equation}
+	w \cong w+2 \pi(m+n \tau) \:, \label{5.1.11}
+\end{equation}
+其中 $\tau=v^{1}+\mi v^{2} $, 环面是$w$平面中有周期边界条件的平行四边形, 如图\ref{fig:5.1}所示.
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 654 368
+		%1px=0.75pt
+		\includegraphics[width=0.5\textwidth,natwidth=490.5,natheight=276]{Fig5.1.jpg}\\
+		\caption{在规范$\dif s^{2}=\dif w \dif \bar{w}$下, 模为$\tau$的环面. 上下两边和左右两边分别被粘在一起. 闭曲线$A$和$B$是为了后面的参考.}\label{fig:5.1}
+	\end{center}
+\end{figure}
+
+
+换一种方式, 用$w=\sigma^{1}+\tau \sigma^{2}$定义$\sigma^{a}$. 原始周期性\eqref{5.1.8}被保留, 但度规采取更普遍形式\eqref{5.1.9}. 
+对度规的积分退化到对$\tau$的实部和虚部的两个积分. 度规\eqref{5.1.9}在$\tau$复共轭下不变, 并且对于实的$\tau$退化, 
+所以我们可将注意力集中在$\operatorname{Im} \tau>0$. 正如圆的情况\eqref{5.1.5}, 我们可以将这些参量放进度规\eqref{5.1.9}或周期性\eqref{5.1.11}中.
+参量$\tau$被称为\emph{Teichm\"{u}ller参量}或更普遍的\emph{模}. 与点粒子不同的是, $\tau$没有像圆的不变长度这种简单的不变表达式.
+
+存在一些额外的冗余, 其在点粒子情况没有类比. $\tau+1$生成了与$\tau$相同的等价集\eqref{5.1.11}, 并做替换$(m, n)\to(m-n, n) $. 
+$-1 / \tau$也是如此, 定义$w^{\prime}=\tau w$, 并做替换$(m, n) \rightarrow(n,-m)$. 重复使用这两个变换
+\begin{equation}
+	T\:: \quad \tau^{\prime}=\tau+1\:, \qquad S\: : \quad \tau^{\prime}=-1 / \tau \:, \label{5.1.12}
+\end{equation}
+生成了
+\begin{equation}
+	\tau^{\prime}=\frac{a \tau+b}{c \tau+d} \label{5.1.13}
+\end{equation}
+其中 $a, b, c, d$是满足$a d-b c=1$的整数.
+
+我们也可以这样想. 变换
+\begin{equation}
+	\begin{bmatrix}
+		\sigma^{1} \\
+		\sigma^{2}
+	\end{bmatrix}= \begin{bmatrix}
+		d & b \\
+		c & a
+	\end{bmatrix} \begin{bmatrix}
+		\sigma^{\prime 1} \\
+		\sigma^{\prime 2}
+	\end{bmatrix} \label{5.1.14}
+\end{equation}
+使得$\sigma$的度规\eqref{5.1.9}变成 $\sigma^{\prime}$的相同形式的度规, 但模为$\tau^{\prime}$, 这是环面的微分同胚映射. 由于$a d-b c=1$, 这是一个一一映射, 
+并且保护了周期性\eqref{5.1.8}. 然而, 它无法从连续的无穷小变换从恒等变换获得——它是所谓的\emph{大坐标变换}. 坐标$\sigma$中的曲线$A$映射到$\sigma^{\prime}$坐标中的曲线沿$A^{\prime}$方向伸长$a$倍, 沿$B^{\prime}$方向伸长$-c$倍. 这些大坐标变换构成群$SL(2, \mathds{Z})$. 
+可以看到在$a, b, c, d$的符号反转下, $\tau^{\prime}$是不变的, 所以$\tau$平面上的群是$S L(2, \mathds{Z}) / \mathds{Z}_{2}=P S L(2, \mathds{Z})$. 
+变换\eqref{5.1.14}的群称为模群.
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 729 673
+		%1px=0.75pt
+		\includegraphics[width=0.5\textwidth,natwidth=546.75,natheight=504.75]{Fig5.2.jpg}\\
+		\caption{阴影区域是环面模空间的标准基本区域(fundamental region)$F_{0}$. 线I和I$'$是等同的, 弧II和II$'$也是如此. 由II, II$'$, III和 III$'$围起来的是另一个基本区域, 它在模变换$S$下映射到$F_{0}$.}\label{fig:5.2}
+	\end{center}
+\end{figure}
+
+利用模变换\eqref{5.1.13}, 可以证明每个$\tau$等价于区域$F_{0}$中的一个点, 如图\ref{fig:5.2}所示.
+\begin{equation}
+	-\frac{1}{2} \leq \operatorname{Re} \tau \leq \frac{1}{2}, \qquad|\tau| \geq 1 \:,\label{5.1.15}
+\end{equation}
+除了图中所示等价起来的边界, 这被称为上半平面模掉$PSL(2, \mathds{Z})$后的基本区域. 由于等价性, 可以认为$F_{0}$ 被卷起来, 
+仅当$\operatorname{Im} \tau \rightarrow \infty$时有开边界. 基本区域 $F_{0}$ 是(diff $\times$ Weyl)不等价度规的模空间的一个表示.
+
+和点粒子一样, 这里有进一步的困难. 要求度规采取形式\eqref{5.1.9}, 其中 $\tau$处在一个给定的基本区域, 并不会固定所有的diff $\times$ Weyl不变性. 
+度规以及周期性在刚性变换下不变
+\begin{equation}
+	\sigma^{a} \rightarrow \sigma^{a}+v^{a} \:, \label{5.1.16}
+\end{equation}
+所以这个 diff $\times$ Weyl 二参量子群没有被固定. 另外, 离散变换 $\sigma^{a} \rightarrow-\sigma^{a}$使度规不变, 而在非定向情况下, $\tau \rightarrow-\bar{\tau}$的 $(\sigma^{1}, \sigma^{2}) \rightarrow (-\sigma^{1}, \sigma^{2})$也使度规不变. 因此这里又有了度规自由度与定域对称性之间的不匹配: 度规中的参量不能被对称性移除, 并且对称性没有被度规的选择所固定. 未固定的对称性称为\emph{共形基灵群(Conformal Killing Group, 简记为CKG)}.
+
+当振幅中有足够多的顶点时, 通过固定某些顶点算符的位置, 我们可以完全固定规范不变性. 在有$n$个顶点算符的环面上, 不变性\eqref{5.1.16}可以用来固定一个顶点算符的位置, 
+留下对$\tau$以及其它$n-1$个顶点位置的积分. 通过要求第二个顶点算符在环面的中间可以固定来自$\sigma^{a} \rightarrow-\sigma^{a}$的$\mathds{Z}_{2}$. 
+实际上, 对于有限的重复计数, 留下一些不固定的对称性并除以一个合适的因子通常更方便些. 另外, 如果顶点算符过少, 某些共形基灵不变性仍然未固定, 那么我们必须明确考虑重复计数.
+
+\subsection*{对读者的提醒}
+在本章剩余部分, 我们将更一般地讨论模. 主要目标是弦$S$-矩阵的规范固定表达式\eqref{5.3.9}. 事实上, 在树图振幅和一圈振幅就可以看到大多数有趣的弦物理. 
+对于这些情况, 可以通过一些捷径获得测度. 对于树图振幅, 度规模空间是零维的且某些顶点算符的位置必须确定下来. 可以像\eqref{6.4.4}下面所阐述的那样推理出测度. 对于一圈振幅, 
+通过类比\eqref{7.3.9}下面关于点粒子的讨论, 可以以一种相对直观的方式理解测度. 
+
+\section{\texorpdfstring{模和黎曼面}{5.2 Moduli and 黎曼 surfaces}} \label{sec:5.2}
+
+现在, 我们以一种更普遍更抽象的方式重复之上的讨论. 我们先对某些给定拓扑$r$上的所有度规积分. 称该度规空间为$\mathscr{G}_{r}$. 对于定向闭曲面, 我们可以用柄的数目$g$, 
+也称为\emph{亏格}, 来标记$r$. 在考虑了diff $\times$ Weyl 冗余后, 我们留下了模空间
+\begin{equation}
+	\mathscr{M}_{r}=\frac{\mathscr{G}_{r}}{(\text{diff} \times \mathrm{Weyl})_{r}} \:.  \label{5.2.1}
+\end{equation}
+就像环面的情况, 这个空间被有限个\emph{模(moduli)}参量化. 对于环面, $\mathscr{M}_{1}$是上半平面模掉$PSL(2, \mathds{Z})$, 或等价地任意基本区域如$F_{0}$. 
+仍有可能存在diff $\times$ Weyl子群, 即CKG, 使度规不变.
+
+当路径积分中有顶点算符时, 将顶点算符的位置也看作一种模将是有用的. 当我们需要作出区分时, 我们将指\emph{度规模}. 当路径积分中存在顶点算符时, 
+一种处理CKG的方式是通过固定某些顶点算符的位置进一步指定规范. Polyakov路径积分包含对$\mathscr{G}_{r}$的积分, 以及$n$个顶点算符对世界面$\mathscr{M}$的积分. 
+那么拓扑为$r$且有$n$个顶点算符的模空间是
+\begin{equation}
+	\mathscr{M}_{r, n}=\frac{\mathscr{G}_{r} \times M^{n}}{(\text{diff } \times \mathrm{Weyl})_{r}} \:. \label{5.2.2}
+\end{equation}
+\newpage
+就像我们在环面中所看到的, $\text{diff}_{r}$一般不是连通的. 选出包含单位元的连通部分$\text{diff}_{r 0}$, 模群是商
+\begin{equation}
+	\frac{\text{diff}_{r}}{\text{diff}_{r 0}} \:. \label{5.2.3}
+\end{equation}
+
+研究无限小层次上的度规的diff $\times$ Weyl冗余是很有趣的. 即, 寻找一些与diff $\times$ Weyl 变换不等价的度规变分, 因而等价于模中的改变. 
+我们也要寻找某些不改变度规的diff $\times$ Weyl 变换, 这些是CKG的无限小元, 称为\emph{共形基灵矢量(conformal Killing vectors, 简记为CKVs)}. 
+
+在一个无限小的diff $\times$ Weyl变换下, 度规的变化是
+\begin{equation}
+	\delta g_{a b}=-2(P_{1} \delta \sigma)_{a b}+(2 \delta \omega-\nabla \cdot \delta \sigma) g_{a b} \:, \label{5.2.4}
+\end{equation}
+其中$P_{1}$是导数的无迹对称线性组合\eqref{3.3.17}. 模所对应的度规变分$\delta^{\prime} g_{a b}$与所有变分\eqref{5.2.4}正交:
+	\begin{align}
+		0 &=\int \dif^{2} \sigma \: g^{1 / 2} \delta^{\prime} g_{a b}\Bigl[-2(P_{1} \delta \sigma)^{a b}+(2 \delta \omega-\nabla \cdot \delta \sigma) g^{a b}\Bigr]  \nonumber \\
+		&=\int \dif^{2} \sigma \: g^{1 / 2}\Bigl[-2(P_{1}^{T} \delta^{\prime} g)_{a} \delta \sigma^{a}+\delta^{\prime} g_{a b} g^{a b}(2 \delta \omega-\nabla \cdot \delta \sigma)\Bigr] \:. \label{5.2.5}
+	\end{align}
+其中平移 $(P_{1}^{T} u)_{a}=-\nabla^{b} u_{a b}$. 为了使重叠\eqref{5.2.5}对于一般的$\delta \omega$ 与 $\delta \sigma$ 为零, 我们需要
+\begin{subequations} \label{5.2.6}
+\begin{align}
+g^{a b} \delta^{\prime} g_{a b} &=0  \:, \label{5.2.6a} \\
+(P_{1}^{T} \delta^{\prime} g)_{a} &=0 \:. \label{5.2.6b}
+\end{align}			
+\end{subequations}
+第一个条件要求 $\delta^{\prime} g_{a b}$ 无迹, 并且是 $P_{1}^{T}$ 作用的无迹对称张量. 对于这些方程的每一解, 都存在一个模.
+
+\begin{tcolorbox}
+	\begin{remark}
+		\begin{align*}
+			(P, \delta \sigma)^{a b}&=\frac{1}{2}(\nabla^{a} \delta \sigma^{b}+\nabla^{b} \delta \sigma^{a}-g^{a b} \nabla \cdot \delta \sigma) \\
+			\delta^{\prime} g_{a b}(P, \delta \sigma)^{a b}&=\frac{1}{2}(\delta^{\prime} g_{a b} \nabla^{a} \delta \sigma^{b}+\delta^{\prime} g_{a b} \nabla^{b} \delta \sigma^{a}-\delta^{\prime} g_{a b} g^{a b} \nabla \cdot \delta \sigma)
+			\end{align*}
+	\end{remark}
+\end{tcolorbox}
+
+CKVs 是使得 $\delta g_{a b}=0 $的\eqref{5.2.4}, 对方程求迹唯一确定了$\delta \omega$, 留下了\emph{共形基灵方程}
+\begin{equation}
+	(P_{1} \delta \sigma )_{a b}=0 \:. \label{5.2.7}
+\end{equation}
+
+\eqref{5.2.6}和\eqref{5.2.7}对共形规范周围的变分变得简单
+\begin{subequations} \label{5.2.8}
+\begin{align}
+\partial_{\bar{z}} \delta^{\prime} g_{z z} &=\partial_{z} \delta^{\prime} g_{\bar{z} \bar{z}}=0 \:, \label{5.2.8a} \\
+\partial_{\bar{z}} \delta z &=\partial_{z} \delta \bar{z}=0 \:, \label{5.2.8b}
+\end{align}			
+\end{subequations}
+所以模的变分对应于\emph{全纯二次微分}, 而CKV对应\emph{全纯矢量场}. 在环面上, 唯一的全纯双周期函数是常数, 所以存在两个实模以及两个实的CKV, 与上节讨论一致.
+
+度规模对应$P_{1}^{T}$的核\eqref{5.2.6}, 而CKV对应$P_{1}$的核\eqref{5.2.7}. 黎曼-罗赫定理将度规模的数目$\mu=\operatorname{dim} \operatorname{ker} P_{1}^{T}$ 以及CKVs的数目$ \kappa=\operatorname{dim} \operatorname{ker} P_{1}$和欧拉数 $\chi$联系起来
+\begin{equation}
+	\mu-\kappa=-3 \chi \:. \label{5.2.9}
+\end{equation}
+我们将在本章后面推导它. 对于闭定向曲面 $-3 \chi=6 g-6 $. 这个计数针对实模, 将复数模例如 $\tau$ 分成了实部核虚部.
+
+进一步, $\kappa$ 对于 $\chi<0$ 为零,  $\mu$对 $\chi>0 $为零. 为证明这点, 我们引用如下性质: 总能通过Weyl变换找到一度规, 其标量曲率$R$为常数. 
+这样$R$与$\chi$符号相同. 现在, $P_{1}^{T} P_{1}=-\frac{1}{2} \nabla^{2}-\frac{1}{4} R$, 所以
+	\begin{align}
+		  \int \dif^{2} \sigma \: g^{1 / 2} (P_{1} \delta \sigma)_{a b}(P_{1} \delta \sigma)^{a b} 
+		&=\int \dif^{2} \sigma \: g^{1 / 2} \delta \sigma_{a}(P_{1}^{T} P_{1} \delta \sigma)^{a}  \nonumber \\
+		&=\int \dif^{2} \sigma \: g^{1 / 2} \biggl(\frac{1}{2} \nabla_{a} \delta \sigma_{b} \nabla^{a} \delta \sigma^{b}-\frac{R}{4} \delta \sigma_{a} \delta \sigma^{a}\biggr) \:. \label{5.2.10}
+	\end{align}
+对于负的 $\chi$, 右边是严格正定的, 所以 $P_{1} \delta \sigma$不可能为零. 一个类似的讨论表明, 对于正的 $\chi$,  $P_{1}^{T} \delta^{\prime} g$不能为零. 结合这些结果, 我们有
+\begin{subequations} \label{5.2.11}
+\begin{align}
+\chi>0\:: &\quad  \kappa=3 \chi\:, \quad \mu=0 \:, \label{5.2.11a} \\
+\chi<0\:: &\quad \kappa=0\:, \quad \mu=-3 \chi \:. \label{5.2.11b}
+\end{align}						
+\end{subequations}
+
+\subsection*{黎曼面}
+描述模空间的常见方法是从每个等价类中选择一个度规. 这构成依赖模$t^{k}$的度规族$\hat{g}_{a b}(t ; \sigma)$. 对于环面, \eqref{5.1.9}给出这样一个切片. 
+使用\eqref{5.1.11}的另一描述通常比较方便, 其中 $\dif w \dif \bar{w}$ 被固定, 而模的信息被编码在坐标区域. 我们可以对这一概念进行如下形式化.
+
+我们先来回忆可微流形是如何被定义的. 用一组相互交叠的坐标卡覆盖流形,  $\sigma_{m}^{a}$是第$m$个坐标卡中的坐标, 而$a$从1取到流形的维数. 
+当坐标卡$m$与$n$交叠时, 两个坐标卡中的坐标通过如下公式相关
+\begin{equation}
+	\sigma_{m}^{a}=f_{m n}^{a}(\sigma_{n}) \:, \label{5.2.12}
+\end{equation}
+其中要求传递函数能微分给定次. 对黎曼流形, 在每个坐标卡中同样给定了度规$g_{m, a b}(\sigma_{m})$ , 而度规在重叠区的值通过通常的张量法则相关.
+
+对于一个\emph{复}流形, 在每个坐标卡中存在复坐标 $z_{m}^{a}$, 而现在$a$从$1$取到流形维数的一半. 传递函数被要求是全纯的
+\begin{equation}
+	z_{m}^{a}=f_{m n}^{a}(z_{n}) \:. \label{5.2.13}
+\end{equation}
+由于全纯性不依赖所使用的坐标 $z_{m}^{a}$. 现在可以定义流形上的全纯函数. 正如, 如果两个可微流形之间存在一对一可微映射, 它们就等价；如果两个复流形之间存在一对一全纯映射, 它们就等价. 特别地, 在每个坐标卡内做一个全纯的坐标变换, 将给出等价的表面.
+
+在二维情况 (一个复坐标), 复流形被称为黎曼面. 在这一情况下存在一一对应
+\begin{equation}
+\text{黎曼面} \leftrightarrow \text{黎曼流形 mod Weyl变换} \:. \label{5.2.14}
+\end{equation}
+我们在右边放置了 'mod Weyl' 是因为 'mod diff' 已经隐含在黎曼流形的定义中. 为了看到这个同构, 从黎曼流形出发. 从对共形规范的讨论中, 我们知道, 
+可以在每个坐标卡中找到 $z_{m}$ 使得
+\begin{equation}
+	\dif s^{2} \propto \dif z_{m} \dif \bar{z}_{m} \:. \label{5.2.15}
+\end{equation}
+在临近的卡中, 坐标不需要是相同的, 但由于 $\dif s^{2} \propto \dif z_{m} \dif \bar{z}_{m} \propto \dif z_{n} \dif \bar{z}_{n}$, 传递函数是全纯的. 
+这是从黎曼流形到两实维的复流形的映射. 对于逆映射, 可以在第$m$个卡中取度规 $\dif z_{m} \dif \bar{z}_{m}$, 并使其在交叠区光滑以产生黎曼流形. 黎曼面的两个表征因而是等价的.
+
+以平行四边形图\ref{fig:5.1}的复坐标$w$来描述环面例证了复流形的思想. 假想取单个坐标卡, 其比图\ref{fig:5.1}的基本平行四边形大一点. 那么, 周期性条件
+\begin{equation}
+	w \cong w+2 \pi \cong w+2 \pi \tau \label{5.2.16}
+\end{equation}
+就是坐标卡两个相反边缘的交叠上的传递函数. 这些传递函数定义了曲面. 为了定义原始的对度规的路径积分, 将度规视为固定坐标, 例如平方\eqref{5.1.7}, 或至少是传递函数固定的坐标卡的固定集合, 是最简单的出发点. 为了研究给定平面上的量子场论, 那么最简单的就是处理传递函数模相关的单位度规, 就像平行四边形\eqref{5.1.11}中那样.
+
+也可以这样看黎曼面. 定义世界面为坐标卡的并. 我们可以用 diff $\times$ Weyl 自由度在每一坐标卡中达到度规 $\dif z \dif \bar{z}$. 
+这样在坐标卡交叠区的规范选择只能相差该度规的diff $\times$ Weyl 不变. 这正是我们讨论过的共形变换. 
+因为CFT中的场在共形变换下有明确的变换性质, 所以黎曼面是CFT自然生长的地方, 
+
+\section{\texorpdfstring{模的测度}{5.3 The measure for moduli}} \label{sec:5.3}
+
+我们现在回顾Polyakov路径积分的规范固定. 我们已经知道了规范冗余不完全消除对度规的路径积分, 但留下的是模空间上的有限维积分. 
+为了将其考虑在内, 有必要精炼\ref{sec:3.3}节的讨论.
+
+$S$-矩阵的路径积分是
+	\begin{align}
+		&S_{j_{1} \ldots j_{n}}(k_{1}, \ldots, k_{n})  \nonumber \\
+		&\qquad=\sum_{\text{compact} \atop
+				\text {topologies}} \int \frac{[\dif \phi \,\dif g]}{V_{\text {diff }} \times \text { Weyl }} 
+				\exp (-S_{\mathrm{m}}-\lambda \chi) \prod_{i=1}^{n} \int \dif^{2} \sigma_{i} \: g(\sigma_{i})^{1 / 2} 
+				\mathscr{V}_{j_{i}}(k_{i}, \sigma_{i}) \:, \label{5.3.1}
+	\end{align}
+这是之前的表达式\eqref{3.5.5}, 但现在有一个$c=\tilde{c}=26$的一般物质场, 用$\phi$标记. 在规范固定中, 对度规和位置的积分换成对规范群、模以及未定位置的积分
+\begin{equation}
+	[\dif g]\, \dif^{2 n} \sigma \rightarrow [\dif \zeta] \,\dif^{\mu} t \,\dif^{2 n-\kappa} \sigma \:. \label{5.3.2}
+\end{equation}
+在因式分解出规范体积后, 这一变换的雅可比行列式就变成了模空间上的测度.
+
+这一步与\ref{sec:3.3}节中的步骤是相同的, 现在将模与CKV考虑在内. 特别地, 规范选择现在会固定$\kappa$个顶点坐标, $\sigma_{i}^{a} \rightarrow \hat{\sigma}_{i}^{a}$. 
+记固定坐标 $(a, i)$的集合为$f$, 定义模空间上的Faddeev-Popov测度为
+\begin{equation}
+	1=\Delta_{\mathrm{FP}}(g, \sigma) \int_{F} \dif^{\mu} t \int_{\text{diff} \times \text{Weyl}}[\dif \zeta] \,
+	\delta(g-\hat{g}(t)^{\zeta}) \prod_{(a, i) \in f} \delta(\sigma_{i}^{a}-\hat{\sigma}_{i}^{\zeta a}) \:. \label{5.3.3}
+\end{equation}
+通过定义, 每个度规(diff $\times$ Weyl)等价于一个$t$和$\zeta $的$\hat{g}(t)$. 实际上, 正如\ref{sec:5.1}节末尾所讨论的, 可能会存在一个残留的有限阶$n_{R}$的离散对称群, 所以$\delta$函数在$n_{R}$个点非零.
+
+将\eqref{5.3.3}代入路径积分\eqref{5.3.1}, 并使用与之前相同步骤给出
+	\begin{align}
+		S_{j_{1} \ldots j_{n}}(k_{1}, \ldots, k_{n})=& \sum_{\text{compact}\atop \text{topologies} } \int_{F} \dif^{\mu} t \: 
+		\Delta_{\mathrm{FP}}(\hat{g}(t), \hat{\sigma}) \int[\dif \phi] \int \prod_{(a, i) \notin f} \dif \sigma_{i}^{a}  \nonumber \\	
+		&\times \exp \Bigl(-S_{\mathrm{m}}[\phi, \hat{g}(t)]-\lambda \chi\Bigr)
+		 \prod_{i=1}^{n}\Bigl[\hat{g}(\sigma_{i})^{1 / 2} \mathscr{V}_{j_{i}}(k_{i} ; \sigma_{i})\Bigr] \:. \label{5.3.4}
+	\end{align}
+对度规和顶点算符坐标的积分现在退化成对度规和未定坐标的模空间$F$加上$\Delta_{\mathrm{FP}} $给定的测度的积分. 在顶点算符中, $\kappa$个位置被固定了.
+
+现在我们计算Faddeev-Popov测度. $\delta$函数$n_{R}$个点上非零, 这$n_{R}$个点通过对称性相联系, 所以我们考察其中一个点并除以$n_{R}$. 
+在该点附近展开$\Delta_{\mathrm{FP}}$的定义\eqref{5.3.3}. 一般度规变分等于定域对称变分加上模$t^{k}$的一个变化,
+\begin{equation}
+	\delta g_{a b}=\sum_{k=1}^{\mu} \delta t^{k} \partial_{t^{k}} \hat{g}_{a b}-2(\hat{P}_{1} \delta \sigma)_{a b}+(2 \delta \omega-\hat{\nabla} \cdot \delta \sigma) \hat{g}_{a b} \:. \label{5.3.5}
+\end{equation}
+Faddeev-Popov逆行列式为
+	\begin{align}
+		&\Delta_{\mathrm{FP}}(\hat{g}, \hat{\sigma})^{-1} \nonumber \\
+		&\quad =n_{R} \int \dif^{\mu} \delta t\,[\dif \delta \omega\, \dif \delta \sigma]\: \delta(\delta g_{a b}) 
+		\prod_{(a, i) \in f} \delta(\delta \sigma^{a}(\hat{\sigma}_{i})) \nonumber \\
+		&\quad =n_{R}  \int \dif^{\mu} \delta t\, \dif^{\kappa} x \: [\dif \beta^{\prime} \,\dif \delta \sigma] \nonumber  \\
+		&\qquad \times \exp \Biggl[2 \pi \mi (\beta^{\prime}, 2 \hat{P}_{1} \delta \sigma-\delta t^{k} \partial_{k} \hat{g})
+		+2 \pi \mi \sum_{(a, i) \in f} x_{a i} \delta \sigma^{a}(\hat{\sigma}_{i})\Biggr] \:, \label{5.3.6}
+	\end{align}
+第二行中内积的定义参考习题3.2. 我们跟随了与\ref{sec:3.3}节相同的定域讨论, 将$\delta$-函数与泛函写成对$x$ 与 $\beta_{a b}$ 的积分, 并积掉 $\delta \omega$ 以获得 $\beta_{a b}^{\prime}$ 是无迹的约束.
+
+像之前一样, 将所有玻色变量替换成格拉斯曼变量来转换积分\eqref{5.3.6}:
+\begin{subequations} \label{5.3.7}
+\begin{align}
+\delta \sigma^{a}  &\rightarrow c^{a} \:, \label{5.3.7a} \\
+\beta_{a b}^{\prime} & \rightarrow b_{a b} \:,  \label{5.3.7b}\\
+x_{a i}  &\rightarrow \eta_{a i}  \:,\label{5.3.7c} \\
+\delta t^{k}  &\rightarrow \xi^{k} \:. \label{5.3.7d}
+\end{align}	
+\end{subequations}
+然后, 在场的传统归一化下
+	\begin{align}
+		\Delta_{\mathrm{FP}}(\hat{g}, \hat{\sigma})&= \frac{1}{n_{R}} \int[\dif b\, \dif c] \,\dif^{\mu} \xi \,\dif^{\kappa} \eta \nonumber \\
+		&\qquad \qquad \times \exp \Biggl[-\frac{1}{4 \pi}(b, 2 \hat{P}_{1} c-\xi^{k} \partial_{k} \hat{g})
+		+\sum_{(a, i) \in f} \eta_{a i} c^{a}(\hat{\sigma}_{i})\Biggr]  \nonumber \\
+		&= \frac{1}{n_{R}} \int[\dif b\, \dif c] \: \exp (-S_{\mathrm{g}}) \prod_{k=1}^{\mu} \frac{1}{4 \pi}(b, \partial_{k} \hat{g}) 
+		\prod_{(a, i) \in f} c^{a}(\hat{\sigma}_{i}) \:. \label{5.3.8}
+	\end{align}
+在最后一行, 我们积掉了格拉斯曼变量 $\eta_{a i}$和 $\xi^{k}$.
+
+模空间上合适的积分测度由带有该插入鬼路径积分生成. 我们不试图在中间步骤保留总符号的踪迹; 既然这是一个雅可比行列式, 我们可以暗中选择总符号以给出正的结果. 
+$S$-矩阵的完整表达式是
+	\begin{align}
+		&S_{j_{1} \ldots j_{n}}(k_{1}, \ldots, k_{n})
+		=\sum_{ \text{compact} \atop \text{topologies} } \int_{F} \frac{\dif^{\mu} t}{n_{R}} \int[\dif \phi \,\dif b\, \dif c] \exp (-S_{\mathrm{m}}-S_{\mathrm{g}}-\lambda \chi) \nonumber  \\
+		&\qquad \quad \times \prod_{(a, i) \notin f} \int \dif \sigma_{i}^{a} \prod_{k=1}^{\mu} \frac{1}{4 \pi}(b, \partial_{k} \hat{g}) 
+		\prod_{(a, i) \in f} c^{a}(\hat{\sigma}_{i}) \prod_{i=1}^{n} \hat{g}(\sigma_{i})^{1 / 2} \mathscr{V}_{j_{i}}(k_{i}, \sigma_{i})\:.\label{5.3.9}
+	\end{align}
+这一结果随时可以扩展到所有玻色弦理论 —— 闭的或开的, 定向或非定向的 —— 唯一的差异是要引入什么样的拓扑并允许什么样的顶点算符. \eqref{5.3.9}是一个有用且漂亮的结果. 模和CKV引入的复杂性通过在路径积分中插入$b$和$c$而考虑在内. 对于每个固定坐标, $\dif \sigma_{i}^{a}$被替换成 $c_{i}^{a}$, 而每个度规模由插入$b$给出.
+
+\subsection*{行列式形式的表示}
+
+在\eqref{5.3.8}中, 我们将Faddeev-Popov行列式表示成对格拉斯曼变量和场的积分. 我们现在要将其化简成有限维泛函行列式的乘积. 
+当我们在接下来的章节中继续研究弦$S$矩阵时, 这一直接的路径积分方法仅是我们要使用的方法之一.
+
+在合适的完备基下展开鬼场
+\begin{equation}
+	c^{a}(\sigma)=\sum_{J} c_{J} \mathsf{C}_{J}^{a}(\sigma), \quad b_{a b}(\sigma)=\sum_{K} b_{K} \mathsf{B}_{K a b}(\sigma) \:. \label{5.3.10}
+\end{equation}
+完备基 $\mathsf{C}_{J}^{a}$ 与 $\mathsf{B}_{K a b}$定义如下. 出现在鬼作用量中的导数 $P_{1}$ 将矢量转换成无迹对称张量. 而它的转置是相反的功能. 鬼作用量可以写成
+\begin{equation}
+	S_{\mathrm{g}}=\frac{1}{2 \pi}(b, P_{1} c)=\frac{1}{2 \pi}(P_{1}^{T} b, c) \:. \label{5.3.11}
+\end{equation}
+因为它将一种场转化成另一种, 我们无法以一种diff不变的方式对角化 $P_{1}$, 但我们可以对角化$P_{1}^{T} P_{1}$ 和 $P_{1} P_{1}^{T}$: 
+\begin{equation}
+	P_{1}^{T} P_{1} \mathsf{C}_{J}^{a}=\nu_{J}^{\prime 2} \mathsf{C}_{J}^{a}, \quad P_{1} P_{1}^{T} \mathsf{B}_{K a b}=\nu_{K}^{2} \mathsf{B}_{K a b} \:. \label{5.3.12}
+\end{equation}
+本征函数可以选为实的, 并在如下内积中归一化
+\begin{subequations} \label{5.3.13}
+\begin{align}
+(\mathsf{C}_{J}, \mathsf{C}_{J^{\prime}}) &=\int \dif^{2} \sigma \: g^{1/2} \mathsf{C}_{J}^{a} \mathsf{C}_{J^{\prime} a}=\delta_{J J^{\prime}} \:, \label{5.3.13a} \\
+(\mathsf{B}_{K}, \mathsf{B}_{K^{\prime}}) &=\int \dif^{2} \sigma \: g^{1 / 2} \mathsf{B}_{K a b} \mathsf{B}_{K^{\prime}}^{a b}
+=\delta_{K K^{\prime}} \:. \label{5.3.13b}
+\end{align}
+\end{subequations}
+
+现在注意到
+\begin{equation}
+	(P_{1} P_{1}^{T}) P_{1} \mathsf{C}_{J}=P_{1}(P_{1}^{T} P_{1}) \mathsf{C}_{J}=\nu_{J}^{\prime 2} P_{1} \mathsf{C}_{J} \:, \label{5.3.14}
+\end{equation}
+所以 $P_{1} \mathsf{C}_{J}$是 $P_{1} P_{1}^{T} $的本征函数. 以同样方法, $P_{1}^{T} \mathsf{B}_{K}$ 是 $P_{1}^{T} P_{1} $的本征函数. 
+因此\emph{除了}$P_{1} \mathsf{C}_{J}=0$ 或 $P_{1}^{T} \mathsf{B}_{K}=0 $, 本征函数之间存在一一映射.  它们对应 $P_{1}^{T} P_{1}$ 或 $P_{1} P_{1}^{T} $的本征值. 它们正是CKV和全纯二次微分, 因而它们的数目分别是 $\kappa$ 和 $\mu$. 我们将本征值为零的本征函数记为$\mathsf{C}_{0 j}$或$\mathsf{B}_{0 k}$, 
+而非零本征值被标记为 $J, K=1, \ldots$ . 对于后者, 归一化关联函数的关系是
+\begin{equation}
+	\mathsf{B}_{J a b}=\frac{1}{\nu_{J}}(P_{1} \mathsf{C}_{J})_{a b} \:, \quad \nu_{J}=\nu_{J}^{\prime} \neq 0 \:. \label{5.3.15}
+\end{equation}
+
+以模的形式, 鬼路径积分 $\Delta_{\mathrm{FP}}$ 变成
+\begin{equation}
+	\int \prod_{k=1}^{\mu} \dif b_{0 k} \prod_{j=1}^{\kappa} \dif c_{0 j} \prod_{J} \dif b_{J} \,\dif c_{J} 
+	\exp \left(-\frac{\nu_{J} b_{J} c_{J}}{2 \pi}\right) \prod_{k^{\prime}=1}^{\mu} \frac{1}{4 \pi}\left(b, \partial_{k^{\prime}} \hat{g}\right) \prod_{(a, i) \in f} c^{a}\left(\sigma_{i}\right) \:. \label{5.3.16}
+\end{equation}
+从A.2节, 我们知道, 除非变量出现在被积函数中, 否则格拉斯曼积分为零. $c_{0 j}$ 和 $b_{0 k}$ 没有出现在作用量中, 而仅仅出现在插入中. 事实上, 积分\eqref{5.3.16}中每一种插入的数目, $\kappa$和$\mu$, 分别与鬼零模匹配. 我们恰好有足够多的插入以给出非零的结果, 并且在插入中, 只有鬼场的零模部分有贡献. 因此
+	\begin{align}
+		\Delta_{\mathrm{FP}}&=\int \prod_{k=1}^{\mu}  \dif b_{0 k} \:\prod_{k^{\prime}=1}^{\mu}\Biggl[\sum_{k^{\prime \prime}=1}^{\mu} \frac{b_{0 k^{\prime \prime}}}{4 \pi}(\mathrm{B}_{0 k^{\prime \prime}}, \partial_{k^{\prime}} \hat{g})\Biggr] \nonumber \\
+		& \qquad \qquad \times \int \prod_{j=1}^{\kappa} \dif c_{0 j} \: \prod_{(a, i) \in f}\Biggl[\sum_{j^{\prime}=1}^{\kappa} c_{0 j^{\prime}} \mathsf{C}_{0 j^{\prime}}^{a}(\sigma_{i})\Biggr] \nonumber \\
+		& \qquad \qquad \times \int \prod_{J} \dif b_{J}\, \dif c_{J} \exp \biggl(-\frac{\nu_{J} b_{J} c_{J}}{2 \pi}\biggr) \:.\label{5.3.17}
+	\end{align}
+对所有使得零模积分充满格拉斯曼变量的方式求和, 在每种情况下, 积分会生成有限行列式, 而非零模产生一个无穷乘积, 一个泛函行列式. 合起来
+\begin{equation}
+	\Delta_{\mathrm{FP}}=\operatorname{det} \frac{\left(\mathrm{B}_{0 k}, \partial_{k^{\prime}} \hat{g}\right)}{4 \pi} \operatorname{det} \mathsf{C}_{0 j}^{a}\left(\sigma_{i}\right) \operatorname{det}^{\prime}\left(\frac{P_{1}^{T} P_{1}}{4 \pi^{2}}\right)^{1 / 2} \:.
+	\label{5.3.18}
+\end{equation}
+注意到$\mathsf{C}_{0 j}^{a}(\sigma_{i})$ 是平方矩阵, 其中 $(a, i) \in f$ 像$j$一样取遍 $\kappa$ 个值.泛函行列式上的撇代表去掉了零本征值.
+
+\subsection*{黎曼-罗赫定理}
+我们现在给出黎曼-罗赫 定理的一个路径积分推导.对于全纯 $b c$ 系统 (没有 $\tilde{b}, \tilde{c}$)的鬼流, 习题3.6中导出的流守恒反常是
+\begin{equation}
+	\nabla_{a} j^{a}=\frac{1-2 \lambda}{4} R \:. \label{5.3.19}
+\end{equation}
+Noether定理将流守恒与不变性相关联. 对于不守恒流, 通过相同讨论可以看到
+\begin{equation}
+	\frac{\delta([\dif \phi]\: \exp (-S))}{[\dif \phi] \:\exp (-S)}=\frac{\mi \epsilon}{2 \pi} \int \dif^{2} \sigma \: g^{1 / 2} \nabla_{a} j^{a} \rightarrow-\mi \epsilon \frac{2 \lambda-1}{2} \chi \:. \label{5.3.20}
+\end{equation}
+鬼数对称性的作用为 $\delta b=-\mi \epsilon b, \delta c=\mi \epsilon c $.  当路径积分非零时, 测度、作用量和插入的变换必须相互抵消. 
+因此, 从反常中我们了解到$c$插入的数目减去$b$插入的数目是$3 \chi / 2 $.  路径积分计算将插入的数目与零模的数目关联起来, 因而给出相同的差值
+\begin{equation}
+	\frac{1}{2}(\kappa-\mu)=\frac{1}{2}(\operatorname{dim} \operatorname{ker} P_{1}-\operatorname{dim} \operatorname{ker} P_{1}^{T}) 
+	\label{5.3.21}
+\end{equation}
+出现因子$\frac{1}{2}$是因为我们仅仅取出了全纯理论; 反全纯理论给出相同贡献. 等同从反常中得到的结果与从零模中得到的结果给出黎曼-罗赫定理$\kappa-\mu=3 \chi$. 
+对一般的$b c$系统, 以相同方式会发现
+\begin{equation}
+	\operatorname{dim} \operatorname{ker} P_{n}-\operatorname{dim} \operatorname{ker} P_{n}^{T}=(2 n+1) \chi \label{5.3.22}
+\end{equation}
+$P_{n}$算符在习题3.2中定义.
+
+\section{\texorpdfstring{关于测度的更多介绍}{5.4 More about the measure}}
+
+这里我们收集了一些规范固定弦振幅的普遍性质. 它们对第\ref{cha:9}章中更加形式化的考察有奠基性的作用.
+
+\subsection*{规范不变性}
+Faddeev-Popov处理所生成的规范固定振幅是BRST不变且独立于规范选择. 然而, 明确检验它是否有期望的全部性质也是很有用的. 
+
+第一, 它独立于模空间上坐标$t$的选择. 对于新坐标$t^{\prime k}(t)$
+	\begin{align}
+		\dif^{\mu} t^{\prime} &=\left|\operatorname{det} \frac{\partial t^{\prime}}{\partial t}\right| \dif^{\mu} t \:, \nonumber  \\
+		\prod_{k=1}^{\mu} \frac{1}{4 \pi}(b, \partial_{k}^{\prime} \hat{g}) &=\operatorname{det}\left(\frac{\partial t}{\partial t^{\prime}}\right) \prod_{k=1}^{\mu} \frac{1}{4 \pi}(b, \partial_{k} \hat{g}) \:,  \label{5.4.1}
+	\end{align}
+并且这两个雅可比行列式相互抵消(相差一个符号, 我们会手动决定以给出一个正的测度). 换句话说, $b$鬼引起的积分像模空间上的密度那样变换.
+
+第二, 我们来看一下该测度在规范切片的Weyl变换下不变. 在Weyl变换下,
+\begin{equation}
+	\delta \hat{g}_{a b}^{\prime}(t ; \sigma)=2 \delta \omega(t ; \sigma) \hat{g}_{a b}(t ; \sigma) \:, \label{5.4.2}
+\end{equation}
+作用量和测度的变分给出了定域算符$T^{a}{}_{a}$的插入, 其在$D=26$时由于运动方程而为零. 因此, 我们只需要关心各个插入上的效应. 顶点算符插入本就构造成了Weyl-不变. 
+插入$c^{a}(\sigma_{i})$ 根据\eqref{3.3.24}下面的讨论也是Weyl-不变. 对于$b$插入,
+	\begin{align}
+		(b, \partial_{k} \hat{g}^{\prime}) &=\int \dif^{2} \sigma\: \hat{g}^{\prime 1 / 2} \,b_{a b} \hat{g}^{\prime a c} \hat{g}^{b d} \partial_{k} \hat{g}_{c d}^{\prime}  \nonumber \\
+		&=\int \dif^{2} \sigma \:\hat{g}^{1 / 2} \,b_{a b}(\hat{g}^{a c} \hat{g}^{b d} \partial_{k} \hat{g}_{c d}+2 \hat{g}^{a b} \partial_{k} \omega) \nonumber \\
+		&=(b, \partial_{k} \hat{g}) \:, \label{5.4.3}
+	\end{align}
+最后一个等式由于$b$的无迹而成立.
+
+第三, 我们来检验无限小diff变换 $\delta \sigma=\xi(t ; \sigma) $下的不变性. 扩展到一般diff变换是直接的. 
+振幅\eqref{5.3.9}中唯一一个不是立即不变的项是$b$插入以及坐标被固定的顶点算符. 前者变换为
+	\begin{align}
+		\delta (b, \partial_{k} \hat{g}) &=-2(b, P_{1} \partial_{k} \xi ) =-2(P_{1}^{T} b, \partial_{k} \xi)  =0  \label{5.4.4}
+	\end{align}
+其中利用了$b$的运动方程. $b$的运动方程来自$\delta S / \delta c=0$, 所以在$c$插入上会存在源项; 它们正是解释坐标变换在固定顶点算符上的效应所需要的.
+
+\subsection*{BRST不变性}
+我们现在来证明\eqref{5.3.9}的全BRST不变性. 从定域分析中知道路径积分测度与作用量是不变的, 所以我们不得不考察BRST变换在插入上的效应. 
+在规范固定的路径积分\eqref{5.3.9}中, 不积分的顶点算符伴随因子 $c$ 或 $\tilde{c} c$. 这正是我们在\ref{sec:4.4}节末尾对与OCQ态对应的BRST不变顶点算符的描述. 
+另一方面, 被积顶点算符不是BRST不变的, 它们有BRST性质: 
+\begin{equation}
+	\delta_{\mathrm{B}} \mathscr{V}_{\mathrm{m}}=\mi \epsilon \partial_{a}(c^{a} \mathscr{V}_{\mathrm{m}}) \:, \label{5.4.5}
+\end{equation}
+其在积分意义下为零.
+
+最终还有$b$插入的变分
+\begin{equation}
+	\delta_{\mathrm{B}}(b, \partial_{k} \hat{g})=\mi \epsilon(T, \partial_{k} \hat{g}) \:. \label{5.4.6}
+\end{equation}
+能动量张量的插入仅产生了对$t^{k}$的导数, 所以除了一个可能来自于模空间边界的项, BRST变分为零. 我们会在下一章检验模空间的边界. 
+由于所谓的\emph{抵消传播子讨论(canceled propagator argument)}, 大多数情况中不存在表面贡献. 在一定情形下, 这个讨论并不适用, 我们将看到如何处理这一点.
+
+重要的是, 规范固定结果\eqref{5.3.9}可以直接从BRST不变性的要求中写出来, 而不用参考规范固定形式. 正如我们在计算路径积分时所看到的, 
+至少存在 $\mu $ 个$b$插入和 $\kappa $ 个$c$插入, 否则路径积分为零. 在振幅\eqref{5.3.9}中正好存在数目正确的鬼插入以给出非零结果. 
+一旦我们引入必需的$b$因子, BRST变分引入了能动量张量与度规的$t^{k}$导数的卷积. 这正比于对模的导数, 所以就像以前做的那样, 对模空间积分就得到了一个不变的结果. 
+结果\eqref{5.3.9}可以以各种方式推广, 例如共形基灵不变性那部分保持不固定的情况. 在第\ref{cha:7}章, 我们将对无顶点算符的环面明确地例证这一点.
+
+BRST不变性暗示了BRST等价态的振幅是相同的. 如果我们给任意一个态增加一个空部分$Q_{B}|\chi\rangle$, 
+效果是在路径积分中插入变分$\delta_{B} \mathscr{V}_{\chi}$; 这部分积分为零. 
+这是重要的, 因为物理希尔伯特空间等同为上同调, 所以等价态应该有相同振幅.
+
+\subsection*{黎曼面的测度}
+在规范固定世界面是由依赖模的度规导出的框架中, 我们推导出了Faddeev-Popov测度. 
+我们现在在黎曼面的框架中重铸这个结果, 在这个框架中, 结构被编码进依赖模的传递函数中.
+
+为了表示该测度在模空间中给定点$t_{0}$处的值, 我们取一组坐标卡, 在第$m$个坐标卡有复坐标$z_{m}$以及全纯的传递函数, 
+其中度规 $\hat{g}(t_{0})$ 在每个坐标卡中等价于$\dif z_{m} \dif \bar{z}_{m}$. 现在考察模的变化. 
+我们先将其描述为度规在传递函数固定时的变化, 然后将其转化为传递函数在度规固定时的变化. 在第一种描述中, 定义\emph{Beltrami微分}
+\begin{equation}
+	\mu_{k a}{}^{b}=\frac{1}{2} \hat{g}^{b c} \partial_{k} \hat{g}_{a c} \:. \label{5.4.7}
+\end{equation}
+ $\delta t^{k}$ 的$b$插入变成
+\begin{equation}
+	\frac{1}{2 \pi}(b, \mu_{k})=\frac{1}{2 \pi} \int \dif^{2} z\: \Bigl(b_{z z} \mu_{k \bar{z}}{}^{z}+b_{\bar{z} \bar{z}} \mu_{k z}{}^{\bar{z}}\Bigr) \:. \label{5.4.8}
+\end{equation}
+在第二种描述中, 模变化$\delta t^{k}$之后, 在每个坐标卡中将会有新坐标
+\begin{equation}
+	z_{m}^{\prime}=z_{m}+\delta t^{k} v_{k m}^{z_{m}}(z_{m}, \bar{z}_{m}) \:. \label{5.4.9}
+\end{equation}
+$v_{k m}^{a}$的上标是顶点指标; 注意到$v_{k m}^{a}$仅定义在第$m$个坐标卡中. 根据黎曼面的定义, 
+$\dif z_{m}^{\prime} \dif \bar{z}_{m}^{\prime}$ 等价于 $t_{0}+\delta t$处的度规
+\begin{equation}
+	\dif z_{m}^{\prime} \dif \bar{z}_{m}^{\prime} \propto \dif z_{m} \dif \bar{z}_{m}+\delta t^{k}
+	\Bigl(\mu_{k z_{m}}{}^{\!\!\!\!\bar{z}_{m}} \dif z_{m} \dif z_{m}+\mu_{k \bar{z}_{m}}{}^{\!\!\!\!z_{m}} \dif \bar{z}_{m} \dif \bar{z}_{m}\Bigr) \:. \label{5.4.10}
+\end{equation}
+因此坐标变化 $v_{k m}^{a}$与Beltrami微分的关系为
+\begin{equation}
+	\mu_{k z_{m}}{}^{\!\!\!\!\bar{z}_{m}}=\partial_{z_{m}} v_{k m}^{\bar{z}_{m}}, \quad \mu_{k \bar{z}_{m}}^{z_{m}}=\partial_{\bar{z}_{m}} v_{k m}^{z_{m}}
+\end{equation}
+这是Beltrami方程的无穷小版本. 它暗示了$v_{k m}^{z_{m}}$ 不是全纯的, 否则它将不对应模的变化. 
+另外, $v_{k m}^{z_{m}}$ 中有一个不由Beltrami方程决定的全纯部分, 对于 $v_{k m}^{\bar{z}_{m}}$则是反全纯部分; 
+这些对应于每个坐标卡中做全纯再参量化的自由度.
+
+分部积分, $b$插入\eqref{5.4.8}变成
+\begin{equation}
+	\frac{1}{2 \pi}(b, \mu_{k})=\frac{1}{2 \pi \mi} \sum_{m} \oint_{C_{m}}\Bigl(\dif z_{m} \: v_{k m}^{z_{m}} b_{z_{m} z_{m}}-\dif \bar{z}_{m}\: v_{k m}^{\bar{z}_{m}} b_{\bar{z}_{m} \bar{z}_{m}}\Bigr) \:, \label{5.4.12}
+\end{equation}
+围道 $C_{m}$ 逆时针围绕第$m$个坐标卡. 通过\eqref{5.4.9}, 坐标对模的导数在给定点是
+\begin{equation}
+	\frac{\dif z_{m}}{\dif t^{k}}=v_{k m}^{z_{m}} \:. \label{5.4.13}
+\end{equation}
+因此, 传递函数在模变换下的变换是
+\begin{equation}
+	\frac{\partial z_{m}}{\partial t^{k}}\biggr|_{z_{n}}=v_{k m}^{z_{m}}-\frac{\partial z_{m}}{\partial z_{n}}\biggr\vert_{t} v_{t}^{z_{k n}}=v_{k m}^{z_{m}}-v_{k n}^{z_{m}} \:. \label{5.4.14}
+\end{equation}
+那么, 结合环绕邻近坐标卡的围道积分\eqref{5.4.12}给出
+\begin{equation}
+	\frac{1}{2 \pi}(b, \mu_{k}) = \frac{1}{2 \pi \mi} \sum_{(m n)} \int_{C_{m n}}
+	\left( \dif z_{m} \frac{\partial z_{m}}{\partial t^{k}}\biggr\vert_{z_{n}} b_{z_{m} z_{m}}
+	      -\dif \bar{z}_{m} \frac{\partial \bar{z}_{m}}{\partial t^{k}}\biggr\vert_{z_{n}} b_{\bar{z}_{m} \bar{z}_{m}}\right)\:,
+     \label{5.4.15}
+\end{equation}
+这正比于传递函数的导数. 求和取遍所有重叠的坐标卡. 围道 $C_{m n}$ 在卡$m$ 和 $n$之间跑动, 并且方向在$m$的视角下是逆时针的. 
+$(m n)$ 项关于 $m$ 和 $n$对称, 但这并不显然. 每个围道要么闭合, 要么在坐标卡 $m, n$和 $p$重合区域截止, 
+在这里围道 $C_{m n}, C_{n p}$和$C_{p m}$ 交于一点. $b$插入现在以定义黎曼面的数据显式地表述出来, 传递函数模掉了全纯等价性.
+
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 436 415
+		%1px=0.75pt
+		\includegraphics[width=0.5\textwidth,natwidth=327,natheight=311]{Fig5.3.jpg}\\
+		\caption{在$z^{\prime}=0$处有顶点算法的坐标卡$z^{\prime}$(斜线阴影)和$z$(水平线阴影). 在圆环区域, $z=z^{\prime}+z_{v}$.}\label{fig:5.3}
+	\end{center}
+\end{figure}
+
+作为一个例证, 我们可以用其将度规的模与顶点算符位置的模放在一个更加平等的基础上. 考察坐标系$z$中位于$z_{v}$处的顶点算符. 
+以顶点算符为中心做一个较小的新坐标卡 $z^{\prime}$, 如图\ref{fig:5.3}所示. 我们保留$z^{\prime}=0$处的顶点算符, 并将它的位置编码进传递函数中
+\begin{equation}
+	z=z^{\prime}+z_{v} \label{5.4.16}
+\end{equation}
+ $z_{v}, \bar{z}_{v}$ 的测度由\eqref{5.4.15}给定, 其中
+\begin{equation}
+	\frac{\partial z^{\prime}}{\partial z_{v}}\biggr|_{z}=-1 \:. \label{5.4.17}
+\end{equation}
+因此, 鬼插入是
+\begin{equation}
+	\int_{C} \frac{\dif z^{\prime}}{2 \pi \mi} b_{z^{\prime} z^{\prime}} \int_{C} \frac{\dif \bar{z}_{m}^{\prime}}{-2 \pi \mi} b_{\bar{z}^{\prime} \bar{z}^{\prime}}=b_{-1} \tilde{b}_{-1} \cdot \:,  \label{5.4.18}
+\end{equation}
+其中 $C$ 是如图所示环绕顶点算符的任意围道.那么, S矩阵的完整表达式可以紧凑的写成
+\begin{equation}
+	S(1 ; \ldots ; n)=\sum_{
+			\text { compact } \atop \text { topologies }
+	} \me^{-\lambda \chi} \int_{F} \frac{\dif^{m} t}{n_{R}}\Biggl\langle\prod_{k=1}^{m} B_{k} \prod_{i=1}^{n} \hat{\mathscr{V}}_{i}\Biggr\rangle \:.\label{5.4.19}
+\end{equation}
+这里,  $B_{k}$是$b$鬼插入\eqref{5.4.15}的简写, 而$\hat{\mathscr{V}}$ 对于闭弦代表 $\tilde{c} c \mathscr{K}_{\mathrm{m}}$, 
+对于开弦代表 $t_{a} c^{a} \mathscr{V}_{\mathrm{m}}$. 即, 我们现在将所有的顶点算符处理成固定的, 并将它们的坐标换成传递函数中的额外参量. 模的数目$m$是
+\begin{equation}
+	m=\mu+2 n_{\mathrm{c}}+n_{\mathrm{o}}-\kappa=-3 \chi+2 n_{\mathrm{c}}+n_{\mathrm{o}} \:, \label{5.4.20}
+\end{equation}
+其中 $n_{\mathrm{c}}$ 和 $n_{\mathrm{o}}$ 分别是闭弦顶点算符和开弦顶点算符的数目.
+
+\eqref{5.4.19}表明了戴帽的顶点算符, 即含有 $\tilde{c} c$ 或 $t_{a} c^{a}$的算符, 是基础的. 这正是态-算符对应所产生的, 并且它是BRST不变的. 如果顶点算符被积分了, 鬼插入\eqref{5.4.18}会移除$\tilde{c} c$或 $t_{a} c^{a} $ . 例如
+\begin{equation}
+	b_{-1} \tilde{b}_{-1} \cdot \tilde{c} c \mathscr{V}_{\mathrm{m}}=\mathscr{V}_{\mathrm{m}} \:, \label{5.4.21}
+\end{equation}
+留下了顶点算符的积分形式. 我们从Polyakov路径积分中写出\eqref{5.4.19}, 所以顶点算符以OCQ的形式出现, 但现在我们可以使用任意的BRST不变顶点算符.
+

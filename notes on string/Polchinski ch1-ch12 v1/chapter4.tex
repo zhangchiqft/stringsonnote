@@ -1,0 +1,731 @@
+\setcounter{section}{0}%更改chapter的计数器值
+%\numberwithin{equation}{chapter}%公式计数器从属于节计数器
+\numberwithin{equation}{section}%公式计数器从属于节计数器
+\numberwithin{figure}{section}%图计数器从属于节计数器
+\setcounter{chapter}{3}
+
+%\chapter{\texorpdfstring{弦谱}{4 The string spectrum}}
+\chapter{弦谱}
+%\section{\texorpdfstring{旧的协变量子化}{4.1 Old covariant quantization}}
+\section{旧的协变量子化}
+在共形规范下，世界面场是 $X^{\mu}$ 以及Faddeev-Popov 鬼场 $b_{a b}$ 与 $c^{a} $. Hilbert比实际的弦的物理频谱要大:  D 组 $\alpha^{\mu}$ 振子包含坐标系的非物理振荡，并且存在鬼振子. 这普遍是协变规范中的情况，存在来自类时振子(由于对易子正比于时空度规 $\eta_{\mu v}$)的负范态，以及来自鬼场的负范态.\\
+实际的物理空间更小. 为了看到如何辨认这个更小的空间，考察某个初态$|i\rangle$ 传播到某个末态 $|f\rangle $的无限圆柱上的振幅.  假定初时我们使用定域对称性以固定度规为形式 $g_{a b}(\sigma) $. 现在考察一个不同的规范，度规为 $g_{a b}(\sigma)+\delta g_{a b}(\sigma)$. 物理振幅应该不依赖于这个选择；当然，对于度规的改变，我们知道路径积分如何变化. 从$T^{a b}$的定义(3.4.4) 
+\begin{equation}
+\delta\langle f \mid i\rangle=-\frac{1}{4 \pi} \int d^{2} \sigma g(\sigma)^{1 / 2} \delta g_{a b}(\sigma)\left\langle f\left|T^{a b}(\sigma)\right| i\right\rangle
+\end{equation}
+为了使对于度规的任意改变变分为零，我们需要
+\begin{equation}\label{4.1.2}
+\left\langle\psi\left|T^{a b}(\sigma)\right| \psi^{\prime}\right\rangle=0
+\end{equation}
+其中 $|\psi\rangle,\left|\psi^{\prime}\right\rangle$ 是任意的态.\\
+考虑它的另一种方式.  从 $g_{a b}$ 的变分得到的原始运动方程是 $T^{a b}=0 $.  在固定规范后，这并不作为一个算符方程成立：由于我们在规范固定理论中没有变化 $g_{a b}$ ，我们缺失了一个方程. 条件 (\ref{4.1.2})称缺失的运动方程，必须对物理态之间的任何矩阵元成立. 当我们变换规范时，必须将Faddeev–Popov行列式的变化考虑在内. 所以矩阵元中的能动量张量是$X^\mu$贡献与鬼场贡献之和：
+\begin{equation}
+T_{a b}=T_{a b}^{X}+T_{a b}^{\mathrm{g}}
+\end{equation}
+$X^\mu$可以被更加普遍的CFT替代(我们指代物质CFT). 在这个情况下
+\begin{equation}
+T_{a b}=T_{a b}^{\mathrm{m}}+T_{a b}^{\mathrm{g}}
+\end{equation}
+在本节的剩余部分，我们将以一种简单却有些特殊的方式(ad hoc way)强加条件(\ref{4.1.2})，这称为旧协变量子化(OCQ). 对于很多用处，它是足够的. 在下一节，我们将采取一个更加系统的方法，BRST量子化. 它们实际上是等价的，这将在4.4节证明.\\
+在这个特殊方法中，我们将简单地忽视鬼场并尝试约束物质Hilbert空间，使得缺失的运动方程$T_{a b}^{\mathrm{m}}=0$ 对于矩阵元成立. 以Laurent系数的形式，这是 $L_{n}^{\mathrm{m}}=0$, 在闭弦中又有 $\tilde{L}_{n}^{\mathrm{m}}=0 $. 可以先尝试要求物理态对于所有的n满足$L_{n}^{m}|\psi\rangle=0$ , 但这太强了;用 $L_{m}^{\mathrm{m}}$作用这个方程，并构成对易子. 由于 Virasoro代数中的中心荷，会遇到不一致. 然而，只要Virasoro下降，且零算符湮灭物理态，就是足够的
+\begin{equation}\label{4.1.5}
+\left(L_{n}^{\mathrm{m}}+A \delta_{n, 0}\right)|\psi\rangle=0 \quad \text { for } n \geq 0
+\end{equation}
+那么，对于n<0，我们有
+\begin{equation}
+\left\langle\psi\left|L_{n}^{\mathrm{m}}\right| \psi^{\prime}\right\rangle=\left\langle L_{-n}^{\mathrm{m}} \psi \mid \psi^{\prime}\right\rangle=0
+\end{equation}
+我们使用了
+\begin{equation}\label{4.1.7}
+L_{n}^{\mathrm{m} \dagger}=L_{-n}^{\mathrm{m}}
+\end{equation}
+这源于能动量张量的Hermiticity. (\ref{4.1.5})与Virasoro代数是一致的. 当n=0，我们像往常一样引入序列常数的可能. 满足(\ref{4.1.5}) 的态是物理的.\\
+以(2.9.8)的术语，物理态是权重-A的最高权重态. (\ref{4.1.5})类似量子电动力学的Gupta量子化. 利用共轭伴(\ref{4.1.7})，可看到态的形式为
+\begin{equation}\label{4.1.8}
+|\chi\rangle=\sum_{n=1}^{\infty} L_{-n}^{\mathrm{m}}\left|\chi_{n}\right\rangle
+\end{equation}
+它正交于任何 $\left|\chi_{n}\right\rangle $的所有物理态. 这样的态称为伪态(spurious). 一个既是物理的，又是伪的态，称为空(null). 如果 $|\psi\rangle$是物理的， $|\chi\rangle$是空的, 那么 $|\psi\rangle+|\chi\rangle$ 也是物理的，且任何物理态与它的内积和与$|\psi\rangle$的内积相同. 因而这两个态物理上不可分辨. 我们等同
+\begin{equation}
+|\psi\rangle \cong|\psi\rangle+|\chi\rangle
+\end{equation}
+那么真实物理态是等价类的集合
+\begin{equation}
+\mathscr{H}_{\mathrm{OCQ}}=\frac{\mathscr{H}_{\text {phys }}}{\mathscr{H}_{\text {null }}}
+\end{equation}
+我们来看看，对于平坦时空中的开弦的前两个等级，这是如何运作的，不必假定D=26. 唯一的相关项是
+\begin{subequations}
+\begin{equation}
+L_{0}^{\mathrm{m}}=\alpha^{\prime} p^{2}+\alpha_{-1} \cdot \alpha_{1}+\ldots
+\end{equation}
+\begin{equation}
+L_{\pm 1}^{\mathrm{m}}=\left(2 \alpha^{\prime}\right)^{1 / 2} p \cdot \alpha_{\pm 1}+\ldots
+\end{equation}
+\end{subequations}
+
+\begin{proof}
+对于开弦，由(2.7.25)
+$$
+\alpha_{0}^{\mu}=\left(2 \alpha^{\prime}\right)^{1 / 2} p^{\mu}
+$$
+$$
+\alpha^{\prime} P^{2}=\frac{\alpha^{\prime}}{2 \alpha^{\prime}} \alpha_{0} \cdot \alpha_{0}=\frac{1}{2} \alpha_{0} \cdot \alpha_{0}
+$$
+$$
+\left(2 \alpha^{\prime}\right)^{1 / 2} p \cdot \alpha_{\pm 1}=\alpha_{0} \cdot \alpha_{\pm 1}
+$$
+\end{proof}
+\noindent
+最低质量能级唯一态是 $ | 0 ; k \rangle $.  此能级唯一非平庸条件是 $\left(L_{0}^{\mathrm{m}}+A\right)|\psi\rangle=0$, 
+\quad 给出$m^{2}=A / \alpha^{\prime} $.  
+这一能级不存在空态.  伪态(\ref{4.1.8}) 中 Virasoro生成元全部包含上升算符，因而存在一个等价类，对应标量粒子.\\
+
+
+\fbox{\noindent\centering\parbox{0.9\textwidth}{补充：$m^{2}=A / \alpha^{\prime} $的证明\\
+	$$
+	\left.L_{0}^{m}|\psi\rangle=\alpha^{\prime} p^{2} / \psi\right\rangle=-\alpha^{\prime} m^{2}|\psi\rangle
+	$$
+	$$
+	\therefore \alpha^{\prime} m^{2}=A
+	$$}}\\
+
+\noindent
+在下一能级，存在D个态
+\begin{equation}
+|e ; k\rangle=e \cdot \alpha_{-1}|0 ; k\rangle
+\end{equation}
+范数是
+\begin{equation}\label{4.1.13}
+\begin{aligned}
+\left\langle e ; k \mid e ; k^{\prime}\right\rangle &=\left\langle 0 ; k\left|e^{*} \cdot \alpha_{1} e \cdot \alpha_{-1}\right| 0 ; k^{\prime}\right\rangle \\
+&=\left\langle 0 ; k\left|\left(e^{*} \cdot e+e^{*} \cdot \alpha_{-1} e \cdot \alpha_{1}\right)\right| 0 ; k^{\prime}\right\rangle \\
+&=e^{\mu *} e_{\mu}(2 \pi)^{D} \delta^{D}\left(k-k^{\prime}\right)
+\end{aligned}
+\end{equation}
+我们使用了
+\begin{equation}
+\alpha_{n}^{\mu \dagger}=\alpha_{-n}^{\mu}
+\end{equation}
+其源于$X^\mu$的Hermiticity ，以及
+\begin{equation}
+\left\langle 0 ; k \mid 0 ; k^{\prime}\right\rangle=(2 \pi)^{D} \delta^{D}\left(k-k^{\prime}\right)
+\end{equation}
+类时激发有一个负范态.\\
+$L_{0}^{\mathrm{m}}$条件给出
+\begin{equation}
+m^{2}=\frac{1+A}{\alpha^{\prime}}
+\end{equation}
+\begin{proof}
+	$$
+	\begin{array}{l}
+	L_{0}^{m}\left|e; k\right\rangle=\alpha^{\prime} p^{2}|e ; k\rangle+\alpha_{-1} \cdot \alpha_{1} e \cdot \alpha_{-1}|0 ; k\rangle \\
+	\left.=\left|-\alpha^{\prime} m^{2}\right| e; k\right\rangle+\alpha_{-1}^{\mu} e^{\nu}\left(\eta_{\mu \nu}+\alpha_{-1\nu}\alpha_{1, \mu}\right)|0 ; k\rangle \\
+	=-\alpha^{\prime} m^{2}\left|e;k\right\rangle+e \cdot \alpha_{-1}\left|0; k\right\rangle \\
+	=\left(1-\alpha^{\prime} m^{2}\right)\left|e; k\right\rangle
+	\end{array}
+	$$
+	$$
+	\therefore A=\alpha^{\prime} m^{2}-1
+	$$
+\end{proof}
+其他非平庸物理态条件是
+\begin{equation}
+L_{1}^{\mathrm{m}}|e ; k\rangle \propto p \cdot \alpha_{1} e \cdot \alpha_{-1}|0 ; k\rangle=e \cdot k|0 ; k\rangle=0
+\end{equation}
+因而$k \cdot e=0$，在这一能级存在伪态
+\begin{equation}
+L_{-1}^{\mathrm{m}}|0 ; k\rangle=\left(2 \alpha^{\prime}\right)^{1 / 2} k \cdot \alpha_{-1}|0 ; k\rangle
+\end{equation}
+即， $e^{\mu} \propto k^{\mu}$是伪的. 存在三种情况：\\
+(1)
+如果A>-1，质量平方是正的，回到静系($\vec{k}=0, k^{0} \neq 0$). 物理态条件($e \cdot k=0  \Rightarrow e^{0}=0$)移除了负范类时偏振. 伪态不是物理的，所以没有空态且频谱由正矢量粒子的D-1个正范态给出.\\
+(2)
+如果A=-1，质量平方为0，$k \cdot k=0$，所以伪态是物理且空的，因而
+\begin{equation}
+k \cdot e=0, \quad e_{\mu} \cong e_{\mu}+\gamma k_{\mu}
+\end{equation}
+这描述了有质量矢量粒子的D-2个正范态.\\
+(3)
+如果A<-1，质量平方为负，动量是类空的($\vec{k} \neq 0, k^{0} = 0$). 所以物理态条件移去正范类空偏振，伪态是非物理的，所以我们留下了一个有D-2个正范态及一个负范态的矢量粒子快子.\\
+第(3)点是无法接受的，第(2)点与光锥量子化相同，第(1)点与光锥频谱不同. 有不同的质量并在第一能级有额外的态，但没有任何明显的不相容性. 下一能级的结果相当有趣：它依赖于常数A以及时空维数D. 约束在第一激发能级所发现的A=-1. 如果额外有D=26，才会与光锥频谱一致；如果D<26, OCQ频谱有正范态，但比光锥量子化的态要多；D>26，有负范态. OCQ在A=-1与D=26实际上在所有能级与光锥量子化是相同的
+\begin{equation}
+\mathscr{H}_{\mathrm{OCQ}}=\mathscr{H}_{\text {light-cone }}
+\end{equation}
+将在4.4节证明. 仅在这种情况下相容相互作用是已知的.\\
+扩张到闭弦是直接的. 存在两组振子以及两种Virasoro代数. 所以在每个能级，频谱是开弦频谱配对物的乘积. 那么前两个能级是 
+\begin{subequations}
+\begin{equation}
+|0 ; k\rangle, \quad m^{2}=-\frac{4}{\alpha^{\prime}}
+\end{equation}
+\begin{equation}
+e_{\mu \nu} \alpha_{-1}^{\mu} \tilde{\alpha}_{-1}^{v}|0 ; k\rangle, \quad m^{2}=0, k^{\mu} e_{\mu v}=k^{v} e_{\mu v}=0
+\end{equation}
+\begin{equation}
+e_{\mu \nu} \cong e_{\mu v}+a_{\mu} k_{v}+k_{\mu} b_{v}, a \cdot k=b \cdot k=0
+\end{equation}
+\end{subequations}
+相关值是A=-1，D=26. 正如光锥量子化那样，存在 无质量态，构成无迹的对称张量，一个反对称张量以及一个标量.\\
+\centerline{\Large 助记法}
+对于更加广泛的弦理论，有一个快速记忆法以获得零点常数是有用的. 正如下节所要导出的，$L_0^m$条件可以理解成：
+\begin{equation}\label{4.1.22}
+\left(L_{0}^{\mathrm{m}}+L_{0}^{\mathrm{g}}\right)|\psi, \downarrow\rangle=0
+\end{equation}
+即，引入了鬼贡献，其中鬼处在基态$|\downarrow\rangle$, 其有 $L_{0}^{\mathrm{g}}=-1$.  $L_{0}$ 生成元与Hamiltonian相差一个偏移$(2.6 .10)$，其正比于中心荷，但弦论中总的中心荷为0，所以我们可以将这个条件写成：
+\begin{equation}
+\left(H^{\mathrm{m}}+H^{\mathrm{g}}\right)|\psi, \downarrow\rangle=0
+\end{equation}
+现在，对零点能应用第2章末尾给出的助记法. 特别地，鬼总抵消 $\mu=0,1$ 振子，因为它们有相同的周期性，但却有着相反的统计. 所以规则是A作为横向振子的零点能被给出. 这与光锥坐标中的规则相同，这里给出 $A=24\left(-\frac{1}{24}\right)=-1$.\\
+附带地，由于计数物理态的缘故 (不是它们的精确形式) ，总可以忽视鬼与$\mu=0,1$ 振子并像光锥规范中那样计数横向激发.\\
+条件(4.1.22)要求物理态的权重是1. 既然物理态要求物质态是最高权重态，那么顶点算符必须是权重1或 $(1,1)$ 张量. 这与3.6节所获条件相同，即可积顶点算符是共形不变的，其给出条件A=-1的另一理解.\\
+
+\section{BRST量子化}%{4.2 BRST quantization}
+
+我们现在转向对频谱更加系统的研究. 条件(\ref{4.1.2})不足以保证规范不变性，它暗示了对于$g_{ab}$任意固定选择的不变性，但这不是最普遍的规范. 在光锥规范中，我们赋予$X^\mu$及$g_{ab}$某些条件，为了考察规范条件最普遍可能的变化，我们必须允许$\delta g_{ab}$是算符，亦即，依赖于路径积分中的场.\\
+为了导出整个不变条件，采取一个更普遍且抽象的观点是有用的. 考察有定域对称性的路径积分，路径积分场被记为 $\phi_{i}$, 其在现在的情况是 $X^{\mu}(\sigma)$ 和 $g_{a b}(\sigma) $. 这里我们使用一个非常紧凑的记号，其中 $i$标记场也表示坐标$\sigma $. 规范不变性是 $\epsilon^{\alpha} \delta_{\alpha}$, 其中 $\alpha$ 也包含坐标. 我们假设规范参量 $\epsilon^{\alpha}$ 是实的，这是因为我们总可以将一个复参量分解成实部与虚部. 规范变换满足代数
+\begin{equation}\label{4.2.1}
+\left[\delta_{\alpha}, \delta_{\beta}\right]=f_{\alpha \beta}^{\gamma} \delta_{\gamma}
+\end{equation}
+现在用条件
+\begin{equation}
+F^{A}(\phi)=0
+\end{equation}
+固定规范，其中A依然包含坐标. 跟随3.3节中的Faddeev-Popov步骤，路径积分变成
+\begin{equation}
+\int \frac{\left[d \phi_{i}\right]}{V_{\text {gauge }}} \exp \left(-S_{1}\right) \rightarrow \int\left[d \phi_{i} d B_{A} d b_{A} d c^{\alpha}\right] \exp \left(-S_{1}-S_{2}-S_{3}\right)
+\end{equation}
+其中$S_1$是原始的规范不变作用量, $S_2$是规范固定作用量
+\begin{equation}
+S_{2}=-i B_{A} F^{A}(\phi)
+\end{equation}
+而$S_3$是Faddeev-Popov作用量
+\begin{equation}
+S_{3}=b_{A} c^{\alpha} \delta_{\alpha} F^{A}(\phi)
+\end{equation}
+我们引入了场$B_A$ 以产生规范固定 $\delta\left(F^{A}\right)$的积分表示.\\
+对于此作用量，有两件事值得注意，其一是在Becchi–Rouet–Stora–Tyutin (BRST) 变换下不变
+\begin{subequations}\label{4.2.6}
+\begin{equation}
+\delta_{\mathrm{B}} \phi_{i}=-i \epsilon c^{\alpha} \delta_{\alpha} \phi_{i}
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} B_{A}=0
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} b_{A}=\epsilon B_{A}
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} c^{\alpha}=\frac{i}{2} \epsilon f_{\beta \gamma}^{\alpha} c^{\beta} c^{\gamma}
+\end{equation}
+\end{subequations}
+这一变换混合了对易量与反对易量，使得$\epsilon$ 必须取成反对易. 存在守恒鬼数，其对于  $c^{\alpha}$是1, 对于$b_{A}$ 和 $\epsilon$是-1, 对于其他场则是0. 原始作用量 $S_{1}$ 本身就是不变的，因为$\delta_{\mathrm{B}}$ 在 $\phi_{i}$ 上作用仅是参量为 $i \epsilon c^{\alpha}$的规范变换. 而 $S_{2}$的变化抵消了 $S_{3}$ 中$b_{A}$的变化,而 $S_{3}$ 中$\delta_{\alpha} F^{A}$ 与 $c^{\alpha}$ 的变化抵消了.\\
+第二个关键性质是
+\begin{equation}
+\delta_{\mathrm{B}}\left(b_{A} F^{A}\right)=i \epsilon\left(S_{2}+S_{3}\right)
+\end{equation}
+现在考察规范固定条件中的一个小改变$\delta F$. 规范固定以及鬼作用量中的改变给出
+\begin{equation}
+	\begin{aligned}
+		\epsilon \delta\langle f \mid i\rangle &=i\left\langle f\left|\delta_{\mathrm{B}}\left(b_{A} \delta F^{A}\right)\right| i\right\rangle \\
+		&=-\epsilon\left\langle f\left|\left\{Q_{\mathrm{B}}, b_{A} \delta F^{A}\right\}\right| i\right\rangle
+	\end{aligned}
+\end{equation}
+其中我们将BRST变分写成了与相对应守恒荷$Q_B$的反对易. 因此物理态必须满足
+\begin{equation}
+\left\langle\psi\left|\left\{Q_{\mathrm{B}}, b_{A} \delta F^{A}\right\}\right| \psi^{\prime}\right\rangle=0
+\end{equation}
+为了使其对于任意$\delta F$都成立，必须有
+\begin{equation}
+Q_{\mathrm{B}}|\psi\rangle=Q_{\mathrm{B}}\left|\psi^{\prime}\right\rangle=0
+\end{equation}
+这是重要的条件：物理态必须是BRST不变的. 我么已经假定了 $Q_{\mathrm{B}}^{\dagger}=Q_{\mathrm{B}} $存在几种方式看到确实必须是这种情况. 一是如果 $Q_{\mathrm{B}}^{\dagger}$不同，将不得不有另一些其他的对称性. 但并不存在候选者. 另一个更好的讨论是场$c^{\alpha}$ 与 $b_{A}$ 就像规范参量$\epsilon^{\alpha}$ 与 Lagrange 乘子 $B_{A}$的反对易版本, 因而继承了它们的实数性质. \\
+另一方面，对于任意的常数矩阵$M_{AB}$，我们也可给作用量增加正比于
+\begin{equation}
+\epsilon^{-1} \delta_{\mathrm{B}}\left(b_{A} B_{B} M^{A B}\right)=-B_{A} B_{B} M^{A B}
+\end{equation}
+的一项. 通过之上的讨论，物理态之间的的振幅是不受影响的. 对$B_{A}$的积分在产生一个Gauss函数而非$\delta$函数：它们是Gauss平均规范，其包含了规范理论的协变$\alpha$规范. \\
+存在一个更关键的概念. 为了在规范选择的空间中来回移动，BRST荷必须守恒. 因此它与Hamiltonian中的改变对易                                                                                                                                                                                                                                                                                                                                         
+\begin{equation}
+\begin{aligned}
+0 &=\left[Q_{\mathrm{B}},\left\{Q_{\mathrm{B}}, b_{A} \delta F^{A}\right\}\right] \\
+&=Q_{\mathrm{B}}^{2} b_{A} \delta F^{A}-Q_{\mathrm{B}} b_{A} \delta F^{A} Q_{\mathrm{B}}+Q_{\mathrm{B}} b_{A} \delta F^{A} Q_{\mathrm{B}}-b_{A} \delta F^{A} Q_{\mathrm{B}}^{2} \\
+&=\left[Q_{\mathrm{B}}^{2}, b_{A} \delta F^{A}\right]
+\end{aligned}
+\end{equation}
+为使其对于一般的规范改变为0. 我们需要
+\begin{equation}
+Q_{\mathrm{B}}^{2}=0
+\end{equation}
+即，BRST是幂零的. 因为$Q_B^2$有鬼数2. 所以它是常数的可能性被排除了. 读者可检验用BRST变换 (\ref{4.2.6}) 作用两次使所有场不变. 特别地，                                                                         
+\begin{equation}
+\delta_{\mathrm{B}}\left(\delta_{\mathrm{B}}^{\prime} c^{\alpha}\right)=-\frac{1}{2} \epsilon \epsilon^{\prime} f_{\beta \gamma}^{\alpha} f_{\delta \epsilon}^{\gamma} c^{\beta} c^{\delta} c^{\epsilon}=0
+\end{equation}
+鬼的积对于指标$\beta, \delta, \epsilon$ 是反对称的，那么结构常数的乘积由于Jacobi等式为零.\\
+我们应该提及一下，关于规范代数(\ref{4.2.1})我们已经做了两个简化假定. 其一，结构常数$f^{\alpha}{ }_{\beta \gamma}$是常数，独立于场；其二，代数在右边没有正比于运动方程的额外项. 更普遍的，这两个假定都被破坏了. 在这些情况下，我们所描述的BRST体系并不给出幂零变换. 一个推广，Batalin–Vilkovisky (BV)体系是需要的. BV体系在弦论中有多种应用，但我们并不会需要它. $Q_B$的幂零性有一重要结果. 态的形式若为
+\begin{equation}\label{4.2.15}
+Q_{\mathrm{B}}|\chi\rangle
+\end{equation}
+对任意$\chi$，其将被 $Q_{\mathrm{B}}$消灭，因而是物理的. 然而，它正交于所有的物理态包括其本身. 如果$Q_{\mathrm{B}}|\psi\rangle=0$
+\begin{equation}
+\langle\psi|\left(Q_{\mathrm{B}}|\chi\rangle\right)=\left(\langle\psi| Q_{\mathrm{B}}\right)|\chi\rangle=0
+\end{equation}
+因而所有包含这样一个空态的物理振幅为零. 两个仅差一个空态的物理态
+\begin{equation}
+\left|\psi^{\prime}\right\rangle=|\psi\rangle+Q_{\mathrm{B}}|\chi\rangle
+\end{equation}
+与所有物理态的内积均相同. 所以，正如OCQ，我们将真空物理空间与一组等价类等同起来，相差空态的态是等价的. 这是幂零算符的一个自然构造，称为$Q_{\mathrm{B}}$的上同调. 幂零算符的另一例子是微分几何中的外微分以及拓扑学中的边界算符. 在上同调中，闭项用于被$Q_{\mathrm{B}}$所湮灭的态，而恰当项用于形如(\ref{4.2.15})的态. 因此，我们的处理是
+\begin{equation}
+\mathscr{H}_{\mathrm{BRST}}=\frac{\mathscr{H}_{\text {closed }}}{\mathscr{H}_{\text {exact }}}
+\end{equation}
+我们将在本章剩余部分清晰的看到这个空间有着弦论中预期的形式. 显然，不变性条件移除了一组非物理$X^\mu$振子及鬼振子，而等价关系移去了另一组非物理$X^\mu$振子及鬼振子.\\
+
+\centerline{\Large 点粒子例子}
+现在来考察点粒子的例子. 展开之上紧凑记号，定域对称性是坐标再参量化 $\delta \tau(\tau)$, 所以指标 $\alpha$ 就变成了$\tau$ ，无限小变换的一个基是 $\delta_{\tau_{1}} \tau(\tau)=\delta\left(\tau-\tau_{1}\right)$. 它们作用在场上为
+\begin{equation}
+	\delta_{\tau_{1}} X^{\mu}(\tau)=-\delta\left(\tau-\tau_{1}\right) \partial_{\tau} X^{\mu}(\tau), \quad \delta_{\tau_{1}} e(\tau)=-\partial_{\tau}\left[\delta\left(\tau-\tau_{1}\right) e(\tau)\right]
+\end{equation}
+作用第二个变换，并构成对易子，我们有
+\begin{equation}
+	\begin{array}{l}
+		{\left[\delta_{\tau_{1}}, \delta_{\tau_{2}}\right] X^{\mu}(\tau)} \\
+		=-\left[\delta\left(\tau-\tau_{1}\right) \partial_{\tau} \delta\left(\tau-\tau_{2}\right)-\delta\left(\tau-\tau_{2}\right) \partial_{\tau} \delta\left(\tau-\tau_{1}\right)\right] \partial_{\tau} X^{\mu}(\tau) \\
+		\equiv \int d \tau_{3} f_{\tau_{1} \tau_{2}} \delta_{\tau_{3}} X^{\mu}(\tau)
+	\end{array}
+\end{equation}
+从对易子我们已经决定了结构常数
+\begin{equation}
+	f_{\tau_{1} \tau_{2}}^{\tau_{3}}=\delta\left(\tau_{3}-\tau_{1}\right) \partial_{\tau_{3}} \delta\left(\tau_{3}-\tau_{2}\right)-\delta\left(\tau_{3}-\tau_{2}\right) \partial_{\tau_{3}} \delta\left(\tau_{3}-\tau_{1}\right)
+\end{equation}
+那么BRST变换是
+\begin{subequations}
+\begin{equation}
+\delta_{\mathrm{B}} X^{\mu}=i \epsilon c \dot{X}^{\mu}
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} e=i \epsilon(\dot{c e})
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} B=0
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} b=\epsilon B
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} c=i \epsilon c \dot{c}
+\end{equation}
+\end{subequations}
+规范$e(\tau)=1$类似于弦的单位规范，利用单个坐标自由度以固定四元量(tetrad)的每个分量，所以 $F(\tau)=1-e(\tau)$. 那么规范固定作用量是
+\begin{equation}
+S=\int d \tau\left(\frac{1}{2} e^{-1} \dot{X}^{\mu} \dot{X}_{\mu}+\frac{1}{2} e m^{2}+i B(e-1)-e \dot{b} c\right)
+\end{equation}
+我们发现将B积掉是很方便的，因而固定了 $e=1 $，留下了场 $X^{\mu}, b$ 和 $c$, 以及作用量
+\begin{equation}
+S=\int d \tau\left(\frac{1}{2} \dot{X}^{\mu} \dot{X}_{\mu}+\frac{1}{2} m^{2}-\dot{b} c\right)
+\end{equation}
+以及BRST变换
+\begin{subequations}\label{4.2.25}
+\begin{equation}
+\delta_{\mathrm{B}} X^{\mu}=i \epsilon c \dot{X}^{\mu}
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} b=i \epsilon\left(-\frac{1}{2} \dot{X}^{\mu} \dot{X}_{\mu}+\frac{1}{2} m^{2}-\dot{b} c\right)
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} c=i \epsilon c \dot{c}
+\end{equation}
+\end{subequations}
+由于B不再出现，我们已经使用了从e得到的运动方程，以替换b的变换法则中的B. 读者可以检验新的变换(\ref{4.2.25})是作用量的对称性且是幂零的. 当场 $B^{A}$被积掉后这是适用的，尽管 $\delta_{\mathrm{B}} \delta_{\mathrm{B}}^{\prime} b$ 不再恒等于0，但正比于运动方程. 这是完全令人满意的: $Q_{\mathrm{B}}^{2}=0$ 作为一个算符方程成立，这正是我们需要的.\\
+正则对易子是
+\begin{equation}
+\left[p^{\mu}, X^{v}\right]=-i \eta^{\mu v}, \quad\{b, c\}=1
+\end{equation}
+其中 $p^{\mu}=i \dot{X}^{\mu}$, i 来自Euclidean特征. Hamiltonian是 $H=\frac{1}{2}\left(p^{2}+m^{2}\right)$,  Noether步骤给出 BRST 算符
+\begin{equation}
+Q_{\mathrm{B}}=c H
+\end{equation}
+这里的结构类似于我们为弦所寻找的结构. 约束(丢失的运动方程)是H=0. BRST算符是c乘以它.\\
+鬼生成了两态系统，所以态的完备基是$|k, \downarrow\rangle,|k, \uparrow\rangle$，其中
+\begin{subequations}
+\begin{equation}
+p^{\mu}|k, \downarrow\rangle=k^{\mu}|k, \downarrow\rangle, \quad p^{\mu}|k, \uparrow\rangle=k^{\mu}|k, \uparrow\rangle
+\end{equation}
+\begin{equation}
+b|k, \downarrow\rangle=0, \quad b|k, \uparrow\rangle=|k, \downarrow\rangle
+\end{equation}
+\begin{equation}
+c|k, \downarrow\rangle=|k, \uparrow\rangle, \quad c|k, \uparrow\rangle=0
+\end{equation}
+\end{subequations}
+BRST算符在它们上的作用是
+\begin{equation}
+Q_{\mathrm{B}}|k, \downarrow\rangle=\frac{1}{2}\left(k^{2}+m^{2}\right)|k, \uparrow\rangle, \quad Q_{\mathrm{B}}|k, \uparrow\rangle=0
+\end{equation}
+由此得出的闭态是
+\begin{subequations}
+\begin{equation}
+|k, \downarrow\rangle, \quad k^{2}+m^{2}=0
+\end{equation}
+\begin{equation}
+|k, \uparrow\rangle, \quad \text { all } k^{\mu}
+\end{equation}
+\end{subequations}
+而恰当态是
+\begin{equation}
+|k, \uparrow\rangle, \quad k^{2}+m^{2} \neq 0
+\end{equation}
+不恰当态是
+\begin{equation}
+|k, \downarrow\rangle, k^{2}+m^{2}=0 ; \quad|k, \uparrow\rangle, k^{2}+m^{2}=0
+\end{equation}
+即，物理态必须满足质壳条件，但我们有预期频谱的两个复本. 事实上，仅有态$|k, \downarrow\rangle$ 满足额外条件
+\begin{equation}
+b|\psi\rangle=0
+\end{equation}
+而出现在物理振幅中，这一额外条件的起源是运动学的. 对于 $k^{2}+m^{2} \neq 0$, 态 $|k, \uparrow\rangle$ 是恰当的————它们正比于所有物理态，并且振幅恒为零. 所以振幅只能正比于 $\delta\left(k^{2}+m^{2}\right) $ . 但场论和弦论中的振幅，尽管可能有极点与割线，却不会有$\delta$函数(除了在$D=2$ ，其运动学是特殊的). 所以它们必须恒为零.\\
+
+\section{弦的BRST量子化}%{4.3 BRST quantization of the string}
+
+在弦论中，BRST变换是
+\begin{subequations}\label{4.3.1}
+\begin{equation}
+\delta_{\mathrm{B}} X^{\mu}=i \epsilon(c \partial+\tilde{c} \bar{\partial}) X^{\mu}
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} b=i \epsilon\left(T^{X}+T^{\mathrm{g}}\right), \quad \delta_{\mathrm{B}} \tilde{b}=i \epsilon\left(\tilde{T}^{X}+\tilde{T}^{\mathrm{g}}\right)
+\end{equation}
+\begin{equation}
+\delta_{\mathrm{B}} c=i \epsilon c \partial c, \quad \delta_{\mathrm{B}} \tilde{c}=i \epsilon \tilde{c} \bar{\partial} \tilde{c}
+\end{equation}
+\end{subequations}
+读者可以从点粒子例子中导出这些. 给Polyakov和鬼作用量之和，加上规范固定项
+\begin{equation}
+\frac{i}{4 \pi} \int d^{2} \sigma g^{1 / 2} B^{a b}\left(\delta_{a b}-g_{a b}\right)
+\end{equation}
+在对 $B_{a b}$ 积分后，并用 $g_{a b}$的运动方程替换变换中的 $B_{a b}$后，变换 $\delta_{\mathrm{B}} b_{a b}=\epsilon B_{a b}$变成 $(4.3 .1)$ . Weyl鬼仅是一个Lagrange乘子, 使 $b_{a b}$ 无迹.读者可以检验相差运动方程的幂零性. BRST变换(4.3.1) 与粒子情况 (\ref{4.2.25}) 之间的相似性是显然的. 将 $X^{\mu}$ 替换至更普遍的物质CFT，物质场的BRST变换是 $v(z)=c(z)$的共形变换, 而 $T^{\mathrm{m}}$ 替换了b变换中的 $T^{X}$ .\\
+Noether定理给出BRST流
+\begin{equation}\label{4.3.3}
+\begin{aligned}
+j_{\mathrm{B}} &=c T^{\mathrm{m}}+\frac{1}{2}: c T^{\mathrm{g}}:+\frac{3}{2} \partial^{2} c \\
+&=c T^{\mathrm{m}}+: b c \partial c:+\frac{3}{2} \partial^{2} c
+\end{aligned}
+\end{equation}
+相应地有$\tilde{j}_B$. 流中的最后一项是全导数，并不对BRST荷有贡献；它是手加上的，以使BRST流是张量. BRST流与鬼场以及一般物质张量场的OPE是
+\begin{subequations}
+\begin{equation}
+j_{\mathrm{B}}(z) b(0) \sim \frac{3}{z^{3}}+\frac{1}{z^{2}} j^{\mathrm{g}}(0)+\frac{1}{z} T^{\mathrm{m}+\mathrm{g}}(0)
+\end{equation}
+\begin{equation}
+j_{\mathrm{B}}(z) c(0) \sim \frac{1}{z} c \partial c(0)
+\end{equation}
+\begin{equation}
+j_{\mathrm{B}}(z) \mathcal{O}^{\mathrm{m}}(0,0) \sim \frac{h}{z^{2}} c \mathcal{O}^{\mathrm{m}}(0,0)+\frac{1}{z}\left[h(\partial c) \mathcal{O}^{\mathrm{m}}(0,0)+c \partial \mathcal{O}^{\mathrm{m}}(0,0)\right]
+\end{equation}
+\end{subequations}
+单极点反映了这些场的BRST变换.\\
+BRST算符是
+\begin{equation}
+Q_{\mathrm{B}}=\frac{1}{2 \pi i} \oint\left(d z j_{\mathrm{B}}-d \bar{z} \tilde{\jmath}_{\mathrm{B}}\right)
+\end{equation}
+通过通常的围道讨论，OPE暗示了
+\begin{equation}
+\left\{Q_{\mathrm{B}}, b_{m}\right\}=L_{m}^{\mathrm{m}}+L_{m}^{\mathrm{g}}
+\end{equation}
+以鬼场模的形式
+\begin{equation}\label{4.3.7}
+\begin{aligned}
+Q_{\mathrm{B}}=& \sum_{n=-\infty}^{\infty}\left(c_{n} L_{-n}^{\mathrm{m}}+\tilde{c}_{n} \tilde{L}_{-n}^{\mathrm{m}}\right) \\
+&+\sum_{m, n=-\infty}^{\infty} \frac{(m-n)}{2} {}_\circ^\circ\left(c_{m} c_{n} b_{-m-n}+\tilde{c}_{m} \tilde{c}_{n} \tilde{b}_{-m-n}\right) {}_\circ^\circ+a^{\mathrm{B}}\left(c_{0}+\tilde{c}_{0}\right)
+\end{aligned}
+\end{equation}
+序常数是$a^{\mathrm{B}}=a^{\mathrm{g}}=-1$，源于反对易子
+\begin{equation}
+\left\{Q_{\mathrm{B}}, b_{0}\right\}=L_{0}^{\mathrm{m}}+L_{0}^{\mathrm{g}}
+\end{equation}
+当$c^{\mathrm{m}} \neq 26$时，规范对称性中存在反常，所以我们预期在BRST形式体系中存在某些故障. BRST流依旧是守恒的：流(\ref{4.3.3})中所有项对于中心荷的任何值都是解析的. 然而，它不再是幂零的
+\begin{equation}
+\left\{Q_{\mathrm{B}}, Q_{\mathrm{B}}\right\}=0 \text { only if } c^{\mathrm{m}}=26
+\end{equation}
+这一结果的最短推导是用Jacobi等式. 更直接的，它源于OPE.
+\begin{equation}
+j_{\mathrm{B}}(z) j_{\mathrm{B}}(0) \sim-\frac{c^{\mathrm{m}}-18}{2 z^{3}} c \partial c(0)-\frac{c^{\mathrm{m}}-18}{4 z^{2}} c \partial^{2} c(0)-\frac{c^{\mathrm{m}}-26}{12 z} c \partial^{3} c(0)
+\end{equation}
+这要求一点计算，小心来自反对易子的负号. 单极点暗示了当$c^{\mathrm{m}}=26$时$\left\{Q_{\mathrm{B}}, Q_{\mathrm{B}}\right\}=0$ . 又注意到OPE 
+\begin{equation}
+T(z) j_{\mathrm{B}}(0) \sim \frac{c^{\mathrm{m}}-26}{2 z^{4}} c(0)+\frac{1}{z^{2}} j_{\mathrm{B}}(0)+\frac{1}{z} \partial j_{\mathrm{B}}(0)
+\end{equation}
+其暗示了仅当 $c^{\mathrm{m}}=26$时$j_{\mathrm{B}}$ 是张量.\\
+我们来指出一些重要特征. 丢失的运动方程正是共形变换的生成元为零，定域对称群的部分不由规范选择确定，这是一个一般结果. 当规范条件完全确定了对称性，可以证明丢失的运动方程由于作用量的规范不变性是平庸的，它们在矩阵元的含义下必须为零，或者更普遍的，在BRST含义下为零. 将剩余对称性生成元记为$G_{I}$，称为约束；对于弦，它们是 $L_{m}$ 荷 $\tilde{L}_{m} $，它们构成代数
+\begin{equation}\label{4.3.12}
+\left[G_{I}, G_{J}\right]=i g_{I J}^{K} G_{K}
+\end{equation}
+与每个生成元关联的是一对儿鬼，$b_{I}$ and $c^{I}$，其中
+\begin{equation}\label{4.3.13}
+\left\{c^{I}, b_{J}\right\}=\delta_{J}^{I}, \quad\left\{c^{I}, c^{J}\right\}=\left\{b_{I}, b_{J}\right\}=0
+\end{equation}
+BRST算符的普遍形式：正如弦情况(\ref{4.3.7})所例证的，是
+\begin{equation}\label{4.3.14}
+\begin{aligned}
+Q_{\mathrm{B}} &=c^{I} G_{I}^{\mathrm{m}}-\frac{i}{2} g^{K}{ }_{I J} c^{I} c^{J} b_{K} \\
+&=c^{I}\left(G_{I}^{\mathrm{m}}+\frac{1}{2} G_{I}^{\mathrm{g}}\right)
+\end{aligned}
+\end{equation}
+其中$G_{I}^{\mathrm{m}}$ 是$G_{I}$的物质部分，而
+\begin{equation}
+G_{I}^{\mathrm{g}}=-i g_{I J}^{K} c^{J} b_{K}
+\end{equation}
+是鬼部分. $G_{I}^{\mathrm{m}}$与 $G_{I}^{\mathrm{g}}$ 满足与 $G_{I}$相同的代数 . 利用对易子 (4.3.12) and (4.3.13), 可发现
+\begin{equation}
+Q_{\mathrm{B}}^{2}=\frac{1}{2}\left\{Q_{\mathrm{B}}, Q_{\mathrm{B}}\right\}=-\frac{1}{2} g_{I J}^{K} g_{K L}^{M} c^{I} c^{J} c^{L} b_{M}=0
+\end{equation}
+最后一个等式源于GGG Jacobi等式，其要求$g^{K}{I J} g^{M}{ }_{K L}$当IJL反对称时为零. 
+我们忽视了中心荷项，它们需要手动检验.\\
+再次重申，约束代数是世界面对称代数，其在物理矩阵元中要求为零. 当我们在卷II推广玻色弦论，最简单方法是以约束代数形式直接这样做，并且我们以形式(\ref{4.3.14})直接求出BRST荷.\\
+
+\centerline{\Large 弦的BRST上同调}
+我们现在来看看处在弦最低阶的BRST上同调. 通过指定
+\begin{subequations}\label{4.3.17}
+\begin{equation}
+\left(\alpha_{m}^{\mu}\right)^{\dagger}=\alpha_{-m}^{\mu}, \quad\left(\tilde{\alpha}_{m}^{\mu}\right)^{\dagger}=\tilde{\alpha}_{-m}^{\mu}
+\end{equation}
+\begin{equation}
+\left(b_{m}\right)^{\dagger}=b_{-m}, \quad\left(\tilde{b}_{m}\right)^{\dagger}=\tilde{b}_{-m}
+\end{equation}
+\begin{equation}
+\left(c_{m}\right)^{\dagger}=c_{-m}, \quad\left(\tilde{c}_{m}\right)^{\dagger}=\tilde{c}_{-m}
+\end{equation}
+\end{subequations}
+来定义内积. 特别地，BRST荷的Hermiticity 要求鬼场也是Hermitean. 
+鬼零模的Hermiticity迫使基态的内积采取形式
+\begin{subequations}
+\begin{equation}
+\text { open string: } \quad\left\langle 0 ; k\left|c_{0}\right| 0 ; k^{\prime}\right\rangle=(2 \pi)^{26} \delta^{26}\left(k-k^{\prime}\right)
+\end{equation}
+\begin{equation}
+\text { closed string: } \quad\left\langle 0 ; k\left|\tilde{c}_{0} c_{0}\right| 0 ; k^{\prime}\right\rangle=i(2 \pi)^{26} \delta^{26}\left(k-k^{\prime}\right)
+\end{equation}
+\end{subequations}
+这里 $|0 ; k\rangle$ 代表物质基态乘以鬼基态 $\downarrow\rangle$, 其有动量 $k$. 插入 $c_{0}$ 与 $\tilde{c}_{0}$ 是非零结果所必需的. 例如, $\left\langle 0 ; k \mid 0 ; k^{\prime}\right\rangle=\left\langle 0 ; k\left|\left(c_{0} b_{0}+b_{0} c_{0}\right)\right| 0 ; k^{\prime}\right\rangle=0$;
+最后一个等式是因为 $b_{0}$ 湮灭左矢与右矢，鬼零模内积中所需要的因子i是由于Hermiticity. 那么基态的内积，就像早期计算(\ref{4.1.13})中那样，通过使用对易关系与伴(\ref{4.3.17})获得.\\
+我们将集中于开弦；闭弦讨论是完全平行的，但要写两倍多的东西. 我们断言(之后证明)，物理态必须满足额外的条件 
+\begin{equation}
+b_{0}|\psi\rangle=0
+\end{equation}
+这也暗示了
+\begin{equation}
+L_{0}|\psi\rangle=\left\{Q_{\mathrm{B}}, b_{0}\right\}|\psi\rangle=0
+\end{equation}
+这是因为$Q_{\mathrm{B}}$与 $b_{0}$ 均湮灭 $|\psi\rangle$. 算符$L_{0}$是
+\begin{equation}
+L_{0}=\alpha^{\prime}\left(p^{\mu} p_{\mu}+m^{2}\right)
+\end{equation}
+其中
+\begin{equation}
+\alpha^{\prime} m^{2}=\sum_{n=1}^{\infty} n\left(N_{b n}+N_{c n}+\sum_{\mu=0}^{25} N_{\mu n}\right)-1
+\end{equation}
+因此 $L_{0}$条件 (4.3 .20) 决定了弦的质量. BRST不变性与额外条件 (4.3.19), 暗示了每个弦态都在壳. 我们将满足(4.3 .19)与(4.3 .20)的态空间记为 $\hat{\mathscr{H}}$. 从对易子 $\left\{Q_{\mathrm{B}}, b_{0}\right\}=L_{0}$ 与 $\left[Q_{\mathrm{B}}, L_{0}\right]=0$, 得出 $Q_{\mathrm{B}}$ 使 $\hat{\mathscr{H}}$到其本身.\\
+内积 (4.3.18a)不是 $\hat{\mathscr{H}} $中完全正确的内积，它没有良好定义：鬼零模给出0，而由于动量约束在质壳上， $\delta^{26}\left(k-k^{\prime}\right)$包含因子 $\delta(0)$ . 因此我们在$\hat{\mathscr{H}}$ 中使用退化内积 $\langle\|\rangle$，其中我们忽视了$X^{0}$ 与鬼零模. 它是与几率解释相关的内积. 可以检验 $Q_{\mathrm{B}}$ 在这个退化内积下依旧是Hermitean. 注意到质壳条件以空间动量 $\mathbf{k}$的形式决定了 $k^{0}$ (我们集中于进入情况) ，并且我们已经使用了态的协变归一化.\\
+我们现在来解释D=26平坦时空弦的第一能级. 在最低阶，N=0，我们有
+\begin{equation}
+|0 ; \mathbf{k}\rangle, \quad-k^{2}=-\frac{1}{\alpha^{\prime}}
+\end{equation}
+这个态是不变的
+\begin{equation}
+Q_{\mathrm{B}}|0 ; \mathbf{k}\rangle=0
+\end{equation}
+这是因为 $Q_{\mathrm{B}}$ 中的每一项包含下降算符或 $L_{0}$. 这也表明在这一能级下不存在恰当态，所以每个不变态对应一个上同调类. 它们恰好是快子态. 质壳条件与1.3节光锥量子化中所发现的是相同的，并且与3.6节中开弦顶点算符中得到的是相同的. 在第一章以一种启发式的方法得到，在这里由$Q_{\mathrm{B}}$的正规序列常数确定，被幂零的要求所决定.\\
+在下一能级，N+1，存在26+2个态
+\begin{equation}
+\left|\psi_{1}\right\rangle=\left(e \cdot \alpha_{-1}+\beta b_{-1}+\gamma c_{-1}\right)|0 ; \mathbf{k}\rangle, \quad-k^{2}=0
+\end{equation}
+依赖于26-矢量 $e_{\mu}$以及两个常数 $\beta$ ，$\gamma$. 这个态的范数是
+\begin{equation}
+\begin{aligned}
+\left\langle\psi_{1} \| \psi_{1}\right\rangle &=\left\langle 0 ; \mathbf{k} \|\left(e^{*} \cdot \alpha_{1}+\beta^{*} b_{1}+\gamma^{*} c_{1}\right)\left(e \cdot \alpha_{-1}+\beta b_{-1}+\gamma c_{-1}\right) \mid 0 ; \mathbf{k}^{\prime}\right\rangle \\
+&=\left(e^{*} \cdot e+\beta^{*} \gamma+\gamma^{*} \beta\right)\left\langle 0 ; \mathbf{k} \| 0 ; \mathbf{k}^{\prime}\right\rangle
+\end{aligned}
+\end{equation}
+来到正交基，存在26个正范态与2个负范态，BRST条件是
+\begin{equation}
+\begin{aligned}
+0=Q_{\mathrm{B}}\left|\psi_{1}\right\rangle &=\left(2 \alpha^{\prime}\right)^{1 / 2}\left(c_{-1} k \cdot \alpha_{1}+c_{1} k \cdot \alpha_{-1}\right)\left|\psi_{1}\right\rangle \\
+&=\left(2 \alpha^{\prime}\right)^{1 / 2}\left(k \cdot e c_{-1}+\beta k \cdot \alpha_{-1}\right)|0 ; \mathbf{k}\rangle
+\end{aligned}
+\end{equation}
+正比于 $c_{0}$ 的项由于质壳条件其和为零，被忽略了.  一个不变态因此满足$k \cdot e=\beta=0 $ ，留下26个线性无关态，其中24个有正范，2个范数为0. 正交于所有的物理态包括它们本身，零范不变态由$c_{-1}$ 及 $k \cdot \alpha_{-1}$创造. 普遍的 $|\chi\rangle$与(4.3 .25)相同，其常数为 $e_{\mu}^{\prime}, \beta^{\prime}, \gamma^{\prime}$, 所以在这一能级的普遍BRST恰当态是
+\begin{equation}
+Q_{\mathrm{B}}|\chi\rangle=\left(2 \alpha^{\prime}\right)^{1 / 2}\left(k \cdot e^{\prime} c_{-1}+\beta^{\prime} k \cdot \alpha_{-1}\right)|0 ; \mathbf{k}\rangle
+\end{equation}
+因此鬼态 $c_{-1}|0 ; \mathbf{k}\rangle$是BRST恰当的，而极化是带有等价关系$e_{\mu} \cong e_{\mu}+\left(2 \alpha^{\prime}\right)^{1 / 2} \beta^{\prime} k_{\mu} $的横向，这留下了无质量矢量粒子所期待的24个正范态，与光锥量子化以及A=-1处的OCQ相同.\\
+这一模式是普遍的：存在两个额外的正范振子族与两个负范振子族. 与光锥量子化相对，物理态条件消除了其中两个，并留下了内积为零的两个组合. 那些空振子是BRST恰当的，被等价关系移除.\\
+另一方面：态 $b_{-1}|0 ; \mathbf{k}\rangle$ 与 $c_{-1}|0 ; \mathbf{k}\rangle$ 被等价为场论中无质量矢量场BRST量子化中所出现的两个Faddeev-Popov鬼 . 世界面BRST算符以一种与规范场论中相对应时空BRST算符相同的方式作用在这些态上.  在整个弦Hilbert空间上作用，那么开弦BRST算符是时空规范理论BRST不变性的某些无限维推广，而闭弦BRST算符是在自由极限下，时空广义坐标BRST不变性的推广 .\\
+推广到闭弦是直接的. 我们将注意力集中在满足
+\begin{equation}
+b_{0}|\psi\rangle=\tilde{b}_{0}|\psi\rangle=0
+\end{equation}
+的态的空间上. 这也暗示了
+\begin{equation}
+L_{0}|\psi\rangle=\tilde{L}_{0}|\psi\rangle=0
+\end{equation}
+在闭弦中
+\begin{equation}
+L_{0}=\frac{\alpha^{\prime}}{4}\left(p^{2}+m^{2}\right), \quad \tilde{L}_{0}=\frac{\alpha^{\prime}}{4}\left(p^{2}+\tilde{m}^{2}\right)
+\end{equation}
+其中
+\begin{subequations}
+\begin{equation}
+\frac{\alpha^{\prime}}{4} m^{2}=\sum_{n=1}^{\infty} n\left(N_{b n}+N_{c n}+\sum_{\mu=0}^{25} N_{\mu n}\right)-1
+\end{equation}
+\begin{equation}
+\frac{\alpha^{\prime}}{4} \tilde{m}^{2}=\sum_{n=1}^{\infty} n\left(\tilde{N}_{b n}+\tilde{N}_{c n}+\sum_{\mu=0}^{25} \tilde{N}_{\mu n}\right)-1
+\end{equation}
+\end{subequations}
+重复之前的练习，在 $m^{2}=-4 / \alpha^{\prime}$ 我们发现了快子，在 $m^{2}=0$ 发现了引力子，伸缩子与反对称张量的 $24 \times 24$ 态.\\
+
+\section{无鬼定理}%{4.4 The no-ghost theorem}
+
+在这一节我们证明弦的BRST上同调有一正定内积并且同构于光锥和OCQ频谱，我们将BRST上同调视为物理Hilbert空间. 我们也需要验证，在我们的弦振幅研究中，振幅在上同调上是良好定义的(即，等价态有相同振幅)并且S矩阵在物理态空间之内是幺正的.\\
+我们将在第三章末尾所描述的一般框架下处理，即世界面理论的组成为包括 $\mu=0$的d个自由场$X^{\mu}$，中心荷为26-d的某个紧致幺正CFT K，加上鬼. Virasoro生成元是和
+\begin{equation}
+L_{m}=L_{m}^{X}+L_{m}^{K}+L_{m}^{\mathrm{g}}
+\end{equation}
+紧致意为 $L_{0}^{K}$有离散谱. 例如，在K对应于紧致流形上的弦的情形，$L_{0}$的项 $\alpha^{\prime} p^{2}$ 被 $-\alpha^{\prime} \nabla^{2}$替换，其在紧致空间上有离散谱.\\
+在开弦和闭弦中，普遍态被标记为
+\begin{equation}
+|N, I ; k\rangle, \quad|N, \tilde{N}, I ; k\rangle
+\end{equation}
+其中$N$ (和 $\tilde{N})$指代d维振子和鬼振子,k是d维动量，而I标记边界条件给定的紧致CFT的态. 像上面一样附加 $b_{0}$条件 (4.3.19) 或 (4.3 .29). 这暗示了质壳条件
+\begin{subequations}
+\begin{equation}
+-\sum_{\mu=0}^{d-1} k_{\mu} k^{\mu}=m^{2}
+\end{equation}
+\begin{equation}
+\alpha^{\prime} m^{2}=\sum_{n=1}^{\infty} n\left(N_{b n}+N_{c n}+\sum_{\mu=0}^{d-1} N_{\mu n}\right)+L_{0}^{K}-1
+\end{equation}
+\end{subequations}
+这是对于开弦的；对于闭弦则有
+\begin{subequations}
+\begin{equation}
+-\sum_{\mu=0}^{d-1} k_{\mu} k^{\mu}=m^{2}=\tilde{m}^{2}
+\end{equation}
+\begin{equation}
+\frac{\alpha^{\prime}}{4} m^{2}=\sum_{n=1}^{\infty} n\left(N_{b n}+N_{c n}+\sum_{\mu=0}^{d-1} N_{\mu n}\right)+L_{0}^{K}-1
+\end{equation}
+\begin{equation}
+\frac{\alpha^{\prime}}{4} \tilde{m}^{2}=\sum_{n=1}^{\infty} n\left(\tilde{N}_{b n}+\tilde{N}_{c n}+\sum_{\mu=0}^{d-1} \tilde{N}_{\mu n}\right)+\tilde{L}_{0}^{K}-1
+\end{equation}
+\end{subequations}
+即$d \leq \mu \leq 25$ 振子的贡献被紧致CFT中的$L_{0}^{K}$ 或 $\tilde{L}_{0}^{K}$ 的本征值代替. 关于紧致CFT我们所使用的唯一信息是它在合适中心荷下共形不变，所以存在幂零BRST算符，并且它有正定内积. 基I可以取为正交的，所以退化内积是
+\begin{equation}
+\left\langle 0, I ; \mathbf{k} \| 0, I^{\prime} ; \mathbf{k}^{\prime}\right\rangle=\left\langle 0,0, I ; \mathbf{k} \| 0,0, I^{\prime} ; \mathbf{k}^{\prime}\right\rangle=2 k^{0}(2 \pi)^{d-1} \delta^{d-1}\left(\mathbf{k}-\mathbf{k}^{\prime}\right) \delta_{I, I^{\prime}}
+\end{equation}
+现在我们来看看对于物理Hilbert空间我们期望些什么. 定义横向Hilbert空间 $\mathscr{H}^{\perp}$ ，该空间由$\hat{\mathscr{H}}$ 中没有纵向 $\left(X^{0}, X^{1}, b,c\right)$激发的态构成. 由于这些振子是不确定内积的源泉, $\mathscr{H}^{\perp}$ 有一正定内积. 光锥规范固定直接消除了纵向振子————光锥Hilbert空间同构于 $\mathscr{H}^{\perp}$, 正如我们第一章平坦时空情况所看到的. 我们将证明在一般情况下，BRST上同调同构于$\mathscr{H}^{\perp} $ ，即它在每一质量能级有相同的态数，并有一正交内积，这是无鬼定理.\\
+
+\centerline{\Large 证明}
+证明有两部分. 第一是发现简化BRST算符 $Q_{1}$的上同调， $Q_{1}$振子的二次型；第二部分是证明整个$Q_{\mathrm{B}}$的上同调等同于 $Q_{1}$的上同调.\\
+定义光锥振子
+\begin{equation}
+\alpha_{m}^{\pm}=2^{-1 / 2}\left(\alpha_{m}^{0} \pm \alpha_{m}^{1}\right)
+\end{equation}
+其满足
+\begin{equation}
+\left[\alpha_{m}^{+}, \alpha_{n}^{-}\right]=-m \delta_{m,-n}, \quad\left[\alpha_{m}^{+}, \alpha_{n}^{+}\right]=\left[\alpha_{m}^{-}, \alpha_{n}^{-}\right]=0
+\end{equation}
+我们将广泛使用量子数
+\begin{equation}
+N^{\mathrm{lc}}=\sum_{m=-\infty \atop m \neq 0}^{\infty} \frac{1}{m}{}_\circ^\circ \alpha_{-m}^{+} \alpha_{m}^{-}{}_\circ^\circ
+\end{equation}
+$N^{\mathrm{lc}}$是 $-$ 激发数减去 $+$激发数; 由于质心部分被省略了，它不是一个Lorentz生成元. 我们选择动量分量 $k^{+}$非零坐标系. 
+现在用量子数 $N^{\mathrm{lc}}$分解BRST生成元 :
+\begin{equation}
+Q_{\mathrm{B}}=Q_{1}+Q_{0}+Q_{-1}
+\end{equation}
+其中$Q_{j}$ 改变 $N^{\mathrm{lc}}$   $j$个单位：
+\begin{equation}
+\left[N^{\mathrm{lc}}, Q_{j}\right]=j Q_{j}
+\end{equation}
+另外每个$Q_{j}$ 提高鬼数 $N^{\mathrm{g}}$个单位：
+\begin{equation}
+\left[N^{\mathrm{g}}, Q_{j}\right]=Q_{j}
+\end{equation}
+展开$Q_{\mathrm{B}}^{2}=0$ 给出
+\begin{equation}
+\left(Q_{1}^{2}\right)+\left(\left\{Q_{1}, Q_{0}\right\}\right)+\left(\left\{Q_{1}, Q_{-1}\right\}+Q_{0}^{2}\right)+\left(\left\{Q_{0}, Q_{-1}\right\}\right)+\left(Q_{-1}^{2}\right)=0
+\end{equation}
+括号中每一组有一不同的$N^{\mathrm{lc}}$ 所以必须分别为零. 特别地, $Q_{1}$ 本身是幂零的，所以有一上同调. 显式地，
+\begin{equation}
+Q_{1}=-\left(2 \alpha^{\prime}\right)^{1 / 2} k^{+} \sum_{m=-\infty \atop m \neq 0}^{\infty} \alpha_{-m}^{-} c_{m}
+\end{equation}
+对于 $m<0$这湮灭一个$\mathrm{a}+$ 模，并创造一个$c$；对于 $m>0$它创造一个-模，并湮灭一个 $b$. 通过考察$Q_{1}$在占有数基底的作用可以直接找到上同调. 这个留作练习，我们这里使用一个标准策略，这在$Q_{\mathrm{B}}$的推广中将是有用的. 定义
+\begin{equation}
+R=\frac{1}{\left(2 \alpha^{\prime}\right)^{1 / 2} k^{+}} \sum_{m=-\infty \atop m \neq 0}^{\infty} \alpha_{-m}^{+} b_{m}
+\end{equation}
+以及
+\begin{equation}
+\begin{aligned}
+S \equiv\left\{Q_{1}, R\right\} &=\sum_{m=1}^{\infty}\left(m b_{-m} c_{m}+m c_{-m} b_{m}-\alpha_{-m}^{+} \alpha_{m}^{-}-\alpha_{-m}^{-} \alpha_{m}^{+}\right) \\
+&=\sum_{m=1}^{\infty} m\left(N_{b m}+N_{c m}+N_{m}^{+}+N_{m}^{-}\right)
+\end{aligned}
+\end{equation}
+正规序列常数的决定是通过注意到$Q_{1}$ 与 $R$ 均湮灭基态. 注意到 $Q_{1}$ 与S对易.那么我们可以在S的每个本征空间内计算上同调，而整个上同调是结果的并. 如果 $|\psi\rangle$ 是满足$S|\psi\rangle=s|\psi\rangle$的 $Q_{1}$ 不变量, 那么对于非零的s
+\begin{equation}
+|\psi\rangle=\frac{1}{s}\left\{Q_{1}, R\right\}|\psi\rangle=\frac{1}{s} Q_{1} R|\psi\rangle
+\end{equation}
+因而$|\psi\rangle$ 实际上是$Q_{1}$ 恰当的. 因此 $Q_{1}$ 上同调仅在 $s=0$处非零. 通过s的定义 (4.4.15)， $s=0$的态没有纵向激发 ———— $s=0$ 空间正是 $\mathscr{H}^{\perp} $ .算符$Q_{1}$ 湮灭 $\mathscr{H}^{\perp}$中的所有态 ,所以它们都是 $Q_{1}$ 闭的，并且在这一空间不存在$Q_{1}$恰当态. 因此，上同调是 $\mathscr{H}^{\perp}$ 本身. 这样我们就对$Q_{1}$证明了无鬼定理.\\
+证明分两步：首先证明上同调仅来自$s=0$ 的态(S的核), 第二是证明 $s=0$ 态是 $Q_{1}$ 不变的. 以一种更抽象的方式证明第二步是有用的，利用所有$s=0$ 态有相同鬼数这一性质，在该情况下，鬼数为 $-\frac{1}{2} $ . 假设 $S|\psi\rangle=0$.既然$S$ 与 $Q_{1}$ 对易，我们有
+\begin{equation}
+0=Q_{1} S|\psi\rangle=S Q_{1}|\psi\rangle
+\end{equation}
+态 $|\psi\rangle$ 有鬼数$-\frac{1}{2}$, 所以 $Q_{1}|\psi\rangle$ 有鬼数 $+\frac{1}{2}$. 既然 $S$ 在这一鬼数是可逆的，必须有 $Q_{1}|\psi\rangle=0$ ，这正是我们希望证明的.\\
+剩下要证明的是$Q_{\mathrm{B}}$的上同调与$Q_{\mathrm{B}}$的上同调相同，想法是取代S，利用算符
+\begin{equation}
+S+U \equiv\left\{Q_{\mathrm{B}}, R\right\}
+\end{equation}
+现在，$U=\left\{Q_{0}+Q_{-1}, R\right\}$ 降低 $N^{\mathrm{lc}}$ 一个或两个单位. 以$N^{\mathrm{lc}} \mathrm{y}$的形式, $S$ 是对角的， $U$ 是下三角的. 通过下三角矩阵的普遍性质，$S+U$ 的核不可能大于它对角部分 S的核 . 事实上，它们是同构的：如果 $\left|\psi_{0}\right\rangle$被湮灭，那么
+\begin{equation}
+|\psi\rangle=\left(1-S^{-1} U+S^{-1} U S^{-1} U-\ldots\right)\left|\psi_{0}\right\rangle
+\end{equation}
+因子 $S^{-1}$是合理的，因为它总作用在 $N^{\mathrm{lc}}<0$态上,在这些态上 $S$ 是可逆的. 由于相同原因,除了在鬼数 $-\frac{1}{2}$上，S+U是可逆的. (4.4.16) 和 (4.4.17) 现在可用于 $Q_{\mathrm{B}}$, 而 $S+U$ 代替了S. 它们暗示了 $Q_{\mathrm{B}}$ 上同调同构于 $S+U$的核，而这又同构于 $S$的核, 继而同构于$Q_{1}$的上同调，正如我们所要证明的.\\
+我们仍要验证内积是正定的.  (4.4.19) 右边第一项之后的所有项有一严格负的 $N^{\mathrm{lc}}$. 通过对易关系，这个内积仅在$N^{\mathrm{lc}}$ 相加为零的态之间不为零. 那么对于S+U的核中的两个态(4.4 .19)
+\begin{equation}
+\left\langle\psi \| \psi^{\prime}\right\rangle=\left\langle\psi_{0} \| \psi_{0}^{\prime}\right\rangle
+\end{equation}
+那么在S+U的核上内积的正定性就从S核上内积的正定性得到了.\\
+ 在增添了 $Q_{\mathrm{B}}, N^{\mathrm{lc}}$,R 等的波浪算符后，闭弦证明是相同的.\\
+
+\centerline{\Large BRST-OCQ等价性}
+我们现在证明等价性
+\begin{equation}
+\mathscr{H}_{\mathrm{OCQ}}=\mathscr{H}_{\mathrm{BRST}}=\mathscr{H}_{\text {light-cone }}
+\end{equation}
+对于物质Hilbert空间中的态，从全物质加鬼理论联系态
+\begin{equation}
+|\psi, \downarrow\rangle
+\end{equation}
+又一次，鬼真空 $|\downarrow\rangle$ 被所有的鬼下降算符，即  $n \geq 0$ 的$b_{n}$ 和$n>0 $的 $c_{n}$所湮灭，用 $Q_{\mathrm{B}}$作用
+\begin{equation}
+Q_{\mathrm{B}}|\psi, \downarrow\rangle=\sum_{n=0}^{\infty} c_{-n}\left(L_{n}^{\mathrm{m}}-\delta_{n, 0}\right)|\psi, \downarrow\rangle=0
+\end{equation}
+$Q_{\mathrm{B}}$中所有包含鬼下降算符的项被扔掉了，而从$Q_{\mathrm{B}}$的模展开， eq. (4.3.7)知道了n=0项中的常数.因而OCQ物理态映射到BRST闭态. 序常数 $A=-1$ 源于鬼真空 $L_{0}$ 的本征值.\\
+为了建立等价性 (4.4.21), 我们需要证明更多. 首先，我们需要证明，我们有等价类定义合理的映射：如果$\psi$ 和 $\psi^{\prime}$是等价的OCQ物理态，它们映射到同一BRST类:
+\begin{equation}
+|\psi, \downarrow\rangle-\left|\psi^{\prime}, \downarrow\right\rangle
+\end{equation}
+必须是BRST恰当的. 通过 (4.4.23), 这个态是BRST闭的. 进一步，既然 $|\psi\rangle^{\prime}-|\psi\rangle$ 是OCQ空态，态(4.4.24) 范数为零. 从BRST无鬼定理，上同调的内积是正定的，所以零范闭态是BRST恰当的，正是我们要证明的.\\
+为了得出我们有一同构这一结论，我们需要证明映射是一对一且到上的. 一对一意味着映射到同一BRST类的OCQ物理态中 $\psi$ 和 $\psi^{\prime}$必须在同一OCQ类————如果
+\begin{equation}
+|\psi, \downarrow\rangle-\left|\psi^{\prime}, \downarrow\right\rangle=Q_{\mathrm{B}}|\chi\rangle
+\end{equation}
+那么$|\psi\rangle-|\psi\rangle^{\prime}$必定是空态. 为看到这点，做展开
+\begin{equation}
+|\chi\rangle=\sum_{n=1}^{\infty} b_{-n}\left|\chi_{n}, \downarrow\right\rangle+\ldots
+\end{equation}
+$|\chi\rangle$ 有鬼数 $-\frac{3}{2}$, 所以省略号代表的是，至少有一次 $c$激发和两次$b$ 激发. 将其代入形式(4.4 .25)并在两边保留只有鬼基态的项，这给出
+\begin{equation}
+\begin{aligned}
+|\psi, \downarrow\rangle-\left|\psi^{\prime}, \downarrow\right\rangle &=\sum_{m, n=1}^{\infty} c_{m} L_{-m}^{\mathrm{m}} b_{-n}\left|\chi_{n}, \downarrow\right\rangle \\
+&=\sum_{n=1}^{\infty} L_{-n}^{\mathrm{m}}\left|\chi_{n}, \downarrow\right\rangle
+\end{aligned}
+\end{equation}
+有鬼激发的项必须分别为零，所以已经被省略了 . 因此, $|\psi\rangle-\left|\psi^{\prime}\right\rangle=\sum_{n=1}^{\infty} L_{-n}^{\mathrm{m}}\left|\chi_{n}\right\rangle$是OCQ空态，这一映射是一对一的. 最后，我们必须证明映射是到上的，每个 $Q_{\mathrm{B}}$ 态至少包含形式为 (4.4.22)的一个态. 事实上，特定表示(4.4 .19)，被$S+U$湮灭的态, 是这种形式之一. 为看到这点，考察量子数 $N^{\prime}=2 N^{-}+N_{b}+N_{c}$, 这包含 $-, b$, 和 $c$ 激发. 算符 $R$ 有 $N^{\prime}=-1$： $R$ 中 $m>0$ 的项减少 $N_{c}$ 一个单位， $m<0$减少 $N^{-}$ 一个单位，并增加$N_{b}$ 一个单位. \\
+检验 $Q_{0}+Q_{-1}$,会发现 $N^{\prime}=1$的各种项，但没有更大的. 所以 $U=\left\{R, Q_{0}+Q_{-1}\right\}$ 无法增加 $N^{\prime}$. 检验态 $(4.4 .19)$, 并注意到 $S$ 和 $\left|\psi_{0}\right\rangle$ 有 $N^{\prime}=0$, 我们看到右边所有项 $N^{\prime} \leq 0 $.  通过定义，$N^{\prime}$ 是非负的，所以必须是 $N^{\prime}|\psi\rangle=0 $.  这暗示了没有 $-, b$, 或 $c$ 激发，所以这个态形式为 $(4.4.22)$. 因而等价性$(4.4 .21)$ 被证明了.\\
+BRST方法的全部威力是理解弦振幅的普遍结构所需要的. 然而对于大多数实用目的，用形式为 $|\psi, \downarrow\rangle$的态来处理是一个很大的简化. 所以知道每个BRST类至少包含一个鬼模未激发的态是有用的，我们称它们未OCQ型态.\\
+OCQ物理态条件 (4.1.5) 要求物理态是 $L_{0}=1$的最高权重态. 相对应的顶点算符是从物质场构建的权重-1张量场 $\mathscr{V}^{\mathrm{m}}$，包含鬼态 $|\downarrow\rangle$, 全顶点算符是$c \mathscr{V}^{\mathrm{m}} $，对于闭弦，全顶点算符是$\tilde{c} c \mathscr{r}^{\mathrm{m}}$，其中 $\mathscr{V}^{\mathrm{m}}$是  $(1,1)$型张量. 顶点算符的物质部分与3.6节Polyakov体系中所发现的是相同的，而鬼部分在下章将有一简单解释.\\
+Eq. (4.4.19) 在每一上同调类中定义了一个OCQ物理态. 对于平坦时空的特殊情况，通过利用 Del Giudice-Di Vecchia-Fubini (DDF)算符，这一态可以更清晰的建立. 为了解释这些，我们需要进一步发展顶点算符技巧，所以这延迟到第8章.\\

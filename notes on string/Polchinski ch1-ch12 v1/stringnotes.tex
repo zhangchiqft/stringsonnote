@@ -1,0 +1,111 @@
+\documentclass[cn,11pt,chinese]{elegantbook}
+
+\title{\,弦论笔记}
+\subtitle{Notes on Polchinski's String theory}
+
+\author{兴趣使然的弦论爱好者}
+%\institute{Elegant\LaTeX{} Program}
+%\date{\today}
+%\version{3.10}
+%\bioinfo{自定义}{信息}
+
+\extrainfo{I have noticed when I was younger, that lots of old men in the field couldn't understand new ideas very well, and resisted them with one method or another, and that they were very foolish in saying these ideas were wrong — such as Einstein not being able to take quantum mechanics. I'm an old man now, and these are new ideas, and they look crazy to me, and they look like they're on the wrong track. --- Richard Feynman}
+
+%\logo{logo-blue.png}
+\cover{M-theory.jpeg}
+
+% 本文档命令
+\usepackage{array}
+\usepackage{dsfont}
+\usepackage{tensor}
+%\usepackage{amsmath}
+\usepackage{mathtools}
+%for Wick收缩underbracket
+\usepackage{simplewick}
+%\usepackage{graphicx}
+
+%空白页
+\usepackage{afterpage}
+\newcommand{\myemptypage}{\null\thispagestyle{empty}\addtocounter{page}{0}\newpage}
+
+ \definecolor{foo}{RGB}{173,34,48}
+%+++++++++++++++++++++++数学字体的设置++++++++++++++++++++++++++++++++++++++++%
+\newcommand{\me}{\mathrm{e}}  % for math e
+\newcommand{\mi}{\mathrm{i}} % for math i
+\newcommand{\dif}{\mathrm{d}} %for differential operator d
+\newcommand{\cvec}[1]{\!\vec{\,#1}}
+\newcommand{\Ptimes}{\,\overset{\otimes }{,}\,}
+\DeclareSymbolFont{lettersA}{U}{txmia}{m}{it}
+ \DeclareMathSymbol{\piup}{\mathord}{lettersA}{25}
+ \DeclareMathSymbol{\muup}{\mathord}{lettersA}{22}
+ \DeclareMathSymbol{\deltaup}{\mathord}{lettersA}{14}
+ \newcommand{\uppi}{\piup}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareSymbolFont{symbols2}{LS1}{stixfrak}{m}{n}
+\DeclareMathSymbol{\typecolon}{\mathbin}{symbols2}{"25}
+% 修改目录深度
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+%\frontmatter
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\begin{frontmatter}
+\vspace*{1cm}
+\leftline{{ Notes on Physics Series}}
+\vspace{5cm}
+\leftline{\Large Notes on Polchinski's String theory}
+\vspace{0.5cm}
+\leftline{作者：兴趣使然的弦论爱好者}
+\leftline{编辑：渤海玉兔 \quad 校对：兴趣使然的弦论爱好者}
+\vspace{10cm}
+\leftline{2021年9月第1版}
+\leftline{2021年9月第1次印刷}
+\leftline{版权所有}
+
+\newpage
+\end{frontmatter}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+
+\newpage
+\myemptypage
+
+
+\mainmatter
+\pagenumbering{arabic}
+% 修改页码起始页
+\setcounter{page}{1}
+
+
+\part{玻色弦理论导论}
+
+\myemptypage
+
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{chapter7}
+\include{chapter8}
+\include{chapter9}
+
+\part{超弦理论以及拓展}
+
+\myemptypage
+
+\include{chapter10}
+\include{chapter11}
+\include{chapter12}
+
+\end{document}

@@ -1,0 +1,800 @@
+
+\setcounter{section}{0}%更改chapter的计数器值
+%\numberwithin{equation}{chapter}%公式计数器从属于节计数器
+\numberwithin{equation}{section}%公式计数器从属于节计数器
+\numberwithin{figure}{section}%图计数器从属于节计数器
+\setcounter{chapter}{0}
+
+
+%\chapter{\texorpdfstring{弦论初探}{1 A first look at strings}}
+\chapter{弦论初探}
+%\section{\texorpdfstring{为什么是弦？}{1.1 Why strings?}}
+\section{为什么是弦？}
+本节都是定性分析, 我没有翻译和注释. 原文参考：
+\par
+J.Polchinski.String Theory.Cambridge:Cambridge University Press,2001.
+
+\section{作用量原理}%{1.2 Action principles}
+弦在$D$维平坦时空中运动, 度规$\eta_{\mu\nu}=\operatorname{diag}(-,+,+,\cdots,+)$.
+
+首先回顾零维物体的经典力学. 一个相对论性点粒子, 我们可以用$D{-}1$个位置的时间函数$\textbf{X}(X^0)$来描述它. 但是这隐藏了理论的协变性, 所以最好引入沿着粒子世界线的参量$\tau$, 并用$D$个函数$X^\mu(\tau)$来描述时空中的运动. 参量化是任意的：相同路径不同的参量形式是物理上等价的, 即对于任何单调函数$\tau^\prime(\tau)$, 两条路径是相等的：
+\begin{equation}
+X^{\prime\mu}(\tau^\prime(\tau))=X^\mu(\tau)
+\end{equation}
+最简单的Poincar\'{e}不变作用量(不依赖于参量化的形式)正比于沿世界线的固有时：
+\begin{equation}
+S_{\mathrm{pp}}=-m \int \dif\tau\:(-\dot{X}^\mu \dot{X}_\mu)^{1/2}
+\end{equation}
+其中$\dot{X}^\mu=\frac{\partial X^\mu}{\partial \tau}$. 作用量的变分(在分部积分后)是：
+\begin{equation}
+\delta S_{\mathrm{pp}}=+m \int \dif\tau\: \tfrac{1}{2}(-\dot{X}^\nu \dot{X}_\nu)^{-1/2}\, 2\dot{X}_\mu \delta\dot{X}^\mu=m \int \dif\tau\: u_\mu \delta \dot{X}^\mu \nonumber\:,
+\end{equation}
+所以
+\begin{equation}
+\delta S_{\mathrm{pp}}=-m \int \dif\tau\: \dot{u}_\mu \delta X^\mu
+\end{equation}
+其中
+\begin{equation}
+u^\mu=\dot{X}^\mu (-\dot{X}^\nu \dot{X}_\nu)^{-1/2}
+\end{equation}
+是归一化$D$-速度. 因而运动方程$\dot{u}^\mu=0$描述了自由运动. 归一化常数$m$是粒子质量. 
+
+通过引入世界面上的额外场, 一个与世界线无关的度规$\gamma_{\tau\tau}(\tau)$, 这个作用量可以变成另一形式. 利用标架$\eta(\tau)=(-\gamma_{\tau\tau}(\tau))^{1/2}$处理将是方便的. 其被定义为正定的. 我们在任意维数下使用广义相对论项tetrad(标架, 即便它的词根意味着``4''). 那么
+\begin{equation}
+S^\prime _{\mathrm{pp}}=\frac{1}{2}\int \dif\tau\: \Bigl(\eta^{-1}\dot{X}^\mu \dot{X}_\mu-\eta m^2\Bigr) \label{action-reparameter}
+\end{equation}
+这个作用量与$S_{\mathrm{pp}}$有相同的对称性. 即Poincar\'{e}不变性与再参量化不变性. 后者$\eta(\tau)$的变换为
+\begin{equation}
+\eta^\prime(\tau^\prime)\dif\tau^\prime=\eta(\tau)\dif\tau\:
+\end{equation}
+\begin{proof}
+    \begin{align*}
+        S^\prime _{\mathrm{pp}}&=\frac{1}{2}\int \dif\tau\: \Bigl(\eta^{-1}\dot{X}^\mu \dot{X}_\mu-\eta m^2\Bigr) \nonumber \\
+        &=\frac{1}{2}\int \dif\tau^\prime \:\Bigl(\frac{\dif\tau}{\dif\tau^\prime} \eta^{-1}\frac{\partial X^\mu}{\partial \tau} \frac{\partial X_\mu}{\partial \tau}-\frac{\dif\tau}{\dif\tau^\prime} \eta m^2\Bigr) \nonumber \\
+        &=\frac{1}{2}\int \dif\tau^\prime\: \biggl(\frac{\dif\tau}{\dif\tau^\prime} \eta^{-1}\Bigl(\frac{\dif\tau^\prime}{\dif\tau}\Bigr)^2\frac{\partial X^\mu}{\partial \tau^\prime} \frac{\partial X_\mu}{\partial \tau^\prime}- \eta^\prime m^2\biggr) \nonumber \\
+        &=\frac{1}{2}\int \dif\tau^\prime\: \Bigl(\eta^{\prime -1}\frac{\partial X^\mu}{\partial \tau^\prime} \frac{\partial X_\mu}{\partial \tau^\prime}- \eta^\prime m^2\Bigr) \nonumber
+        \end{align*}
+\end{proof}
+
+对标架$\eta(\tau)$变分得到运动方程
+\begin{align}
+&\delta S_{\mathrm{pp}}^\prime =\frac{1}{2}\int \dif\tau\:\Bigl(-\frac{1}{\eta^{-2}}\dot{X}^\mu\dot{X}_\mu-m^2\Bigr)\delta\eta \nonumber \\
+&\Longrightarrow \eta^2=-\dot{X}^\mu\dot{X}_\mu/m^2 \label{1.2.7}
+\end{align}
+利用上式消掉(\ref{action-reparameter})中的$\eta$, $S_{\mathrm{pp}}^\prime$变成$S_{\mathrm{pp}}$. 
+$S_{\mathrm{pp}}^\prime$可以处理无质量粒子, 而$S_{\mathrm{pp}}$不行. 
+尽管$S_{\mathrm{pp}}^\prime$与$S_{\mathrm{pp}}$在经典上等价, 但是$S_{\mathrm{pp}}$由于它复杂的形式很难做路径积分. 而$S_{\mathrm{pp}}^\prime$是导数的二次型, 路径积分是相当容易计算的. 可推测, 任何定义$S_{\mathrm{pp}}$量子理论的尝试所导出的结果与$S_{\mathrm{pp}}^\prime$路径积分等价. 我们取后者为量子理论的出发点. 
+
+一维物体扫过二维世界面, 其以两个参量描述, 记作$X^\mu(\tau,\sigma)$. 我们仍旧坚持作用量仅依赖于所嵌入的时空, 而不是参量化的形式. 最简单的作用量是Nambu-Goto作用量, 它正比于世界面的面积. 引入诱导度规$h_{ab}$, $a,b$取遍值$(\tau,\sigma)$：
+\begin{equation}
+h_{ab}=\partial_a X^\mu\partial_b X_\mu
+\end{equation}
+那么Nambu-Goto作用量为
+\begin{subequations}
+\begin{align}
+S_{\mathrm{NG}}&=\int_M \dif\tau \dif\sigma\: \mathcal{L}_{NG} \\
+\mathscr{L}_{NG}&=-\frac{1}{2\pi\alpha^\prime}(-\det h_{ab})^{1/2}
+\end{align} \label{1.2.9} 
+\end{subequations}
+其中M代表世界面, $\alpha^\prime$量纲为$L^2$, 是Regge斜率. 弦的张力T与Regge斜率的关系为
+\begin{equation}
+T=\frac{1}{2\pi\alpha^\prime}
+\end{equation}
+现在考察这个作用量的对称性. 使$S_{\mathrm{NG}}(X^\prime)=S_{\mathrm{NG}}(X)$的$X^\mu(\tau,\sigma)$的变换有:
+\begin{enumerate}
+    \item 平坦时空的等距群（D维Poincar\'{e}群）
+    \begin{equation}
+    X^{\prime \mu}(\tau,\sigma)=\Lambda\indices{^\mu_\nu} X^\nu(\tau,\sigma)+a^\mu.
+    \end{equation}
+    \item 二维坐标不变性（称为微分同胚映射不变性, 英文diffeomorphism, 简写为diff）
+    \begin{equation}
+    X^{\prime \mu}(\tau^\prime,\sigma^\prime)=X^{\mu}(\tau,\sigma). \label{diffeomorphism}
+    \end{equation}
+\end{enumerate}
+
+NG作用量类似$S_{\mathrm{pp}}$. 同样, 引入世界面无关度规$\gamma_{ab}(\tau,\sigma)$. 之后度规总是指$\gamma_{ab}$(除非说诱导度规). 
+令$\gamma_{ab}$有\,Lorentz\,特征$(-,+)$, 作用量:
+\begin{equation}
+S_{\mathrm{P}}[X,\gamma]=-\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: (-\gamma)^{1/2}\gamma^{ab}\partial_a X^\mu\partial_b X_\mu 
+\label{1.2.13}
+\end{equation}
+其中$\gamma=\det\gamma^{ab}$. 这是Brink-Di Vecchia-Howe-Desert-Zumino作用量, 简称Polyakov作用量. 提出原因: 为了推广定域世界面超对称性. Polyakov强调了其优点, 尤其是路径积分量子化. 
+
+与$S_{\mathrm{NG}}$的等价：对度规变分
+\begin{align}
+\delta_\gamma S_{\mathrm{P}}[X,\gamma] &= -\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: \Bigl[\delta\gamma^{ab}(-\gamma)^{1/2}h_{ab}-\tfrac{1}{2}(-\gamma)^{-1/2}(-\gamma \gamma_{ab}\delta\gamma^{ab})h_{cd}\gamma^{cd}\Bigr] \nonumber \\
+&= -\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: (-\gamma)^{1/2}\delta\gamma^{ab}\Bigl(h_{ab}-\tfrac{1}{2}\gamma_{ab}\gamma^{cd}h_{cd}\Bigr)
+\end{align}
+其中利用了
+\begin{equation}
+\delta\gamma=\gamma \gamma^{ab}\delta\gamma_{ab}=-\gamma \gamma_{ab}\delta\gamma^{ab}
+\end{equation}
+$\delta_\gamma S_{\mathrm{P}}[X,\gamma]=0$意味着
+\begin{equation}
+h_{ab}=\tfrac{1}{2}\gamma_{ab}\gamma^{cd}h_{cd}
+\end{equation}
+两边同除$(-h)^{1/2}$
+\begin{equation}
+h_{ab}(-h)^{-1/2}=\frac{\frac{1}{2}\gamma_{ab}\gamma^{cd}h_{cd}}{\sqrt{-\gamma}\frac{1}{2}\gamma^{cd}h_{cd}}=\gamma_{ab}(-\gamma)^{-1/2} \label{metric-identity}
+\end{equation}
+所以$\gamma_{ab}$正比于$h_{ab}$.
+利用从(\ref{metric-identity})得到的$h_{ab}\gamma^{ab}(-\gamma)^{1/2}=(-h)^{1/2}\gamma_{ab}\gamma^{ab}$, 从$S_{\mathrm{P}}$中消除$\gamma_{ab}$：
+\begin{equation}
+S_{\mathrm{P}}[X,\gamma] \rightarrow -\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: (-\gamma)^{1/2}h_{ab}\gamma^{ab}
+=-\frac{1}{2\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: (-h)^{1/2}=S_{\mathrm{NG}}[X]
+\end{equation}
+$S_{\mathrm{P}}$有如下对称性：
+\begin{enumerate}
+    \item $D$维Poincar\'{e}不变性
+    \begin{align}
+    X^{\prime \mu}(\tau,\sigma)&={\Lambda^\mu}_\nu X^\nu(\tau,\sigma)+a^\mu \nonumber \\
+    \gamma^\prime_{ab}(\tau,\sigma)&=\gamma_{ab}(\tau,\sigma)\:. 
+    \end{align}
+    \item Diff不变性
+    \begin{align}
+    X^{\prime \mu}(\tau^\prime,\sigma^\prime)&= X^{\mu}(\tau,\sigma)\nonumber \\
+    \frac{\partial \sigma^{\prime c}}{\partial \sigma^a}\frac{\partial \sigma^{\prime d}}{\partial \sigma^b}\gamma^\prime_{cd}(\tau^\prime,\sigma^\prime)&=\gamma_{ab}(\tau,\sigma) \:.
+    \end{align}
+    \item 二维Weyl不变性
+    \begin{align}
+    X^{\prime \mu}(\tau,\sigma)&=X^{\mu}(\tau,\sigma)  \nonumber \\
+    \gamma^\prime_{ab}(\tau,\sigma)&=\mathrm{exp}[2\omega(\tau,\sigma)]\gamma_{ab}(\tau,\sigma)
+    \end{align}
+\end{enumerate}
+\begin{proof}
+    \begin{align}
+        S^\prime_{\mathrm{P}} &= -\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: (-\gamma^\prime)^{1/2}\gamma^{\prime ab}\partial_a X^{\prime \mu}\partial_b X^\prime _\mu \nonumber \\
+        &= -\frac{1}{4\pi\alpha^\prime}\int_M \dif\tau\dif\sigma\: \mathrm{e}^{2\omega}(-\gamma)^{1/2}\mathrm{e}^{-2\omega}\gamma^{ab}h_{ab} \nonumber \\
+        &= S_{\mathrm{P}} \nonumber
+        \end{align}
+\end{proof}
+Weyl不变性, 即世界面度规的定域缩放, 在NG形式中没有对比. 通过观察用以联系Polyakov作用量与NG作用量的运动方程(\ref{metric-identity}), 我们可以理解它的出现. (\ref{metric-identity})并不唯一确定$\gamma_{ab}$, 而是一个定域缩放. 所以Weyl等价度规对应于时空的相同嵌入. 这是Polyakov公式另加的冗余. 
+
+作用量相对度规的变分给出能动量张量
+\begin{equation}
+T^{ab}(\tau,\sigma)=-4\pi(-\gamma)^{-\frac{1}{2}}\frac{\delta}{\delta\gamma_{ab}}S_{\mathrm{P}}=-\frac{1}{\alpha^\prime}\bigl(\partial^a X^\mu \partial^b X_\mu-\tfrac{1}{2}\gamma_{ab}\partial_c X^\mu \partial^c X_\mu\bigr)
+\end{equation}
+\begin{proof}
+    利用$\gamma_{ab}\delta \gamma^{ab}=-\gamma^{ab}\delta\gamma_{ab}$, 那么
+\begin{align*}
+\delta \gamma^{ab}h_{ab}-\tfrac{1}{2}\delta \gamma^{ab}\gamma_{ab}\gamma^{cd}h_{cd} \nonumber
+&=-\gamma^{ac}\delta\gamma_{ab}\gamma^{bd}h_{cd}+\tfrac{1}{2}\gamma^{ab}\delta\gamma_{ab}\gamma^{cd}h_{cd} \nonumber\\
+&=-\delta\gamma_{ab}h^{ab}+\tfrac{1}{2}\gamma^{ab}\gamma^{cd}h_{cd}\delta\gamma_{ab} \nonumber \\
+&\Longrightarrow 
+\frac{\delta}{\delta\gamma_{ab}}S_{\mathrm{P}}=-\frac{1}{4\pi\alpha^\prime}(-\gamma)^{\frac{1}{2}}(-h^{ab}+\tfrac{1}{2}\gamma^{ab}\gamma^{cd}h_{cd})
+\end{align*}
+\end{proof}
+能动张量是守恒的($\nabla_a T^{ab}=0$), 这是diff不变性的结果. 
+Weyl不变性暗示着
+\begin{equation}
+\gamma_{ab}\frac{\delta}{\delta\gamma_{ab}}S_{\mathrm{P}}=0 \Rightarrow {T_a} ^a=0
+\end{equation}
+\begin{proof}
+    $\delta S \sim \int \delta\gamma_{ab} T^{ab}$, 而Weyl变换$\delta\gamma_{ab}=2\omega \gamma_{ab}$, 于是$T^{ab}\gamma_{ab}=0$.
+\end{proof}
+
+$S_{\mathrm{NG}}$与$S_{\mathrm{P}}$在弦世界面上定义了2维场论. 在弦论中, 我们看到时空过程的振幅由世界面上的2维量子场论的矩阵元给定. 尽管是现实世界是4维时空, 但在弦微扰论中所使用的大多数机制是2维的. (\ref{diffeomorphism})将$X^\mu(\tau,\sigma)$定义为标量场, $\mu$是内部指标. 从2维的观点来看, Polyakov作用量描述了与$\gamma_{ab}$协变耦合的无质量Klein-Gordon标量$X^\mu$. 这样, Poincar\'{e}不变性是内部对称性. 
+
+对$\gamma_{ab}$变分给出运动方程：
+\begin{equation}
+T_{ab}=0
+\end{equation}
+利用分部积分, 对$X^\mu$变分给出
+\begin{gather}
+0=(-\gamma)^{1/2}\gamma^{ab}(2\partial_a X^\mu\delta\partial_b X_\mu)
+=-2\partial_b[(-\gamma)^{1/2}\gamma^{ab}\partial_a X^\mu]\delta X_\mu \nonumber \\
+\Longrightarrow\partial_a[(-\gamma)^{1/2}\gamma^{ab}\partial_b X^\mu]=(-\gamma)^{1/2}\nabla^2 X^\mu=0
+\end{gather}
+\begin{proof}
+\begin{align}
+    0&=(-\gamma)^{1/2}\partial_a \gamma^{ab}\partial_b X^\mu +\gamma^{ab}\partial_b X^\mu \partial_a(-\gamma)^{1/2} \nonumber \\
+    &=(-\gamma)^{1/2}[\partial_a (\gamma^{ab}\partial_b X^\mu )+(-\gamma)^{-1/2}\partial_a(-\gamma)^{1/2}\gamma^{ab}\partial_b X^\mu ] \nonumber \\
+    &=(-\gamma)^{1/2}[\nabla_a (\gamma^{ab}\partial_b X^\mu )]=(-\gamma)^{1/2}\nabla_a \gamma^{ab}\nabla_b X^\mu =(-\gamma)^{1/2}\nabla^2 X^\mu \nonumber
+    \end{align}
+    其中利用了$\nabla_a=\partial_a+(\frac{1}{\sqrt{-\gamma}}\partial_a\sqrt{-\gamma})$.
+    注意$X^\mu$是一标量, $\partial_b\rightarrow \nabla_b$.
+\end{proof}
+对于有边界的世界面, 在作用量的变分中还有表面项. 具体些, 令坐标区域：
+\begin{equation}
+-\infty<\tau<\infty, \quad 0 \leq \sigma \leq \ell
+\end{equation}
+认为$\tau,\sigma$分别是时间、空间变量, 则
+\begin{align}
+\delta S_{\mathrm{P}}&=\frac{1}{2 \pi \alpha^{\prime}} \int_{-\infty}^{\infty} \dif\tau \int_{0}^{\ell} \dif\sigma\:(-\gamma)^{1 / 2} \delta X^{\mu} \nabla^{2} X_{\mu} \nonumber  \\
+&\qquad -\frac{1}{2 \pi \alpha^{\prime}} \int_{-\infty}^{\infty} \dif \tau\: (-\gamma)^{1 / 2} \delta X^{\mu}
+ \partial^{\sigma} X_{\mu}\Big\rvert_{\sigma=0}^{\sigma=\ell}
+\end{align}
+边界项为零使得:
+\begin{enumerate}
+    \item \begin{equation}
+        \partial^{\sigma} X^{\mu}(\tau, 0)=\partial^{\sigma} X^{\mu}(\tau, \ell)=0 \label{Neumann-bound}
+        \end{equation}
+        这是Neumann边界条件. 更协变的形式为
+        \begin{equation}
+        n^{a} \partial_{a} X_{\mu}=0 \quad \text { on } \partial M
+        \end{equation}
+        $n^a$垂直于边界$\partial M$. 开弦的末端在时空中自由运动. 
+     \item   
+     \begin{subequations}
+     \begin{align}
+     X^{\mu}(\tau, \ell)&=X^{\mu}(\tau, 0), \quad \partial^{\sigma} X^{\mu}(\tau, \ell)=\partial^{\sigma} X^{\mu}(\tau, 0)\\
+     \gamma_{a b}(\tau, \ell)&=\gamma_{a b}(\tau, 0)
+     \end{align}
+     \end{subequations}
+     这种场是周期的, 没有边界, 形成闭弦. 
+\end{enumerate}
+
+这两种条件是与$D$维Poincar\'{e}不变性与运动方程相容唯一的可能性. NG和Polyakov作用量也许是带有给定对称性的最简单的作用量. 但简单性不是正确的判据, 对称性才是关键. 
+
+现在来推广Polyakov作用量, 要求对称性被保留, 且是导数的多项式. 
+整体Weyl不变性, 亦即 $\omega(\tau,\sigma)=C$ ($C$为常数), 要求作用量中$\gamma^{ab}$比$\gamma_{ab}$多一个因子, 以抵消$(-\gamma)^{1/2}$的变分. 额外的上标只能与导数收缩, 所以每一项有两个导数. 
+坐标不变性与Poincar\'{e}不变性允许：
+\begin{equation}
+\chi=\frac{1}{4 \pi} \int_{M} \dif \tau \dif \:\sigma(-\gamma)^{1 / 2} R \label{Poincar\'{e}-x}
+\end{equation}
+其中$R$是Ricci标量. 在定域Weyl缩放下：
+\begin{equation}
+\left(-\gamma^{\prime}\right)^{1 / 2} R^{\prime}=(-\gamma)^{1 / 2}\left(R-2 \nabla^{2} \omega\right)\label{Ricci-Weyl}
+\end{equation}
+\begin{proof}
+\begin{align*}
+R^\prime &=\frac{R}{\me^{2 \omega}}-2 g^{\rho \sigma} \frac{\nabla_{\rho} \partial_{\sigma} \me^{\omega}}{\me^{3 \omega}}+2 g^{\rho \sigma} \frac{(\partial_\rho \me^\omega )(\partial _\sigma \me^\omega)}{\me^{4 \omega}} \\
+&=\frac{R}{\me^{2 \omega}}-2 g^{\rho \sigma} \frac{\nabla_{\rho} \partial_{\sigma} \me^{\omega}}{\me^{3 \omega}}-2 g^{\rho \sigma} \frac{(\partial _\sigma \partial_{\rho} \omega )\omega}{\me^{2 \omega}} \\
+&=\frac{R}{\me^{2 \omega}}-2 g^{\rho \sigma} \frac{\nabla_{\rho} \me^{\omega} \partial_{\sigma} \omega}{\me^{3 \omega}}-2 g^{\rho \sigma} \frac{\left(\nabla_{\sigma} \partial_{\rho} \omega\right) \omega}{\me^{2 \omega}}
+\end{align*}
+而
+\begin{align*}
+\nabla _\rho \me^{\omega} \partial_{\sigma} \omega=\partial_{\rho} \me^{\omega} \partial_{\sigma} \omega-\Gamma_{\rho \sigma}^{\lambda} \me^{\omega} \partial_{\lambda} \omega=\left(-\nabla_{\rho} \partial _\sigma \omega-\Gamma_{\rho \sigma}^{\lambda} \partial _\lambda \omega\right) \me^{\omega}
+\end{align*}
+那么后两项变成：
+\[
+\frac{-2 g^{\rho \sigma}}{\me^{2 \omega}}\left(-\nabla_{\rho} \partial_{\sigma} \omega-T_{\rho \sigma}^{\lambda} \partial_{\lambda} \omega+\omega \nabla_{\sigma} \partial_{\rho} \omega\right)
+\]
+\end{proof}
+\noindent (\ref{Ricci-Weyl})中, 变分是一个全导数, 因为对于任意$v^a$, 有$(-\gamma)^{1/2}\nabla_a v^a=\partial_a[(-\gamma)^{1/2}v^a]$. (\ref{Poincar\'{e}-x})对于无边界的世界面是不变的. 有边界则多一个表面项. 
+
+可将$\chi$写进作用量：
+\begin{equation}
+\begin{aligned}
+S_{\mathrm{P}}^{\prime} &=S_{\mathrm{P}}-\lambda \chi \\
+&=-\int_{M} \dif \tau \dif \sigma\:(-\gamma)^{1 / 2}\left(\frac{1}{4 \pi \alpha^{\prime}} \gamma^{a b} \partial_{a} X^{\mu} \partial_{b} X_{\mu}+\frac{\lambda}{4 \pi} R\right)
+\end{aligned}
+\end{equation}
+这是最普遍的(diff $\times$ Weyl)-不变以及Poincar\'{e}不变作用量. $S_{\mathrm{P}}^\prime$看起来像(引力)度规的Hilbert作用量$\int (-\gamma)^{1/2}R$与$D$个无质量标量场的最小耦合. 然而2维中, Hilbert作用量仅依赖于世界面的拓扑, 它的变分是$R_{ab}-\frac{1}{2}\gamma_{ab}R$. 在2维情况, 曲率张量的对称性暗示着$R_{ab}=\frac{1}{2}\gamma_{ab}R$. Hilbert作用量在度规的连续变换下不变, 但却有整体效应. \\
+\begin{remark}
+    在2维下$R=\gamma^{ab}R_{ab}$, $\gamma\gamma_{ab} R=\gamma_{ab}\gamma^{ab}R_{ab}=2R_{ab}$.
+\end{remark}
+
+\section{开弦频谱}%{1.3 The open string spectrum}
+引入时空中的光锥坐标
+\begin{equation}
+x^{\pm}=2^{-1 / 2}\left(x^{0} \pm x^{1}\right), \quad x^{i},\quad  i=2, \ldots, D-1
+\end{equation}
+时空坐标写为$X^\mu$, 世界面上的场写为$X^\mu(\tau,\sigma)$. 在这些坐标下, 度规为
+\begin{subequations}
+\begin{align}
+&a^{\mu} b_{\mu}=-a^{+} b^{-}-a^{-} b^{+}+a^{i} b^{i} \\
+&a_{-}=-a^{+}, \quad a_{+}=-a^{-}, \quad a_{i}=a^{i}
+\end{align}
+\end{subequations}
+令世界面上的参量$\tau$为时空坐标$X^+$. 那么$X^+$会扮演时间的角色, $p^-$则是能量. 纵向分量$X^-,p^+$就像空间坐标和动量, 就像横向的$X^i,p^i$.
+从点粒子开始, 利用$S_{\mathrm{pp}}^\prime$. 通过下式固定世界线的参量形式：
+\begin{equation}
+X^+(\tau)=\tau
+\end{equation}
+于是作用量变成
+\begin{equation}
+S_{\mathrm{pp}}^{\prime}=\frac{1}{2} \int \dif\tau\left(-2 \eta^{-1} \dot{X}^{-}+\eta^{-1} \dot{X}^{i} \dot{X}^{i}-\eta m^{2}\right)
+\end{equation}
+\begin{remark}
+    这里使用了$\dot{X}^{\mu} \dot{X}_{\mu}=-\dot{X}^{+} \dot{X}^{-}-\dot{X}^{+} \dot{X}^{-}+\dot{X}^{i} \dot{X}^{i}=-2 \dot{X}^{-}+\dot{X}^{i} \dot{X}^{i}$ 
+\end{remark}
+\noindent 正则动量$p_{\mu}=\partial L / \partial \dot{X}^{\mu}$为
+\begin{equation}
+p_{-}=-\eta^{-1}, \quad p_{i}=\eta^{-1} \dot{X}^{i}
+\end{equation}
+利用度规$p^i=p_i$, $p^+=-p_-$, 那么哈密顿量为
+\begin{equation}
+\begin{aligned}
+H &=p_{-} \dot{X}^{-}+p_{i} \dot{X}^{i}-L \\
+&=-\eta^{-1}\dot{X}^- +\eta p_i p^i +\eta^{-1}\dot{X}^- -\tfrac{1}{2}\eta p_i p_i +\tfrac{1}{2}\eta m^2 \\
+&=\frac{p^{i} p^{i}+m^{2}}{2 \eta^{-1}}=\frac{p^{i} p^{i}+m^{2}}{2 p^{+}}\label{string-哈密顿量}
+\end{aligned}
+\end{equation}
+没有$p_+ X^+$项是因为$X^+$不是动力学变量. 另外, $\dot{\eta}$没有出现在作用量中. 所以$p_\eta=0$. 由于$\eta=-1/p_{-}$, 我们不应把$\eta$处理为独立的正则坐标. 
+
+为了量子化, 给动力学场施加正则对易子
+\begin{equation}
+\left[p_{i}, X^{j}\right]=-\mi \delta_{i}^{j}, \quad\left[p_{-}, X^{-}\right]=-\mi
+\end{equation}
+动量本征态$|k_-,k^i\rangle$构成完全集. 剩余的动量分量由其他量决定. 规范选择将$\tau$与$X^+$相关联, 所以$H=-p_+ =p^-$. H与$p_+$间的负号是由于前者主动, 后者被动. 于是, (\ref{string-哈密顿量})变成相对论质壳条件. 我们已经获得了相对论标量的谱. 
+
+转向开弦. 坐标区域$-\infty<\tau<+\infty, 0\leq \sigma\leq l$. 选择规范以去掉Polyakov的冗余. 令：
+\begin{subequations}
+\begin{align}
+&X^+=\tau \label{1.3.8a} \\
+&\partial_{\sigma} \gamma_{\sigma \sigma}=0 \label{1.3.8b} \\
+&\operatorname{det} \gamma_{a b}=-1 \label{1.3.8c}
+\end{align} \label{1.3.8}
+\end{subequations}
+如何得到上述规范? 首先, 根据(\ref{1.3.8a})选择$\tau$. 注意到$f=\gamma_{\sigma \sigma}\left(-\operatorname{det} \gamma_{a b}\right)^{-1 / 2}$变换为
+\begin{equation}
+f^{\prime} \dif \sigma^{\prime}=f \dif \sigma
+\end{equation}
+定义不变长度$\dif l=f\dif \sigma$. 定义一个点的$\sigma$坐标正比于从$\sigma=0$到该点的不变长度. 比例系数由右端点坐标保持$\sigma=l$决定. 在这个坐标系下$f=\dif l/\dif \sigma$是独立于$\sigma$的. 它依赖于$\tau$. 
+最终做一Weyl变换以满足(\ref{1.3.8c}). 由于$f$是Weyl不变的, 所以$\partial_\sigma f$依旧为零. 结合(\ref{1.3.8c}), 这意味着$\partial_{\sigma} \gamma_{\sigma \sigma}=0$, 所以(\ref{1.3.8b})也满足. 
+
+针对$\gamma_{\tau\tau}(\tau,\sigma)$, 我们可解出规范条件(\ref{1.3.8c}). 由于$\gamma_{\sigma\sigma}$独立于$\sigma$, 所以度规中独立的自由度现在只有$\gamma_{\sigma\sigma}(\tau)$以及$\gamma_{\sigma\tau}(\tau,\sigma)$. 度规的逆是
+\begin{equation}
+\begin{bmatrix}
+\gamma^{\tau \tau} & \gamma^{\tau \sigma} \\
+\gamma^{\sigma \tau} & \gamma^{\sigma \sigma}
+\end{bmatrix}=
+\begin{bmatrix}
+-\gamma_{\sigma \sigma}(\tau) & \gamma_{\tau \sigma}(\tau, \sigma) \\
+\gamma_{\tau \sigma}(\tau, \sigma) & \gamma_{\sigma \sigma}^{-1}(\tau)\left(1-\gamma_{\tau \sigma}^{2}(\tau, \sigma)\right)
+\end{bmatrix}
+\end{equation}
+\begin{proof}
+    \[
+\begin{bmatrix}
+\gamma_{\tau \tau} & \gamma_{\tau \sigma} \\
+\gamma_{\tau \sigma} & \gamma_{\sigma\sigma}
+\end{bmatrix}
+\begin{bmatrix}
+\gamma^{\tau\tau} & \gamma^{\tau \sigma} \\
+\gamma^{\tau \sigma} & \gamma^{\sigma \sigma}
+\end{bmatrix}
+=\begin{bmatrix}
+    -\gamma_{\tau \tau} \gamma_{\sigma \sigma}+\gamma_{\tau \sigma}^{2} & \gamma_{\tau\tau} \gamma_{\tau \sigma}+\gamma_{\tau \sigma} \gamma_{\sigma \sigma}^{-1}\left(1-\gamma_{\tau \sigma}^{2}\right) \\
+    -\gamma_{\sigma \sigma} \gamma_{\tau \sigma}+\gamma_{\sigma \sigma} \gamma_{\tau \sigma} & \gamma_{\tau \sigma}^{2}+1-\gamma_{\tau \sigma}^{2}  
+\end{bmatrix}
+\]
+然后利用\eqref{1.3.8c}给出的$\gamma_{\tau\tau} \gamma_{\sigma \sigma}-\gamma_{\tau \sigma}^{2}=-1$.
+\end{proof} 
+\noindent 于是, Polyakov拉格朗日量变成
+\begin{equation}
+\begin{aligned}
+L&=-\frac{1}{4 \pi \alpha^{\prime}} \int_{0}^{\ell} \dif\sigma\: \Bigl[\gamma_{\sigma \sigma}\left(2 \partial_{\tau} x^{-}-\partial_{\tau} X^{i} \partial_{\tau} X^{i}\right) \\
+&\qquad \quad-2 \gamma_{\sigma \tau}(\partial_{\sigma} Y^{-}-\partial_{\tau} X^{i} \partial_{\sigma} X^{i})
++\gamma_{\sigma \sigma}^{-1}(1-\gamma_{\tau \sigma}^{2}) \partial_{\sigma} X^{i} \partial_{\sigma} X^{i}\Bigr]
+\end{aligned}
+\end{equation}
+\begin{proof}
+将Polyakov作用量\eqref{1.2.13}按分量展开
+\begin{align*}
+L=-\frac{1}{4 \pi \alpha^{\prime}} \int_{0}^{\ell} \dif\sigma \:\Bigl[-\gamma_{\sigma \sigma}\underbrace{(\partial_\tau X^{\mu} \partial_\tau X_{\mu})}_{(1)} 
++2 \gamma_{\tau \sigma}\underbrace{(\partial_{\tau} X^{\mu} \partial_{\sigma} X_{\mu})}_{(2)} 
++\gamma_{\sigma \sigma}^{-1}(1-\gamma_{\tau \sigma}^{2}) \underbrace{(\partial_{\sigma} X^{\mu} \partial_{\sigma} X_{\mu})}_{(3)}\Bigr]
+\end{align*}
+其中
+\begin{align*}
+(1) &=-\dot{X}^{+} \dot{X}^{-}-\dot{X}^{+} \dot{X}^{-}+\dot{X}^{i} \dot{X}^{i} =-2 \partial_{\tau} X^{-}+\partial_{\tau} X^{i} \partial_{\tau} X^{i} \\
+(2) &=-\partial_{\tau} X^{\dagger} \partial_{\sigma} X^{-}-\partial_{\tau} X^{-} \partial_{\sigma} X^{+}+\partial_{\tau} X^{i} \partial_{\sigma} X^{i} \\
+&=-\partial_{\sigma} X^{-}-\partial_{\tau} X^{-} \partial_{\sigma} \tau+\partial_{\tau} X^{i} \partial_{\tau} X^{i} =-\left(\partial_{\sigma} Y^{-}-\partial_{\tau} X^{i} \partial_{\sigma} X^{i}\right) \\
+(3) &=-\partial_{\sigma} X^{-} \partial_{\sigma} X^{+}-\partial_{\sigma} X^{+} \partial_{\sigma} X^{-}+\partial_{\sigma} X^{i} \partial_{\sigma}X^{i} 
+=\partial_{\sigma} X^{i} \partial_{\sigma} X^{i}
+\end{align*}
+证毕.
+\end{proof}
+\noindent 这里我们将$X^-(\tau,\sigma)$分成两部分$x^-(\tau)$和$Y^-(\tau,\sigma)$. $x^-(\tau)$是$\tau$时刻$X^-$的平均值. 
+\begin{subequations}
+\begin{align}
+x^{-}(\tau)&=\frac{1}{\ell} \int_{0}^{\ell} \dif \sigma X^{-}(\tau, \sigma) \\
+Y^{-}(\tau, \sigma)&=X^{-}(\tau, \sigma)-x^{-}(\tau)
+\end{align}
+\end{subequations}
+$Y^-$不出现在含有时间导数的项中, 因而是非动力学项. 它的作用类似Lagrange乘子, 约束$\partial_\sigma\gamma_{\tau\sigma}$为零. 
+在规范\eqref{1.3.8}下, 开弦边界条件(\ref{Neumann-bound})变成
+\begin{equation}
+\gamma_{\tau \sigma} \partial_{\tau} X^{\mu}-\gamma_{\tau \tau} \partial_{\sigma} X^{\mu}=0 \quad \text { at } \sigma=0, \ell
+\end{equation}
+\begin{proof}
+$
+\partial^{\sigma} X^{\mu} =\gamma^{\sigma a} \partial_{a} X^{\mu}=\gamma^{\sigma \tau} \partial_{\tau} X^{\mu}+\gamma^{\sigma \sigma} \partial_{\sigma} X^{\mu} =\gamma_{\tau \sigma} \partial_{\tau} X^{\mu}+\gamma_{\sigma \sigma}^{-1}\left(1-\gamma_{\tau \sigma}^{2}\right) \partial_{\sigma} X^{\mu} =\gamma_{\tau \sigma} \partial_{\tau} X^{\mu}-\gamma_{\tau \tau} \partial_{\sigma} X^{\mu}
+$
+证毕. 
+\end{proof}
+\noindent 对于$\mu=+$:
+\begin{equation}
+\gamma_{\tau \sigma}=0 \quad \text { at } \sigma=0, \ell
+\end{equation}
+由于$\partial_\sigma\gamma_{\tau\sigma}=0$, $\gamma_{\tau\sigma}$在任何地方为零. 
+对于$\mu=i$, 边界条件为
+\begin{equation}
+\partial_{\sigma} X^{i}=0 \quad \text { at } \sigma=0, \ell   \label{bound-mu-i}
+\end{equation}
+施加规范条件, 并将Lagrange乘子$Y^-$考虑进来,拉格朗日量为
+\begin{equation}
+L=-\frac{\ell}{2 \pi \alpha^{\prime}} \gamma_{\sigma \sigma} \partial_{\tau} x^{-}+\frac{1}{4 \pi \alpha^{\prime}} \int_{0}^{\ell} \dif\sigma\,\Bigl(\gamma_{\sigma \sigma} \partial_{\tau} X^{i} \partial_{\tau} X^{i}-\gamma_{\sigma \sigma}^{-1} \partial_{\sigma} X^{i} \partial_{\sigma} X^{i}\Bigr)
+\end{equation}
+$x^-$的共轭动量为
+\begin{equation}
+p_{-}=-p^{+}=\frac{\partial L}{\partial\left(\partial_{\tau} x^{-}\right)}=-\frac{\ell}{2 \pi \alpha^{\prime}} \gamma_{\sigma \sigma}
+\end{equation}
+正如粒子中的$\eta$, $\gamma_{\sigma\sigma}$是动量而非坐标. $X^i(\tau\sigma)$的共轭动量密度为
+\begin{equation}
+\Pi^{i}=\frac{\delta L}{\delta\left(\partial_{\tau} X^{i}\right)}=\frac{1}{2 \pi \alpha^{\alpha}} \gamma_{\sigma \sigma} \partial_{\tau} X^{i}=\frac{p^{+}}{\ell} \partial_{\tau} X^{i} \label{1.3.18}
+\end{equation}
+于是, 哈密顿量为
+\begin{align}
+H &=p_{-} \partial_{\tau} x^{-}-L+\int_{0}^{\ell} \dif \sigma\: \Pi_{i} \partial_{\tau} X^{i} \nonumber \\
+&= p_{-} \partial_{\tau}  x^{-}-p_{-} \partial_{\tau} x^{-} -\frac{1}{4 \pi \alpha^{\prime}} \int_{0}^{\ell} \dif \sigma\:\biggl(\gamma_{\sigma \sigma} \partial_{\tau} X^{i} \partial_{\tau} X^{i}-\frac{\partial_{\sigma} X^{i} \partial_{\sigma} X^{i}}{\gamma_{\sigma \sigma}}\biggr) 
++\int_{0}^{\ell} \dif \sigma\: \frac{l\,\Pi_{i}^{2} }{ p^{+}} \nonumber \\
+&=\frac{\ell}{4 \pi \alpha^{\prime} p^{+}} \int_{0}^{\ell} \dif \sigma\, 4 \pi \alpha^{\prime}\Pi_{i}^{2} -\frac{\gamma_{\sigma\sigma}^{-1}}{4 \pi \alpha^{\prime}} \int_{0}^{\ell} \dif \sigma\,\left[\left(2 \pi \alpha^{\prime} \Pi^{i}\right)^{2}-\partial_\sigma X^{i} \partial _\sigma X^{i}\right] \nonumber \\
+&=\frac{\ell}{4 \pi \alpha^{\prime} p^{+}} \int_{0}^{\ell} d \sigma\left(2 \pi \alpha^{\prime} \Pi^{i} \Pi^{i}+\frac{1}{2 \pi \alpha^{\prime}} \partial_{\sigma} X^{i} \partial_{\sigma} X^{i}\right) \label{1.3.19}
+\end{align}
+这正是$D{-}2$个自由场$X^i$的哈密顿量, 其中$p^+$是守恒量. 运动方程为
+\begin{subequations}
+\begin{align}
+\partial_{\tau} x^{-}&=\frac{\partial H}{\partial p_-}=-\frac{\partial H}{\partial p^{+}}=-\frac{H p^{+} \partial(p^+)^{-1}}{\partial p^{+}}=\frac{H}{p^+} \:,\quad
+\partial_{\tau} p^{+}=\frac{\partial H}{\partial x^{-}}=0 \\
+\partial_{\tau} X^{i}&=\frac{\delta H}{\delta \Pi^{i}}=\frac{\ell}{2 p^{+}} 2 \Pi^{i}=2 \pi\alpha^{\prime}c\Pi^{i} \:,\quad
+\partial_\tau \Pi^{i}=-\frac{\delta H}{\delta X^{i}}=\frac{c}{2 \pi \alpha^{\prime}} \partial_{\sigma}^{2} X^{i} \:,
+\end{align}
+\end{subequations}
+其中$c=\ell/(2 \pi \alpha^{\prime} p^{+})$.
+由此得到波动方程
+\begin{equation}
+\partial_{\tau}^{2} X^{i}=c^{2} \partial_{\sigma}^{2} X^{i}
+\end{equation}
+选择$\ell$使$c=1$. 因而$p^+$守恒, 总弦长$\ell$不变. 
+
+$X^\pm$也满足波动方程. $X^-$需要一点运算. 在(\ref{bound-mu-i})下, 波动方程的一般解为
+\begin{equation}
+X^{i}(\tau, \sigma)=x^{i}+\frac{p^{i}}{p^{+}} \tau+\mi\left(2 \alpha^{\prime}\right)^{1 / 2} \sum_{n=-\infty , n \neq 0}^{\infty} \frac{1}{n} \alpha_{n}^{i} \exp \left(-\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{\pi n \sigma}{\ell} \label{1.3.22}
+\end{equation}
+$X^i$是实的, 要求$\alpha_{-n}^{i}=\left(\alpha_{n}^{i}\right)^{\dagger}$. 定义质心变量
+\begin{subequations}
+\begin{align}
+x^{i}(\tau)&=\frac{1}{\ell} \int_{0}^{\ell} \dif \sigma\: X^{i}(\tau, \sigma) \\
+p^{i}(\tau)&=\int_{0}^{\ell} \dif \sigma\: \Pi^{i}(\tau, \sigma)=\frac{p^{+}}{\ell} \int_{0}^{\ell} \dif \sigma \:\partial_{\tau} X^{i}(\tau, \sigma)
+\end{align}
+\end{subequations}
+分别是平均质量与总动量. 
+这些是Heisenberg算符. (\ref{1.3.22})中是Schrodinger算符$x^{i} \equiv x^{i}(0)$ ,  $p^{i} \equiv p^{i}(0)$.
+为了量子化, 施加对易关系
+\begin{subequations}
+\begin{align}
+\left[x^{-}, p^{+}\right]&=\mi \eta^{-+}=-\mi  \label{1.3.24a}\\
+\left[X^{i}(\sigma), \Pi^{j}\left(\sigma^{\prime}\right)\right]&=\mi \delta^{i j} \delta\left(\sigma-\sigma^{\prime}\right)
+\label{1.3.24b}
+\end{align}
+\end{subequations}
+写成Fourier分量形式：
+\begin{subequations}
+\begin{align}
+\left[x^{i}, p^{j}\right]&=\mi \delta^{i j}   \label{1.3.25a}\\
+\left[\alpha_{m}^{i}, \alpha_{n}^{j}\right]&=m \delta^{i j} \delta_{m,-n}   \label{1.3.25b}
+\end{align} \label{transverse-commutator}
+\end{subequations}
+\begin{proof}
+    \eqref{1.3.24b}, \eqref{1.3.25a}, \eqref{1.3.25b}三式构成因果循环, 知其二, 可推其三. 这里假定知后两个, 证第一个. 引入符号
+\[\sideset{}{'}\sum={\sum_{n=-\infty, n \neq 0}^{+\infty} }\]
+根据\eqref{1.3.18}和\eqref{1.3.22}可以得到
+\begin{align}
+\Pi^{i}(\tau, \sigma)
+=&\frac{p^{i}}{\ell}+\frac{p^+}{\ell}\mi \left(2 \alpha^{\prime}\right)^{1 / 2} \sideset{}{'}\sum \frac{1}{n} \alpha_{n}^{i}\left(-\frac{\pi \mi n c}{\ell}\right) \exp \left(-\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{n \pi \sigma}{\ell} \nonumber \\
+=&\frac{p^ i}{\ell}+\frac{1}{\left(2 \alpha^{\prime}\right)^{1 / 2} \ell} \sideset{}{'}\sum \alpha_{n}^{i} \exp \left(-\frac{\pi \mi n c\tau}{\ell}\right) \cos \frac{n \pi \sigma}{\ell} \tag{1.a} \label{1.a}
+\end{align}
+其中利用了
+\[
+\mi\left(2 \alpha^{\prime }\right)^{1 / 2} \frac{-\mi \pi c}{\ell}=\pi\left(2 \alpha^{\prime}\right)^{1 / 2} \frac{1}{2 \alpha^{\prime} \pi p^{+}}=\frac{1}{(2 \alpha^\prime)^{1 / 2} p^{+}}
+\]
+那么
+\[
+\begin{aligned}
+&[X^{i} , \Pi^{i}]\\
+=&\frac{1}{\ell}\left[x^{i} , p^{i}\right]+\frac{\mi}{\ell } \sideset{}{'}\sum_{n,m} \frac{1}{n} \exp \left(-\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{n \pi \sigma}{\ell}
+\left[\alpha_{n}^{i}, \alpha_{m}^{i}\right] \exp \left(-\frac{\pi \mi m c \tau}{\ell}\right) \cos \frac{m \pi\sigma^\prime}{\ell}
+\end{aligned}
+\]
+令$\left[\alpha_{m}^{i}, \alpha_{n}^{i}\right]=m \delta_{m,-n}$, 由
+\[
+2\pi\delta(\sigma^{\prime}-\sigma)=\sum_{n=-\infty}^{+\infty} \me^{ \mi n\left(\sigma^{\prime}-\sigma\right)}
+=1+\sideset{}{'}\sum \me^{ \mi n \left(\sigma^{\prime}-\sigma\right)}
+\]
+后一项变成
+\begin{align*}
+&\quad -\frac{\mi}{\ell} {\sum}^\prime \frac{1}{n} \exp \left(-\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{n \pi \sigma}{\ell}(-n)  \exp \left(+\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{-n \pi \sigma^\prime}{\ell}\\
+&=\frac{\mi}{\ell} {\sum}^\prime \cos\frac{n \pi \sigma}{\ell} \cos \frac{n \pi \sigma^{\prime}}{\ell} \\
+&=\frac{\mi}{ 4\ell}  {\sum}^\prime \Bigl[\me^{\mi n \pi(\sigma+\sigma^{\prime})/\ell}+\me^{-\mi n \pi(\sigma+\sigma^{\prime})/\ell}+ \me^{\mi n \pi(\sigma-\sigma^{\prime})/\ell}+\me^{-\mi n \pi(\sigma-\sigma^{\prime})/\ell}\Bigr]\\
+&=\frac{\mi}{2\ell} \Bigl( 2\pi\delta\bigl(\pi(\sigma+\sigma^{\prime})/\ell\bigr)-1+2\pi\delta\bigl(\pi(\sigma-\sigma^{\prime})/\ell\bigr)-1 \Bigr) \\
+&=-\frac{\mi}{\ell}+\frac{\mi \pi}{ \ell} \delta\bigl(\pi(\sigma-\sigma^{\prime})/\ell\bigr) 
+=-\frac{\mi}{\ell}+\mi \delta(\sigma-\sigma^{\prime})
+\end{align*}
+注意$\delta(\sigma-\sigma^\prime)=\delta(\sigma^\prime-\sigma)$, 给出2倍；且$\sigma,\sigma^\prime>0$, 使得$\delta\bigl(\pi(\sigma+\sigma^{\prime})/\ell\bigr)=0$. 再由$[x^{i}, p^{i}]=\mi$, 可得
+$$\left[X^{i} , \Pi^{i}\right]=\mi \delta(\sigma-\sigma^{\prime})$$ 
+证毕. 
+\end{proof}
+\noindent 对于每个$m$和$i$, 模式(mode)满足谐振子代数
+\begin{equation}
+\alpha_{m}^{i} \sim m^{1 / 2} a, \quad \alpha_{-m}^{i} \sim m^{1 / 2} a^{\dagger}, \quad m>0
+\end{equation}
+其中$[a,a^\dagger]=1$.
+态$|0;k \rangle$(其中$k=(k^+,k^i)$)被下降算符湮灭, 是质心动量的本征态：
+\begin{subequations}
+\begin{align}
+p^{+}|0 ; k\rangle&=k^{+}|0 ; k\rangle, \quad p^{i}|0 ; k\rangle=k^{i}|0 ; k\rangle \\
+\alpha_{m}^{i}|0 ; k\rangle&=0, \quad m>0
+\end{align}
+\end{subequations}
+一般的态用上升算符作用在$|0;k \rangle$得到：
+\begin{equation}
+|N ; k\rangle=\left[\prod_{i=2}^{D-1} \prod_{n=1}^{\infty} \frac{\left(\alpha_{-n}^{i}\right)^{N_{i n}}}{\left(n^{N_{i n}} N_{i n} !\right)^{1 / 2}}\right]|0 ; k\rangle\label{general-state}
+\end{equation}
+独立的态可被质心动量$k^+$以及$k^i$ 以及占有数$N_{in}$ 所标记. 质心动量正是点粒子自由度. 而振子代表无限多个内部自由度. 以时空的观点来看, 每个占有数的选择对应不同的粒子态或自旋. 态(\ref{general-state})构成单个开弦的Hilbert空间$\mathscr{H}$. 特别地, 态$|0;0 \rangle$动量为零单个弦的基态, 而不是无弦真空态. 我们称后者为$|\text{vacuum} \rangle$. 出现在它上面的各种算符不能产生或消灭弦, 而只能作用在单个弦的态空间上. $n$-弦Hilbert空间$\mathscr{H}_n$由$n$对空间(\ref{general-state})的乘积构成；波函数必须是对称的, 这是因为所有这些态是整数自旋(将证). 在自由极限下, 弦论的整个Hilbert空间为
+\begin{equation}
+\mathscr{H}=\lvert \text{vacuum}\rangle \oplus \mathscr{H}_{1} \oplus \mathscr{H}_{2} \oplus \ldots
+\end{equation}
+将(\ref{1.3.22})代入(\ref{1.3.19}), 给出
+\begin{equation}
+H=\frac{p^{i} p^{i}}{2 p^{+}}+\frac{1}{2 p^{+} \alpha^{\prime}}\left(\sum_{n=1}^{\infty} \alpha_{-n}^{i} \alpha_{n}^{i}+A\right)
+\end{equation}
+\begin{proof}
+    首先将弦哈密顿量\eqref{1.3.19}拆成两部分:
+\begin{align*}
+    H_{\Pi}=\frac{\ell}{2 p^+} \int_{0}^{\ell} \dif \sigma \: \Pi^{i} \Pi^{i}\:, \quad 
+    H_{X}=\frac{\ell}{2p^{+}(2 \pi \alpha^\prime)^{2} } \int_{0}^{\ell} \dif \sigma \:\partial_{\sigma} X^{i} \partial_{\sigma} X^{i} \:.
+\end{align*}  
+利用\eqref{1.a}可以得到
+\begin{align*}
+H_\Pi&=\frac{\ell}{2 p^+} \int_{0}^{\ell} \dif \sigma \:
+\Biggl( \frac{p^{i} p^{i}}{\ell^{2}}
++\frac{1}{2 \alpha^\prime \ell^2} \sideset{}{'}\sum_{n,m} \alpha_{n}^{i} \alpha_{m}^{i}\exp\Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr)  \cos \frac{n \pi \sigma}{\ell} \cos \frac{m\pi \sigma}{\ell}  \\
+&\qquad \qquad\qquad  +\frac{2p^{i}}{\left(2 \alpha^{\prime}\right)^{1 / 2 } \ell^{2}} \sideset{}{'}\sum \alpha_{n}^{i} \exp \left(-\frac{\pi \mi n c \tau}{\ell}\right) \cos \frac{n \pi \sigma}{\ell} \Biggr) \\
+&=\frac{p^{i}p^{i}}{2p^{+}}+\frac{1}{4p^{+}\alpha'}\sideset{}{'}\sum_{n,m} \alpha_{n}^{i} \alpha_{m}^{i}\exp\Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr)\bigl(\delta_{n,m}+\delta_{n,-m}\bigr)/2
+\end{align*}
+利用\eqref{1.3.22}可得
+\begin{align*}
+\partial_\sigma X^{i} =-\frac{\mi\left(2 \alpha^{\prime}\right)^{1 / 2} \pi}{\ell} \sideset{}{'}\sum \alpha_{n}^{i} \exp \Bigl(-\frac{\pi \mi n c \tau}{\ell}\Bigr) \sin \frac{n \pi \sigma}{\ell} \:,
+\end{align*}
+那么
+\begin{align*}
+H_X &=\frac{\ell}{2p^{+}(2 \pi \alpha^\prime)^{2} } \frac{-2 \alpha^\prime \pi^2}{\ell^2} \int_{0}^{\ell} \dif \sigma \sideset{}{'}\sum _{n,m} \alpha_{n}^{i}\alpha_{m}^{i} 
+\exp \Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr) \sin \frac{n \pi \sigma}{l}\sin \frac{m \pi \sigma}{\ell} \\
+&=-\frac{1}{4p^{+}\alpha^\prime }  \sideset{}{'}\sum _{n,m} \alpha_{n}^{i}\alpha_{m}^{i} 
+\exp \Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr) \bigl(\delta_{n,m}-\delta_{n,-m}\bigr)/2
+\end{align*}
+所以
+\begin{align*}
+    H&=H_{\Pi}+H_{X}=\frac{p^{i}p^{i}}{2p^{+}} +\frac{1}{4p^{+}\alpha'}\sideset{}{'}\sum_{n,m} \alpha_{n}^{i} \alpha_{m}^{i}\exp\Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr)\delta_{n,-m} \\
+    &=\frac{p^{i}p^{i}}{2p^{+}} +\frac{1}{4p^{+}\alpha'}\sideset{}{'}\sum_{n} \alpha_{n}^{i} \alpha_{-n}^{i}
+\end{align*}
+而
+\[
+\sum_{n} \alpha_{n}^{i} \alpha_{-n}^{i}=\sum_{n=-1}^{-\infty} \alpha_{n}^{i} \alpha_{-n}^{i}+\sum_{n=1}^{\infty} \alpha_{n}^{i} \alpha_{-n}^{i}=2 \sum_{n=1}^{\infty} \alpha_{-n}^{i} \alpha_{n}^{i}+(D-2)\sum_{n=1}^{\infty} n
+\]
+因此$A=(D-2)\sum_{n=1}^{\infty}n/2=(D-2)\zeta(-1)/2$. 证毕.
+\end{proof}
+\noindent 在这个$H$中, 算符的次序是反常的. 我们已将下降算符放在右边, 上升算符放在左边. 常数$A$来源于对易子. 在光锥量子化的细致处理中, 常数的决定方法如下: 光锥规范的选择阻碍了理论的Lorentz不变性. 通过寻找生成Lorentz变换的算符$M^{\mu\nu}$, 并验证其与$p^\mu$以及其他算符是否有正确的代数, 仅有一种情况是符合的, 即$A=-1$. 相对应的时空维数$D=26$.
+
+在光锥量子化时, 我们不希望花太多时间在上面. 我们将用共形规范方法获得$A,D$的值. 它将告诉我们为什么在光锥方法中错误的$A$和$D$会失去Lorentz不变性. 
+
+首先, 我们认为哈密顿量中的算符序列常数源于对每个振子模的零点能的求和. 
+对于像$X^\mu$的玻色场,  则是$\omega/2$. 而$\frac{1}{2} \omega\left(a a^{\dagger}+a^{\dagger} a\right)$和$\omega\left(a^{\dagger} a+\frac{1}{2}\right)$是等价的. 在$H$中
+\begin{equation}
+A=\frac{D-2}{2} \sum_{n=1}^{\infty} n
+\end{equation}
+$D-2$来自对横向的求和. 这个零点能发散. 利用重整化的手段
+\begin{equation}
+\sum_{n=1}^{\infty} n \rightarrow-\frac{1}{12}
+\end{equation}
+为了得到这个, 插入光滑截断因子
+\begin{equation}
+\exp \left(-\epsilon \gamma_{\sigma \sigma}^{-1 / 2}\left|k_{\sigma}\right|\right)
+\end{equation}
+其中$k_\sigma=n\pi/\ell$. 因子$\gamma_{\sigma\sigma}^{-1/2}$是为了在$\sigma$ 再参量化下不变. 
+\begin{equation}
+\begin{aligned}
+A & \rightarrow \frac{D-2}{2} \sum_{n=1}^{\infty} n \exp \left[-\epsilon n\left(\pi / 2 p^{+} \alpha^{\prime} \ell\right)^{1 / 2}\right] \\
+&=\frac{D-2}{2}\left(\frac{2 \ell p^{+} \alpha^{\prime}}{\epsilon^{2} \pi}-\frac{1}{12}+O(\epsilon)\right)
+\end{aligned}
+\end{equation}
+截断的第一项正比于弦长$\ell$, 可被正比于$\int \dif^2\sigma(-\gamma)^{1/2}$的作用量中的抵消项抵消. 事实上Weyl不变性要求它被抵消, 仅留下截断无关的第二项
+\begin{equation}
+A=\frac{2-D}{24}
+\end{equation}
+有限的残余量是Casimir能量的例子. 这源于弦长是有限的. 对于点粒子$p^-=H$, 所以
+\begin{equation}
+m^{2}=2 p^{+} H-p^{i} p^{i}=\frac{1}{\alpha^{\prime}}\left(N+\frac{2-D}{24}\right)
+\end{equation}
+其中$N$是能级
+\begin{equation}
+N=\sum_{i=2}^{D-1} \sum_{n=1}^{\infty} n N_{i n}
+\end{equation}
+每个态的质量以激发能级的形式决定. 
+看一些轻弦态. 最轻的是
+\begin{equation}
+|0 ; k\rangle, \quad m^{2}=\frac{2-D}{24 \alpha^{\prime}}
+\end{equation}
+如果$D>2,m^2$为负, 这个态是快子. 在场论中, 标量场势能是$\frac{1}{2}m^2\phi^2$, 所以负的质量平方意味着``无弦''真空实际上是不稳定的, 类似于自发对称性破缺中的对称态. 玻色弦是否有任何稳定的真空是个复杂的问题, 答案依旧是不清楚的. 对于超弦, 则有``无快子''弦论. 我们将继续使用玻色弦为模型发展弦技巧, 而忽视这个不稳定. 
+
+弦的最低激发态是激发$n=1$的模$1$次
+\begin{equation}
+\alpha_{-1}^{i}|0 ; k\rangle, \quad m^{2}=\frac{26-D}{24 \alpha^{\prime}}
+\end{equation}
+Lorentz不变性对$D$的要求如下. 对于无质量粒子和有质量粒子, 自旋的分析是不同的. 对于有质量粒子, 在静系下$p^\mu=(m,0,\cdots,0)$. 那么内部态构成空间旋转群$SO(D-1)$的一个表示. 对于无质量粒子, 没有静系, 选择系为$p^\mu=(E,E,0,\cdots,0)$. 那么$SO(D-2)$作用在横向上使$p^\mu$不变, 同样内部态构成群表示. 对于$D=4$, 有质量粒子被自旋$j$标记, 即$SO(3)$表示, 所以有$2j-1$个态. 无质量粒子由螺旋度$\lambda$标记, 是在$SO(2)$的单个生成元下的本征态. Lorentz不变仅要求这一个态, 但$\mathsf{CPT}$对称性令$\lambda$取$-\lambda$. 
+在$D$维, 一个有质量粒子有D-1个自旋态, 而一个无质量粒子有$D-2$个态. 在第一个能级我们仅发现$D-2$个态$\alpha_{-1}^{i}|0 ; k\rangle$, 所以是无质量的. 
+\begin{equation}
+A=-1,\quad D=26
+\end{equation}
+这是突出且重要的结果. 仅当时空维数$D=26$, 频谱是Lorentz不变的. 经典理论对于任何$D$都是Lorentz不变的. 但有一个反常, 除了$D=26$, 量子化不保护Lorentz不变性.
+
+光锥量子化挑出两个方向, 留下$SO(D-2)$作用在横向上. 
+对于横向, 自旋生成元是
+\begin{equation}
+S^{i j}=-\mi \sum_{n=1}^{\infty} \frac{1}{n}(\alpha_{-n}^{i} \alpha_{n}^{j}-\alpha_{-n}^{j} \alpha_{n}^{i})
+\end{equation}
+它关于$i,j$反对称, 和Lorentz不变性一道禁止了无质量态的零点能常数. 
+\begin{proof}
+$S_{ij}$的定义是 $S_{ij}= \int_{0}^{\ell}\dif\sigma\: X^{i}\Pi^{j}-X^{j}\Pi^{i}$. 注意此时$p_{i}=0$, 所以
+\begin{equation*}
+    X^{i} \Pi^{j}-X^{j}\Pi^{i}=\frac{\mi}{\ell} \sideset{}{'}\sum_{n, m} \frac{1}{n} \alpha_{n}^{i} \alpha_{m}^{j} \exp \Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr) \cos \frac{n \pi \sigma}{\ell} \cos \frac{m \pi \sigma}{\ell} -(i\leftrightarrow j).
+\end{equation*}
+由此可以得出
+\begin{align*}
+    S_{ij}&=\mi\sideset{}{'}\sum_{n, m} \frac{1}{n} \alpha_{n}^{i} \alpha_{m}^{j} \exp \Bigl(-\frac{\pi \mi c \tau}{\ell}(n+m)\Bigr)\bigl(\delta_{n,m}+\delta_{n,-m}\bigr)/2-(i\leftrightarrow j) \\
+    &=\mi\sideset{}{'}\sum_{n} \frac{1}{n} \alpha_{n}^{i} \alpha_{-n}^{j}/2-(i\leftrightarrow j) 
+\end{align*}
+证毕.
+\end{proof}
+
+对于无质量粒子, 通过选择动量方向为量子化所选择的$1$方向, 整个$SO(D-2)$自旋对称性被凸显出来. 
+对于有质量粒子, 在光锥量子化的$SO(D-1)$对称性中, 仅有一个$SO(D-2)$子群是显然的. 但这依然是有用的. 
+在$SO(D-2)$作用在横向方向下, $SO(D-1)$的矢量表示破缺成一个不变量和一个$(D-2)$-矢量：
+\begin{equation}
+\mathbf{v}=\left(v^{1}, 0, \ldots, 0\right)+\left(0, v^{2}, \ldots, v^{D-1}\right)
+\end{equation}
+因而, 如果一个有质量粒子处在$SO(D-1)$的矢量表示中, 当我们考察其在$SO(D-2)$下的变换性质, 我们将看到一个标量和一个矢量. 弦的更高激发态是有质量的, 形成$SO(D-1)$的全表示. 
+在能级$N$, 给定自旋分量$S^{23}$的最大本征值是$N$, 是通过用$\alpha_{-1}^{2}+\mi \alpha_{-1}^{3}$作用$N$次得到的. 
+因而
+\begin{equation}
+S^{23} \leq 1+\alpha^{\prime} m^{2}
+\end{equation}
+不等式中的斜率称为Regge斜率. 介子共振服从这个形式的线性关系, 即$\alpha^{\prime} \sim(1 \mathrm{GeV})^{-2}$. 由于这个原因, 弦论最初在20世纪70年代是作为强作用的理论. 现在, 作为量子引力的理论, $\alpha^\prime$在$M_P^{-2}$阶, 有质量粒子的质量在$M_P$阶. 它是如此之大, 以至于在目前实验水平, 这些粒子仅出现在虚态中. 因此, 我们特别关心无质量弦谱. 
+多数已知粒子有质量, 但和$M_P$比如此小, 所以在一阶近似为零, 而由于小的对称性破缺变成非零. 
+
+\section{闭弦和非定向弦}%{1.4 Closed and unoriented strings}
+闭弦的光锥量子化与开弦十分类似. 再一次施加规范条件(\ref{1.3.8a})-(\ref{1.3.8c}). 在开弦下, 这些完全决定规范. 在闭弦下, 仍有一些额外的坐标自由度：
+\begin{equation}
+\sigma^{\prime}=\sigma+s(\tau) \bmod \ell
+\end{equation}
+因为$\sigma=0$可以选为弦上任意一点, 这个剩余自由度大部分可以被额外的规范条件所固定：
+\begin{equation}
+\gamma_{\tau \sigma}(\tau, 0)=0
+\end{equation}
+即$\sigma=0$的线与$\tau=C$ ($C$为常数)的线垂直. 除了一个整体平移外, 这完全决定了线$\sigma=0$. 因而, (1.3.8)与(1.4.2)除了$\sigma$的与$\tau$无关的平移外, 固定了所有的规范自由度. 
+\begin{equation}
+\sigma^{\prime}=\sigma+s \bmod \ell   \label{sigma-translation}
+\end{equation}
+现在的分析完全平行于开弦：拉格朗日量, 正则动量, 哈密顿量, 运动方程等. 运动方程的普遍周期解：
+\begin{equation}
+\begin{aligned}
+X^{i}(\tau, \sigma) &=x^{i}+\frac{p^{i}}{p^{+}} \tau+\mi\left(\frac{\alpha^{\prime}}{2}\right)^{1 / 2} \\
+& \times \sum_{n=-\infty , n \neq 0}^{\infty}\left\{\frac{\alpha_{n}^{i}}{n} \exp \left[-\frac{2 \pi \mi n(\sigma+c \tau)}{\ell}\right]+\frac{\tilde{\alpha}_{n}^{i}}{n} \exp \left[\frac{2 \pi \mi n(\sigma-c \tau)}{\ell}\right]\right\} \label{general-periodic-solution}
+\end{aligned}
+\end{equation}
+在闭弦中, 有两组独立的振荡解$\alpha_{n}^{i}, \tilde{\alpha}_{n}^{i}$, 分别对应沿弦向左和向右运动的波. 在开弦中, 端点处的边界条件将这些混在一起. 独立的自由度又一次是横向振荡及横向与纵向的质心变量：
+\begin{equation}
+\alpha_{n}^{i}, \tilde{\alpha}_{n}^{i}, x^{i}, p^{i}, x^{-}, p^{+}
+\end{equation}
+并有正则对易子
+\begin{subequations}
+\begin{align}
+\left[x^{-}, p^{+}\right]&=-\mi \\
+\left[x^{i}, p^{j}\right]&=\mi \delta^{i j} \\
+\left[\alpha_{m}^{i}, \alpha_{n}^{j}\right]&=m \delta^{i j} \delta_{m,-n} \\
+\left[\tilde{\alpha}_{m}^{i}, \tilde{\alpha}_{n}^{j}\right]&=m \delta^{i j} \delta_{m,-n} 
+\end{align}
+\end{subequations}
+从态$|0,0;k \rangle$开始, 其有质心动量$k^\mu$, 并被$m>0$的$\alpha_{n}^{i}, \tilde{\alpha}_{n}^{i}$湮灭. 一般态为
+\begin{equation}
+|N, \tilde{N} ; k\rangle=\left[
+    \prod_{i=2}^{D-1} \prod_{n=1}^{\infty} \frac{(\alpha_{-n}^{i})^{N_{i n}}(\tilde{\alpha}_{-n}^{i})^{\tilde{N}_{i n}}}{(n^{N_{i n}} N_{i n}! n^{\tilde{N}_{i n}} \tilde{N}_{i n}!)^{1 / 2}}
+\right] |0,0 ; k\rangle
+\end{equation}
+质量公式为
+\begin{equation}
+\begin{aligned}
+m^{2} &=2 p^{+} H-p^{i} p^{i} \\
+&=\frac{2}{\alpha^{\prime}}\left[\sum_{n=1}^{\infty}\left(\alpha_{-n}^{i} \alpha_{n}^{i}+\tilde{\alpha}_{-n}^{i} \tilde{\alpha}_{n}^{i}\right)+A+\tilde{A}\right] \\
+&=\frac{2}{\alpha^{\prime}}(N+\tilde{N}+A+\tilde{A})
+\end{aligned}
+\end{equation}
+我们将能级与零点能分为两部分: 向左和向右运动的. 对零点能求和给出：
+\begin{equation}
+A=\tilde{A}=\frac{2-D}{24}
+\end{equation}
+由于剩余规范自由度, 即(\ref{sigma-translation})的$\sigma$平移, 还有进一步约束. 生成$\sigma$ 平移的算符为
+\begin{equation}
+\begin{aligned}
+P &=-\int_{0}^{\ell} \dif \sigma \:\Pi^{i} \partial_{\sigma} X^{i} \\
+&=-\frac{2 \pi}{\ell}\left[\sum_{n=1}^{\infty}\left(\alpha_{-n}^{i} \alpha_{n}^{i}-\tilde{\alpha}_{-n}^{i} \tilde{\alpha}_{n}^{i}\right)+A-\tilde{A}\right] \\
+&=-\frac{2 \pi}{\ell}(N-\tilde{N})
+\end{aligned}
+\end{equation}
+态必须满足
+\begin{equation}
+N=\tilde{N}
+\end{equation}
+最轻的闭弦态
+\begin{equation}
+|0,0 ; k\rangle, \quad m^{2}=\frac{2-D}{6 \alpha^{\prime}}
+\end{equation}
+也是快子. 第一激发态
+\begin{equation}
+\alpha_{-1}^{i} \tilde{\alpha}_{-1}^{j}|0,0 ; k\rangle, \quad m^{2}=\frac{26-D}{6 \alpha^{\prime}} \label{1-excited-state}
+\end{equation}
+正如开弦, 这些态加起来不够$SO(D-1)$的完全表示, 所以能级必须是无质量
+\begin{equation}
+A=\tilde{A}=-1, \quad D=26
+\end{equation}
+态(\ref{1-excited-state})在$SO(D-2)$下像一个2阶张量变换. 这是一个可约表示. 它能分解成一个对称的无迹张量与反对称张量, 以及一个标量. 即任何一个张量$e^{ij}$可以分成：
+\begin{equation}
+e^{i j}=\frac{1}{2}\left(e^{i j}+e^{j i}-\frac{2}{D-2} \delta^{i j} e^{k k}\right)+\frac{1}{2}\left(e^{i j}-e^{j i}\right)+\frac{1}{D-2} \delta^{i j} e^{k k}
+\end{equation}
+这3个单独的项在旋转下不互相混合. \\
+\begin{remark}
+\begin{align*}
+    &(1.4.15)= 
+    \frac{1}{2}\left(\alpha_{-1}^{i} \tilde{\alpha}_{-1}^{j}+\tilde{\alpha}_{-1}^{j} \tilde{\alpha}_{-1}^{i}-\frac{2}{D-2} \delta^{i j} \alpha_{-1}^{k} \tilde{\alpha}_{-1}^{k}\right)\\
+    &\qquad\qquad+\frac{1}{2}\left(\alpha_{-1}^{i} \tilde{\alpha}_{-1}^{j}-\alpha_{-1}^{j} \tilde{\alpha}_{-1}^{i}\right)
+    +\frac{1}{D-2} \delta^{i j} \alpha_{-1}^{k} \tilde{\alpha}_{-1}^{k} 
+\end{align*}
+\end{remark}
+
+
+在任何能阶下, 除了$N=\tilde{N}$约束之外, $N_{in}$与$\tilde{N}_{in}$独立. 因此在$m^{2}=4(N-1)/\alpha^{\prime}$的闭弦频谱是两对开弦能级$m^{2}=(N-1) / \alpha^{\prime}$ 的乘积. 
+
+2维diff不变性从频谱中移除了两类简正模. 如果我们尝试在没有这个不变性的情况下构建协变理论, 我们将不得不把横向对易子(\ref{transverse-commutator})推广为
+\begin{equation}
+\left[\alpha_{m}^{\mu}, \alpha_{n}^{\nu}\right]=m \eta^{\mu \nu} \delta_{m,-n} \label{trans-commu-2}
+\end{equation}
+Lorentz不变性迫使类时振子有一负号（wrong-sign）对易子. 
+
+\begin{remark}
+    $\left[\alpha_{m}^{\mu}, \alpha_{n}^{\nu}\right]=m \eta^{\mu \nu} \delta_{m,-n}$, 所以$\left[\alpha_{m}^{0}, \alpha_{-m}^{0}\right]=-m$, 而
+$\alpha_{-m}^{0}={\alpha_{m}^{0}}^\dagger$. 因为$\langle 0|\alpha_{m}^{0} \alpha_{-m}^{0}| 0\rangle=-m\langle 0 \mid 0\rangle<0$, 所以$\alpha_{m}^{0}\vert 0\rangle$ 就是一个负范态.
+\end{remark}
+\noindent 有奇数次类时激发的态将会有一个负的范数. 这与量子力学不一致. 
+事实上, (\ref{trans-commu-2})的理论比我们所描述的弦论来得要早, 而后者是要求在物理过程中不能产生负范态的情况下被发现的. 对易子(\ref{trans-commu-2})诞生于弦论的协变量子化, 而坐标不变性作为约束出现, 用以消除负范态. 
+
+在开弦理论中无质量矢量的出现, 以及闭弦中无质量对称张量和反对称张量的出现是显著的. 普遍原理要求无质量矢量与一守恒流耦合, 因而理论有一规范不变性. 在所有基础弦论中, 这是我们无质量规范粒子的第一个例子. 实际上, 这个特殊的规范玻色子称为光子, 不是非常有趣, 因为规范群只是$U(1)$. 并且该理论中的所有粒子都是中性的. 在第6章我们将讨论开弦理论的一个简单推广, 在弦端点增加Chan–Paton自由度. 这将导出$U(n)$, $SO(n)$与$Sp(n)$规范群. 类似地, 无质量对称张量粒子必须与守恒对称张量源耦合. 唯一这样的源是能动量张量（在特殊情况下会有其他可能性, 以一种相容方式与其耦合要求这个理论有时空坐标不变性）. 因此无质量对称张量是引力子, 而广义相对论作为闭弦理论的一小部分被包含其中. 无质量反对称张量称为2-形式规范玻色子. 在3.7节, 我们将看到有一种定域时空对称性与其联系. 
+
+在4维中, 被2-方向和3-方向振子所激发获得的无质量弦态通过螺旋度$\lambda=S^{23}$来识别它们. 光子的$\lambda=1$, 引力子$\lambda=2$. 闭弦标量和反对称张量给出$\lambda=0$的态, 它们分别称为伸缩子与轴子. 
+
+我们以非定向弦论总结本节. 之前所讨论的都是定向弦论. 我们还没有考虑坐标变换
+\begin{equation}
+\sigma^{\prime}=\ell-\sigma, \quad \tau^{\prime}=\tau \label{unoriented-transformation}
+\end{equation}
+这改变了世界面的方向(手性). 这个对称性由世界面宇称算符$\Omega$ 生成. 进行(\ref{unoriented-transformation})两次, 给出恒等式, 因此$\Omega^2=1$, $\Omega$的本征值是$\pm 1$. 从模展开(\ref{1.3.22}),(\ref{general-periodic-solution})我们看到, 在开弦中
+\begin{equation}
+\Omega \alpha_{n}^{i} \Omega^{-1}=(-1)^{n} \alpha_{n}^{i}
+\end{equation}
+在闭弦中
+\begin{subequations}
+\begin{align}
+\Omega \alpha_{n}^{i} \Omega^{-1}&=\tilde{\alpha}_{n}^{i}\\
+\Omega \tilde{\alpha}_{n}^{i} \Omega^{-1}&=\alpha_{n}^{i}
+\end{align}
+\end{subequations}
+通过对于基态$|0;k\rangle,|0,0;k\rangle$ 固定$\Omega=+1$, 我们定义$\Omega$的相位.  稍后, 我们将看到这个选择是为了$\Omega$对于相互作用守恒. 于是
+\begin{subequations}
+\begin{align}
+\Omega|N ; k\rangle&=(-1)^{N}|N ; k\rangle \\
+\Omega|N, \tilde{N} ; k\rangle&=|\tilde{N}, N ; k\rangle.
+\end{align}
+\end{subequations}
+有一不矛盾的相互作用弦论, 即非定向弦论, 其中仅有$\Omega=+1$的态被保留下来. 专注于无质量态, 开弦光子有$\Omega=-1$,  因而在非定向理论中被禁止. 作用在闭弦中的无质量张量态, 宇称算符$\Omega$令$e^{ij}$变成$e^{ji}$. 所以引力子与伸缩子出现在非定向理论中, 而反对称张量则不是. 注意到开弦快子和闭弦快子都在非定向理论中存活, 我们不得不更加努力地移除它们. 
+
+再提另外两个在研究相互作用时会出现的约束: \\
+首先, 有可能在只有闭弦的情况下或者闭弦和开弦都有, 而不能只有开弦的情况得到不矛盾的理论. 闭弦总可以在开弦的散射中产生. \\
+第二, 定向或非定向开弦仅能与同类闭弦耦合. 我们列出可能的结合以及它们的无质量频谱. 设$G_{\mu\nu},B_{\mu\nu},\Phi,A_\mu$分别表示引力子, 反对称张量, 伸缩子, 光子. 那么
+\begin{enumerate}
+    \item 定向bosonic闭弦: $G_{\mu\nu},B_{\mu\nu},\Phi$.
+    \item 非定向bosonic闭弦: $G_{\mu\nu},\Phi$.
+    \item 定向bosonic闭弦和开弦: $G_{\mu\nu},B_{\mu\nu},\Phi,A_\mu$.
+    \item 非定向bosonic闭弦和开弦: $G_{\mu\nu},\Phi$ 
+\end{enumerate}
+所有的这些都有引力子, 伸缩子及快子. 无质量定向开弦将是$U(n)$规范玻色子, 而无质量非定向开弦将是$SO(n)$或$Sp(n)$规范玻色子. 

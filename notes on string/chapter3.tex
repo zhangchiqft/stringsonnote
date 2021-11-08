@@ -1,0 +1,1004 @@
+% \setcounter{section}{0}%更改chapter的计数器值
+% %\numberwithin{equation}{chapter}%公式计数器从属于节计数器
+% \numberwithin{equation}{section}%公式计数器从属于节计数器
+% %\numberwithin{figure}{section}%图计数器从属于节计数器
+% \setcounter{chapter}{2}
+
+\chapter{\texorpdfstring{Polyakov路径积分}{3 The Polyakov path integral}} \label{cha:3}
+
+我们现在用 Polyakov 路径积分和共形场论对弦论做一系统研究. 在介绍路径积分的图像后, 我们讨论规范固定, Weyl 反常与顶点算符, 
+之后我们将弦论推广至弯曲时空.
+
+\section{\texorpdfstring{世界面上的求和}{3.1 Sums over world-sheets}} \label{sec:3.2}
+Feynman 路径积分是表示量子论的一种方法, 并且它是描述弦论相互作用的一个非常自然的方法. 在路径积分量子化中, 振幅通过对初态和末态之间所有可能的历史求和获得. 每个历史被赋予权重
+\begin{equation}
+	\exp (\mi S_{\mathrm{cl}} / \hbar) \:, \label{3.1.1}
+\end{equation}
+其中$S_{\mathrm{cl}}$是给定历史的经典作用量. 因此, 对连接给定初始曲线与终末曲线的所有世界面求和将定义弦论中的振幅. 图\ref{Fig3.1}a 针对开弦, 图\ref{Fig3.1}b 针对闭弦. 对相对论点粒子的类似求和产生自由传播子.
+\vspace{-0.5cm}
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 680 374
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=500,natheight=240]{Fig3.1.jpg}
+\caption{(a) 拓扑为长带的的开弦世界面. 粗曲线是弦端点的世界线. (b) 拓扑为圆柱的闭弦世界面.}\label{Fig3.1}
+	\end{center}
+\end{figure}
+
+可以想象出弦产生相互作用的数个方法. 一种是连接相互作用, 两弦相交时的能量; 另一种是经由某种量子场的长程力. 然而, 我们在弦论中增加的相互作用不可能与对称性相容; 稍后我们将看到其中的原因. 与之相反, 唯一允许的相互作用已经隐含在世界面求和中. 例如考察图\ref{Fig3.2} 所示的世界面. 图\ref{Fig3.2}a看起来是对图\ref{Fig3.1}a中的开弦振幅的量子修正. 这个修正中包含一个有两个开弦的中间态. 图\ref{Fig3.2}b有三个外闭弦, 它代表一个弦衰变成两个弦. 从中看出这是在弦中引入相互作用的一种正确方式. 我们将看到这些相互作用产生了包含引力的相容理论, 它们有限且幺正.
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 741 390
+		%1px=0.75pt
+		\includegraphics[width=0.75\textwidth,natwidth=500,natheight=218]{Fig3.2.jpg}\\
+\caption{(a)开弦传播子的量子修正. (b) 一个闭弦衰变到两个闭弦. 虚线代表时间切片.}\label{Fig3.2}
+	\end{center}
+\end{figure}
+
+像图\ref{Fig3.3}那样在连续的几个时刻里考察图\ref{Fig3.2}b的过程是很有趣的.
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 510 279
+		%1px=0.75pt
+		\includegraphics[width=0.65\textwidth,natwidth=350,natheight=138]{Fig3.3.jpg}\\
+\caption{图\ref{Fig3.2}(b)中的数个连续切面. 箭头指明了弦的定向.}\label{Fig3.3}
+	\end{center}
+\end{figure}
+在闭弦理论中, 所有粒子作为弦的不同激发态获得. 而所有的相互作用(规范, 引力, Yukawa)源于图\ref{Fig3.3}的单个过程. 对于有开弦的理论, 存在几种额外可能发生的过程, 如图\ref{fig:3.4}所示. 在一给定时刻, 图\ref{Fig3.3}与图\ref{fig:3.4}发生在确定的时空点, 但这是一个错觉. 一个不同的切面(slicing)将显然的相互作用放在不同点上; 在时空中不存在可区分的点. 相互作用仅源于世界面的整体拓扑, 而世界面的定域性质在自由情况下是相同的. 正如导论中所讨论的, 这一点涂抹出来的相互作用截断了引力的短程发散. 
+\vspace{0.5cm}
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 783 471
+		%1px=0.75pt
+		\includegraphics[width=0.7\textwidth,natwidth=520,natheight=250]{fig:3.4.jpg}\\
+\caption{包含开弦的过程: (a) 开弦 $\leftrightarrow$ 开弦 $+$ 开弦; (b) 闭弦 $\leftrightarrow$ 开弦; (c) 开弦 $+$ 开弦 $\leftrightarrow$ 开弦 $+$ 开弦; (d) 开弦 $\leftrightarrow$ 开弦 $+$ 闭弦.}\label{fig:3.4}
+	\end{center}
+\end{figure}
+
+实际上还有几种不同的弦论, 依赖于我们在世界面求和中引入的拓扑. 注意到我们所画的世界面有两类边界, 源边界对应初态与末态的弦构型, 而端点边界对应开弦端点的世界线. 现在忽视源边界; 我们将在本章后面讨论源的细节. 所以在之后的讨论中, “边界”意味着端点边界. 那么有4种方式定义对世界面求和, 对应1.4节末尾所列的4种自由弦理论:
+\begin{enumerate}
+	\item 闭定向: 所有无边界的定向世界面; 
+	\item 闭非定向: 所有无边界的世界面; 
+	\item 闭加开定向: 有任意个边界的所有定向世界面; 
+	\item 闭加开非定向: 有任意个边界的所有世界面; 
+\end{enumerate} 
+
+
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 717 409
+		%1px=0.75pt
+		\includegraphics[width=0.65\textwidth,natwidth=500,natheight=230]{Fig3.5.jpg}\\
+\caption{2-开弦振幅的定向贡献(a)和非定向贡献(b).}\label{Fig3.5}
+	\end{center}
+\end{figure}
+
+我们在这里要详述两件事. 其一是非定向世界面内含物之间的连结以及1.4节所描述的$\Omega=+1$投影. 图\ref{Fig3.5}展示了计入开弦非定向理论的两个世界面. 图\ref{Fig3.5}(b)的世界面等价于沿着虚线剪断图\ref{Fig3.5}(a)的定向世界面. 我们用$0 \leq \sigma \leq \pi$参量化它, 并要求在剪断处的场满足
+\begin{equation}
+X_{\text {upper }}^{\mu}(\sigma)=X_{\text {lower }}^{\mu}(\pi-\sigma) \:. \label{3.1.2}
+\end{equation}
+这反过来等价于用算符$\Omega$作用在开弦态上. 将这两个平面赋予合适的权重加起来, 那么相当于插入算符$\frac{1}{2}(1+\Omega)$, 其投射到
+$\Omega=+1$的态上. 在对所有定向曲面与非定向曲面的求和中, 在所有中间态上插入投影算符, 将频谱约化至$\Omega=+1$部分.
+
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 740 280
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=520,natheight=190]{Fig3.6.jpg}\\
+\caption{(a) 圆环: 中间态是两个开弦. (b) 具有相同拓扑的圆柱: 中间态是一个闭弦.}\label{Fig3.6}
+	\end{center}
+\end{figure}
+
+其二, 之上的列表中没有计入只有开弦的理论. 我们来细致地解释下为什么是这种情况.
+考察一个拓扑为圆环的世界面, 如图\ref{Fig3.6}(a). 方便起见, 我们只画出了真空振幅, 但通过连上合适的源, 相同的讨论也适用于散射振幅. 从虚线中可以看出这是一个中间态有两个开弦的过程. 因而这类拓扑的世界面必须出现在有开弦的任何理论中. 在图\ref{Fig3.6}(b), 我们将同一拓扑画成圆柱, 并在单个闭弦的中间态上切开它. 因此, 即使我们只从闭弦出发, 对世界面的求和将必然地引入这样的过程——开弦的散射产生闭弦. 随着振幅的发散, 我们将细致地看到它是如何运作的.
+
+开弦理论中闭弦的需求可以从另一方面看到. 考察图\ref{fig:3.4} (a)和(b)中的相互作用, 但时间反演: 两个开弦合并成一个, 一个开弦变成闭弦. 在相互作用点附加它们是相同的, 两个端点合并为了有第一个相互作用而没有第二个. 将要求在弦的动力学上附加某些非定域约束; 这将确认是不相容的. 可以对图\ref{fig:3.4}(c)和(d)作同一讨论, 其中相互作用定域的是一对弦的重新连接, 因而, 如果任何开弦相互作用被允许了, 那么在开弦产生闭弦的同一过程也是允许的.
+
+\section{\texorpdfstring{Polyakov路径积分}{3.2 The Polyakov path integral}} \label{sec:3.2}
+
+我们现在开始研究对世界面的求和, 它表示为对Polyakov形式体系的场积分. 我们这里与第1章有个区别: 闵可夫斯基 度规 $\gamma_{ab}$ 被替换为特征为$(+,+)$的 Euclid 度规$g_{a b}(\sigma^{1}, \sigma^{2})$. 积分取遍所有的 Euclid 度规以及世界面在 闵可夫斯基 时空中的嵌入$X^{\mu}(\sigma^{1}, \sigma^{2})$: 
+\begin{equation}\label{3.2.1}
+\int[\dif X \dif g] \exp (-S) \:.
+\end{equation}
+Euclid作用量是
+\begin{equation}
+S=S_{X}+\lambda \chi \:, \label{3.2.2}
+\end{equation}
+其中
+\begin{subequations}\label{3.2.3}
+\begin{align}
+S_{X}&=\frac{1}{4 \pi \alpha^{\prime}} \int_{M} \dif^{2} \sigma \: g^{1 / 2} g^{a b} \partial_{a} X^{\mu} \partial_{b} X_{\mu} \:, \label{3.2.3a} \\
+\chi&=\frac{1}{4 \pi} \int_{M} \dif^{2} \sigma \: g^{1 / 2} R+\frac{1}{2 \pi} \int_{\partial M} \dif s\: k \:. \label{3.2.3b}
+\end{align}
+\end{subequations}
+这里$\dif s$是沿着边界的固有时, $k$是边界的测地线曲率 $k=\pm t^{a} n_{b} \nabla_{a} t^{b}$. \\
+\begin{remark}
+$t^a$ 是与边界相切的单位向量, 而$n^a$是指向外侧与$t^a$垂直的单位矢量, $+$号对应类时边界, $-$对应类空边界. 在这里边界总是类空的. 
+\end{remark}
+
+Euclid路径积分的优点是对度规的积分可以更好地定义. 我们所描述的拓扑非平庸世界面可以有非奇异的Euclid度规, 而闵可夫斯基度规不行. 我们将取Euclid理论(\ref{3.2.1})作为出发点. 我们将展示如何给它一个精准的定义并且它定义了相容时空理论. 然而, 我们将给出一个简要的形式讨论, 它等价于我们出发点闵可夫斯基理论. 
+
+我们从点粒子的例子出发, 其中路径积分
+\begin{equation}
+\int[\dif \eta \, \dif X] \exp \left[\frac{\mi}{2} \int \dif \tau\: \Bigl(\eta^{-1} \dot{X}^{\mu} \dot{X}_{\mu}-\eta m^{2}\Bigr)\right] \label{3.2.4}
+\end{equation}
+是振荡的. 对$\eta, X^\mu$ 的路径积分是普通积分的乘积, 因而我们可以像普通积分那样对围道变形. 如果我们取
+\begin{equation}
+\eta(\tau) \rightarrow e^{-i \theta} \eta(\tau)\:, \quad X^{0}(\tau) \rightarrow e^{-i \theta} X^{0}(\tau) \:, \label{3.2.5}
+\end{equation}
+对于无限小的$\theta$, 指数中的所有项要求有一负的实部, 使其收敛. 现在我们可以在场空间中旋转围道$\eta=-\mi e, X^{0}=-\mi X^{D}$ , 积分变成
+\begin{equation}
+\int[\dif e \, \dif X] \exp \Biggl[-\frac{1}{2} \int \dif \tau \: \Biggl(e^{-1} \sum_{\mu=1}^{D} \dot{X}^{\mu} \dot{X}^{\mu}+e m^{2}\Biggr)\Biggr] \:. \label{3.2.6}
+\end{equation}
+这是路径积分(\ref{3.2.1})的Euclid点粒子类比. 我们仅仅做了一个围道旋转, 所以Euclid路径积分给出与闵可夫斯基相同的振幅. 
+
+如果我们将度规写成四元基的形式$\gamma_{a b}=-e_{a}^{0} e_{b}^{0}+e_{a}^{1} e_{b}^{1}$, 并在$e_a^0$上做同一旋转, 那么相同的处理适用于Polyakov作用量. 
+这提供了闵可夫斯基路径积分与Euclid路径积分等效的一个形式证明. 通过显式的计算, 在光锥规范和共形规范下分别证明了它们有相同的振幅.
+在(\ref{3.2.3a})中我们留下了$X^0$的旋转, 这是为了强调时空的闵可夫斯基特性. 写成了$X^0$的形式, 运动方程与OPE是协变的, 度规为$\eta^{\mu\nu}$. 
+
+我们注意到在二维中, $\chi$定域地是全导数, 因而反依赖于世界面的拓扑——它是世界面的Euler数. 因而, $\me^{-\lambda \chi}$因子在路径积分中只影响世界面求和中不同拓扑的相对权重. 如果我们向世界面中增加额外的带, 就像我们从图\ref{Fig3.1}a到图\ref{Fig3.2}a中做的那样, Euler数减1, 路径积分被赋予额外的权重$\me^\lambda$. 由于增加一个带对应于发射并再吸收一个虚开弦, 从任意过程中发射一个开弦的振幅正比于$\me^{\lambda/2}$. 在任意世界面上增加一个把手将Euler数减2, 因而增加因子$\me^{2\lambda}$.  由于这对应发射和再吸收一个闭弦, 发射一个闭弦的振幅正比于$\me^\lambda$. 作用量中的Euler项因而控制着弦论中的耦合常数, 其中
+\begin{equation}\label{3.2.7}
+g_{\mathrm{o}}^{2} \sim g_{\mathrm{c}} \sim \me^{\lambda} \:.
+\end{equation}
+附带的, $\lambda$可以视为理论中的自由参量, 这与绪论中弦论没有这种参量的陈述矛盾. 这是一个关键点, 我们将在\ref{sec:3.7}节解决它.
+
+另一方面, 耦合的计数以一种简单的方式扩张到有弦源的世界面. 闭弦的源是封闭的圈, 开弦的源是有边界的线段. 方便起见, 我们将要求开弦源边界与端点边界在是世界面度规下成直角. 我们必须小心, 因为边界曲率在角处发散: Euler数是
+\begin{equation}
+\chi=\tilde{\chi}+\frac{1}{4} n_{\mathrm{c}} \:, \label{3.2.8}
+\end{equation}
+其中 仅包括光滑边界部分上的积分. $n_\mathrm{c}$是角的数目. 路径积分正确的权重是
+\begin{equation}\label{3.2.9}
+\exp (-\lambda \tilde{\chi})=\exp (-\lambda \chi+\lambda n_{\mathrm{c}} / 4) \:. 
+\end{equation}
+这源于幺正性: 如果我们剪开世界面, $\lambda$相关性必须不变. 对于权重(\ref{3.2.9})正是这种情况,
+这是因为在$\tilde{\chi}$中的面积分在边缘处抵消了. 增加一个闭弦源相当于在世界面上剪了个洞, 并将$\chi$减1. 
+增加开弦源使$\chi$不变但$n_c$加2. 因而, 我们得到了发射闭弦或开弦的振幅, 与\eqref{3.2.7}相同. 
+
+\section{\texorpdfstring{规范固定}{3.3 Gauge fixing}} \label{sec:3.3}
+
+路径积分\eqref{3.2.1}不是完全正确的, 它包含一个庞大的重复计数. 这是因为构型$(X, g)$与 $(X^{\prime}, g^{\prime})$若通过diff $\times$ Weyl对称性相关, 则它们代表同一物理构型. 事实上, 我们需要除以定域对称群的体积,
+\begin{equation}\label{3.3.1}
+\int \frac{[\dif X\, \dif g]}{V_{\text {diff } \times \text { Weyl }}} \exp (-S) \equiv Z \:.
+\end{equation}
+我们将通过规范固定实现这一点, 对穿过每一规范等价类一个切片积分, 并通过 Faddeev--Popov 方法获得切片上的正确测度.
+
+
+在第\ref{cha:1}章, 我们附加了光锥规范.  这由于某些目的是有用的, 但隐藏了理论的某些对称性, 所以我们现在做另一选择. 注意到度规是对称的, 有三个独立分量, 并存在三个规范函数, 两个坐标与度规的定域缩放. 因此恰好存在足够多的规范自由度以消除度规上的积分, 将其固定在某个特定的泛函形式, 我们称其为基准度规
+\begin{equation}
+g_{a b}(\sigma) \rightarrow \hat{g}_{a b}(\sigma) \:. \label{3.3.2}
+\end{equation}
+一个简单的选择是平坦度规或\emph{单位规范}度规
+\begin{equation}\label{3.3.3}
+\hat{g}_{a b}(\sigma)=\delta_{a b} \:. 
+\end{equation}
+有时希望单独考虑diff群的效应. 我们可以将任意度规变成单位形式的一个Weyl变换. 这是\emph{共形规范}
+\begin{equation}
+\hat{g}_{a b}(\sigma)=\exp [2 \omega(\sigma)] \delta_{a b} \:. \label{3.3.4}
+\end{equation}
+
+这样, 任何度规至少可以定域地变成平坦形式. 首先, 做一Weyl变换以使里奇标量为零. 里奇标量的Weyl变换
+\begin{equation}\label{3.3.5}
+g^{\prime 1 / 2} R^{\prime}=g^{1 / 2}\left(R-2 \nabla^{2} \omega\right) \:.
+\end{equation}
+令$R^{\prime}=0$ 要求解 $2 \nabla^{2} \omega=R$. 这总是可能的, 类似于静电学中的讨论. 在二维中, 里奇标量为零暗示着黎曼张量为零, 这是因为黎曼张量的对称性暗示
+\begin{equation}
+R_{a b c d}=\frac{1}{2}(g_{a c} g_{b d}-g_{a d} g_{b c}) R  \:. \label{3.3.6}
+\end{equation}
+所以度规是平坦的, 且坐标等价于单位度规(\ref{3.2.3}).
+
+在这里像第\ref{cha:2}章中那样引入复坐标$z=\sigma^{1}+\mi \sigma^{2}$, 平坦度规$\dif s^{2}=\dif z \dif \bar{z}$. 考察一个坐标变换, 使得$z^\prime$是z的全纯函数
+\begin{equation}\label{3.3.7}
+z^{\prime} \equiv \sigma^{\prime 1}+\mi \sigma^{\prime 2}=f(z) \:, 
+\end{equation}
+结合一个Weyl变换. 新度规是
+\begin{equation}
+\dif s^{\prime 2}=\exp (2 \omega)\lvert\partial_{z} f\rvert^{-2} \dif z^{\prime} \dif \bar{z}^{\prime} \:. \label{3.3.8}
+\end{equation}
+那么对于
+\begin{equation}\label{3.3.9}
+\omega=\ln \lvert\partial_{z} f\rvert \:,
+\end{equation}
+这个度规是不变的. %因而, 我们还存在一个额外的自由度. diff$\:\times\:$Weyl变换.
+
+
+当我们考察整个世界面时, 这种额外自由度大多会被消除. 这里存在两个问题. 其一, 在Noether定理和Ward恒等式的讨论中, 我们在\eqref{2.3.10}下面仔细强调了这些结果依赖于定域定义在世界面上的对称性. 变换(\ref{3.3.7})和(\ref{3.3.9})因而会给出守恒流与Ward等式. 这是第\ref{cha:2}章研究的共形不变性. 我们看到这源于保持单位度规不变的 diff$\:\times\:$Weyl子群.
+
+第二个问题是当我们确实考察全世界面时, 我们对度规和规范自由度的计数发生了什么. 我们将在第\ref{cha:5}章考虑它们.
+
+\subsection*{Faddeev-Popov行列式}
+
+在固定度规之后, 泛函积分取遍由$X^\mu$参量化的切片. 为了获得正确的测度, 我们使用Faddeev-Popov手续. 这个方法与杨-米尔斯理论中获得规范固定测度的方法相同. 图\ref{Fig:3.7}阐明了这个方法.
+\begin{figure}
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 654 372
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=490,natheight=279]{Fig3.7.jpg}\\
+\caption{Faddeev–Popov手续的图形表示. 规范轨道是规范等价构型的族. 对整个场空间积分并除以轨道体积等价于在一个与所有轨道都相交一次的切片上积分.}\label{Fig:3.7}
+	\end{center}
+\end{figure}
+
+
+令$\zeta$ 为坐标变换与Weyl变换的组合
+\begin{equation}
+\zeta: g \rightarrow g^{\zeta}, \quad g_{a b}^{\zeta}(\sigma^{\prime}) = 
+\exp [2 \omega(\sigma)] \frac{\partial \sigma^{c}}{\partial \sigma^{\prime a}} \frac{\partial \sigma^{d}}{\partial \sigma^{b}} g_{c d}(\sigma) \:. \label{3.3.10}
+\end{equation}
+根据标准程序, 定义Faddeev-Popov测度$\Delta_{\mathrm{FP}}$
+\begin{equation}\label{3.3.11}
+1=\Delta_{\mathrm{FP}}(g) \int[\dif \zeta] \: \delta(g-\hat{g}^{\zeta}) \:, 
+\end{equation}
+其中$\hat{g}_{a b}$ 是基准度规. 在(\ref{3.3.11})中, $[\dif \zeta]$是diff $\times$ Weyl群上的规范不变测度. $\delta$-函数实际上是 $\delta$-泛函, 
+要求在每一点$g_{a b}(\sigma)=\hat{g}_{a b}^{\zeta}(\sigma)$. 
+
+将(\ref{3.3.11})代入泛函积分(\ref{3.3.1})
+\begin{equation}
+Z[\hat{g}]=\int \frac{[\dif \zeta \,\dif X \,\dif g]}{V_{\text {diff } \times \text { Weyl }}}  \Delta_{\mathrm{FP}}(g) \delta(g-\hat{g}^{\zeta}) \exp (-S[X, g]) \:. \label{3.3.12}
+\end{equation}
+进行对$g_{ab}$的积分, 并重新命名积分变量$X \to X^{\zeta}$, 得到
+\begin{equation}
+Z[\hat{g}]=\int \frac{[\dif \zeta\, \dif X^{\zeta}]}{V_{\text {diff } \times \text { Weyl }}} \Delta_{\mathrm{FP}}(\hat{g}^{\zeta}) \exp (-S[X^{\zeta}, \hat{g}^{\zeta}]) \:. \label{3.3.13}
+\end{equation}
+现在利用$\Delta_{\mathrm{FP}}$的规范不变性\footnote{$\Delta_{\mathrm{FP}}$的规范不变性: 
+\begin{align*}
+\Delta_{\mathrm{FP}}(g^{\zeta})^{-1} &=\int[\dif \zeta^{\prime}] \: \delta(g^{\zeta}-\hat{g}^{\zeta^{\prime}})
+=\int[\dif \zeta^{\prime}]\: \delta(g-\hat{g}^{\zeta^{-1} \cdot \zeta^{\prime}}) \\
+&=\int[\dif \zeta^{\prime \prime}] \: \delta(g-\hat{g}^{\zeta^{\prime \prime}})=\Delta_{\mathrm{FP}}(g)^{-1} \:,
+\end{align*}
+其中$\zeta^{\prime \prime}=\zeta^{-1} \cdot \zeta^{\prime} $.}, 泛函积分测度$[\dif X]$的不变性, 以及作用量的规范不变性, 得: 
+\begin{equation}
+Z[\hat{g}]=\int \frac{[\dif \zeta\, \dif X]}{V_{\text {diff } \times \text { Weyl }}} \Delta_{\mathrm{FP}}(\hat{g}) \exp (-S[X, \hat{g}]) \:. \label{3.3.14}
+\end{equation}
+最后, 被积函数中没有什么量依赖于$\zeta$, 所以$\zeta$的积分仅产生了规范群的体积并与分母抵消, 留下
+\begin{equation}
+Z[\hat{g}]=\int[\dif X] \: \Delta_{\mathrm{FP}}(\hat{g}) \exp (-S[X, \hat{g}]) \:. \label{3.3.15}
+\end{equation}
+因而$\Delta_{\mathrm{FP}}(\hat{g})$ 是切片上的正确测度.
+
+为了计算Faddeev-Popov测度的表达式(\ref{3.3.11}), 我们假定规范选择完美地固定了规范对称性, 使得对于精确的一个$\zeta$值, $\delta(g-\hat{g} ^\zeta)$非零; 而对于$\delta(g-\hat{g}^ \zeta)$这是一个等式. 正如前面提起的, 存在一个整体的小的错误匹配, 我们将在时间参与进来时处理它——它不影响世界面的定域性质. 对于接近于1的 $\zeta$, 我们可以展开
+\begin{align}
+\delta g_{a b} &=2 \delta \omega \,g_{a b}-\nabla_{a} \delta \sigma_{b}-\nabla_{b} \delta \sigma_{a} \nonumber \\
+&=(2 \delta \omega-\nabla_{c} \delta \sigma^{c}) g_{a b}-2(P_{1} \delta \sigma)_{a b} \:. \label{3.3.16}
+\end{align}
+其中$P_1$是使矢量成为无迹对称2-张量的微分算符
+\begin{equation}
+(P_{1} \delta \sigma)_{a b}=\frac{1}{2}(\nabla_{a} \delta \sigma_{b}+\nabla_{b} \delta \sigma_{a}-g_{a b} \nabla_{c} \delta \sigma^{c}) \:. \label{3.3.17}
+\end{equation}
+在1附近, 逆行列式(\ref{3.3.11})变成
+\begin{align}
+&\Delta_{\mathrm{FP}}(\hat{g})^{-1} \nonumber \\
+&\quad =\int[\dif \delta \omega \, \dif \delta \sigma]\: \delta\Bigl[-(2 \delta \omega-\hat{\nabla} \cdot \delta \sigma) \hat{g}+2 \hat{P}_{1} \delta \sigma\Bigr] \nonumber \\
+&\quad =\int[\dif \delta \omega \, \dif \beta\, \dif \delta \sigma] \: \exp \biggl\{2 \pi \mi \int \dif^{2} \sigma \: \hat{g}^{1 / 2} \beta^{a b}
+\Bigl[-(2 \delta \omega-\hat{\nabla} \cdot \delta \sigma) \hat{g}+2 \hat{P}_{1} \delta \sigma\Bigr]_{a b}\biggr\} \nonumber \\
+&\quad =\int[\dif \beta^{\prime}\, \dif \delta \sigma]\: \exp \biggl\{4 \pi \mi \int \dif^{2} \sigma \: \hat{g}^{1 / 2} \beta^{\prime a b}
+(\hat{P}_{1} \delta \sigma)_{a b}\biggr\} \:. \label{3.3.18}
+\end{align}
+微分算符上的帽子代表它包含基准度规$\hat{g}$. 在第二个等式中, 我们使用了泛函$\delta$函数的积分表示, 引入了对称张量场$\beta^{a b} $. 
+在第三个等式中我们积掉了$\delta \omega$, 它产生了一个$\delta$-泛函迫使 $\beta^{a b}$无迹; 那么泛函积分$[\dif \beta^{\prime}]$是对\emph{无迹}对称张量积分. 
+我们现在有了 $\Delta_{\mathrm{FP}}(\hat{g})^{-1}$ 作为对矢量场 $\delta \sigma^{a}$ 与无迹对称张量 $\beta^{\prime a b}$的泛函积分表示.
+
+通过将玻色场替换为相应的Grassmann\emph{鬼}场
+\begin{subequations} \label{3.3.19}
+\begin{align}
+\delta \sigma^{a} &\rightarrow c^{a} \:, \label{3.3.19a}\\
+\beta_{a b}^{\prime} & \rightarrow b_{a b} \:, \label{3.3.19b}
+\end{align}
+\end{subequations}
+我们可以转化路径积分, 其中$b^{a b}$像$\beta^{\prime a b}$一样是无迹的. 因而,
+\begin{equation}
+\Delta_{\mathrm{FP}}(\hat{g})=\int[\dif b\, \dif c] \: \exp (-S_{\mathrm{g}}) \:, \label{3.3.20}
+\end{equation}
+其中, 在场的一个方便的归一化下, 鬼场作用量是
+\begin{equation}\label{3.3.21}
+S_{\mathrm{g}}=\frac{1}{2 \pi} \int \dif^{2} \sigma \: \hat{g}^{1 / 2} b_{a b} \hat{\nabla}^{a} c^{b}=\frac{1}{2 \pi} \int \dif^{2} \sigma \hat{g}^{1 / 2} b_{a b}(\hat{P}_{1} c)^{a b} \:. 
+\end{equation}
+定域地在世界面上, Polyakov路径积分是
+\begin{equation}\label{3.3.22}
+Z[\hat{g}]=\int[\dif X\, \dif b\, \dif c]\: \exp (-S_{X}-S_{\mathrm{g}}) \:. 
+\end{equation}
+这个作用量是场的二次型, 所以我们可以以行列式的形式计算路径积分. 这个计算将在第\ref{cha:5}章进行更细致的描述; 这里的结果是
+\begin{equation}
+Z[\hat{g}]=(\operatorname{det} \hat{\nabla}^{2})^{-D / 2} \operatorname{det} \hat{P}_{1} \:, \label{3.3.23}
+\end{equation}
+第一个行列式来自于X积分, 而第二个来自于鬼场积分.
+
+在共形规范下, $\hat{g}_{a b}(\sigma)=\exp [2 \omega(\sigma)] \delta_{a b}$, 鬼场作用量(\ref{3.3.21})是
+\begin{align}
+S_{\mathrm{g}} &=\frac{1}{2 \pi} \int \dif^{2} z\:\Bigl(b_{z z} \nabla_{\bar{z}} c^{z}+b_{\bar{z} \bar{z}} \nabla_{z} c^{\bar{z}}\Bigr)  \nonumber \\
+&=\frac{1}{2 \pi} \int \dif^{2} z\:\Bigl(b_{z z} \partial_{\bar{z}} c^{z}+b_{\bar{z} \bar{z}} \partial_{z} c^{\bar{z}}\Bigr) \:. \label{3.3.24}
+\end{align}
+注意, $\omega(\sigma)$并没有出现在最终形式中.  这是因为若张量只有$z$指标, 那么它的协变$\bar{z}$导数将简化成简单导数, 反之亦然, 读者可以通过解出联络张量来验证这一点. 
+由于作用量\eqref{3.3.24}是Weyl不变的, 所以$b_{a b}$ 和 $c^{a}$ 在左Weyl变换下是中性的($b^{a b}$和 $c_{a}$则相反, 它们包含额外的度规因子). 由于共形变换是坐标变换\eqref{3.3.7} 和Weyl变换\eqref{3.3.9}的组合, 我们可以立即从张量指标中读出 $b_{a b}$ 与 $c^{a}$ 的共形变换: 这是 $(h_{b}, h_{c})=(2,-1)$的$bc$ CFT 与 $(\tilde{h}_{b}, \tilde{h}_{c})=(2,-1)$的$\tilde{b} \tilde{c}$ CFT .
+
+我们推导规范固定路径积分的方式有时被称为“启发”式推导. Polyakov泛函积分(\ref{3.3.1})由于庞大的规范重复计数不是合理定义的. 另一方面, 规范固定泛函(\ref{3.3.22})的定义是相当好的, 并可以清楚地计算出来. 由于实用的原因, 我们或许应该视规范固定的形式为出发点, 而规范不变的那个则给出了直观解释. 在规范固定形式中, 规范对称性的实质内容表示为BRST不变, 我们将在下一章着手处理. 
+
+在开弦中, 我们也要考虑包含边界线段的部分. 将泛函积分视为固定区域上场的积分是方便的, 所以diff不变性被限制为使边界变换到自身的坐标变换. 因而变分$\delta \sigma^{a}$ 有一零法向分量
+\begin{equation}
+n_{a} \delta \sigma^{a}=0 \:. \label{3.3.25}
+\end{equation}
+这个边界条件被相应的鬼场
+\begin{equation}
+n_{a} c^{a}=0 \:, \label{3.3.26}
+\end{equation}
+所继承, 所以$c^{a}$正比于切向矢量$t^{a}$. 那么运动方程给$b_{a b}$提供了一个边界条件. 它们有表面项
+\begin{equation}
+\int_{\partial M} \dif s\: n^{a} b_{a b} \delta c^{b}=0 \:. \label{3.3.27}
+\end{equation}
+加上$c^a$上的边界条件. 这暗示了
+\begin{equation}
+n_{a} t_{b} b^{a b}=0 \:. \label{3.3.28}
+\end{equation}
+这些是我们在\ref{sec:2.7}节所用的边界条件.
+
+\section{\texorpdfstring{Weyl反常}{3.4 The Weyl anomaly}} \label{sec:3.4}
+
+弦论的关键特征之一仅在满足特定条件的时空背景下才是自洽的. 对于平坦时空中的玻色弦论, 条件是$D=26$. 
+它首次是从散射振幅的一个病态中发现的. 在光锥分析中, 
+它来自于 Lorentz 对称性的缺失. 这一约束的潜在原因是定域世界面对称性中的一个\emph{反常}. 在我们现在的体系中, 反常是在 Weyl 对称性中: $T^{a}{}_{a}$在经典的意义上为零, 
+但在量子理论中不是. 
+
+整体Weyl变换, $\omega(\sigma)=$ 常数, 等价于长度的总体缩放. 几个四维中的场论在这种缩放下是不变的. 它们包括$\phi^4$无质量标量场论以及非阿贝尔规范场论. 标度不变性是显然的. 这是因为Lagrangian中只包含无量纲参量——每个情况下的耦合常数是无量纲的. 然而, 由于量子理论中的发散, 在每个理论中存在一个非零的重整化群$\beta$函数, 暗示了有效耦合常数实际上是长度标度的函数. 相应的, 能动量张量的迹在经典理论中为零, 但把量子效应考虑进去之后, 迹不为零, 并正比于$\beta$函数. 
+
+在上一节, 我们忽略了反常的可能性. 我们需要验证: 规范固的定路径积分$Z[g]$是否真的独立于基准度规的选择, 
+\begin{equation}
+Z[g^{\zeta}]=Z[g]\:? \label{3.4.1}
+\end{equation}
+在\ref{sec:4.2}节, 我们将把这个推广至更一般的规范变换. 方便起见, 此后省略$g$上的帽子. 我们也对有额外插入的路径积分感兴趣
+\begin{equation}
+\langle\cdots\rangle_{g} \equiv \int[\dif X\, \dif b \, \dif c] \:\exp (-S[X, b, c, g]) \cdots \:. \label{3.4.2}
+\end{equation}
+那么, 我们要求
+\begin{equation}
+\langle\cdots\rangle_{g ^\zeta}=\langle\cdots\rangle_{g} \:. \label{3.4.3}
+\end{equation}
+当前我们并不对插入的细节感兴趣——那将是下2节的主题——我们将注意力限制在“$\cdots$”中的场位置附近$\zeta$为零的规范变换. 即, 我们想知道Weyl不变性作为算符方程是否成立.
+
+很容易保证量子理论中的diff不变性与Poincare不变性. 例如, 可以利用Pauli-Villars正规化子定义规范固定路径积分, 将这个路径积分除以一个有质量的正规化场. 有质量正规化子场可以以diff不变与Poincare不变的方式与度规耦合. 然而, 对于一个正规化子场$Y^\mu$, diff不变且Poincare不变的项$\mu^{2}\int \dif^{2} \sigma\: g^{1/2} Y^{\mu} Y_{\mu}$不是Weyl不变的. 任何Weyl变换可通过重复无限小变换而获得, 所以研究无限小变换就足够了.
+
+能动量张量$T^{\mu\nu}$是路径积分相对于度规的无穷小变分,
+\begin{equation}\label{3.4.4}
+\delta\langle\cdots\rangle_{g}=-\frac{1}{4 \pi} \int \dif^{2} \sigma \: g(\sigma)^{1 / 2} \delta g_{a b}(\sigma)\Bigl\langle T^{a b}(\sigma) \cdots\Bigr\rangle_{g}
+\end{equation}
+经典上, $T^{\mu\nu}$完全来自作用量的变分, 并且这与Noether定义一致
+\begin{equation}
+T^{a b}(\sigma) \stackrel{\text { classical }}{=} \frac{4 \pi}{g(\sigma)^{1 / 2}} \frac{\delta}{\delta g_{a b}(\sigma)} S \:. \label{3.4.5}
+\end{equation}
+在平坦世界面的极限下, 它也约化至早期的定义. 如果取$\delta g_{a b}$有坐标变换的形式, 路径积分的diff不变性暗示$T^{ab}$守恒.
+
+在下面的分析中, 我们将先忽略可能的边界项. 对于一个Weyl变换, $T^{ab}$的定义(\ref{3.4.4})意味着
+\begin{equation}\label{3.4.6}
+\delta_{\mathrm{W}}\langle\cdots\rangle_{g}=-\frac{1}{2 \pi} \int \dif^{2} \sigma\: g(\sigma)^{1 / 2} \delta \omega(\sigma)\langle T^{a}{}_{a}(\sigma) \cdots\rangle_{g} \:,
+\end{equation}
+所以在一般插入“$\cdots$”下, Weyl不变性可以表述为算符陈述: 能动量张量是无迹的
+\begin{equation}
+{T^a}_{a} \stackrel{?}{=} 0 \:. \label{3.4.7}
+\end{equation}
+经典作用量是Weyl不变的, 但在量子理论中, 由于我们还没发现一个完全规范不变的正规化子, 这个迹可能非零. 这个迹必须是diff不变且Weyl不变的, 因为我们保护了这些对称性, 它在平坦时空中为零, 因为我们从上一章知道了这个理论是共形平坦的. 这仅留下一种可能性: 
+\begin{equation}\label{3.4.8}
+T^{a}{}_{a}=a_{1} R \:,
+\end{equation}
+其中$a_{1}$为某个常数, $R$是世界面里奇标量. 由于量纲的原因, 带有两个导数或多个导数的项被禁止了. 在以世界面长度为单位时, $g_{ab}$和$X^\mu$都是无量纲的, 
+所以(\ref{3.4.8})中的常数$a_1$也是无量纲的. 带有多个导数的项将有一个系数, 这个系数的量纲是用来定义路径积分的截断长度量纲的正幂次, 所以在截断取为零的极限下为零.
+
+\subsection*{Weyl反常的计算}
+
+构建规范不变理论中可能的障碍已经退化至单个常数$a_1$. 事实上, 这个数正比于我们计算过的一个量——平坦世界面上CFT的\emph{中心荷}$c$. $a_1$和$c$均与能动量张量的两点函数有关, 尽管是不同的分量. 为了得到它们之间的精确关系, 我们将需要使用diff不变性. 
+
+在复坐标系下,
+\begin{equation}
+T_{z \bar{z}}=\frac{a_{1}}{2} g_{z \bar{z}} R \:. \label{3.4.9}
+\end{equation}
+取协变导数,
+\begin{equation}
+\nabla^{\bar{z}} T_{\bar{z} z}=\frac{a_{1}}{2} \nabla^{\bar{z}}(g_{z \bar{z}} R)=\frac{a_{1}}{2} \partial_{z} R \:, \label{3.4.10}
+\end{equation}
+其中我们使用了度规是协变导数这个性质. 那么通过$T_{ab}$的守恒,
+\begin{equation}\label{3.4.11}
+\nabla^{z} T_{z z}=-\nabla^{\bar{z}} T_{\bar{z} z}=-\frac{a_{1}}{2} \partial_{z} R \:.
+\end{equation}
+为了固定$a_1$, 我们比较左边和右边的Weyl变换. 右边的Weyl变换(\ref{3.3.5})是
+\begin{equation}\label{3.4.12}
+a_{1} \partial_{z} \nabla^{2} \delta \omega \approx 4 a_{1} \partial_{z}^{2} \partial_{\bar{z}} \delta \omega \:,
+\end{equation}
+其中我们在一个平坦的世界面附近展开. 为了得到$T_{zz}$上的Weyl变换, 我们首先使用共形变换\eqref{2.4.24},
+\begin{equation}
+\epsilon^{-1} \delta T_{z z}(z)=-\frac{c}{12} \partial_{z}^{3} v^{z}(z)-2 \partial_{z} v^{z}(z) T_{z z}(z)-v^{z}(z) \partial_{z} T_{z z}(z) \:. \label{3.4.13}
+\end{equation}
+从\ref{sec:3.3}节中的讨论, 这个共形变换由一个坐标变换 $\delta z=\epsilon v$ 和一个Weyl变换 $2 \delta \omega=\epsilon \partial v+\epsilon(\partial v)^{*}$构成. 变分中的后两项是张量的坐标变换, 所以至平坦空间的领头阶, Weyl变换是
+\begin{equation}
+\delta_{\mathrm{W}} T_{z z}=-\frac{c}{6} \partial_{z}^{2} \delta \omega \:. \label{3.4.14}
+\end{equation}
+用$\partial^{z}=2 \partial_{\bar{z}}$作用, 并与变换(\ref{3.4.12})相比给出: 
+\begin{equation}
+c=-12 a_{1}, \qquad {T^a}_{a}=-\frac{c}{12} R \:. \label{3.4.15}
+\end{equation}
+\begin{tcolorbox}
+	注意$\partial^{z} \delta_{\mathrm{W}} T_{z z}=\left(-\frac{c}{3}\right) \partial_{\bar{z}} \partial_{z}^{2} \delta \omega$, 而\eqref{3.4.12}右边是$4 a_{1} \partial_{z}^{2} \partial_{\bar{z}} \delta \omega$.
+\end{tcolorbox}
+
+我们用另一个稍长一点的步骤再推导一次, 我们会在中间得到一个有用的结果. 在共形规范下,
+\begin{subequations}\label{3.4.16}
+\begin{align}
+R&=-2 \exp (-2 \omega) \partial_{a} \partial_{a} \omega \:,\label{3.4.16a}\\
+\nabla^{2}&=\exp (-2 \omega) \partial_{a} \partial_{a} \:. \label{3.4.16b}
+\end{align}
+\end{subequations}
+通过收缩两个下指标, 亦即$\delta^{a b} \partial_{a} \partial_{b}$. $Z[g]$的Weyl变分(\ref{3.4.6})变成
+\begin{equation}
+\delta_{\mathrm{W}} Z[\exp (2 \omega) \delta]=\frac{a_{1}}{\pi} Z[\exp (2 \omega) \delta] \int \dif^{2} \sigma\: \delta \omega \partial_{a} \partial_{a} \omega \:, \label{3.4.17}
+\end{equation}
+其中$\exp (2 \omega) \delta$ 代表共形规范. 积分立即给出
+\begin{equation}\label{3.4.18}
+Z[\exp (2 \omega) \delta]=Z[\delta] \exp \left(-\frac{a_{1}}{2 \pi} \int \dif^{2} \sigma \: \partial_{a} \omega \partial_{a} \omega\right) \:.
+\end{equation}
+由于每个度规在微分同胚的意义下等价于共形度规, (\ref{3.4.18})实际上决定了$Z[g]$对度规的全部依赖性. 我们需要找到可以在共形规范下退化至(\ref{3.4.18})的diff不变表达式. 
+利用(\ref{3.4.16}) 可以证明期望的表达式: 
+\begin{equation}\label{3.4.19}
+Z[g]=Z[\delta] \exp \left[\frac{a_{1}}{8 \pi} \int \dif^{2} \sigma \int \dif^{2} \sigma^{\prime} \: g^{1 / 2} R(\sigma) G(\sigma, \sigma^{\prime}) g^{1 / 2} R(\sigma^{\prime})\right] \:,
+\end{equation}
+其中
+\begin{equation}
+g(\sigma)^{1 / 2} \nabla^{2} G(\sigma, \sigma^{\prime})=\delta^{2}(\sigma-\sigma^{\prime}) \label{3.4.20}
+\end{equation}
+定义了标量格林函数. 这是一个有趣的结果: 路径积分完全由反常方程决定.
+
+现在围绕平坦背景展开$Z[g]$, $g_{a b}=\delta_{a b}+h_{a b}$, 并保留至 $h_{\bar{z} \bar{z}} $的二阶项. 到 $h_{\bar{z} \bar{z}}$的一阶, 里奇 标量是 $4 \partial_{z}^{2} h_{\bar{z} \bar{z}}$, 所以
+\begin{align}
+\ln \frac{Z[\delta+h]}{Z[\delta]} & \approx \frac{a_{1}}{8 \pi^{2}} \int \dif^{2} z \int \dif^{2} z^{\prime} \:
+(\partial_{z}^{2} \ln \lvert z-z^{\prime}\rvert^{2}) h_{\bar{z} \bar{z}}(z, \bar{z}) \partial_{z^{\prime}}^{2} h_{\bar{z} \bar{z}}(z^{\prime}, \bar{z}^{\prime}) \nonumber \\
+&=-\frac{3 a_{1}}{4 \pi^{2}} \int \dif^{2} z \int \dif^{2} z^{\prime} \: \frac{h_{\bar{z} \bar{z}}(z, \bar{z}) h_{\bar{z} \bar{z}}(z^{\prime}, \bar{z}^{\prime})}{(z-z^{\prime})^{4}} \:. \label{3.4.21}
+\end{align}
+我们可以用度规中的二阶微扰论计算它, 它通过(\ref{3.4.4})给出: 
+\begin{equation}
+\ln \frac{Z[\delta+h]}{Z[\delta]} \approx \frac{1}{8 \pi^{2}} \int \dif^{2} z \int \dif^{2} z^{\prime} \: h_{\bar{z} \bar{z}}(z, \bar{z}) h_{\bar{z} \bar{z}}(z^{\prime}, \bar{z}^{\prime})\bigl\langle T_{z z}(z) T_{z z}(z^{\prime})\bigr\rangle_{\delta} \:. \label{3.4.22}
+\end{equation}
+现在使用标准$TT$ OPE\eqref{2.4.25}. 除了第一个包含非零自旋算符的项, 所有的项由于旋转不变性为零, 留下$\bigl\langle T_{z z}(z) T_{z z}(z^{\prime})\bigr\rangle_{1}=\frac{1}{2} c(z-z^{\prime})^{-4}$. 与从Weyl反常得到的结果(\ref{3.4.21})相比, 又一次给出(\ref{3.4.15}).
+
+\subsection*{讨论}
+由中心荷为$D$的$X^\mu$及中心荷为$-26$的鬼构成的世界面理论, 它的中心荷是
+\begin{equation}
+c=c^{X}+c^{\mathrm{g}}=D-26 \:, \label{3.4.23}
+\end{equation}
+其中, 鬼的中心荷由$\lambda=2$时的\eqref{2.5.12}给出. 这个理论仅对$D=26$是Weyl不变的, 与第\ref{cha:1}章发现的Lorentz不变性的条件相同. 当Weyl反常不为零, 不同的规范选择是不等价的, 并且就像带有反常的规范理论, 任何一个选择导致了一个不自洽, 诸如协变性或幺正性的缺失. 例如, 在光锥规范下, 选择不同的时空就要求了规范的范围, 所以潜在的Weyl反常转变成了Lorentz反常.
+
+还有另一件事可以尝试: 忽视Weyl反常, 仅将diff不变性视为规范对称性. 那么度规将有一个实自由度$\omega(\sigma)$要被积掉而不是规范固定. 由于(\ref{3.4.18})中的量子效应对$\omega$所生成的作用就像对一个$X^\mu$的作用; 当$D<26$, 这个符号是类空维度的. 然而, 物理是有一点小奇怪的, 这是因为$\omega$以及随之的能动量张量的diff变换不同于$X^\mu$. 事实上, 这个理论是线性伸缩子CFT. 所以不存在$D{+}1$维Lorentz不变性, 并且这个理论对我们当前目的是无用的, 即将物理理解为我们宇宙的一部分. 它是一个有趣的模型, 我们将在9.9节简要地回到这点.
+
+之上我们发现了当且仅当总中心荷$c$为零时, 一个平坦世界面CFT可以以一种Weyl不变的方式与弯曲度规耦合. 然而, 这里存在一个矛盾, 由于相同的讨论适用于反全纯中心荷$\tilde{c}$, 并且我们已经从$bc$ CFT的例子看出$c$不需要与$\tilde{c}$相等. 关键点是我们在(\ref{3.4.11})与(\ref{3.4.19})中暗中假定了世界面diff不变性. 如果$c\neq \tilde{c}$, 那么不存在与$O(h_{z z}^{2})$ 和 $O(h_{\bar{z} \bar{z}}^{2})$计算均一致的diff不变表达式, 那么CFT\emph{不能}以一种diff不变的方式与弯曲度规耦合; 存在\emph{diff}反常或\emph{引力}反常. 矛盾表明, 一个CFT要想无引力反常, $c= \tilde{c}$是必要的, 也可证明它是充分的.
+
+\subsection*{引入边界}
+
+首先回到方程(\ref{3.4.8}), 并考虑更一般的可能性
+\begin{equation}\label{3.4.24}
+	T^{a}{}_{a}=a_{1} R+a_{2} \:. 
+\end{equation}
+这是diff不变性所允许的, 但在平坦极限下不为零. 早先我们通过$T_{ab}$的选择\eqref{2.3.15b}令$a_2=0$. 等价地, 平坦世界面上有超过一个守恒$T_{ab}$意味着如何与弯曲度规耦合中存在自由度. 特别地, 我们可以附加作用量
+\begin{equation}
+S_{\mathrm{ct}}=b \int \dif^{2} \sigma \: g^{1 / 2} \:, \label{3.4.25}
+\end{equation}
+这是二维宇宙学常数, 它不是Weyl不变的. 它给$T_{ab}$加上了$2 \pi b g_{a b}$, 所以迹(\ref{3.4.24})变成
+\begin{equation}
+	T^{a}{}_{a}=a_{1} R+\left(a_{2}+4 \pi b\right)
+\end{equation}
+通过令$b=-a_{2} / 4 \pi$, 我们可以使第二项为零; 这正是我们在\eqref{2.3.15b}所做的. $a_2$和$b$的值依赖于定义.
+
+没有定域抵消项可以消除$a_1$. 例如, $\int \dif^{2} \sigma\: g^{1 / 2} R$是Weyl不变的. 所以如果$a_1$不为零, 那么Weyl对称性中真实存在一个反常. 
+
+我们现在考察边界的效应. 包含边界项, 最一般的可能变分为
+\begin{align}
+\delta_{\mathrm{W}} \ln Z[g] &=-\frac{1}{2 \pi} \int_{M} \dif^{2} \sigma\: g^{1 / 2} (a_{1} R+a_{2}) \delta \omega  \nonumber \\
+&\qquad \qquad -\frac{1}{2 \pi} \int_{\partial M} \dif s\: (a_{3}+a_{4} k+a_{5} n^{a} \partial_{a}) \delta \omega \:, \label{3.4.27}
+\end{align}
+其中, $k=-t^{a} n_{b} \nabla_{a} t^{b}$是边界的测地曲率. 可能的抵消项是
+\begin{equation}
+	S_{\mathrm{ct}}=\int_{M} \dif^{2} \sigma \: g^{1 / 2} b_{1}+\int_{\partial M} \dif s\: (b_{2}+b_{3} k) \:. \label{3.4.28}
+\end{equation}
+$b_3$项是附加在Euler数中的测地曲率项上的项. $S_{\mathrm{ct}}$的Weyl变分, 包含$\dif s$依赖性与度规上单位矢量$t$与$n$的依赖性, 是
+\begin{equation}
+	\delta_{\mathrm{W}} S_{\mathrm{ct}}=2 \int_{M} \dif^{2} \sigma \: g^{1 / 2} b_{1} \delta \omega + 
+	\int_{\partial M} \dif s\: (b_{2}+b_{3} n^{a} \partial_{a}) \delta \omega \:. \label{3.4.29}
+\end{equation}
+我们可以选择$b_{1}, b_{2}$和 $b_{3}$令 $a_{2}, a_{3}$和 $a_{5}$为零, 留下 $a_{1}, a_{4}$为潜在的反常. 在我们的处理中存在另一工具, Wess–Zumino一致性条件. 
+取二阶泛函变分
+	\begin{align}
+		&\delta_{\mathrm{W}_{1}}(\delta_{\mathrm{W}_{2}} \ln \langle\cdots\rangle_{g}) \nonumber \\
+		 &\qquad=\frac{a_{1}}{\pi} \int_{M} \dif^{2} \sigma\: g^{1 / 2}\, \delta \omega_{2} \nabla^{2} \delta \omega_{1}-\frac{a_{4}}{2 \pi} \int_{\partial M} \dif s\: \delta \omega_{2} \, n^{a} \partial_{a} \delta \omega_{1} \nonumber \\
+		&\qquad=-\frac{a_{1}}{\pi} \int_{M} \dif^{2} \sigma\: g^{1 / 2} \,\partial_{a} \delta \omega_{2} \partial^{a} \delta \omega_{1}+\frac{2 a_{1}-a_{4}}{2 \pi} \int_{\partial M} \dif s\: n^{a} \delta \omega_{2}\, \partial_{a} \delta \omega_{1} \:. \label{3.4.30}
+	\end{align}
+这是一个二阶泛函导数, 所以根据定义它关于$\delta \omega_{1}$和 $\delta \omega_{2}$是对称的, 第二项不是, 所以$a_4=2a_1$. 由此得出: 在开弦边界条件下, 不产生新的Weyl反常. 在量子理论中, 当且仅当$a_{1}=-c / 12$为零时Weyl不变性成立. 这由世界面\emph{内部}的物理决定. 
+
+Wess–Zumino一致性条件是对反常形式一个强有力的约束. 第二个应用使我们能够证明中心荷是一常数. 这从上面的Lorentz不变性与量纲分析得出, 但在更普遍的CFT中, 可以有
+\begin{equation}
+T^{a}{}_{a}(\sigma)=-\frac{\mathscr{C}(\sigma)}{12} R(\sigma) \:, \label{3.4.31}
+\end{equation}
+其中$\mathscr{C}(\sigma)$ 是某个定域算符. 特别地, 这个迹将在平坦世界面上依旧为零. 重复计算(\ref{3.4.30}), 其中 $a_{1}$ 被换成 $-\mathscr{C}(\sigma) / 12$, 通过分部积分可以看到存在一个额外的正比于 $\partial_{a} \mathscr{C}(\sigma)$ 的项. 一致性条件因此暗示着包含 $\mathscr{C}(\sigma)$的期待值与位置无关, 表明$\mathscr{C}(\sigma)$本身只是一个数值常数$c$.
+
+\section{\texorpdfstring{散射振幅}{3.5 Scattering amplitudes}} \label{sec:3.5}
+
+对所有被初曲线和末曲线束缚的世界面进行求和的想法看起来似乎是非常自然的. 然而, 以一种与定域世界面对称性相容的方式定义它是困难的, 并且相应的振幅也相当复杂. 存在一种特殊的情况, 在这种情况下振幅简化了——即取弦源无穷远的极限. 这对应出弦和入弦被指定的散射振幅, $S$-矩阵元. 本书的大部分, 我们将只限于$S$-矩阵元以及类似的“在壳”问题. 这不是完全令人满意的, 因为我们想讨论在有限时间内的系统, 而不仅是渐近过程. 现在, 由于$S$矩阵易于理解, 我们专注于它. 尽管思考离壳弦论的正确方式是不清楚的, 我们将在下一节及第9章简要地回答这个问题.
+
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 860 600
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=645,natheight=450]{Fig3.8.jpg}\\
+		\caption{(a) 闭弦的散射, 其中弦的源趋于$X^{0}=\pm \infty$. (b) 4-闭弦散射的共形等价图像: 有非常小的洞的球面.}\label{Fig3.8}
+	\end{center}
+\end{figure}
+
+所以, 我们现在来考察图\ref{Fig3.8}中所示的过程, 其中源被拉向了无穷远处. 我们将讨论应该如何在路径积分中表示这些源. 远离散射过程, 弦自由地传播, 每个出弦与入弦是一个长圆柱, 可以用一个复坐标$w$描述,
+\begin{equation}
+-2 \pi t \leq \operatorname{Im} w \leq 0, \qquad w \cong w+2 \pi \:. \label{3.5.1}
+\end{equation}
+圆柱的下端$\operatorname{Im} w=-2 \pi t$, 是源的结尾, 上端插入世界面的其余部分, 并且圆周是周期$\operatorname{Re} w$方向. 对应于散射过程的极限是$t \rightarrow \infty$. 看起来似乎是我们将时空中的长距离与世界面坐标中的长圆柱混淆, 但这将是较为正确的: 稍后我们将看到, 沿着长时空距离的传播精确来源于这样的世界面, 其中圆柱以以上的意义变长.
+
+我们在第\ref{cha:2}章知道, 圆柱有一等价描述: 
+\begin{equation}
+z=\exp (-\mi w), \quad \exp (-2 \pi t) \leq|z| \leq 1 \:. \label{3.5.2}
+\end{equation}
+在这个图景中, 长圆柱映射到了单位圆盘, 其中外弦态是处在中心的圆. 在内部度规的几何中, 图\ref{Fig3.8}a所示的过程现在看起来像是\ref{Fig3.8}b. 在$t \rightarrow \infty$的极限下, 小圆收缩成点, 而世界面退化至对于每一外态则插入一个点的球面.
+
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 863 602 
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=645,natheight=450]{Fig3.9.jpg}\\
+		\caption{(a) 四个开弦的散射, 其中弦源趋于$X^{0}=\pm \infty$. (b) 共形等价图像: 有凹痕的圆盘.}\label{Fig3.9}
+	\end{center}
+\end{figure}
+
+同样的概念对外开弦态成立. 图\ref{Fig3.9}a过程中的长带可以描述成
+\begin{equation}
+-2 \pi t \leq \operatorname{Im} w \leq 0, \quad 0 \leq \operatorname{Re} w \leq \pi \:. \label{3.5.3}
+\end{equation}
+其中 $\operatorname{Im} w=-2 \pi t$ 是源, 而 $\operatorname{Re} w=0, \pi$ 是端点边界. 在 $z=-\exp (-\mi w)$下, 这映射成单位圆盘与上半平面的交集. 而在原点处切开了一个小的半圆
+\begin{equation}
+\exp (-2 \pi t) \leq|z| \leq 1, \quad \operatorname{Im} z \geq 0 \:. \label{3.5.4}
+\end{equation}
+散射过程现在看起来像图\ref{Fig3.9}b. 在$t \rightarrow \infty$的极限下, 源收缩成位于(端点)边界上的点.
+
+这是我们已经看到的态-算符对应. 每个源变成世界面上的一个定域扰动. 对于一个给定的入弦或出弦, 其有$D$-动量$k^{\mu}$以及内部态$j$, 相应地, 存在一个由极限过程决定的定域\emph{顶点算符} $\mathscr{V}_{j}(k)$ . 出态和入态由 $k^{0}$ 符号区分; 对于入态 $k^{\mu}=(E, \mathbf{k})$ 和出态 $k^{\mu}=-(E, \mathbf{k})$, 图\ref{Fig3.8}和\ref{Fig3.9}仅描述了最低阶振幅, 但这个构造是相当普遍的: 我们可以将注意力限制在紧致世界面上, 其上没有一个趋向无限远处的管, 但对于每一外闭弦有一在内部的类点插入. 对于每一外开弦在边界上有一类点插入. 那么一个$n$点$S$-矩阵元为
+\begin{align}
+&S_{j_{1} \ldots j_{n}}(k_{1}, \ldots, k_{n})  \nonumber \\
+&\quad=\sum_{
+	\text { compact } \atop \text { topologies}} \frac{[\dif X \, \dif g]}{V_{\text {diff } \times \text { Weyl }}} \exp (-S_{X}-\lambda \chi) 
+	\prod_{i=1}^{n} \int \dif^{2} \sigma_{i} \: g(\sigma_{i})^{1 / 2} \mathscr{V}_{j_{i}}(k_{i}, \sigma_{i}) \:. \label{3.5.5}
+\end{align}
+为了使顶点算符插入diff不变, 我们沿着世界面对它们积分, 在本卷的剩余部分, 将看到我们的猜测是正确的, 并且确定了合理的弦$S$-矩阵. 
+
+依赖于我们所考察的是4种理论的那一个, 对拓扑的求和可能包含非定向世界面和/或带边世界面. 一般而言, 对拓扑的求和不限制在连通世界面; 总的过程可能包含两组或多组独立的粒子散射. 将求和约束在连通世界面上, 进而集中于连通$S$-矩阵是方便的. 
+
+为了获得连通$S$-矩阵, 之后我们必须对世界面所有紧致的、连接的拓扑求和. 在二维中, 拓扑的分类是众所周知的. 任何紧致的、连通的、定向的无边二维平面拓扑上等价于有$g$个柄的球面, $g$称为平面的亏格. 在图\ref{Fig3.10}中, 我们展示了$g=0,1,2$情形.
+
+\begin{figure}[h]
+	\begin{center}
+		%width=0.8\textwidth,bb=0 0 890 215
+		%1px=0.75pt
+		\includegraphics[width=0.8\textwidth,natwidth=667,natheight=161]{Fig3.10.jpg}\\
+		\caption{紧致连通定向闭曲面, 其亏格分别为(a) 0, (b) 1, (c) 2.}\label{Fig3.10}
+	\end{center}
+\end{figure}
+
+通过在闭曲面上剪洞可以增加边界. 任何紧致的, 连通的, 定向二维曲面拓扑等价于有$g$个柄和$b$个洞的球面, 例如$(g,b)=(0,1)$是圆盘, $(0,2)$是圆环, $(0,3)$是裤子. 
+
+为了描述非定向曲面, 引入十字帽是有用的: 在面上剪一个洞并将对径点粘起来. 更细致一些, 取复坐标, 剪出一个略小于单位半径的圆盘, 并将$z^{\prime}=-1 / \bar{z}$ 定义的相反点粘起来. 由于粘合是反全纯的, 所产生的曲面是非定向的. 另外, 不像边界的情况, 十字帽不引入边界或其他定域特征. 由于剪切产生的边界仅是坐标补片的边界, 任何紧致连通闭曲面, 无论定向还是非定向, 总可以在球面上增加$g$个柄和$c$个十字帽获得; 任何紧致连通曲面可通过增加$g$个柄, $b$个边界及$c$个十字帽获得. 实际上, 这些描述有些冗余: 无论是无边还是有边情况, 通过将求和约束至仅令$g$和$c$的一个非零, 就能精确获得. 例如$(g, b, c) = (0, 0, 1)$ 是投影平面, $(g, b, c) = (0, 1, 1)$是Mobius带, $(g, b, c) = (0, 0, 2)$是Klein瓶, 而一个有十字帽的轮胎面可以通过$(g, b, c) = (0, 0, 3)$或$(g, b, c) = (1, 0, 1)$获得, 两个两个十字帽换取一个柄.  Euler数为
+\begin{equation}
+\chi=2-2 g-b-c \:. \label{3.5.6}
+\end{equation}
+
+不同拓扑的数目远小于场论给定阶中不同Feynman图的数目. 例如, 在闭定向理论中, 在微扰论每一阶, 精确存在一个拓扑. 在场论中, 图的数目几何增长. 单个弦图包括所有场论图. 在不同极限下, 柄与它们的圆周相比长得多, 我们可以将柄近似为线, 而弦图在这个极限下近似为对应的Feynman图.
+
+
+\section{\texorpdfstring{顶点算符}{3.6 Vertex operators}} \label{sec:3.6}
+
+利用态-算符对应, 闭弦快子的顶点算符是
+\begin{align}
+		V_{0} &=2 g_{\mathrm{c}} \int \dif^{2} \sigma \: g^{1 / 2} \,\me^{\mi k \cdot X}  \nonumber \\
+		& \rightarrow g_{\mathrm{c}} \int \dif^{2} z\: : \mathrel{\me^{\mi k \cdot X}}: \:. \label{3.6.1}
+\end{align}
+我们在映射中引入一个因子$g_{\mathrm{c}}$. 这是闭弦耦合常数, 来自于给过程增加一个额外的弦: 我们将顶点算符的归一化用作耦合的定义. 在第二行, 我们过渡到了平坦世界面. 顶点算符必须是diff且Weyl不变的, 所以, 特别地, 它在平坦世界面上必须是共形不变的. 为了抵消$\dif^2 z$的变换, 算符必须是权重$(1,1)$的张量. 通过一个直接的 OPE 计算, $\me^{\mi k \cdot X}$ 是 权重$h=\tilde{h}=\alpha^{\prime} k^{2} / 4$ 的张量, 所以条件是
+\begin{equation}
+	m^{2}=-k^{2}=-\frac{4}{\alpha^{\prime}} \:, \label{3.6.2}
+\end{equation}
+这精确是光锥量子化中所发现的质量.
+
+类似地, 处在第一激发能级的闭弦张量态有平坦世界面顶点算符
+\begin{equation}
+\frac{2 g_{\mathrm{c}}}{\alpha^{\prime}} \int \dif^{2} z\: : \mathrel{\partial X^{\mu} \bar{\partial} X^{\nu} \me^{\mi k \cdot X}}: \:. \label{3.6.3}
+\end{equation}
+与快子顶点算符相关的归一化源于态-算符对应, 我们将在第\ref{cha:6}章看到, 相同的相关归一化从$S$-矩阵的归一化中获得. 权重是
+\begin{equation}
+h=\tilde{h}=1+\frac{\alpha^{\prime} k^{2}}{4} \:, \label{3.6.4}
+\end{equation}
+所以它们是无质量的, 又一次与光锥量子化相符. 为了使其是一个张量, 存在进一步的条件, 我们将在下面处理.
+
+\subsection*{Polyakov方法中的顶点算符}
+
+在态-算符映射中, 对于任意态, 我们有系统的方法写出平坦世界面顶点算符. 既然世界面总能被变成平坦的, 原则上, 这就是我们需要的全部. 然而现在看来, 研究Polyakov体系中的弯曲世界面顶点算符是有用的. 我们将在本节的剩余部分做这件事. 我们使用的方法将有些笨拙, 并且不像态-算符映射那样系统, 但有些结果是有用的.
+
+任何纳入Polyakov路径积分\eqref{3.5.5}中的算符必须反应理论的定域diff $\times$ Weyl对称性. 我们还没有具体指出\eqref{3.6.1}第一行中的算符是如何在世界面上定义的. 正如之前关于Weyl反常的讨论, 将为方便的方法是保护diff不变性, 并手动检查Weyl变换. 对于大部分用途, 在文献中使用维数正规化. 然而, 对此我们没有大量的需求, 所以将不会引入它; 相反, 我们会推广之前引入的正规编序. 定义重整化算符
+\begin{equation}\label{3.6.5}
+[\mathscr{F}]_{\mathrm{r}}=\exp \biggl(\frac{1}{2} \int \dif^{2} \sigma \dif^{2} \sigma^{\prime}\: \Delta(\sigma, \sigma^{\prime}) \frac{\delta}{\delta X^{\mu}(\sigma)} \frac{\delta}{\delta X_{\mu}\left(\sigma^{\prime}\right)}\biggr) \mathscr{F} \:.
+\end{equation}
+这里
+\begin{equation}
+\Delta(\sigma, \sigma^{\prime})=\frac{\alpha^{\prime}}{2} \ln d^{2}(\sigma, \sigma^{\prime}) \:, \label{3.6.6}
+\end{equation}
+其中$d(\sigma, \sigma^{\prime})$ 是 $\sigma$ 和 $\sigma^{\prime}$之间的测地距离. 与正规编序相同, \eqref{3.6.5}告诉我们利用 $\Delta(\sigma, \sigma^{\prime})$ 收缩 $\mathscr{F}$中的对, 并对所有可能收缩的方式求和. 在平坦世界面上, $d^{2}(\sigma, \sigma^{\prime})=\lvert z-z^{\prime}\rvert^{2}$并且这退化至共形正规编序. 在弯曲世界面上, 它抵消了 $\mathscr{F}$中的场自收缩产生的奇异积分. Diff不变性是显然的, 但收缩依赖度规, 因此引入了Weyl相关性
+\begin{equation}\label{3.6.7}
+\delta_{\mathrm{W}}[\mathscr{F}]_{\mathrm{r}}=\left[\delta_{\mathrm{W}} \mathscr{F}\right]_{\mathrm{r}}+\frac{1}{2} \int \dif^{2} \sigma 
+\dif^{2} \sigma^{\prime} \:\delta_{\mathrm{W}} \Delta(\sigma, \sigma^{\prime}) \frac{\delta}{\delta X^{\mu}(\sigma)} \frac{\delta}{\delta X_{\mu}(\sigma^{\prime})}[\mathscr{F}]_{\mathrm{r}} \:,
+\end{equation}
+第一项显现了算符中的Weyl相关性.
+
+动量为$k_\mu$的态, 它的顶点算符在平移下必须按照与态相同的方式变换, 因而形如$\me^{\mi k\cdot X}$与 $X^\mu$ 的导数之积.
+在Weyl变换下导数个数不同的算符不会混合, 所以我们从考察零导数开始, 算符\eqref{3.6.1}. Weyl变分来自于显式因子$g^{1/2}$以及\eqref{3.6.7}中给出的重整化
+\begin{equation}\label{3.6.8}
+\delta_{\mathrm{W}} V_{0}=2 g_{\mathrm{c}} \int \dif^{2} \sigma \: g^{1 / 2}\biggl(2 \delta \omega(\sigma)-\frac{k^{2}}{2} \delta_{\mathrm{W}} \Delta(\sigma, \sigma)\biggr) [\me^{\mi k \cdot X(\sigma)}]_{\mathrm{r}} \:.
+\end{equation}
+短程时
+\begin{equation}
+d^{2}(\sigma, \sigma^{\prime}) \approx(\sigma-\sigma^{\prime})^{2} \exp (2 \omega(\sigma)) \label{3.6.9}
+\end{equation}
+随之
+\begin{equation}
+\Delta(\sigma, \sigma^{\prime}) \approx \alpha^{\prime} \omega(\sigma)+\frac{\alpha^{\prime}}{2} \ln (\sigma-\sigma^{\prime})^{2} \:. \label{3.6.10}
+\end{equation}
+在$\sigma^{\prime} \rightarrow \sigma$ 极限下, Weyl变分是非奇异的
+\begin{equation}\label{3.6.11}
+\delta_{\mathrm{W}} \Delta(\sigma, \sigma)=\alpha^{\prime} \delta \omega(\sigma) \:.
+\end{equation}
+Weyl变分(\ref{3.6.8})为零的条件就是$k^{2}=4 / \alpha^{\prime}$, 正是前面推导出的结果.
+
+
+\subsection*{离壳振幅?}
+
+考察一个定义离壳振幅的幼稚尝试: 令$k^\mu$不在质量壳上, 但这与定域世界面对称性不相容. 在位置空间, 这意味着弦世界面的一个定域探测, 在路径积分中插入
+\begin{equation}\label{3.6.12}
+\delta^{D}(X(\sigma)-x_{0})=\int \frac{\dif^{D} k}{(2 \pi)^{D}} \: \exp [\mi k \cdot(X(\sigma)-x_{0})] \:,
+\end{equation}
+由于它包含了全部动量所以是不相容的.
+
+从多个角度看, 这并不奇怪. 首先, 前面的讨论, 即我们对弦态可使用点源(顶点算符)要求一个极限过程, 其显著地将我们约束至在壳问题. 
+其次, 弦理论包含引力, 而在广义相对论中简单离壳振幅是不存在的. 这是因为我们必须要指定探针的位置, 但坐标是非物理的, 并且坐标不变的离壳量要复杂得多. 第三, 在弦论中我们没有引入额外场以测量定域可观察量的自由度(类似于用以探测强相互作用系统的电弱过程): 我们必须使用弦本身, 或者将我们所讨论的, 理论内蕴的其他客体(D膜和孤子). 
+
+至少在微扰论中是能定义离壳振幅的. 如果固定规范(对此光锥规范是最简单的)并使用弦源. 那么$S$-矩阵公式\eqref{3.5.5}可以用类似于量子场论中的约化公式导出, 先定义有限时间跃迁振幅, 然后再取无限时间极限. 附带地, 读者如若尝试将当前讨论与场论关联起来, 应该注意到路径积分表达\eqref{3.5.5}并不像Green函数, 而更像$S$矩阵元. 场论中类似客体是外传播子被截断的Green函数并且它的外动量被约束在质量壳上.
+
+定域探测\eqref{3.6.12}的讨论也表明了弦之间接触相互作用的问题. 这种相互作用的最简形式将是
+\begin{equation}
+\int_{M} \dif^{2} \sigma \: g(\sigma)^{1 / 2} \int_{M} \dif^{2} \sigma^{\prime} \: g(\sigma^{\prime})^{1 / 2} \delta^{D}(X(\sigma)-X(\sigma^{\prime}))\:, \label{3.6.13}
+\end{equation}
+只要世界自交, 这不为零. 然而$\delta$函数包含所有动量, 就像方程\eqref{3.6.12}中那样, 所以这不是Weyl不变的. 弦论的结构相当固定: 弦只能以本章开始所描述的方式与其它弦耦合.
+
+\subsection*{无质量闭弦顶点算符}
+
+尽管有些混乱, 进一步做顶点算符的Polyakov处理是有趣的. 不存在一种方式制造带有一个导数的世界面标量, 所以下一个情况是两个导数. diff不变的可能情况是
+\begin{align}
+	V_{1}&=\frac{g_{\mathrm{c}}}{\alpha^{\prime}} \int \dif^{2} \sigma \: g^{1 / 2}\Bigl\{ 
+		(g^{a b} s_{\mu \nu}+\mi \epsilon^{a b} a_{\mu \nu})
+		[\partial_{a} X^{\mu} \partial_{b} X^{\nu} e^{i k \cdot X}]_{\mathrm{r}} \nonumber \\
+		&\qquad \qquad \qquad \qquad \qquad \qquad  +\alpha^{\prime} \phi R[\me^{\mi k \cdot X}]_{\mathrm{r}}\Bigr\}  \:, \label{3.6.14}
+\end{align}
+其中$s_{\mu \nu}, a_{\mu \nu}$,  $\phi$ 分别是对称矩阵, 反对称矩阵和常数. 反对称张量 $\epsilon^{a b}$ 是归一化的,  $g^{1 / 2} \epsilon^{12}=1$或 $g^{1 / 2} \epsilon^{z \bar{z}}=-\mi$. 顶点算符中伴随反对称张量的$\mi$可以理解成Euclidean延拓, 这是因为这一项必有奇数次时间导数(1次). 这一结果广泛应用于Euclidean作用量与顶点算符. 
+
+为了推广Weyl不变性的分析, 我们需要解出高阶的测地距离Weyl相关性(\ref{3.6.11}).
+\begin{subequations}\label{3.6.15}
+\begin{align}
+\partial_{a} \delta_{\mathrm{W}} \Delta(\sigma, \sigma^{\prime})\Bigr\vert_{\sigma^{\prime}=\sigma}&=\frac{1}{2} \alpha^{\prime} \partial_{a} \delta \omega(\sigma) \:, \label{3.6.15a} \\
+\partial_{a} \partial_{b}^{\prime} \delta_{\mathrm{W}} \Delta(\sigma, \sigma^{\prime})\Bigr\vert_{\sigma^{\prime}=\sigma}&=\frac{1+\gamma}{2} \alpha^{\prime} \nabla_{a} \partial_{b} \delta \omega(\sigma) \:, \label{3.6.15b} \\
+\nabla_{a} \partial_{b} \delta_{\mathrm{W}} \Delta(\sigma, \sigma^{\prime})\Bigr\vert_{\sigma^{\prime}=\sigma}&=-\frac{\gamma}{2} \alpha^{\prime} \nabla_{a} \partial_{b} \delta \omega(\sigma) \:. \label{3.6.15c}
+\end{align}
+\end{subequations}
+这里$\gamma=-\frac{2}{3}$, 为了之后的参考, 我们将其留作参量; 第3个方程可以从第2个方程和第1个方程的梯度得到. 对曲率的变分利用\eqref{3.3.5}, 并对重整化的变分利用\eqref{3.6.7}与\eqref{3.6.15} 
+\begin{align}
+\delta_{\mathrm{W}} V_{1}&=\frac{g_{\mathrm{c}}}{2} \int \dif^{2} \sigma\: g^{1 / 2} \delta \omega\Bigl\{\left(g^{a b} S_{\mu \nu}+\mi \epsilon^{a b} A_{\mu \nu}\right)[\partial_{a} X^{\mu} \partial_{b} X^{\nu} \me^{\mi k \cdot X}]_{\mathrm{r}}  \nonumber \\
+&\qquad \qquad\qquad\qquad \qquad  +\alpha^{\prime} F R[\me^{\mi k \cdot X}]_{\mathrm{r}}\Bigr\} \:, \label{3.6.16}
+\end{align}
+其中
+\begin{subequations}
+\begin{align}
+S_{\mu \nu}&=-k^{2} s_{\mu \nu}+k_{\nu} k^{\omega} S_{\mu \omega}+k_{\mu} k^{\omega} s_{\nu \omega}-(1+\gamma) k_{\mu} k_{\nu} s^{\omega}{}_{\omega}+4 k_{\mu} k_{\nu} \phi \:,\label{3.6.17a} \\
+A_{\mu \nu}&=-k^{2} a_{\mu \nu}+k_{v} k^{\omega} a_{\mu \omega}-k_{\mu} k^{\omega} a_{\nu \omega} \:, \label{3.6.17b} \\
+F&=(\gamma-1) k^{2} \phi+\frac{1}{2} \gamma k^{\mu} k^{\nu} s_{\mu \nu}-\frac{1}{4} \gamma(1+\gamma) k^{2} s^{\nu}{}_{\nu}  \:. \label{3.6.17c}
+\end{align}
+\end{subequations}
+
+在推导Weyl变分(\ref{3.6.16})时, 我们进行了分部积分并使用了关系
+\begin{equation}\label{3.6.18}
+[\nabla^{2} X^{\mu} \me^{\mi k \cdot X}]_{\mathrm{r}}=\mi \frac{\alpha^{\prime} \gamma}{4} k^{\mu} R\,[\me^{\mi k \cdot X}]_{\mathrm{r}} \:.
+\end{equation}
+左边本应由于朴素运动方程为零, 但这里运动方程乘上了处在同一点的另一算符. 在该情况下成立的广义原理是算符不需要零, 但它是不独立的——它可以用该理论中其他定域算符展开. 一般而言, 算符的系数依赖于重整化方案; \eqref{3.6.18}可通过取两边的Weyl变分获得.
+
+既然$S_{\mu \nu}, A_{\mu \nu}$ 和 $F$ 所乘为独立算符, Weyl不变的条件是
+\begin{equation}
+S_{\mu \nu}=A_{\mu \nu}=F=0 \:.\label{3.6.19}
+\end{equation}
+为了得到算符数目的精确计数, 我们必须注意到不是所有形如(\ref{3.6.14})的$V_1$是独立的. 相反, 在
+\begin{subequations}\label{3.6.20}
+\begin{align}
+s_{\mu \nu} &\rightarrow s_{\mu \nu}+\xi_{\mu} k_{\nu}+k_{\mu} \xi_{\nu} \:, \label{3.6.20a} \\
+a_{\mu \nu} &\rightarrow a_{\mu \nu}+\zeta_{\mu} k_{\nu}-k_{\mu} \zeta_{\nu} \:, \label{3.6.20b} \\
+\phi &\rightarrow \phi+\frac{\gamma}{2} k \cdot \xi \:, \label{3.6.20c}
+\end{align}
+\end{subequations}
+利用运动方程\eqref{3.6.18}, 可看到$V_1$的变化积分为零. 现在选择满足 $n \cdot k=1$ 和 $n^{2}=0$的矢量$n^{\mu}$. 通过约束
+\begin{equation}\label{3.6.21}
+n^{\mu} s_{\mu \nu}=n^{\mu} a_{\mu \nu}=0
+\end{equation}
+就可以获得一组完备的独立算符. 这是$2D$个参量$\xi_{\mu}$ 和 $\zeta_{\mu}$ 的$2D$个方程; 可以证明一个方程和一个参量是平庸的, 但方程组(\ref{3.6.21})中的其他方程是非退化的, 因而定义了一组独立的顶角算符.
+
+通过使用条件(\ref{3.6.21}), 先解出$S_{\mu \nu} n^{\mu} n^{\nu}=0$, 然后解$S_{\mu \nu} n^{\mu}=$ $A_{\mu \nu} n^{\mu}=0$, 最后解$S_{\mu \nu}=A_{\mu \nu}=F=0$, 得到
+\begin{subequations}  \label{3.6.22}
+\begin{align}
+k^{2}&=0 \:, \label{3.6.22a} \\
+k^{\nu} s_{\mu \nu}&=k^{\mu} a_{\mu \nu}=0 \:, \label{3.6.22b} \\
+\phi&=\frac{1+\gamma}{4} s^{\mu}{}_{\mu} \:. \label{3.6.22c}
+\end{align}
+\end{subequations}
+又一次, 我们发现了质壳条件\eqref{3.6.22a}, 这次对应闭弦的第一激发态. 还有偏振垂直于动量的条件(\ref{3.6.22b}), 这正是无质量张量场的物理偏振所要求的. 在参考系
+\begin{equation}
+k^{\mu}=(1,1,0,0, \ldots, 0) \: , \quad n^{\mu}=\frac{1}{2}(-1,1,0,0, \ldots, 0) \:, \label{3.6.23}
+\end{equation}
+条件\eqref{3.6.21}与\eqref{3.6.22b}暗示了所有0分量与1分量为零. 而\eqref{3.6.22c}固定了$\phi$. 这精确留下了$(D-2)^2$个算符, 与光锥规范中所发现的无质量闭弦态数目相同.
+
+移去零模类光偏振需要条件$n^{\mu} s_{\mu \nu}=n^{\mu} a_{\mu \nu}=0$. 然而矢量$n^\mu$的引入明显破坏了Lorentz不变性, 而$n^\mu$的不同选择由于(\ref{3.6.20})等价, 所以理论是Lorentz不变的. 为使理论是Lorentz不变的, 且有一个正的Hilbert空间范数, \eqref{3.6.20}是重要的. 这些关系是定域时空对称性的特征. 特别地, $\xi_{\mu}$是无穷小时空坐标变换, 而$\zeta_{\mu}$是反对称张量场的定域时空对称性. 我们看到了相互作用理论中的定域时空对称性, 而我们在\ref{sec:1.4}节讨论过, 由于无质量自旋1场和自旋2场的存在, 它们必须出现.
+
+我们应该提及一个技术上的问题. 不同的重整化方案赋予重整化算符不同的名字. 最常用的方案是维数正规化; 这一方案中的算符与前面方案的关系为
+\begin{subequations} \label{3.6.24}
+\begin{align}
+[\me^{\mi k \cdot X} ]_{\mathrm{DR}} &= [\me^{\mi k \cdot X}]_{\mathrm{r}} \:, \label{3.6.24a} \\
+[\partial_{a} X^{\mu} \me^{\mi k \cdot X}]_{\mathrm{DR}}&=[\partial_{a} X^{\mu} \me^{\mi k \cdot X}]_{\mathrm{r}}  \:, \label{3.6.24b} \\
+[\partial_{a} X^{\mu} \partial_{b} X^{\nu} \me^{\mi k \cdot X}]_{\mathrm{DR}}&=[\partial_{a} X^{\mu} \partial_{b} X^{\nu} \me^{\mi k \cdot X}]_{\mathrm{r}}-\frac{\alpha^{\prime}}{12} g_{a b} \eta^{\mu \nu} R\, [\me^{\mi k \cdot X}]_{\mathrm{r}} \:, \label{3.6.24c} \\
+[\nabla_{a} \partial_{b} X^{\mu} \me^{\mi k \cdot X}]_{\mathrm{DR}}&=[\nabla_{a} \partial_{b} X^{\mu} e^{i k \cdot X}]_{\mathrm{r}}+ \mi \frac{\alpha^{\prime}}{12} g_{a b} k^{\mu} R\, [\me^{\mi k \cdot X}]_{\mathrm{r}}  \:. \label{3.6.24d}
+\end{align}
+\end{subequations}
+与(\ref{3.6.18})比, 我们看到在维数正规化中$\gamma=0$, 所以运动方程在正规化算符内成立. 这是一个便利, 很多方程简化了. 特别地, 在时空规范变化(\ref{3.6.20})中, $\phi$是不变的.\\
+
+\subsection*{开弦顶点算符}
+
+扩展至开弦是直接的, 仅给出一些结果. 快子顶点算符是
+\begin{equation}
+g_{\mathrm{o}} \int_{\partial M} \dif s\: [\me^{\mi k \cdot X}]_{\mathrm{r}} \label{3.6.25}
+\end{equation}
+且对于$k^{2}=1 / \alpha^{\prime}$ 是Weyl不变的. 光子顶点算符是
+\begin{equation}
+-\mi \frac{g_{\mathrm{o}}}{(2 \alpha^{\prime})^{1 / 2}} e_{\mu} \int_{\partial M} \dif s\: [\dot{X}^{\mu} \me^{\mi k \cdot X}]_{\mathrm{r}} \:, \label{3.6.26}
+\end{equation}
+其中与快子相关的归一化通过态-算符映射或幺正性获得, $\mi$的出现与闭弦情况相同, 符号是为了方便. 如果 $k^{2}=0$ 且 $k \cdot e=0 $, 这个算符是Weyl不变的. 存在等价关系$e_{\mu} \cong e_{\mu}+\lambda k_{\mu}$, 这是时空规范变换. 这留下了$D-2$个横向偏振. 
+
+
+\section{\texorpdfstring{弯曲时空中的弦}{3.7 Strings in curved spacetime}} \label{sec:3.7}
+
+
+现在我们来考察一个重要的新课题: 在弯曲时空中运动的弦. 我们先来回忆下点粒子情况, 它有一个到弯曲时空的自然扩张. 将平坦度规$\eta_{\mu\nu}$替换成一般度规$G_{\mu\nu}$给出作用量
+\begin{equation}
+S_{\mathrm{pp}}=\frac{1}{2} \int \dif \tau\: \Bigl(\eta^{-1} G_{\mu \nu}(X) \dot{X}^{\mu} \dot{X}^{\nu}-\eta m^{2}\Bigr) \:. \label{3.7.1}
+\end{equation}
+消掉$\eta$之后, 这变成了沿着粒子世界线的不变固有时. 众所周知, 它的变分给出测地线方程, 代表了粒子在引力场中的运动. 
+
+在Polyakov作用量中作一个相同的替换给出
+\begin{equation}
+S_{\sigma}=\frac{1}{4 \pi \alpha^{\prime}} \int_{M} \dif^{2} \sigma \:g^{1 / 2} g^{a b} G_{\mu \nu}(X) \partial_{a} X^{\mu} \partial_{b} X^{\nu} \:. \label{3.7.2}
+\end{equation}
+这是一个自然的猜测, 但读者可能会提出如下异议. 我们已经了解到了引力子本身就是弦的一个态. 一个弯曲时空, 粗略地讲, 是引力子的相干背景, 因而在弦论中它是弦的一个相干态. 仅在作用量\eqref{3.7.2}中放入弯曲度规看起来似乎不足够弦化. 为了看到为什么它是合理的, 考察一个接近平坦的时空
+\begin{equation}
+G_{\mu \nu}(X)=\eta_{\mu \nu}+\chi_{\mu \nu}(X) \label{3.7.3}
+\end{equation}
+其中$\chi_{\mu\nu}$很小. 世界面路径积分中的被积函数是                                        
+\begin{equation}
+\exp(-S_{\sigma})=\exp(-S_{\mathrm{P}})\biggl(1-\frac{1}{4\pi\alpha'}\int \dif^{2}\sigma\:g^{1/2}g^{ab}\chi_{\mu\nu}(X)\partial_{a}X^{\mu}\partial_{b}X^{\nu}+\cdots \biggr) \:. \label{3.7.4}
+\end{equation}
+$\chi$阶项精确是弦引力子态的顶角算符, 即\eqref{3.6.14}中取
+\begin{equation}
+\chi_{\mu \nu}(X)=-4 \pi g_{\mathrm{c}} \me^{\mi k \cdot X} s_{\mu \nu}\:. \label{3.7.5}
+\end{equation}
+所以诚然, 插入弯曲时空确实与我们已知的发生了联系. 作用量(\ref{3.7.2})可视为通过指数化引力子顶点算符来描述引力子的相干态.
+
+这提供了一个自然推广: 将其他无质量弦态的背景也纳入进来. 从顶点算符的形式\eqref{3.6.14}, 有
+\begin{equation}\label{3.7.6}
+S_{\sigma}=\frac{1}{4 \pi \alpha^{\prime}} \int_{M} \dif^{2} \sigma \: g^{1 / 2}\Bigl[\Bigl(g^{a b} G_{\mu \nu}(X)+ \mi \epsilon^{a b} B_{\mu \nu}(X)\Bigr) \partial_{a} X^{\mu} \partial_{b} X^{\nu}+\alpha^{\prime} R \Phi(X)\Bigr] \:.
+\end{equation}
+场$B_{\mu\nu}(x)$是反对称张量, 正如运动方程(\ref{3.6.22c})所暗示的, 伸缩子包含$\Phi$与$G_{\mu\nu}$的对角部分. 
+
+作为一个检验, 我们来看看时空规范不变性. 若路径积分的变量变换对应于一个场重定义$X^{\prime \mu}(X)$, 且$G_{\mu \nu}$与$B_{\mu \nu}$按照张量变换, $\Phi$按照标量变换, 
+\eqref{3.7.6}是不变的. 从时空观点看, 这是一个坐标变换. 这个作用量同样在
+\begin{equation}
+\delta B_{\mu \nu}(X)=\partial_{\mu} \zeta_{\nu}(X)-\partial_{\nu} \zeta_{\mu}(X)  \label{3.7.7}
+\end{equation}
+下不变, 这给Lagrangian密度增加了一个全导数. 这是电磁规范变换到有两个反对称指标的势的推广. 三指标场强
+\begin{equation}
+H_{\omega \mu \nu}=\partial_{\omega} B_{\mu \nu}+\partial_{\mu} B_{\nu \omega}+\partial_{\nu} B_{\omega \mu} \label{3.7.8}
+\end{equation}
+是不变的. 存在一个类似的到$n$阶反对称张量势的推广, 其在超弦中扮演了重要角色.
+
+这个理论因此只依赖于度规和其他场所构建的规范不变量. 可以认为场$X^\mu$是流形上的坐标. 这称为靶空间, 因而$X^\mu$定义了一个嵌入
+\begin{equation}
+\text { 世界面 } \rightarrow \text { 靶 } \:. \label{3.7.9}
+\end{equation}
+在弦理论中, 靶空间是时空本身. 诸如(\ref{3.7.2})的场论, 其中动能项是场相关的, 因而场空间实际上是弯曲流形, 由于历史原因而被称为非线性$\sigma$模型. 
+这个模型在粒子物理与量子场论中有很多应用. 例如, 中性以及带电$\pi$介子场可很好地近似为群流形$SU(2)上$的坐标. 
+
+非线性 $\sigma$模型不再是$X^\mu$的二次型, 所以路径积分现在是一个相互作用二维量子场论. 将路径积分在经典解$X^{\mu}(\sigma)=x_{0}^{\mu}$ 附近展开, 即$X^{\mu}(\sigma)=x_{0}^{\mu}+Y^{\mu}(\sigma)$,
+\begin{align}
+G_{\mu \nu}(X) \partial_{a} X^{\mu} \partial_{b} X^{\nu} &=\Bigl[G_{\mu \nu}(x_{0})+G_{\mu \nu, \omega}\left(x_{0}\right) Y^{\omega}\nonumber \\
+&\quad +\tfrac{1}{2} G_{\mu \nu, \omega \rho}(x_{0}) Y^{\omega} Y^{\rho}+\cdots\Bigr] \partial_{a} Y^{\mu} \partial_{b} Y^{\nu} \:. \label{3.7.10}
+\end{align}
+展开中第一项是场$Y^\mu$的2次动能项. 接下来一项是立方相互作用, 依次类推. 展开中的耦合常数, $G_{\mu \nu, \omega}(x_{0})$
+等, 包含了 $x_{0}$处的导数. 在曲率的特征半径为$R_{\mathrm{c}}$的靶空间中, 度规的导数是$R_{\mathrm{c}}^{-1}$阶的. 因而, 该理论中有效无量纲耦合是 $\alpha'^{1 / 2} R_{\mathrm{c}}^{-1}$. 如果曲率半径 $R_{\mathrm{c}}$ 远大于弦的特征长度, 那么这个耦合是弱的, 并且二维场论的微扰论是个有用的工具. 注意到在同一区域下我们也可采用其他工具. 由于特征长度远大于弦, 我们可以忽略弦的内部结构并使用\emph{低能有效场论}. 正如我们所要看到的, 在决定场论的低能有效作用量时, 弦论进入了. 当约束我们的注意力至无质量背景时, 
+我们暗含使用$\alpha^{\prime 1 / 2} R_{\mathrm{c}}^{-1} \ll 1$: 当波长大于弦尺度时, 不产生有质量弦态.
+
+非线性$\sigma$模型\eqref{3.7.2}是可重整理论: 场$Y^\mu$的量纲是0, 因而相互作用的量纲都是2. 然而耦合, 即度规展开式的系数, 在数值上是无限大(除非某些对称性限制了度规的形式). 实际上将度规函数本身, 而非它的展开系数, 定义成交成理论的耦合更有用些.
+
+\subsection*{Weyl不变性}
+
+我们已经强调了Weyl不变性对弦论的相容性是重要的. 仅当二维量子场论是Weyl不变的, 作用量\eqref{3.7.6}将定义一个自洽的弦论. 这个作用量碰巧是在刚性Weyl变换下经典不变的最普遍作用量, 其中在刚性Weyl变换中, $\delta \omega$独立于$\sigma$. 这很容易看到: 在一个刚性Weyl变换下, 有$n$个导数的收缩将正比于$2-n$. 当然, 考察定域Weyl变换也有必要, 在这个变换下, 作用量\eqref{3.7.6}中的 $G_{\mu \nu}$ 和 $B_{\mu \nu}$ 是不变的, 但 $\Phi$ 项不是, 并且包含了对Weyl变换的量子贡献. 在$B_{\mu \nu}$ 和 $\Phi$ 很小,  $G_{\mu \nu}$ 接近$\eta_{\mu \nu}$的极限下, 我们可以使用上述结果寻找Weyl变换. 写下$S_{\sigma}=S_{\mathrm{P}}-V_{1}+\cdots$, 其中$S_{\mathrm{P}}$是平坦空间作用量, 
+$V_{1}$是顶点算符\eqref{3.6.14}. 那么
+\begin{subequations} \label{3.7.11}
+\begin{align}
+G_{\mu \nu}(X)&=\eta_{\mu \nu}-4 \pi g_{\mathrm{c}} s_{\mu \nu} \me^{\mi k \cdot X} \:, \label{3.7.11a} \\
+B_{\mu \nu}(X)&=-4 \pi g_{\mathrm{c}} a_{\mu \nu} \me^{\mi k \cdot X} \:, \label{3.7.11b} \\
+\Phi(X)&=-4 \pi g_{\mathrm{c}} \phi \me^{\mi k \cdot X} \:. \label{3.7.11c}
+\end{align}
+\end{subequations}
+我们当然可以取动量不同的顶点算符的线性组合. 那么, 到首阶, \eqref{3.6.16}给出了Weyl变换; 方便起见, 我们取$\gamma=0$的重整化方案. 
+像\eqref{3.4.6}中那样将Weyl变换与$T^{a}{}_{a}$关联起来给出
+\begin{equation}
+T^{a}{}_{a}=-\frac{1}{2 \alpha^{\prime}} \beta_{\mu \nu}^{G} g^{a b} \partial_{a} X^{\mu} \partial_{b} X^{\nu}-\frac{i}{2 \alpha^{\prime}} \beta_{\mu \nu}^{B} \epsilon^{a b} \partial_{a} X^{\mu} \partial_{b} X^{\nu}-\frac{1}{2} \beta^{\Phi} R
+\end{equation}
+其中, 到$\chi_{\mu \nu}, B_{\mu \nu}$和$\Phi$ 的线性阶,
+\begin{subequations}\label{3.7.13}
+\begin{align}
+\beta_{\mu \nu}^{G} &\approx-\frac{\alpha^{\prime}}{2}\Bigl(\partial^{2} \chi_{\mu \nu}-\partial_{\nu} \partial^{\omega} \chi_{\mu \omega}-\partial_{\mu} \partial^{\omega} \chi_{\omega \nu}+\partial_{\mu} \partial_{\nu} \chi^{\omega}{}_{\omega}\Bigr)+2 \alpha^{\prime} \partial_{\mu} \partial_{\nu} \Phi \:,  \label{3.7.13a}\\
+\beta_{\mu \nu}^{B} &\approx-\frac{\alpha^{\prime}}{2} \partial^{\omega} H_{\omega \mu \nu} \:, \label{3.7.13b}\\
+\beta^{\Phi} & \approx \frac{D-26}{6}-\frac{\alpha^{\prime}}{2} \partial^{2} \Phi \:. \label{3.7.13c}
+\end{align}
+\end{subequations}
+在$\beta^{\Phi}$中,  我们引入了\ref{sec:3.4}节所发现的平坦时空反常, 其中暗含了来自于鬼场的正比于26的贡献. 用$\beta$表示$T^{a}{ }_{a}$中的系数是因为它们显然是重整化群$\beta$-函数, 控制了物理对世界面尺度的依赖. 我们将进一步讨论这个.
+
+Weyl反常\eqref{3.7.13}有来自高阶场的进一步贡献. 例如, 将路径积分展开至\eqref{3.7.10}中的三次项的二阶, 那么两个相互作用彼此接近会产生发散. 
+它们的OPE包含形如 $|z|^{-2} \partial X^{\mu} \bar{\partial} X^{\nu}$ 乘以 $G_{\alpha \beta} $ 导数的平方的奇异性.  Diff不变要求这个积分以不变距离的形式, $|z| \exp (\omega)>a_{0} $被截断. 这引入了对度规尺度的依赖性, $\ln z_{\min }=-\omega+\ln a_{0}$. Weyl 变分 $\beta_{\mu \nu}^{G}$
+因而得到了正比于 $O(G_{\alpha \beta, \gamma})^{2}$ 的贡献, 这个贡献组合线性二阶导数项以构成时空里奇张量.
+
+我们再次不讨论细节, 但引用保留所有项直至两个导数的结果
+\begin{subequations}\label{3.7.14}
+\begin{align}
+\beta_{\mu \nu}^{G}&=\alpha^{\prime} \bm{R}_{\mu \nu}+2 \alpha^{\prime} \nabla_{\mu} \nabla_{\nu} \Phi-\frac{\alpha^{\prime}}{4} H_{\mu \lambda \omega} H_{\nu}{}^{\lambda \omega}+O(\alpha^{\prime 2}) \:, \label{3.7.14a} \\
+\beta_{\mu \nu}^{B}&=-\frac{\alpha^{\prime}}{2} \nabla^{\omega} H_{\omega \mu \nu}+\alpha^{\prime} \nabla^{\omega} \Phi H_{\omega \mu \nu}+O(\alpha^{\prime 2}) \:, \label{3.7.14b} \\
+\beta^{\Phi}&=\frac{D-26}{6}-\frac{\alpha^{\prime}}{2} \nabla^{2} \Phi+\alpha^{\prime} \nabla_{\omega} \Phi \nabla^{\omega} \Phi-\frac{\alpha^{\prime}}{24} H_{\mu \nu \lambda} H^{\mu \nu \lambda}+O(\alpha^{\prime 2}) \:. \label{3.7.14c} 
+\end{align}
+\end{subequations}
+\eqref{3.7.14}中的几项可以从线性近似\eqref{3.7.13}中辨认出来, 但现在在时空坐标的变换下变得协变. 为了与世界面里奇张量$R_{a b} $区分, 
+时空里奇张量是$\bm{R}_{\mu \nu}$. 有更多导数的项是世界面$\alpha^{1 / 2} R_{\mathrm{c}}^{-1}$展开中的高阶项. 
+进行高阶Weyl反常计算的最有效方法不是我们所描述的, 而是维数正规化. 
+
+世界面是Weyl不变的, 因而条件是
+\begin{equation}
+\beta_{\mu \nu}^{G}=\beta_{\mu \nu}^{B}=\beta^{\Phi}=0 \:. \label{3.7.15}
+\end{equation}
+它们看起来是合理的运动方程. 方程$\beta_{\mu \nu}^{G}=0$类似于有反对称张量场和伸缩子场作为源项的Einstein方程. $\beta_{\mu \nu}^{B}=0$是Maxwell方程的反对称张量推广, 
+决定了场强的发散.
+
+\subsection*{背景}
+场方程的另一定性特征现在能够理解了: 场$\Phi$总是带着微分出现的, 所以它在$X$无关偏移下不变. 这是因为这样的偏移对作用量\eqref{3.7.6}造成的改变正比于Euler数, 
+因而并不影响类似Weyl不变的定域性质. 特别地, 背景
+\begin{equation}
+G_{\mu \nu}(X)=\eta_{\mu \nu}, \quad B_{\mu \nu}(X)=0, \quad \Phi(X)=\Phi_{0}
+\end{equation}
+对于任何常数$\Phi_0$是Weyl不变的. 这正是平坦时空作用量\eqref{3.2.2}, 其中
+\begin{equation}
+\lambda=\Phi_{0} \:. \label{3.7.17}
+\end{equation}
+$\lambda$的值决定弦之间的耦合强度, 但我们现在看到这个参量的不同值并不意味着存在不同的弦理论.  $\lambda$不同值并不对应不同的理论, 而是对应同一理论中的不同\emph{背景}. 
+出现在Nambu-Goto和Polyakov作用量中的其他参量, Regge斜率$\alpha^{\prime}$, 也不是真的自由参量, 因为它是有量纲的. 它定义了长度单位, 可以被吸收进$X^{\mu}$的定义中. 
+
+以二维的观点看, 改变世界面作用量中的场$G_{\mu \nu}, B_{\mu \nu}$和$\Phi$似乎会给出一个新的理论. 从纯弦论的观点看, 这仅是在同一理论下观察不同的背景——一个不同的态. 
+这是弦论吸引人的特征之一. 在标准模型中, 以及大多数在量子场论框架下统一标准模型的尝试中, 存在很多不由理论决定的常数; 这些常数的任何值给出一个相容的理论. 在弦论中, 不存在这样的自由参量——耦合常数依赖于态且原则上由动力学决定. 当然, 目前来看, 这仅是把困难移到了别处, 因为我们对动力学的理解程度不足以知道背景场的值.
+
+令人惊讶的是, Einstein方程在一个看起来不同寻常的地方出现了, 它作为二维场论Weyl不变的条件. 弦论提供了这两个概念的联系. 同样引人注意的是, 仅在满足合适场方程的背景中, 弦的传播才是自洽的. 这类似于我们早期的发现: 只有在壳顶点算符是有意义的.
+
+另一发现: 条件 $D=26$来自$T^{a}{}_{a}$中的$R$项. 在非线性$\sigma$模型中, 这被推广至$\beta^{\Phi}=0$. 
+我们在\eqref{3.7.14c}中看到 $\beta^{\Phi}$中的领头阶正比于$D-26$, 但存在包含场梯度的修正. 显然, 如果场不是常数, 我们有另一$D$值. 这是正确的, 
+尽管我们不能真的从\eqref{3.7.14c}中得到它, 因为这是在近似 $\alpha^{\prime 1 / 2} R_{\mathrm{c}}^{-1} \ll 1$ 下导出的, 而其中 $\beta^{\Phi}$ 的修正很小. 事实上,  $D \neq 26$ 的精确解是知道的. 我们现在给出一个例子: 
+\begin{equation}\label{3.7.18}
+G_{\mu \nu}(X)=\eta_{\mu \nu}, \quad B_{\mu \nu}(X)=0, \quad \Phi(X)=V_{\mu} X^{\mu} \:.
+\end{equation}
+如果
+\begin{equation}
+V_{\mu} V^{\mu}=\frac{26-D}{6 \alpha^{\prime}} \:, \label{3.7.19}
+\end{equation}
+$\beta$-函数(\ref{3.7.14})为零. 这个结果实际上是\emph{精确}的, 因为场\eqref{3.7.18}关于$X^\mu$是常数或线性的, 所以世界面路径积分仍然是高斯型. 
+对$g_{a b}$变分来决定这个理论的$T_{a b}$ , 发现它正是伸缩子CFT, 中心荷$c=D+6 \alpha^{\prime} V_{\mu} V^{\mu}$在条件\eqref{3.7.19}下确定是26. 
+由于$\Phi$必须有一个大的梯度以改变$D$, 这个CFT并不描述我们近似平坦且齐次的4维时空, 但它可能有宇宙学上的应用. 这个CFT同样是重要的, 
+因为$D=1$和$D=2$的情况对弦论是足够简单以至于精确可解的.
+
+\subsection*{时空作用量}
+
+场方程\eqref{3.7.15}可从时空作用量
+	\begin{align}
+		\bm{S}&=\frac{1}{2 \kappa_{0}^{2}} \int \dif^{D} x\: (-G)^{1 / 2} \me^{-2 \Phi} \biggl[- \frac{2(D-26)}{3 \alpha^{\prime}}+\bm{R}-\frac{1}{12} H_{\mu \nu \lambda} H^{\mu \nu \lambda}  \nonumber \\
+		&\qquad\qquad\qquad\qquad \qquad\qquad+4 \partial_{\mu} \Phi \partial^{\mu} \Phi+O(\alpha^{\prime})\biggr]  \label{3.7.20}
+	\end{align}
+导出. 归一化常数$\kappa_0$不由场方程决定, 并且由于它可以通过$\Phi$的重定义被改变, 所以在物理上不是很重要. 可以证明
+\begin{align}
+\delta \bm{S}&=-\frac{1}{2 \kappa_{0}^{2} \alpha^{\prime}} \int \dif^{D} x\: (-G)^{1 / 2} \me^{-2 \Phi} \Bigl[\delta G_{\mu \nu} \beta^{G \mu \nu}+\delta B_{\mu \nu} \beta^{B \mu \nu} \nonumber \\
+&\qquad \qquad +\Bigl(2 \delta \Phi-\tfrac{1}{2} G^{\mu \nu} \delta G_{\mu \nu}\Bigr) (\beta^{G \omega}{}_{\omega}-4 \beta^{\Phi})\Bigr] \:. \label{3.7.21}
+\end{align}
+作用量用$\bm{S}$表示是表明它是控制低能时空场的有效作用量. 
+
+做如下形式的场重定义 
+\begin{equation}
+\tilde{G}_{\mu \nu}(x)=\exp (2 \omega(x)) G_{\mu \nu}(x) \:, \label{3.7.22}
+\end{equation}
+这是时空Weyl变换. 由$\tilde{G}_{\mu \nu}$构造的里奇标量是
+\begin{equation}
+\tilde{\bm{R}}=\exp (-2 \omega)\Bigl[\bm{R}-2(D-1) \nabla^{2} \omega-(D-2)(D-1) \partial_{\mu} \omega \partial^{\mu} \omega\Bigr] \:. \label{3.7.23}
+\end{equation}
+对于特殊情况$D=2$, 这是Weyl变换\eqref{3.3.5}. 令$\omega=2(\Phi_{0}-\Phi) /(D-2)$, 并定义
+\begin{equation}
+\tilde{\Phi}=\Phi-\Phi_{0} \:, \label{3.7.24}
+\end{equation}
+其有一个归零的期望值. 作用量变成
+\begin{align}
+\bm{S} &= \frac{1}{2 \kappa^{2}} \int \dif^{D} X\: (-\tilde{G})^{1 / 2}\biggl[-\frac{2(D-26)}{3 \alpha^{\prime}} \me^{4 \tilde{\Phi} /(D-2)}+\tilde{\bm{R}} \nonumber \\
+&\quad -\frac{1}{12} \me^{-8 \tilde{\Phi} /(D-2)} H_{\mu \nu \lambda} \tilde{H}^{\mu \nu \lambda}-\frac{4}{D-2} \partial_{\mu} \tilde{\Phi} \tilde{\partial}^{\mu} \tilde{\Phi}+O(\alpha^{\prime})\biggr] \:, \label{3.7.25}
+\end{align}
+其中波浪号是作为一个提醒: 指标是通过$\tilde{G}^{\mu \nu}$升降的. 以$\tilde{G}_{\mu \nu}$的形式, 引力拉格朗日密度取标准形式$(-\tilde{G})^{1 / 2} \tilde{\bm{R}} / 2 \kappa^{2}$. 常数$\kappa=\kappa_{0} \me^{\Phi_{0}}$ 是观察到的引力耦合常数,
+\begin{equation}
+\kappa= (8 \pi G_{\mathrm{N}})^{1 / 2}=\frac{(8 \pi)^{1 / 2}}{M_{\mathrm{P}}}=(2.43 \times 10^{18} \:\mathrm{GeV})^{-1} \:. \label{3.7.26}
+\end{equation}
+普遍地,  $G_{\mu \nu}$被称为$\sigma$模型度规或弦度规, 而$\tilde{G}_{\mu \nu}$称为Einstein度规. 由于有交换伸缩子的力, 不存在等效原理, 因而没办法挑出度规的一个优先定义. 更进一步, 在弦论中存在可以赋予伸缩子质量以及一个有限范围的高阶效应——这是好事, 因为等效原理确实以非常高的精度成立.
+
+
+注意到伸缩子总出现在作用量\eqref{3.7.20}的总因子$\me^{-2 \Phi}$中, 并且在其他地方总是以微分形式出现. 这与如下事实是一致的: 给伸缩子增加一个总常数对Weyl反常没有影响. 从时空的观点看, 这给作用量乘上了一个常数, 但不影响运动方程. 它也反应了这样的事实: 在量子场论中, 总可以调节场使得耦合常数$g$作为一个总因子$g^{-2}$出现, 
+且在弦论中则是$\me^{-2 \Phi}$. 例如, Yang-Mills作用量通常以如下形式引入
+\begin{subequations} \label{3.7.27}
+\begin{align}
+\bm{S} &=-\frac{1}{4} \int \dif^{D} x \: \operatorname{Tr}(F_{\mu \nu} F^{\mu \nu}) \:, \label{3.7.27a} \\
+F_{\mu \nu}&=\partial_{\mu} A_{\nu}-\partial_{\nu} A_{\mu}-\mi g[A_{\mu}, A_{\nu}] \:. \label{3.7.27b}
+\end{align}
+\end{subequations}
+通过定义
+\begin{equation}
+g A_{\mu}=A_{\mu}^{\prime}\:, \qquad g F_{\mu\nu}=F_{\mu\nu}^{\prime} \:, \label{3.7.28}
+\end{equation}
+$g$从场强, 协变导数以及规范变换中被消除了, 而以一个总因子$g^{-2}$出现在作用量中. 在弦论中, 当作用量用世界面上的场表示时, 这是成立的. 
+如果我们做一个与伸缩子相关的重定义, 就像推导\eqref{3.7.25}所要做的, 那么这不再成立.
+
+当$g$仅在作用量的归一化中出现时, 每个传播子包含一个$g^{2}$因子, 每个相互作用包含$g^{-2}$. 不难证明对有效作用量的$L$-圈贡献中传播子比顶点多 $L{-}1$个, 
+所以它的标度是$g^{2(L-1)}$. 在弦论中, 这是$\me^{-\chi \Phi}$, 也是我们所期待的.
+
+背景的讨论可扩至开弦. 我们已经看到开弦顶点算符是沿着边界积分的, 所以开弦场作为边界项出现在$\sigma$模型作用量中.
+
+
+\subsection*{紧致化与 CFT}
+目前为止研究的四种弦论(有没有边界, 定向或非定向)有一些共同的特征: 一个很好的特征是会自动包含广义相对论, 也存在几个坏特征: 需要26维, 存在快子, 以及频谱中没有费米子. 然而, 广义相对论的出现为额外维给出了一种自然解释. 在广义相对论中, 时空的几何是动力学的, 不是固定的. 平坦时空仅是场方程众多解中的一个. 可能存在一些解, 其中有些维很大且平坦, 而其他的很小且高度蜷曲. 度规是
+\begin{equation}\label{3.7.29}
+g_{M N}=\begin{bmatrix}
+\eta_{\mu \nu} & 0 \\
+0 & g_{m n}(x^{p})
+\end{bmatrix} \:.
+\end{equation}
+我们已经把26个坐标$M,N=0,\cdots,25$分成四个时空坐标 $\mu, \nu=0, \cdots, 3$ 和 22 个内部坐标 $m, n, p=4, \cdots, 25$. 
+度规\eqref{3.7.29}在四维是平坦的, 但在其他22维是蜷曲的. 假定内部空间紧致. 一个例子: 若伸缩子场是一个常数, 那么至$\alpha^{\prime}$阶, 背景场方程\eqref{3.7.15}是满足的, 
+反对称张量是零, 内部空间是里奇平坦的, $\bm{R}_{m n}=0$.
+
+换句话说, 时空形式为 $M^{d} \times K$,其中$M^{d}$是$d$维闵可夫斯基空间,  $K$ 是某种 $(26-d)$ 维紧致黎曼空间. 在这样的时空中, 尺度远大于$K$的物理与$d$维闵可夫斯基时空的物理是相同的. 独立于弦论, 有很好的理由考虑时空是这一形式的可能性.
+
+我们可以考虑进一步推广这个概念. 基本的物理相容性条件就那么几个. 我们要求Lorentz不变性, 要求量子力学几率为正且守恒——迄今为止, 弦论中似乎没有什么要求标准量子力学的基础被修正, 尽管对其有不同认识将是有趣的. 尽管这些条件是简单的, 但它们在规范理论, 引力和弦论之间存在一些冲突. 在显然协变规范中存在着必须从物理振幅中退耦负范类时激发. 在光锥规范中, 内积是正定的
+
+因此一个必要条件是二维diff不变性, 使得非物理振子仅是坐标系统的振子. Weyl不变性是一个更加技巧的要求: 丢失Weyl不变性所产生的额外自由度没有坐标系统振子那么直观.
+
+我们也将做一个额外的技巧性假定:  出现在世界面作用量中的嵌入时$X_0$仅在
+\begin{equation}\label{3.7.30}
+-\frac{1}{4 \pi \alpha^{\prime}} \int_{M} \dif^{2} \sigma \: g^{1 / 2} g^{a b} \partial_{a} X^{0} \partial_{b} X^{0} \:.
+\end{equation}
+例如, 在$\sigma$模型中, 这意味着场是静态的,  $G_{0 \mu}=\eta_{0 \mu}$ 且 $B_{0 \mu}=0 $. 这一假定算不上一个约束. 如果感兴趣的是静态,  \eqref{3.7.30}就足够了. 
+时间相关的背景也肯定是重要的, 但除了在时间尺度就是弦尺度的极端情况下, 它们可以用低能有效场论来分析. 做出假定\eqref{3.7.30}的原因是要把主要问题, $X^0$的错号特征, 放在一个明显的形式中. 
+
+要求体现定域不变性导致了对更加普遍弦论的如下提议: 将25个空间场$X^{\mu}$替换成任何有$c=\tilde{c}=25$的幺正CFT. 这确保了整个二维理论, 包含$X^{0}$和鬼, 可以以一种(diff $\times$ Weyl)不变的方式与弯曲度规耦合. 幺正(正定内积)条件是必须的, 因为仅存在足够的定域规范对称性以移除非物理$X^{0}$激发; 世界面内积在这里是相关的, 因为它在单粒子分区变成了时空内积. 在第二卷, 我们将看到进一步的推广是可能的, 同时扩大了定域对称群与非物理激发的集合.                                            
+
+如果我们感兴趣的是低能物理看起来像四维的, 我们保持自由场$X^{\mu}$,  $\mu=0,1,2,3$, 而将剩余的$X^{\mu}$ 替换成 $c=\tilde{c}=22$的紧致幺正CFT. 
+对于紧致化, 我们意指频谱是离散的, 就像有限体积内的量子场论. 存在一些构建所有的CFT尝试, 我们将在15章描述. 
+所有这些理论都有快子, 内部CFT中的幺正态 $|1\rangle$ 与四维CFT基态 $|0 ; k\rangle$的乘积.
+
+我们所作的推广有多大？如果定域对称性是唯一显著的约束, 我们可以在世界面上随意引入有不同的世界面和时空量子数的场. 这似乎使得我们远离了原始的26个$X^\mu$场. 然而在二维中, 在看似不同的量子场论之间存在很多等价性, 使得情况不那么显然.
+
+一般而言, 基于不同CFT但有相同的世界面对称性以及拓扑的所有弦论是统一理论的不同基态. 这引起了语义上的问题: 尽管世界面拉格朗日量不同的弦论可能只是同一理论的不同真空,  但我们通常称它们为不同的理论.
